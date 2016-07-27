@@ -1,0 +1,68 @@
+---
+title: "CE083 - Estatística Computacional I"
+output:
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+source("setup_knitr.R")
+```
+
+[![Build Status](https://travis-ci.org/fernandomayer/ce083-2016-2.svg)](https://travis-ci.org/fernandomayer/ce083-2016-2)
+
+<!-- <div class="alert alert-danger" role="alert"> **ATENÇÃO!** Aqui é um -->
+<!-- espaço para avisos. Comente quando não utilizar. </div> -->
+
+# Detalhes da oferta da disciplina
+
+- **Curso:** Estatística (EST)
+- **Período:** segundo semestre de 2016
+- **Professor Responsável:** [Fernando de Pol Mayer][], ([LEG][]:
+  Laboratório de Estatística e Geoinformação)
+- **Horários e Locais:**
+    - Terça, 19:00 - 20:30h, **a confirmar**
+    - Quinta, 20:40 - 22:00h, **a confirmar**
+- **Horários de atendimento do professor:**
+    - Terças e quintas, 14:00-18:00 (preferenciais). Outros horários
+      podem ser agendados previamente por email.
+- **Frequência**: de acordo com as normas da Universidade, mínimo de 75%
+- **Avaliação**: serão realizadas 3 provas durante o semestre
+    - As datas das provas serão definidas conforme o andamento da
+      disciplina, mas serão confirmadas com pelo menos uma semana de
+      antecedência.
+    - A média final será a média simples das 3 provas (todas tem o mesmo
+      peso).
+- **Datas importantes:** De acordo com a [Resolução 49/15 - CEPE][]:
+    - **01/08**: Início do semestre letivo
+    - **12/12**: Final do semestre letivo
+    - **15/12-21/12**: Período de exames
+
+# Programa/objetivos da disciplina
+
+O objetivo desta disciplina é capacitar os alunos em conceitos básicos
+de estatística que permitam a interpretação de resultados de análises e
+procedimentos estatísticos, bem como a execução de procedimentos e
+análises estatística básicas. O curso compreende três grandes tópicos:
+
+- Análise descritiva e exploratória de dados
+- Noções de probabilidades e distribuições de probabilidades
+- Introdução à procedimentos de inferência estatística
+
+<!-- - **Avaliação**: sabatinas, aplicadas ao final de um módulo da disciplina -->
+<!--     - As sabatinas são provas menores, e com conteúdo específico -->
+<!--     - O número de sabatinas em um semestre pode variar conforme o -->
+<!--       andamento da disciplina (geralmente entre 6 e 10) -->
+<!--     - As datas das sabtinas serão definidas durante o semestre, e sempre -->
+<!--       será avisado com antecedência -->
+<!--     - A média final será a média das 75% maiores notas (as 25% menores -->
+<!--       notas serão descartadas) -->
+<!--     - **Importante**: nas sabatinas não há segunda chamada. Ao perder -->
+<!--       uma sabatina, a nota é 0, e automaticamente estará dentro das 25% -->
+<!--       menores notas que serão excluídas para o cálculo da média final -->
+
+<!-- links -->
+
+[Fernando de Pol Mayer]: https://fernandomayer.github.io
+[LEG]: http://www.leg.ufpr.br
+[Resolução 49/15 - CEPE]: http://www.ufpr.br/soc/descarregar_arquivo.php?cod=1064

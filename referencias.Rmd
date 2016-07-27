@@ -8,52 +8,67 @@ output:
 ## Referências básicas
 
 
-- Bussab, WO; [Morettin, PA](http://www.ime.usp.br/~pam).
-  [Estatística Básica](http://www.editorasaraiva.com.br/produtos/show/isbn:9788502207998/titulo:estatistica-basica/).
-  São Paulo: [Editora Saraiva](http://www.saraivauni.com.br), 2006 (5ª
-  Edição).
-- [Magalhães, MN](http://www.ime.usp.br/~marcos);
-      [Lima, ACP](http://www.ime.usp.br/~acarlos).
-      [Noções de Probabilidade e Estatística](http://www.ime.usp.br/~noproest).
-      São Paulo: EDUSP, 2008 (6ª edição).
-- Montgomery, DC; Runger, GC.
-  [Estatística aplicada e probabilidade para engenheiros](http://www.grupogen.com.br/estatistica-aplicada-e-probabilidade-para-engenheiros).
-  Rio de Janeiro: LTC Editora, 2012 (5ª Edição).
+- Dalgaard, P.
+  [Introductory statistics with R](http://www.springer.com/us/book/9780387790534).
+  New York: Springer, 2008.
+- Murrell, P.
+  [Introduction to data technologies](https://www.crcpress.com/Introduction-to-Data-Technologies/Murrell/9781420065176).
+  Boca Raton: Chapman & Hall/CRC, 2009. Disponível em
+  [HTML](https://www.stat.auckland.ac.nz/~paul/ItDT/HTML) e
+  [PDF](https://www.stat.auckland.ac.nz/~paul/ItDT/itdt-2013-03-26.pdf).
+- Peng, RD.
+  [R programming for data science](https://leanpub.com/rprogramming).
+  Leanpub, 2015. (Gratuito)
+- Peng, RD.
+  [Exploratory data analysis with R](https://leanpub.com/exdata).
+  Leanpub, 2015. (Gratuito)
+- Ribeiro Jr., PJ.
+  [Introdução ao ambiente estatístico R](http://www.leg.ufpr.br/~paulojus/embrapa/Rembrapa/).
+  (*on-line*)
 
 ## Referências complementares
 
-- Andrade, DF; Ogliari, PJ.
-  [Estatística para as ciências agrárias e biológicas, com noções de experimentação](http://www.editora.ufsc.br/publicacao/detalhe/id/537). Florianópolis: Editora da UFSC, 2013.
-- Dantas, CAB.
-  [Probabilidade: um curso introdutório](http://www.edusp.com.br/detlivro.asp?id=41384).
-  São Paulo: EDUSP, 2008.
-- Morettin, LG.
-  [Estatística básica: probabilidade e inferência](http://loja.pearson.com.br/estatistica-basica-probabilidade-e-inferencia-9788576053705/p).
-  São Paulo: Pearson, 2010.
-- Navidi, W.
-  [Probabilidade e estatística para ciências exatas](http://www.grupoa.com.br/livros/matematica-e-estatistica/probabilidade-e-estatistica-para-ciencias-exatas/9788580550733).
-  Porto Alegre: Bookman, 2012.
-- Spiegel, MR; Schiller, J; Srinivasan, A.
-  [Probabilidade e estatística](http://www.grupoa.com.br/livros/matematica-e-estatistica/probabilidade-e-estatistica/9788565837187).
-  Porto Alegre: Bookman, 2013.
-- **Nota:** existem diversos textos de estatística compatíveis com o
-      programa do curso. Consulte o professor sobre a adequação de
-      qualquer outra referência bibliográfica.
+
+- Adler, J.
+  [R in a nutshell](http://shop.oreilly.com/product/0636920022008.do).
+  O'Reilly, 2010.
+- Leek, J.
+  [The elements of data analytic style](https://leanpub.com/datastyle).
+  Leanpub, 2015. (Gratuito)
+- Matloff, N.
+  [The art of R programming: A tour of statistical software design](https://www.nostarch.com/artofr.htm).
+  No Starch Press, 2011.
+- Mello, MP; Peternelli, LA.
+  [Conhecendo o R: uma visão mais que Estatística](http://www.dsr.inpe.br/~mello/Conhecendo_o_R.html).
+  Viçosa: Editora UFV, 2013.
+- Peng, RD.
+  [Report writing for data science in R](https://leanpub.com/reportwriting).
+  Leanpub, 2015. (Gratuito)
+- Rizzo, ML.
+  [Statistical computing with R](https://www.crcpress.com/Statistical-Computing-with-R/Rizzo/9781584885450).
+  Boca Raton: Chapman & Hall/CRC, 2008.
+- Teetor, P.
+  [R cookbook](http://shop.oreilly.com/product/9780596809164.do).
+  O'Reilly, 2011.
+- Venables, WB; Ripley, BD.
+  [Modern applied statistics with S](http://www.springer.com/us/book/9780387954578).
+  New York: Springer, 2002.
 
 ## Referências *online*
 
-- [Coursera](https://pt.coursera.org)
-- [Kahn Academy](http://www.khanacademy.org) vídeos sobre diversos
-      assuntos, incluindo sessões especificas de estatística e
-      probabilidade.
-- [Udacity Online courses](http://www.udacity.com). Ver em particular:
-    - [Introduction to Statistics](https://www.udacity.com/course/st101)
+- Horton, NJ; Pruim, R; Kaplan, DT.
+  [A student's guide to R](http://cran-r.c3sl.ufpr.br/doc/contrib/Horton+Pruim+Kaplan_MOSAIC-StudentGuide.pdf). 2015.
+- Jonge, E; Loo, M.
+  [An introduction to data cleaning with R](http://cran-r.c3sl.ufpr.br/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf). 2013.
+- Maindonald, JH.
+  [Using R for data analysis and graphics](http://cran-r.c3sl.ufpr.br/doc/contrib/usingR.pdf). 2008.
+- Paradis, E.
+  [R for beginners](http://cran-r.c3sl.ufpr.br/doc/contrib/Paradis-rdebuts_en.pdf). 2005.
+- Torgo, L.
+  [Introdução à programação em R](http://cran-r.c3sl.ufpr.br/doc/contrib/Torgo-ProgrammingIntro.pdf). 2006.
 
 ## Leituras complementares
 
-<!-- - Hilborn, R; Mangel, M. -->
-<!--   [The ecological detective: confronting models with data](http://press.princeton.edu/titles/5987.html). -->
-<!--   Princeton University Press, 1997. -->
 - Huff, D.
   [Como mentir com estatística](http://www.intrinseca.com.br/livro/624/).
   Rio de Janeiro: Intrínseca, 2016.

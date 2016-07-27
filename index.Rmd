@@ -40,14 +40,50 @@ source("setup_knitr.R")
 
 # Programa/objetivos da disciplina
 
-O objetivo desta disciplina é capacitar os alunos em conceitos básicos
-de estatística que permitam a interpretação de resultados de análises e
-procedimentos estatísticos, bem como a execução de procedimentos e
-análises estatística básicas. O curso compreende três grandes tópicos:
+O objetivo desta disciplina é capacitar os alunos em uma linguagem de
+programação para estatística, onde terão a capacidade de desenvolver
+suas análises em qualquer disciplina. Neste curso usaremos a linguagem R
+que é livre, de código aberto, e já se tornou a linguagem "padrão" para
+análises estatísticas. O objetivo também é ensinar os alunos sobre o
+conceito de ciência reproduzível, e como utilizar o R para gerar
+documentos dinâmicos, misturando código e texto, facilitando e tornando
+clara a difusão do conhecimento.
 
-- Análise descritiva e exploratória de dados
-- Noções de probabilidades e distribuições de probabilidades
-- Introdução à procedimentos de inferência estatística
+O curso compreende os seguintes tópicos:
+
+- Filosofia e conceitos iniciais sobre software livre e R
+- Uma primeira sessão com o R
+- R: essencial
+    - Instalação, interfaces gráficas
+    - Funções e argumentos
+    - Objetos e suas classes
+    - Valores perdidos e especiais
+    - Manipulação de dados: indexação e seleção condicional
+- R: dados
+    - Importação e exportação de dados
+    - Lendo dados de uma URL
+- R: análise exploratória de dados
+    - Funções para resumo de dados
+    - Gráficos exploratórios
+      - Sistemas gráficos
+      - Gráficos básicos
+      - Sistemas de cores
+      - Gráficos com o pacote Lattice
+      - Gráficos com o pacote ggplot2
+- R: estatística
+    - Geração de números aleatórios
+    - Distribuições de probabilidade
+    - Intervalos de confiança e teste de hipótese
+    - Regressão linear e ANOVA
+- R: programação
+    - Estruturas de controle e repetição
+    - Criando funções
+    - A família de funções `apply()`
+- Linguagens de marcação
+    - LaTeX
+    - Markdown (Rmarkdown)
+    - Documentos dinâmicos com knitr e rmarkdown
+
 
 <!-- - **Avaliação**: sabatinas, aplicadas ao final de um módulo da disciplina -->
 <!--     - As sabatinas são provas menores, e com conteúdo específico -->

@@ -16,7 +16,7 @@ output:
       in_header: analytics.html
       after_body: footer.html
 navbar:
-  title: "CE000"
+  title: "CE083"
   left:
     - text: "Home"
       href: index.html

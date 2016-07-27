@@ -24,17 +24,13 @@ navbar:
       href: aulas.html
     - text: "Referências"
       href: referencias.html
-    - text: "Programas"
+    - text: "Recursos"
       href: recursos.html
     - text: "Materiais"
       menu:
-      - text: "Tópico 1"
-      - text: "Página A"
-        href: pagA.html
-      - text: "----------"
-      - text: "Tópico 2"
-      - text: "Página B"
-        href: pagB.html
+      - text: "Configurações iniciais"
+      - text: "Guia de instalação"
+        href: R-instalacao.html
   right:
     - text: GitHub
       icon: fa-github fa-lg

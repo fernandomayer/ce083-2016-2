@@ -29,8 +29,10 @@ navbar:
     - text: "Materiais"
       menu:
       - text: "Configurações iniciais"
-      - text: "Guia de instalação"
+      - text: "Guia de instalação do R"
         href: R-instalacao.html
+      - text: "Introdução ao uso do Linux"
+        href: http://fernandomayer.github.io/linux-intro
   right:
     - text: GitHub
       icon: fa-github fa-lg

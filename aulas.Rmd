@@ -12,7 +12,8 @@ source("setup_knitr.R")
 Abaixo o histórico de atividades realizadas em classe e atividades extra
 classe aplicadas.
 
-- **02/08**: Apresentação da disciplina.
+- **02/08**: Apresentação da disciplina. Ver slides:
+  [Introdução ao uso do Linux](http://fernandomayer.github.io/linux-intro)
 
 ## Exercícios
 

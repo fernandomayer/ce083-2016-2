@@ -11,8 +11,8 @@ source("setup_knitr.R")
 
 [![Build Status](https://travis-ci.org/fernandomayer/ce083-2016-2.svg)](https://travis-ci.org/fernandomayer/ce083-2016-2)
 
-<!-- <div class="alert alert-danger" role="alert"> **ATENÇÃO!** Aqui é um -->
-<!-- espaço para avisos. Comente quando não utilizar. </div> -->
+<div class="alert alert-danger" role="alert"> **ATENÇÃO!** Quinta-feira
+(04/08) não haverá aula. Terça-feira (09/08) aula normal no LABEST. </div>
 
 # Detalhes da oferta da disciplina
 

@@ -173,26 +173,22 @@ Uma linguagem de programação nos permite interagir não só com outros
 <!-- - Pode ser lento com grandes (GB, TB, ...) bases de dados -->
 <!-- 	- Necessidade de **vetorização** -->
 
-<!-- ## Data Science? Estatística? -->
+# Data Science? Estatística?
 
-<!-- * [The data science Venn diagram][DSVD] -->
+- [The data science Venn diagram][DSVD]
 
-<!-- ![Diagrama de Venn para Ciência de Dados](img/Data_Science_VD.png) -->
+![Diagrama de Venn para Ciência de Dados](img/Data_Science_VD.png)
 
-<!-- ## Data Science? Estatística? -->
+# Data Science? Estatística?
 
-<!-- * Conhecimento de matemática e estatística: é o que você está fazendo -->
-<!--   aqui -->
-<!-- * Habilidade hacker: -->
-<!--     * Saber programar (aqui vamos saber usar o R) -->
-<!--     * Saber responder perguntas sozinho. Procurar, pergunta e vasculhar -->
-<!--       para conseguir uma resposta. **A maioria das respostas não estão -->
-<!--       respondidas nos livros!** -->
-<!--     *  Saber usar o Google, SO, quais perguntas você -->
-<!--       tem, quais respostas você não sabe, e descobrir como usar a -->
-<!--       informação que você tem para responder o que quer responder. -->
-<!--   * Experiência substancial: depende da área dos dados, da interação com o -->
-<!--     pesquisador, ou de buscar o conhecimento -->
+- Conhecimento de matemática e estatística: é o que você está fazendo
+  aqui
+- Habilidade hacker:
+    - Saber programar (aqui vamos saber usar o R)
+    - Saber responder perguntas sozinho.
+    -  Saber buscar respostas
+- Experiência substancial: depende da área dos dados, da interação com o
+    pesquisador, ou de buscar o conhecimento
 
 <!-- ## Instalação do R -->
 

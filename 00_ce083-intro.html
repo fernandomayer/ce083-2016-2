@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Fernando Mayer" />
+  <title>CE083 - Estatística Computacional I</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/reveal.js-3.3.0/css/reveal.css"/>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="site_libs/reveal.js-3.3.0/css/theme/black.css" id="theme">
+
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'site_libs/reveal.js-3.3.0/css/print/pdf.css' : 'site_libs/reveal.js-3.3.0/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="site_libs/reveal.js-3.3.0/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">CE083 - Estatística Computacional I</h1>
+    <h2 class="author">Fernando Mayer</h2>
+    <h3 class="date">Agosto, 2016</h3>
+</section>
+
+<section id="interagindo-com-o-computador" class="slide level1">
+<h1>Interagindo com o computador</h1>
+<h2 id="escrevendo-codigo">Escrevendo código</h2>
+<p>O que significa este ícone?</p>
+<p><img src="img/excelcsvgrey.png" width="400px" /></p>
+<ul>
+<li>É um documento do Microsoft Excel? <strong>Não!</strong></li>
+<li>É um arquivo de <strong>texto pleno</strong>, separado por vírgulas (CSV <em>comma separated values</em>)</li>
+<li>De fato, o nome do arquivo é <code>final.csv</code> e não <code>final</code></li>
+<li>O Excel pode sim abrir este arquivo… assim como milhares de outros programas!</li>
+</ul>
+</section>
+<section id="escrevendo-codigo-1" class="slide level1">
+<h1>Escrevendo código</h1>
+<ul>
+<li>O computador (leia-se, nesse caso, o sistema operacional Windows) “proteje” o usuário dos detalhes sujos</li>
+<li>Isso é ruim? <strong>Sim!</strong></li>
+<li>O usuário se acostuma com o computador ditando as regras</li>
+<li>É importante lembrar que é você quem deve dizer o que o computador deve fazer (nesse caso, com qual programa abrir certo arquivo)</li>
+</ul>
+</section>
+<section id="escrevendo-codigo-2" class="slide level1">
+<h1>Escrevendo código</h1>
+<ul>
+<li>Para a maioria dos usuários, a interação com o computador se limita a clicar em links, selecionar menus e caixas de diálogo</li>
+<li>O problema com essa abordagem é que parece que o usuário é controlado pelo computador</li>
+<li>A verdade deve ser o oposto!</li>
+<li>É o usuário que possui o controle e deve dizer para o computador exatamente o que fazer</li>
+<li>Escrever código ainda tem a vantagem de deixar registrado tudo o que foi feito</li>
+</ul>
+</section>
+<section id="escrevendo-codigo-3" class="slide level1" data-background="img/power.gif">
+<h1>Escrevendo código</h1>
+<p>Aprender a interagir com o computador através de uma linguagem de programação, coloca o usuário na sua posição original de poder!</p>
+<!-- <img src="img/power.gif" width="400px" /> -->
+</section>
+<section id="escrevendo-codigo-4" class="slide level1">
+<h1>Escrevendo código</h1>
+<p>Uma linguagem de programação nos permite interagir não só com outros <em>softwares</em>, mas também com o nosso <em>hardware</em></p>
+<p><img src="img/script-hardware.png" width="800px" /></p>
+<!-- # Software livre -->
+<!-- ## Software Livre -->
+<!-- ### O que é software livre? -->
+<!-- - Software que pode ser utilizado, estudado e modificado sem -->
+<!--     restrições -->
+<!-- - Pode ser copiado e redistribuido (modificado ou não) -->
+<!-- - A redistribuição tem uma única restrição: assegurar que os -->
+<!--     receptores tenham a mesma liberdade -->
+<!-- - Para isso é necessário que os desenvolvedores (ou modificadores) -->
+<!--     disponibilizem o **código fonte**! -->
+<!-- - Não confundir software **livre** com software **grátis** -->
+<!-- - Livre como em “liberdade de expressão”, não grátis como “cerveja -->
+<!--   grátis” -->
+<!-- ## Software Livre -->
+<!-- ### Um software só é considerado livre quando é possível ter as 4 liberdades -->
+<!-- 0. Liberdade para usar o programa para qualquer propósito -->
+<!-- 1. Liberdade para estudar como o programa funciona, e modificá-lo para -->
+<!--     sua necessidade -->
+<!-- 2. Liberdade para redistribuir cópias (e ajudar o seu vizinho) -->
+<!-- 3. Liberdade para aprimorar o programa, e redistribuí-lo para que todos -->
+<!--     se beneficiem -->
+<!-- ## Software Livre -->
+<!-- - Os principais motivos para user software livre: -->
+<!--    - Garantir que sabemos (ou temos como saber) o que o software está -->
+<!--      fazendo -->
+<!--    - Garantir que sabemos aonde estão nossos dados, e o que o software -->
+<!--       faz com eles -->
+<!-- - A importância disso aparece cada vez mais na academia, indústria e -->
+<!--   governo: -->
+<!--    - [http://www.softwarelivre.gov.br](http://www.softwarelivre.gov.br) -->
+<!--    - [http://www.softwarepublico.gov.br](http://www.softwarepublico.gov.br) -->
+<!--     - [https://www.serpro.gov.br](https://www.serpro.gov.br) -->
+<!-- # R -->
+<!-- ## O que é o R -->
+<!-- Um dialeto do S. -->
+<!-- > *"The statistical software should help, by supporting each step from -->
+<!-- > user to programmer, with as few intrusive barriers as possible."* -->
+<!-- > *"... to turn ideas into software, quickly and faithfully."* -->
+<!-- --- John M. Chambers -->
+<!-- ## O que é o R -->
+<!-- - *Ambiente* estatístico para análise de dados e produção de gráficos -->
+<!-- - Uma completa linguagem de programação: -->
+<!--    - Interpretada (contrário de compilada)\pause -->
+<!--    - Orientada a objetos: -->
+<!--    *Tudo no R é um objeto...* -->
+<!-- - Livre distribuição (código-aberto) -->
+<!-- - Mais de 6000 pacotes adicionais -->
+<!-- - Versão atual: 3.2.1 (18/06/2015). Ciclo de lançamentos: 6 meses -->
+<!--   (versões menores), 1 ano (versões maiores). -->
+<!-- ## Histórico -->
+<!-- - 1980: Linguagem S: desenvolvida por R. Becker, J. Chambers e A. Wilks -->
+<!-- (AT&T Bell Laboratories) -->
+<!-- - 1980: Versão comercial: S-Plus (Insightful Corporation) -->
+<!-- - 1996: Versão livre: R desenvolvido por R. Ihaka e R. Gentleman -->
+<!-- (Universidade de Auckland) -->
+<!-- - 1997: R Development Core Team -->
+<!-- - Hoje: 20 desenvolvedores principais e muitos outros colaboradores em -->
+<!-- todo o mundo -->
+<!-- - Estatísticos, matemáticos e programadores -->
+<!-- ## Vantagens -->
+<!-- - A linguagem mais comum em *data science*, e certamente a mais -->
+<!--     utilizada em estatística hoje em dia -->
+<!-- - Permite ir rapidamente de dados brutos para gráficos para relatórios -->
+<!--    dinâmicos para aplicativos web -->
+<!-- - Software livre -->
+<!-- - Funciona em praticamente todos os sistemas operacionais: Unix (Linux, -->
+<!-- FreeBSD, \ldots), Macintosh e Windows -->
+<!-- - É o produto da cooperação entre estatísticos do mundo todo -->
+<!-- - Linguagem lógica e intuitiva -->
+<!-- - Flexibilidade nas análises estatísticas -->
+<!-- - Gráficos de alta qualidade -->
+<!-- - [R no New York Times][RNYT] -->
+<!-- ## Desvantagens -->
+<!-- - Sem interface gráfica (?) -->
+<!-- - Não há visualização direta dos dados -->
+<!-- - Curva de aprendizado longa -->
+<!-- - Pode ser lento com grandes (GB, TB, ...) bases de dados -->
+<!--    - Necessidade de **vetorização** -->
+<!-- ## Data Science? Estatística? -->
+<!-- * [The data science Venn diagram][DSVD] -->
+<!-- ![Diagrama de Venn para Ciência de Dados](img/Data_Science_VD.png) -->
+<!-- ## Data Science? Estatística? -->
+<!-- * Conhecimento de matemática e estatística: é o que você está fazendo -->
+<!--   aqui -->
+<!-- * Habilidade hacker: -->
+<!--     * Saber programar (aqui vamos saber usar o R) -->
+<!--     * Saber responder perguntas sozinho. Procurar, pergunta e vasculhar -->
+<!--       para conseguir uma resposta. **A maioria das respostas não estão -->
+<!--       respondidas nos livros!** -->
+<!--     *  Saber usar o Google, SO, quais perguntas você -->
+<!--       tem, quais respostas você não sabe, e descobrir como usar a -->
+<!--       informação que você tem para responder o que quer responder. -->
+<!--   * Experiência substancial: depende da área dos dados, da interação com o -->
+<!--     pesquisador, ou de buscar o conhecimento -->
+<!-- ## Instalação do R -->
+<!-- - Instalação do R no Windows -->
+<!-- - Instalação do R no Linux -->
+<!-- Ver [R - Guia de instalação](http://www.leg.ufpr.br/~fernandomayer/ensino/ce083-2015-02/ce083-2015-02-instalacao-R.html) -->
+</section>
+<section id="editores-de-texto" class="slide level1">
+<h1>Editores de texto</h1>
+<p>Uma característica importante de códigos de programação é que eles são em <strong>texto puro</strong>, por isso precisamos de um bom <strong>editor de textos</strong></p>
+<p>Características de um bom editor:</p>
+<ul>
+<li><strong>Identação automática</strong></li>
+<li><strong>Complementação de parênteses</strong></li>
+<li><strong>Destaque de sintaxe</strong> (<em>syntax highlighting</em>)</li>
+<li><strong>Numeração de linhas</strong></li>
+<li><strong>Auto completar comandos</strong></li>
+</ul>
+</section>
+<section id="editores-para-o-r" class="slide level1">
+<h1>Editores para o R</h1>
+<h3 id="windows">Windows</h3>
+<ul>
+<li>Interface padrão: pouco recomendado</li>
+<li>Tinn-R</li>
+</ul>
+<h3 id="linux">Linux</h3>
+<ul>
+<li>Vim-R-plugin</li>
+<li>Gedit-R-plugin</li>
+</ul>
+<h3 id="todas-as-plataformas">Todas as plataformas</h3>
+<ul>
+<li>Rstudio: recomendado para iniciantes</li>
+<li>Emacs + ESS: altamente recomendado</li>
+</ul>
+</section>
+<section id="r" class="slide level1">
+<h1>R</h1>
+</section>
+<section id="configuracao-inicial" class="slide level1">
+<h1>Configuração inicial</h1>
+<h2 id="configurando-o-diretorio-de-trabalho">Configurando o diretório de trabalho</h2>
+<ul>
+<li>O diretório de trabalho é uma pasta onde o R será direcionado. Todos os arquivos que serão importados (base de dados, …) ou exportados (base de dados, gráficos, …) por ele ficarão nesta pasta.</li>
+<li>Existem duas maneiras de configurar o diretório de trabalho (suponha que vamos usar a pasta <code>~/estatcomp1</code>):</li>
+</ul>
+</section>
+<section id="configurando-o-diretorio-de-trabalho-1" class="slide level1">
+<h1>Configurando o diretório de trabalho</h1>
+<ul>
+<li><code>1)</code> Utilizando a função <code>setwd()</code> dentro do R:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;~/estatcomp1&quot;</span>)</code></pre></div>
+<ul>
+<li><code>2)</code> Pelo menu do RStudio em <code>Session &gt; Set Working Directory &gt;   Choose Directory...</code> Confira o diretório que está trabalhando com a função</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getwd</span>()</code></pre></div>
+</section>
+<section id="visao-geral" class="slide level1">
+<h1>Visão geral</h1>
+<h3 id="o-r-como-uma-calculadora">O R como uma calculadora</h3>
+<p>O símbolo <code>&gt;</code> indica que o R está pronto para receber um comando:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">2</span> +<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+<p>O símbolo <code>&gt;</code> muda para <code>+</code> se o comando estiver incompleto:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">2</span> *
++<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+<p>Espaços entre os números não fazem diferença:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">2</span>+<span class="st">         </span><span class="dv">2</span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+</section>
+<section id="para-onde-vao-os-resultados" class="slide level1">
+<h1>Para onde vão os resultados?</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">1</span> +<span class="st"> </span><span class="dv">3</span> +<span class="st"> </span><span class="dv">5</span> +<span class="st"> </span><span class="dv">7</span></code></pre></div>
+<pre><code>[1] 16</code></pre>
+<p><img src="img/script-commandline.png" alt="" /> <img src="img/script-commandlinedata.png" alt="" /></p>
+<ul>
+<li>Note que o resultado é apenas mostrado na tela, nada é salvo na memória (por enquanto)</li>
+</ul>
+</section>
+<section id="o-editor-de-scripts" class="slide level1">
+<h1>O editor de scripts</h1>
+<ul>
+<li>Para criar rotinas computacionais é necessário utilizar um editor de scripts.</li>
+<li>Clique em <code>File &gt; New file &gt; R script</code>. Salve com a extensão <code>.R</code>.</li>
+<li>Para enviar comandos diretamente para o console, selecione-os e aperte <code>Ctrl + &lt;Enter&gt;</code>.</li>
+<li>Para adicionar comentários ao script, utiliza-se o símbolo <code>#</code> antes do texto e/ou comandos. O que estiver depois do símbolo não será interpretado pelo R. Portanto:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> +<span class="st"> </span><span class="dv">2</span>     <span class="co"># esta linha será executada</span>
+<span class="co"># 2 + 2     esta linha não será executada</span></code></pre></div>
+</section>
+<section id="operadores-aritmeticos" class="slide level1">
+<h1>Operadores aritméticos</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operador</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>+</code></td>
+<td style="text-align: left;">adição</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>-</code></td>
+<td style="text-align: left;">subtração</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>*</code></td>
+<td style="text-align: left;">multiplicação</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>/</code></td>
+<td style="text-align: left;">divisão</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>^</code></td>
+<td style="text-align: left;">potência</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>exp()</code></td>
+<td style="text-align: left;">exponencial</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>sqrt()</code></td>
+<td style="text-align: left;">raíz quadrada</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>factorial()</code></td>
+<td style="text-align: left;">fatorial</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>log()</code>; <code>log2()</code>; <code>log10()</code></td>
+<td style="text-align: left;">logaritmos</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ordens-de-execucao" class="slide level1">
+<h1>Ordens de execução</h1>
+<p>As operações são realizadas sempre seguindo as prioridades:</p>
+<ol type="1">
+<li>De dentro para fora de parênteses <code>()</code></li>
+<li>Multiplicação e divisão</li>
+<li>Adição e subtração</li>
+</ol>
+</section>
+<section id="ordens-de-execucao-1" class="slide level1">
+<h1>Ordens de execução</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">5</span> *<span class="st"> </span><span class="dv">2</span> -<span class="st"> </span><span class="dv">10</span> +<span class="st"> </span><span class="dv">7</span></code></pre></div>
+<pre><code>[1] 7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">5</span> *<span class="st"> </span><span class="dv">2</span> -<span class="st"> </span>(<span class="dv">10</span> +<span class="st"> </span><span class="dv">7</span>)</code></pre></div>
+<pre><code>[1] -7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">5</span> *<span class="st"> </span>(<span class="dv">2</span> -<span class="st"> </span><span class="dv">10</span> +<span class="st"> </span><span class="dv">7</span>)</code></pre></div>
+<pre><code>[1] -5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">5</span> *<span class="st"> </span>(<span class="dv">2</span> -<span class="st"> </span>(<span class="dv">10</span> +<span class="st"> </span><span class="dv">7</span>))</code></pre></div>
+<pre><code>[1] -75</code></pre>
+</section>
+<section id="exercicios" class="slide level1">
+<h1>Exercícios</h1>
+<ol type="1">
+<li>Calcule a seguinte equação: <span class="math inline">\(32 + 16^2 - 25^3\)</span></li>
+<li>Divida o resultado por <span class="math inline">\(345\)</span></li>
+<li>Qual o resultado da expressão <span class="math inline">\(\frac{e^{-2} 2^{4} - 1}{4!}\)</span>?</li>
+<li>E do logaritmo desta expressão?</li>
+</ol>
+</section>
+<section id="salvando-resultados" class="slide level1">
+<h1>“Salvando” resultados</h1>
+<p>Do exercício anterior</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>x &lt;-<span class="st"> </span><span class="dv">32</span> +<span class="st"> </span><span class="dv">16</span>^<span class="dv">2</span> -<span class="st"> </span><span class="dv">25</span>^<span class="dv">3</span>
+&gt;<span class="st"> </span>x</code></pre></div>
+<pre><code>[1] -15337</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>x/<span class="dv">345</span></code></pre></div>
+<pre><code>[1] -44.45507</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>(y &lt;-<span class="st"> </span>(<span class="kw">exp</span>(-<span class="dv">2</span>) *<span class="st"> </span><span class="dv">2</span>^<span class="dv">4</span> -<span class="st"> </span><span class="dv">1</span>)/<span class="kw">factorial</span>(<span class="dv">4</span>))</code></pre></div>
+<pre><code>[1] 0.04855686</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">log</span>(y)</code></pre></div>
+<pre><code>[1] -3.02502</code></pre>
+</section>
+<section id="salvando-resultados-1" class="slide level1">
+<h1>“Salvando” resultados</h1>
+<p>Quando criamos uma variável (<code>x</code>, <code>y</code>), ela fica armazenada <strong>temporariamente</strong> na memória RAM.</p>
+<p><img src="img/script-assign.png" width="400px" /></p>
+<p>Para saber quais objetos estão criados, usamos a <strong>função</strong> <code>ls()</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">ls</span>()</code></pre></div>
+<pre><code>[1] &quot;x&quot; &quot;y&quot;</code></pre>
+</section>
+<section id="salvando-resultados-2" class="slide level1">
+<h1>“Salvando” resultados</h1>
+<p>Estas variáveis ficam armazenadas no chamado <em>workspace</em> do R</p>
+<ul>
+<li>O <em>workspace</em> consiste de tudo que or criado durante uma sessão do R, armazenado na memória RAM</li>
+</ul>
+<p>Para efetivamente salvar esas variáveis, podemos armazenar esse <em>workspace</em> do R em disco, em um arquivo chamdo <code>.Rdata</code></p>
+<p><img src="img/script-workspace.png" alt="" /> <img src="img/script-workspacedata.png" alt="" /></p>
+</section>
+<section id="salvando-resultados-3" class="slide level1">
+<h1>“Salvando” resultados</h1>
+<ul>
+<li>Quando o R é iniciado em um diretório com um arquivo <code>.Rdata</code>, as variáveis salvas são automaticamente carregadas</li>
+<li>No entanto, é sempre melhor salvar os dados e o <strong>script</strong>, assim é possível gerar os resultados novamente, sem salvar nada sem necessidade</li>
+<li>Veremos mais pra frente como salvar variáveis específicas, por exemplo, resultados de uma análise que leva muito tempo para ser executada</li>
+<li>O mais importante é salvar o <strong>código</strong>, assim sabemos <strong>como</strong> chegamos a determinado resultado, e podemos recriá-lo depois</li>
+</ul>
+</section>
+<section id="finalizando-o-programa" class="slide level1">
+<h1>Finalizando o programa</h1>
+<p>A qualquer momento durante uma sessão você pode usar o comando</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">save.image</span>()</code></pre></div>
+<p>No RStudio:</p>
+<ul>
+<li><code>File &gt; Save As...</code></li>
+<li>Na janela que abrir, digite o nome do arquivo (por exemplo <code>script_aula1</code>) e salve</li>
+<li>Automaticamente o script será salvo com a extensão <code>.R</code> (nesse caso <code>script_aula1.R</code>) no diretório de trabalho que você configurou no início</li>
+</ul>
+</section>
+<section id="finalizando-o-programa-1" class="slide level1">
+<h1>Finalizando o programa</h1>
+<p>Alternativamente, você pode também salvar toda sua área de trabalho, clicando em <code>Workspace &gt; Save As Default Workspace</code>. Este processo irá gerar dois arquivos:</p>
+<ul>
+<li><code>.Rdata</code>: contém todos os objetos criados durante uma sessão. Não é necessário (e nem recomendado) dar um nome antes do ponto. Dessa forma, a próxima vez que o programa for iniciado neste diretório, a área de trabalho será carregada automaticamente.</li>
+<li><code>.Rhistory</code>: um arquivo texto que contém todos os comandos que foram digitados no console.</li>
+</ul>
+<!-- ## Layout de código -->
+<!-- ## Formatos de arquivos -->
+<!-- ### Texto pleno -->
+<!-- ### CSV -->
+<!-- ### Encoding -->
+</section>
+<section id="referencias" class="slide level1">
+<h1>Referências</h1>
+<h2 id="referencias-1">Referências</h2>
+<ul>
+<li>Leek, J. <a href="https://leanpub.com/datastyle">The Elements of Data Analytic Style</a>. Leanpub, 2015.</li>
+<li>Murrell, P. <a href="https://www.stat.auckland.ac.nz/~paul/ItDT/HTML">Introduction to data technologies</a>. Boca Raton: Chapman &amp; Hall/CRC, 2009.</li>
+<li>Peng, RD. <a href="https://leanpub.com/rprogramming">R programming for data science</a>. Leanpub, 2015.</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="site_libs/reveal.js-3.3.0/lib/js/head.min.js"></script>
+  <script src="site_libs/reveal.js-3.3.0/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'site_libs/reveal.js-3.3.0/plugin/notes/notes.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

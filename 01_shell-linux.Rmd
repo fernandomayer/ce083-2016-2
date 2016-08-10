@@ -1,0 +1,27 @@
+---
+title: "Introdução ao Shell Linux"
+---
+
+```{r setup, include=FALSE}
+source("setup_knitr.R")
+```
+
+## Começando com o shell
+
+Para verificar o diretório atual
+
+```{sh}
+pwd
+```
+
+Para listar os componentes deste diretório
+
+```{sh}
+ls
+```
+
+Para saber quem é você
+
+```{sh}
+whoami
+```

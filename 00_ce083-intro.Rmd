@@ -19,12 +19,13 @@ source("setup_knitr.R")
 ```
 
 # Interagindo com o computador
-
 ## Escrevendo código
 
 O que significa este ícone?
 
 <img src="img/excelcsvgrey.png" width="400px" />
+
+# Interagindo com o computador
 
 - É um documento do Microsoft Excel? **Não!**
 - É um arquivo de **texto pleno**, separado por vírgulas (CSV *comma
@@ -248,16 +249,13 @@ Características de um bom editor:
 setwd("~/estatcomp1")
 ```
 
-- `2)` Pelo menu do RStudio em `Session > Set Working Directory >
-  Choose Directory...`
+- `2)` Pelo menu do RStudio em `Session > Set Working Directory > Choose Directory...`
 Confira o diretório que está trabalhando com a função
 ```{r, eval=FALSE}
 getwd()
 ```
 
-# Visão geral
-
-### O R como uma calculadora
+# O R como uma calculadora
 
 O símbolo `>` indica que o R está pronto para receber um comando:
 ```{r, prompt=TRUE, comment=NA}
@@ -431,8 +429,6 @@ processo irá gerar dois arquivos:
 <!-- ### Encoding -->
 
 # Referências
-
-## Referências
 
 * Leek, J. [The Elements of Data Analytic Style][datastyle]. Leanpub, 2015.
 * Murrell,

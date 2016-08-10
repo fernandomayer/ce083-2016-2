@@ -33,6 +33,10 @@ navbar:
         href: R-instalacao.html
       - text: "Introdução ao uso do Linux"
         href: http://fernandomayer.github.io/linux-intro
+      - text: "----------"
+      - text: "Introdução"
+      - text: "Computação científica e interação com R [HTML]"
+        href: 00_ce083-intro.html
   right:
     - text: GitHub
       icon: fa-github fa-lg

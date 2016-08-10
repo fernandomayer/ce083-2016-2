@@ -18,6 +18,9 @@ classe aplicadas.
       [Introdução ao uso do Linux](http://fernandomayer.github.io/linux-intro)
     - Ler o [guia de instalação do R](R-instalacao.html), baixar e
       instalar no seu computador pessoal o R e o RStudio.
+- **09/08**: Conceitos iniciais de computação científica. Configuração
+  do diretório de trabalho. Salvando scripts.
+  [Slides](00_ce083-intro.html).
 
 ## Exercícios
 

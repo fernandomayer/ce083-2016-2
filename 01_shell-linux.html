@@ -362,41 +362,230 @@ div.tocify {
 </div>
 
 
-<div id="comecando-com-o-shell" class="section level2">
-<h2>Começando com o shell</h2>
-<p>Para verificar o diretório atual</p>
-<pre class="sh"><code>pwd</code></pre>
-<pre><code>/home/fpmayer/GitHub/ce083-2016-2</code></pre>
-<p>Para listar os componentes deste diretório</p>
-<pre class="sh"><code>ls</code></pre>
-<pre><code>00_ce083-intro.html
-00_ce083-intro.Rmd
-01_shell-linux.html
-01_shell-linux.Rmd
-analytics.html
-aulas.html
-aulas.Rmd
-cache
-footer.html
-img
-index.html
-index.Rmd
-notas.html
-notas.Rmd
-README.html
-README.md
-recursos.html
-recursos.Rmd
-referencias.html
-referencias.Rmd
-R-instalacao.html
-R-instalacao.Rmd
-setup_knitr.R
-site_libs
-_site.yml</code></pre>
-<p>Para saber quem é você</p>
+<div id="introducao" class="section level1">
+<h1>Introdução</h1>
+<p>Em um alto nível, computadores fazem quatro coisas:</p>
+<ul>
+<li>Rodam programas</li>
+<li>Armazenam dados</li>
+<li>Comunicam-se entre eles</li>
+<li>Interagem com humanos</li>
+</ul>
+<p>A interação com humanos pode ser feita de diferentes maneiras, mas a que mais conhecemos é atrave’sde um teclado, mouse e monitor. Embora a maioria dos sistemas operacionais atuais se comuniquem com humanos através de janelas, ícones e botões, essa tecnologia só começou a se popularizar em meados dos anos 1980.</p>
+<p>Este tipo de interface é chamada de <strong>interface gráfica do usuário</strong> (GUI, <em>graphical user interface</em>). Antes dessa fase, a interação com computadores se resumia a comandos digitados em um <em>terminal</em>, uma interface chamada de <strong>interface por linha de comando</strong> (CLI, <em>command-line interface</em>). A CLI consiste no processo em um <strong>loop ler-avaliar-imprimir</strong> (REPL, <em>read-evaluate-print loop</em>). Ou seja, quando um usuário digita um comando e aperta <kbd>Enter</kbd>, o computador lê, executa e imprime uma saída.</p>
+<p>Com esta descrição, pode parecer que o usuário envia um comando direto para o computador, e o computador envia um resultado direto para o usuário. Na verdade, existe um programa intermediário, chamado de <strong>shell</strong>. O que um usuário digita é enviado para o shell, que então determina a execução pelo computador.</p>
+<p>O shell é um programa como qualquer outro. O que ele tem de especial é que seu trabalho é executar outros programas ao invés de fazer cálculos propriamente ditos. O shell mais popular se chama <strong>Bash</strong>, e é o padrão na maioria das distribuições Linux.</p>
+<p>Usar o Bash é muito mais parecido com programação do que com usar um mouse para executar programas. Alguns comandos podem parecer “estranhos” em um primeiro momento, e você pode se sentir como se estivesse voltando ao passado para usar o computador quando não existiam GUIs (apenas CLIs, como o DOS por exemplo). No entanto, com apenas alguns comandos você será capaz de executar diversas tarefas rotineiras de maneira muito mais rápida, e principalmente automatizar tarefas (com um pouco mais de dedicação).</p>
+<p>Possui r familiaridade com o shell é essencial para rodar uma variedade de ferramentas especializadas, como por exemplo servidores remotos de alta-performance. Como clusters e computação em nuvem estão se tornando cada vez mais popular para análise de grandes bases de dados, ser capaz de interagir com estes sistemas é uma habilidade essencial.</p>
+</div>
+<div id="navegando-por-arquivos-e-diretorios" class="section level1">
+<h1>Navegando por arquivos e diretórios</h1>
+<p>A parte do sistema operacional responsável por gerenciar arquivos e diretórios é chamada de <strong>sistema de arquivos</strong>. Ele organiza nossos dados em arquivos que contém informação, e em diretórios (também chamados de “pasta”) que contém arquivos e outros diretórios.</p>
+<p>Diversos comandos são utilizados para criar, inspecionar, renomear e deletar arquivos e diretórios. Para começar a explorá-los, abra uma janela de terminal (shell). A primeira coisa que você verá é algo como:</p>
+<pre class="sh"><code>[fpmayer@turing ~]$</code></pre>
+<p>que corresponde ao seu nome de usuário (<code>fpmayer</code> nesse caso), o nome dado ao seu computador (<code>turing</code> nesse caso) e um til (<code>~</code>). O til nada mais é do que um atalho (<em>alias</em>) para a sua pasta pessoal (que nesse caso é <code>/home/fpmayer</code>). Em seguida o símbolo de <code>$</code> é o <strong>prompt</strong>, que indica que o shell está aguardando algum comando. Dependendo do seu sistema operacional, o prompt pode ser diferente, ou pode haver informações diferentes nessa linha, o que não altera em nada os comandos do shell.</p>
+<div class="panel panel-warning">
+<div class="panel-heading">
+Atenção!
+</div>
+<div class="panel-body">
+Daqui em diante só serão mostrados os comandos do shell, omitindo o prompt e qualquer outra informação adicional.
+</div>
+</div>
+<p>Digite o comando <code>whoami</code> e aperte <kbd>Enter</kbd>. O resultado deste comando deve ser seu nome de usuário:</p>
 <pre class="sh"><code>whoami</code></pre>
 <pre><code>fpmayer</code></pre>
+<p>Mais especificamente, quando digitamos <code>whoami</code> o shell:</p>
+<ol style="list-style-type: decimal">
+<li>Encontra um programa chamado <code>whoami</code></li>
+<li>Executa o programa</li>
+<li>Mostra a saída do programa</li>
+<li>Mostra um novo prompt para mostrar que está pronto para receber mais comandos</li>
+</ol>
+<p>Agora podemos descobrir aonde estamos (em qual diretório do sistema de arquivos) com o comando <code>pwd</code> (<em>print working directory</em>). Daqui em diante os termos “diretório de trabalho” ou “diretório atual” ou “diretório padrão” se referem sempre à mesma coisa, ou seja, o diretório que o computador assume que queremos executar o comando, a não ser que algum outro seja especificado explicitamente.</p>
+<pre class="sh"><code>pwd</code></pre>
+<pre><code>/home/fpmayer</code></pre>
+<p>A resposta para esse comando é <code>/home/fpmayer</code> que é denominado de diretório <em>home</em> de um usuário. Normalmente quando se inicia um terminal, ele começa nesse diretório. Como usuário comum, este é o único diretório ao qual você terá permissão de acesso, ou seja, permissão para criar, modificar ou deletar arquivos e diretórios.</p>
+<!-- colocar figuras -->
+<div class="panel panel-warning">
+<div class="panel-heading">
+Atenção!
+</div>
+<div class="panel-body">
+Note que a barra que divide diretórios no Linux é deitada para a direita (<code>/</code>), ao contrário do Windows que é deitada para a esquerda (<code>\</code>).
+</div>
+</div>
+<p>Agora, para visualizar o conteúdo de um diretório, usamos o comando <code>ls</code> (<em>listing</em>):</p>
+<pre class="sh"><code>ls</code></pre>
+<pre><code>Desktop
+Documents
+Downloads
+Dropbox
+GitHub
+GitLab
+Google Drive
+Music
+Pictures
+Programas
+Public
+R
+R_environment
+Templates
+Videos</code></pre>
+<p>(Note que o seu resultado pode ser diferente dependendo do seu sistema operacional e de customizações).</p>
+<p>O comando <code>ls</code> mostra os nomes dos arquivos e diretórios no diretório atual em ordem alfabetica. Podemos fazer essa saída ficar um pouco mais informativa usando um <strong>argumento adicional ao comando</strong> (também chamado de <em>flag</em>) <code>-F</code>, que diz para o <code>ls</code> adicionar uma barra (<code>/</code>) aos nomes de diretórios:</p>
+<pre class="sh"><code>ls -F</code></pre>
+<pre><code>Desktop/
+Documents/
+Downloads/
+Dropbox/
+GitHub/
+GitLab/
+Google Drive/
+Music/
+Pictures/
+Programas/
+Public/
+R/
+R_environment/
+Templates/
+Videos/</code></pre>
+<p>O comando <code>ls</code> possui muitas opções (<em>flags</em>) para alterar a saída do resultado. Isso é muito comum em diversos comandos shell, e para visualizar as opções podemos digitar</p>
+<pre class="sh"><code>ls --help</code></pre>
+<pre><code>Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      scale sizes by SIZE before printing them; e.g.,
+                               &#39;--block-size=M&#39; prints sizes in units of
+                               1,048,576 bytes; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                               modification of file status information);
+                               with -l: show ctime and sort by name;
+                               otherwise: sort by ctime, newest first
+  -C                         list entries by columns
+      --color[=WHEN]         colorize the output; WHEN can be &#39;always&#39; (default
+                               if omitted), &#39;auto&#39;, or &#39;never&#39;; more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs&#39; dired mode
+  -f                         do not sort, enable -aU, disable -ls --color
+  -F, --classify             append indicator (one of */=&gt;@|) to entries
+      --file-type            likewise, except do not append &#39;*&#39;
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                               single-column -1, verbose -l, vertical -C
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                               can be augmented with a --sort option, but any
+                               use of --sort=none (-U) disables grouping
+  -G, --no-group             in a long listing, don&#39;t print group names
+  -h, --human-readable       with -l and/or -s, print human readable sizes
+                               (e.g., 1K 234M 2G)
+      --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                               that points to a directory
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                               (overridden by -a or -A)
+      --indicator-style=WORD  append indicator with style WORD to entry names:
+                               none (default), slash (-p),
+                               file-type (--file-type), classify (-F)
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for disk usage
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                               link, show information for the file the link
+                               references rather than for the link itself
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print raw entry names (don&#39;t treat e.g. control
+                               characters specially)
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                               unless program is &#39;ls&#39; and output is a terminal)
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                               literal, locale, shell, shell-always,
+                               shell-escape, shell-escape-always, c, escape
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size, largest first
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                               time (-t), version (-v), extension (-X)
+      --time=WORD            with -l, show time as WORD instead of default
+                               modification time: atime or access or use (-u);
+                               ctime or status (-c); also use specified time
+                               as sort key if --sort=time (newest first)
+      --time-style=STYLE     with -l, show times using style STYLE:
+                               full-iso, long-iso, iso, locale, or +FORMAT;
+                               FORMAT is interpreted like in &#39;date&#39;; if FORMAT
+                               is FORMAT1&lt;newline&gt;FORMAT2, then FORMAT1 applies
+                               to non-recent files and FORMAT2 to recent files;
+                               if STYLE is prefixed with &#39;posix-&#39;, STYLE
+                               takes effect only outside the POSIX locale
+  -t                         sort by modification time, newest first
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                               with -l: show access time and sort by name;
+                               otherwise: sort by access time, newest first
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           set output width to COLS.  0 means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+  -1                         list one file per line.  Avoid &#39;\n&#39; with -q or -b
+      --help     display this help and exit
+      --version  output version information and exit
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors command to set it.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+GNU coreutils online help: &lt;http://www.gnu.org/software/coreutils/&gt;
+Full documentation at: &lt;http://www.gnu.org/software/coreutils/ls&gt;
+or available locally via: info &#39;(coreutils) ls invocation&#39;</code></pre>
+<p>Para mais informações ou detalhes de um comando, você pode acessar um manual através de</p>
+<pre class="sh"><code>man ls</code></pre>
+<p>Você entrará em uma página de documentação mais detalhada e possivelmente com exemplos de uso. Para navegar por essa página, use as setas para baixo e para cime, e para sair e voltar ao terminal digite <code>q</code>.</p>
+<p>No exemplo acima, vimos que todo o conteúdo do diretório atual é composto por <strong>sub-diretórios</strong>, pois todos os nomes contém uma barra no final. Nomes sem a barra seriam arquivos. Nós também podemos usar o <code>ls</code> para mostrar o conteúdo de outros diretórios. Por exemplo, para ver o conteúdo do diretório <code>Documents</code>:</p>
+<pre class="sh"><code>ls -F Documents</code></pre>
+<pre><code>backups/
+dados/
+notas.txt
+pizza
+solar.pdf</code></pre>
+<p>Note que agora aparecem diretórios e também arquivos (os nomes sem a barra no final).</p>
+<p>Como você já deve estar percebendo, o uso do shell é altamente dependente da ideia de que seus arquivos são organizados em um sistema de arquivos hierárquico. Organizar arquivos e diretórios desta forma ajuda-nos a organizar nosso trabalho. É possível colocar centenas de arquivos em nossa pasta pessoal, assim como é possível empilhar centenas de papéis na sua mesa, mas não é uma estratégia adequada.</p>
+</div>
+<div id="referencias" class="section level1">
+<h1>Referências</h1>
+<ul>
+<li><a href="http://software-carpentry.org">Software Carpentry Foundation</a>. <a href="http://swcarpentry.github.io/shell-novice">The Unix Shell</a>.</li>
+</ul>
 </div>
 
 <center>

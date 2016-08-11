@@ -24,7 +24,8 @@ output:
   Leanpub, 2015. (Gratuito)
 - Ribeiro Jr., PJ.
   [Introdução ao ambiente estatístico R](http://www.leg.ufpr.br/~paulojus/embrapa/Rembrapa/).
-  (*on-line*)
+  (HTML). Versão em
+  [PDF](http://www.leg.ufpr.br/~paulojus/embrapa/Rembrapa/Rembrapa.pdf).
 
 ## Referências complementares
 

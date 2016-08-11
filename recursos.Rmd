@@ -18,7 +18,7 @@ Para instalar o R, veja este [guia de instalação](R-instalacao.html).
 [The R project for Statistical Computing](http://www.r-project.org):
 página do programa **R**
 
-- [Curso sobre o uso do R](sofware:material-r) no LEG
+- [Curso sobre o uso do R](http://www.leg.ufpr.br/doku.php/sofware:material-r) no LEG
 - [R-rautu](http://git.leg.ufpr.br/fernandomayer/R-rautu) uma introdução
   ao uso do R
 - [R-Studio](http://www.rstudio.org) um ambiente para facilitar uso do R

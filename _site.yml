@@ -37,6 +37,10 @@ navbar:
       - text: "Introdução"
       - text: "Computação científica e interação com R [HTML]"
         href: 00_ce083-intro.html
+      - text: "----------"
+      - text: "Exercícios"
+      - text: "Estatística básica"
+        href: ex01_intro.html
   right:
     - text: GitHub
       icon: fa-github fa-lg

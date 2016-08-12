@@ -21,6 +21,11 @@ classe aplicadas.
 - **09/08**: Conceitos iniciais de computação científica. Configuração
   do diretório de trabalho. Salvando scripts.
   [Slides](00_ce083-intro.html).
+- **11/08**: Conceitos de software livre e comandos básicos do Shell
+  Linux. Slides de
+  [Introdução ao uso do Linux](http://fernandomayer.github.io/linux-intro).
+- **16/08**: Aula especial com o Prof.
+  [Paulo Justiniano Ribeiro Jr](http://www.leg.ufpr.br/~paulojus/).
 
 ## Exercícios
 

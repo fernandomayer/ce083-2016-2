@@ -11,9 +11,9 @@ source("setup_knitr.R")
 
 [![Build Status](https://travis-ci.org/fernandomayer/ce083-2016-2.svg)](https://travis-ci.org/fernandomayer/ce083-2016-2)
 
-<div class="alert alert-danger" role="alert"> **ATENÇÃO!** Quinta-feira
-(11/08) a aula será no Lab. 1 do Departamento de Informática.
-</div>
+<!-- <div class="alert alert-danger" role="alert"> **ATENÇÃO!** Quinta-feira -->
+<!-- (11/08) a aula será no Lab. 1 do Departamento de Informática. -->
+<!-- </div> -->
 
 # Detalhes da oferta da disciplina
 

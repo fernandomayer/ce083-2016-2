@@ -82,3 +82,11 @@ output:
 - Wheelan, C.
   [Estatística: o que é, para que serve, como funciona](http://www.zahar.com.br/livro/estatistica).
   Rio de Janeiro: Zahar, 2016.
+
+## Referências sobre Linux
+
+- [Guia Foca GNU/Linux](http://www.guiafoca.org)
+- [Apostila de Linux](http://www.inf.ufpr.br/cursos/ci055/linux.pdf) do
+  Departamento de Informática (UFPR)
+- [Introdução ao Linux](http://br-linux.org/tutoriais/apostila_linux.sxw.pdf)
+  de Augusto C. Campos

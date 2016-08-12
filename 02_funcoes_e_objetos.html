@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Funções, objetos e classes</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38898840-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/default.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+  padding-left: 10px;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CE083</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="aulas.html">Aulas</a>
+</li>
+<li>
+  <a href="referencias.html">Referências</a>
+</li>
+<li>
+  <a href="recursos.html">Recursos</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Materiais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Configurações iniciais</li>
+    <li>
+      <a href="R-instalacao.html">Guia de instalação do R</a>
+    </li>
+    <li>
+      <a href="http://fernandomayer.github.io/linux-intro">Introdução ao uso do Linux</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Introdução</li>
+    <li>
+      <a href="00_ce083-intro.html">Computação científica e interação com R [HTML]</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/fernandomayer">
+    <span class="fa fa-github fa-lg"></span>
+     
+    GitHub
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Funções, objetos e classes</h1>
+
+</div>
+
+
+<div id="sumario" class="section level1">
+<h1>Sumário</h1>
+<p>Funções e objetos. Classes de objetos.</p>
+</div>
+<div id="funcoes-e-argumentos" class="section level1">
+<h1>Funções e argumentos</h1>
+<p>As funções no R são definidas como:</p>
+<pre class="r"><code>nome(argumento1, argumento2, ...)</code></pre>
+<p>Exemplo: função <code>runif()</code> (para gerar valores aleatórios de uma distribuição uniforme):</p>
+<pre class="r"><code>runif(n, min = 0, max = 1)</code></pre>
+<pre class="r"><code>runif(10, 1, 100)</code></pre>
+<pre><code> [1] 31.468845 26.509578 55.679921  6.581932 47.386379 48.893303 81.427859
+ [8] 37.661733 55.109301 17.855943</code></pre>
+<p>Argumentos que já possuem um valor especificado (como <code>max</code> e <code>min</code>) podem ser omitidos:</p>
+<pre class="r"><code>runif(10)</code></pre>
+<p>Se os argumentos forem nomeados, a ordem deles dentro da função não tem mais importância:</p>
+<pre class="r"><code>runif(min = 1, max = 100, n = 10)</code></pre>
+<p>Argumentos nomeados e não nomeados podem ser utilizados, desde que os não nomeados estejam na posição correta:</p>
+<pre class="r"><code>runif(10, max = 100, min = 1)</code></pre>
+<div id="outros-tipos-de-argumentos" class="section level3">
+<h3>Outros tipos de argumentos</h3>
+<p>Exemplo: função <code>sample()</code>:</p>
+<pre class="r"><code>sample(x, size, replace = FALSE, prob = NULL)</code></pre>
+<ul>
+<li><code>x</code> e <code>size</code> devem ser obrigatoriamente especificados</li>
+<li><code>replace</code> é lógico: <code>TRUE</code> (<code>T</code>) ou <code>FALSE</code> (<code>F</code>)</li>
+<li><code>prob</code> é um argumento vazio ou ausente (“opcional”)</li>
+</ul>
+<p>Exemplo: função <code>plot()</code>:</p>
+<pre class="r"><code>plot(x, y, ...)</code></pre>
+<ul>
+<li>“<code>...</code>” permite especificar argumentos de outras funções (por exemplo <code>par()</code>)</li>
+</ul>
+</div>
+</div>
+<div id="mecanismos-de-ajuda" class="section level1">
+<h1>Mecanismos de ajuda</h1>
+<p>Argumentos e detalhes do funcionamento das funções:</p>
+<pre class="r"><code>?runif</code></pre>
+<p>ou</p>
+<pre class="r"><code>help(runif)</code></pre>
+<p>A documentação contém os campos:</p>
+<ul>
+<li><strong>Description:</strong> breve descrição</li>
+<li><strong>Usage:</strong> função e todos seus argumentos</li>
+<li><strong>Arguments:</strong> lista descrevendo cada argumento</li>
+<li><strong>Details:</strong> descrição detalhada</li>
+<li><strong>Value:</strong> o que a função retorna</li>
+<li><strong>References:</strong> bibliografia relacionada</li>
+<li><strong>See Also:</strong> funções relacionadas</li>
+<li><strong>Examples:</strong> exemplos práticos</li>
+</ul>
+<p>Procura por funções que contenham <code>palavra</code>:</p>
+<pre class="r"><code>help.search(&quot;palavra&quot;)</code></pre>
+<p>Ajuda através do navegador (também contém manuais, …):</p>
+<pre class="r"><code>help.start()</code></pre>
+<p>Busca por <code>palavra</code> nos arquivos da lista de discussão do R:</p>
+<pre class="r"><code>RSiteSearch(&quot;palavra&quot;)</code></pre>
+</div>
+<div id="criando-uma-funcao" class="section level1">
+<h1>Criando uma função</h1>
+<p>A ideia original do R é transformar usuários em programadores</p>
+<p>Criar funções para realizar trabalhos específicos é um dos grandes poderes do R</p>
+<p>Por exemplo, podemos criar a famosa função</p>
+<pre class="r"><code>ola.mundo &lt;- function(){
+    writeLines(&quot;Olá mundo&quot;)
+}</code></pre>
+<p>E chama-la através de</p>
+<pre class="r"><code>ola.mundo()</code></pre>
+<pre><code>Olá mundo</code></pre>
+<p>A função acima não permite alterar o resultado de saída. Podemos fazer isso incluindo um <strong>argumento</strong></p>
+<pre class="r"><code>ola.mundo &lt;- function(texto){
+    writeLines(texto)
+}</code></pre>
+<p>E fazer por exemplo</p>
+<pre class="r"><code>ola.mundo(&quot;Funções são legais&quot;)</code></pre>
+<pre><code>Funções são legais</code></pre>
+<p>(Veremos detalhes de funções mais adiante)</p>
+</div>
+<div id="exercicios" class="section level1">
+<h1>Exercícios</h1>
+<ul>
+<li>Usando a função <code>runif()</code> gere <span class="math inline">\(30\)</span> números aleatórios entre:
+<ul>
+<li>0 e 1</li>
+<li>-5 e 5</li>
+<li>10 e 500 alternando a posição dos argumentos da função.</li>
+</ul></li>
+<li>Veja o help da função (?) <code>&quot;+&quot;</code></li>
+<li>Crie uma função para fazer a soma de dois números: <code>x</code> e <code>y</code></li>
+</ul>
+</div>
+<div id="objetos" class="section level1">
+<h1>Objetos</h1>
+<div id="programacao-orientada-a-objetos" class="section level2">
+<h2>Programação orientada a objetos</h2>
+<p>O que é um objeto?</p>
+<ul>
+<li>Um <strong>símbolo</strong> ou uma <strong>variável</strong> capaz de armazenar qualquer valor ou estrutura de dados</li>
+</ul>
+<p>Por quê objetos?</p>
+<ul>
+<li>Uma maneira simples de acessar os dados armazenados na memória (o R não permite acesso direto à memória)</li>
+</ul>
+<p>Programação:</p>
+<ul>
+<li>Objetos   ⇒   Classes   ⇒   Métodos</li>
+</ul>
+<blockquote>
+<p>“Tudo no R é um objeto.”</p>
+<p>“Todo objeto no R tem uma classe”</p>
+</blockquote>
+<ul>
+<li><strong>Classe:</strong> é a definição de um objeto. Descreve a forma do objeto e como ele será manipulado pelas diferentes funções</li>
+<li><strong>Método:</strong> são <strong>funções genéricas</strong> que executam suas tarefas de acordo com cada classe. As funções genéricas mais importantes são:
+<ul>
+<li><code>summary()</code></li>
+<li><code>plot()</code></li>
+</ul></li>
+</ul>
+<p>Veja o resultado de</p>
+<pre class="r"><code>methods(summary)
+methods(plot)</code></pre>
+<p>A variável <code>x</code> recebe o valor <span class="math inline">\(2\)</span> (tornando-se um objeto dentro do R):</p>
+<pre class="r"><code>x &lt;- 2</code></pre>
+<blockquote>
+<p>O símbolo <code>&lt;-</code> é chamado de <strong>operador de atribuição</strong>. Ele serve para atribuir valores a objetos, e é formado pelos símbolos <code>&lt;</code> e <code>-</code>, obrigatoriamente <strong>sem espaços</strong>.</p>
+</blockquote>
+<p>Para ver o conteúdo do objeto:</p>
+<pre class="r"><code>x</code></pre>
+<pre><code>[1] 2</code></pre>
+<blockquote>
+<p><strong>Observação</strong>: O símbolo <code>=</code> pode ser usado no lugar de <code>&lt;-</code> mas não é recomendado.</p>
+</blockquote>
+<p>Quando você faz</p>
+<pre class="r"><code>x &lt;- 2</code></pre>
+<p>está fazendo uma <strong>declaração</strong>, ou seja, declarando que a variável <code>x</code> irá agora se tornar um objeto que armazena o número <code>2</code>. As declarações podem ser feitas uma em cada linha</p>
+<pre class="r"><code>x &lt;- 2
+y &lt;- 4</code></pre>
+<p>ou separadas por <code>;</code></p>
+<pre class="r"><code>x &lt;- 2; y &lt;- 4</code></pre>
+<p>Operações matemáticas em objetos:</p>
+<pre class="r"><code>x + x</code></pre>
+<pre><code>[1] 4</code></pre>
+<p>Objetos podem armazenar diferentes estruturas de dados:</p>
+<pre class="r"><code>y &lt;- runif(10)
+y</code></pre>
+<pre><code> [1] 0.6249965 0.8821655 0.2803538 0.3984879 0.7625511 0.6690217 0.2046122
+ [8] 0.3575249 0.3594751 0.6902905</code></pre>
+<p>Note que cada objeto só pode armazenar uma estrutura (um número ou uma sequência de valores) de cada vez! (Aqui, o valor <span class="math inline">\(4\)</span> que estava armazenado em <code>y</code> foi sobrescrito pelos valores acima.)</p>
+</div>
+<div id="nomes-de-objetos" class="section level2">
+<h2>Nomes de objetos</h2>
+<ul>
+<li>Podem ser formados por letras, números, “<code>_</code>”, e “<code>.</code>”</li>
+<li>Não podem começar com número e/ou ponto</li>
+<li>Não podem conter espaços</li>
+<li>Evite usar acentos</li>
+<li>Evite usar nomes de funções como:</li>
+</ul>
+<blockquote>
+<p><code>c q t C D F I T diff df data var pt</code></p>
+</blockquote>
+<ul>
+<li>O R é <em>case-sensitive</em>, portanto:</li>
+</ul>
+<blockquote>
+<p><code>dados</code> <span class="math inline">\(\neq\)</span> <code>Dados</code> <span class="math inline">\(\neq\)</span> <code>DADOS</code></p>
+</blockquote>
+</div>
+</div>
+<div id="gerenciando-a-area-de-trabalho-workspace" class="section level1">
+<h1>Gerenciando a área de trabalho (<em>workspace</em>)</h1>
+<p>Liste os objetos criados com a função <code>ls()</code>:</p>
+<pre class="r"><code>ls()</code></pre>
+<p>Para remover apenas um objeto:</p>
+<pre class="r"><code>rm(x)</code></pre>
+<p>Para remover outros objetos:</p>
+<pre class="r"><code>rm(x, y)</code></pre>
+<p>Para remover todos os objetos:</p>
+<pre class="r"><code>rm(list = ls())</code></pre>
+<blockquote>
+<p><strong>Cuidado!</strong> O comando acima apaga todos os objetos na sua área de trabalho sem perguntar. Depois só é possível recuperar os objetos ao rodar os script novamente.</p>
+</blockquote>
+</div>
+<div id="exercicios-1" class="section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li>Armazene o resultado da equação <span class="math inline">\(32 + 16^2 - 25^3\)</span> no objeto <code>x</code></li>
+<li>Divida <code>x</code> por <span class="math inline">\(345\)</span> e armazene em <code>y</code></li>
+<li>Crie um objeto (com o nome que você quiser) para armazenar <span class="math inline">\(30\)</span> valores aleatórios de uma distribuição uniforme entre <span class="math inline">\(10\)</span> e <span class="math inline">\(50\)</span></li>
+<li>Remova o objeto <code>y</code></li>
+<li>Remova os demais objetos de uma única vez</li>
+<li>Procure a função utilizada para gerar numeros aleatórios de uma distribuição de Poisson, e gere <span class="math inline">\(100\)</span> valores para a VA <span class="math inline">\(X \sim  \text{Poisson}(5)\)</span>.</li>
+</ol>
+</div>
+<div id="classes-de-objetos" class="section level1">
+<h1>Classes de objetos</h1>
+<p>O R possui 5 classes básicas de objetos, também chamados de objetos “atômicos”:</p>
+<ul>
+<li><code>character</code></li>
+<li><code>numeric</code></li>
+<li><code>integer</code></li>
+<li><code>complex</code></li>
+<li><code>logical</code></li>
+</ul>
+<blockquote>
+<p>Um vetor só pode conter elementos de uma mesma classe</p>
+</blockquote>
+<p>(A única excessão é a lista).</p>
+<div id="vetor" class="section level3">
+<h3>Vetor</h3>
+<p>Características:</p>
+<ul>
+<li>Coleção ordenada de valores</li>
+<li>Estrutura unidimensional</li>
+</ul>
+<p>Usando a função <code>c()</code> para criar vetores:</p>
+<pre class="r"><code>num &lt;- c(10, 5, 2, 4, 8, 9)
+num</code></pre>
+<pre><code>[1] 10  5  2  4  8  9</code></pre>
+<pre class="r"><code>class(num)</code></pre>
+<pre><code>[1] &quot;numeric&quot;</code></pre>
+<p>Por que <code>numeric</code> e não <code>integer</code>?</p>
+<pre class="r"><code>x &lt;- c(10L, 5L, 2L, 4L, 8L, 9L)
+x</code></pre>
+<pre><code>[1] 10  5  2  4  8  9</code></pre>
+<pre class="r"><code>class(x)</code></pre>
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<p>Para forçar a representação de um número para inteiro é necessário usar o sufixo <code>L</code>.</p>
+<p>Note que a diferença entre <code>numeric</code> e <code>integer</code> também possui impacto computacional, pois o armazenamento de números inteiros ocupa menos espaço na memória. Dessa forma, esperamos que o vetor <code>x</code> acima ocupe menos espaço na memória do que o vetor <code>num</code>, embora sejam aparentemente idênticos. Veja:</p>
+<pre class="r"><code>object.size(num)</code></pre>
+<pre><code>88 bytes</code></pre>
+<pre class="r"><code>object.size(x)</code></pre>
+<pre><code>72 bytes</code></pre>
+<p>A diferença pode parecer pequena, mas pode ter um grande impacto computacional quando os vetores são formados por milhares ou milhões de números.</p>
+<div id="notas-sobre-representacao-numerica-dentro-do-r" class="section level4">
+<h4>Notas sobre representação numérica dentro do R</h4>
+<p>Os números que aparecem na tela do console do R são apenas representações simplificadas do número real armazenado na memória. Por exemplo,</p>
+<pre class="r"><code>x &lt;- runif(10)
+x</code></pre>
+<pre><code> [1] 0.2875775 0.7883051 0.4089769 0.8830174 0.9404673 0.0455565 0.5281055
+ [8] 0.8924190 0.5514350 0.4566147</code></pre>
+<p>O objeto <code>x</code> contém números como 0.2875775, 0.7883051, etc, que possuem 7 casas decimais, que é o padrão do R. O número de casas decimais é controlado pelo argumento <code>digits</code> da função <code>options</code>. Para visualizar essa opção, use</p>
+<pre class="r"><code>getOption(&quot;digits&quot;)</code></pre>
+<pre><code>[1] 7</code></pre>
+<p>Note que esse valor de 7 é o número de <strong>dígitos significativos</strong>, e pode variar conforme a sequência de números. Por exemplo,</p>
+<pre class="r"><code>y &lt;- runif(10)
+y</code></pre>
+<pre><code> [1] 0.069360916 0.817775199 0.942621732 0.269381876 0.169348123
+ [6] 0.033895622 0.178785004 0.641665366 0.022877743 0.008324827</code></pre>
+<p>possui valores com 9 casas decimais. Isto é apenas a representação do número que aparece na tela. Internamente, cada número é armazenado com uma precisão de 22 casas decimais! Você pode ver o número com toda sua precisão usando a função <code>print()</code> e especificando o número de casas decimais com o argumento <code>digits</code> (de 1 a 22)</p>
+<pre class="r"><code>print(x, digits = 1)</code></pre>
+<pre><code> [1] 0.29 0.79 0.41 0.88 0.94 0.05 0.53 0.89 0.55 0.46</code></pre>
+<pre class="r"><code>print(x, digits = 7) # padrão</code></pre>
+<pre><code> [1] 0.2875775 0.7883051 0.4089769 0.8830174 0.9404673 0.0455565 0.5281055
+ [8] 0.8924190 0.5514350 0.4566147</code></pre>
+<pre class="r"><code>print(x, digits = 22)</code></pre>
+<pre><code> [1] 0.28757752012461423873901 0.78830513544380664825439
+ [3] 0.40897692181169986724854 0.88301740400493144989014
+ [5] 0.94046728429384529590607 0.04555649938993155956268
+ [7] 0.52810548804700374603271 0.89241904439404606819153
+ [9] 0.55143501446582376956940 0.45661473530344665050507</code></pre>
+<p>Também é possível alterar a representação na tela para o formato científico, usando a função <code>format()</code></p>
+<pre class="r"><code>format(x, scientific = TRUE)</code></pre>
+<pre><code> [1] &quot;2.875775e-01&quot; &quot;7.883051e-01&quot; &quot;4.089769e-01&quot; &quot;8.830174e-01&quot;
+ [5] &quot;9.404673e-01&quot; &quot;4.555650e-02&quot; &quot;5.281055e-01&quot; &quot;8.924190e-01&quot;
+ [9] &quot;5.514350e-01&quot; &quot;4.566147e-01&quot;</code></pre>
+<p>Nessa representação, o valor 2.875775e-01 = <span class="math inline">\(2.875775 \times 10^{-01}\)</span> = 0.2875775.</p>
+</div>
+<div id="sequencias-de-numeros" class="section level4">
+<h4>Sequências de números</h4>
+<p>Usando a função <code>seq()</code></p>
+<pre class="r"><code>seq(1, 10)</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<p>Ou <code>1:10</code> gera o mesmo resultado. Para a sequência variar em <span class="math inline">\(2\)</span></p>
+<pre class="r"><code>seq(from = 1, to = 10, by = 2)</code></pre>
+<pre><code>[1] 1 3 5 7 9</code></pre>
+<p>Para obter <span class="math inline">\(15\)</span> valores entre <span class="math inline">\(1\)</span> e <span class="math inline">\(10\)</span></p>
+<pre class="r"><code>seq(from = 1, to = 10, length.out = 15)</code></pre>
+<pre><code> [1]  1.000000  1.642857  2.285714  2.928571  3.571429  4.214286  4.857143
+ [8]  5.500000  6.142857  6.785714  7.428571  8.071429  8.714286  9.357143
+[15] 10.000000</code></pre>
+<p>Usando a função <code>rep()</code></p>
+<pre class="r"><code>rep(1, 10)</code></pre>
+<pre><code> [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
+<p>Para gerar um sequência várias vezes</p>
+<pre class="r"><code>rep(c(1, 2, 3), 5)</code></pre>
+<pre><code> [1] 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3</code></pre>
+<p>Para repetir um número da sequência várias vezes</p>
+<pre class="r"><code>rep(c(1, 2, 3), each = 5)</code></pre>
+<pre><code> [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3</code></pre>
+</div>
+<div id="operacoes-matematicas-em-vetores" class="section level4">
+<h4>Operações matemáticas em vetores</h4>
+<p>Operações podem ser feitas entre um vetor e um número:</p>
+<pre class="r"><code>num * 2</code></pre>
+<pre><code>[1] 20 10  4  8 16 18</code></pre>
+<p>E também entre vetores de mesmo comprimento ou com comprimentos múltiplos:</p>
+<pre class="r"><code>num * num</code></pre>
+<pre><code>[1] 100  25   4  16  64  81</code></pre>
+<pre class="r"><code>num + c(2, 4, 1)</code></pre>
+<pre><code>[1] 12  9  3  6 12 10</code></pre>
+</div>
+<div id="a-regra-da-reciclagem" class="section level4">
+<h4>A Regra da Reciclagem</h4>
+<div class="figure">
+<img src="img/reciclagem.png" alt="Regra da reciclagem" />
+<p class="caption">Regra da reciclagem</p>
+</div>
+<p>Agora tente:</p>
+<pre class="r"><code>num + c(2, 4, 1, 3)</code></pre>
+</div>
+</div>
+</div>
+<div id="exercicios-2" class="section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li>Crie um objeto com os valores 54, 0, 17, 94, 12.5, 2, 0.9, 15.</li>
+<li>Some o objeto acima com os valores 5, 6.</li>
+</ol>
+<div id="atributos-de-objetos" class="section level4">
+<h4>Atributos de objetos</h4>
+<p>Os objetos possuem <strong>atributos</strong>, que servem para descrever o formato do objeto:</p>
+<ul>
+<li><code>names</code>, <code>dimnames</code></li>
+<li><code>length</code></li>
+<li><code>dim</code></li>
+<li><code>class</code></li>
+</ul>
+<p>Classe:</p>
+<pre class="r"><code>class(num)</code></pre>
+<pre><code>[1] &quot;numeric&quot;</code></pre>
+<p>Comprimento:</p>
+<pre class="r"><code>length(num)</code></pre>
+<pre><code>[1] 6</code></pre>
+<p>Vetores também podem ter outras classes:</p>
+<ul>
+<li>Vetor de caracteres:</li>
+</ul>
+<pre class="r"><code>caracter &lt;- c(&quot;brava&quot;, &quot;joaquina&quot;, &quot;armação&quot;)
+caracter</code></pre>
+<pre><code>[1] &quot;brava&quot;    &quot;joaquina&quot; &quot;armação&quot; </code></pre>
+<ul>
+<li>Vetor lógico:</li>
+</ul>
+<pre class="r"><code>logico &lt;- caracter == &quot;armação&quot;
+logico</code></pre>
+<pre><code>[1] FALSE FALSE  TRUE</code></pre>
+<p>ou</p>
+<pre class="r"><code>logico &lt;- num &gt; 4
+logico</code></pre>
+<pre><code>[1]  TRUE  TRUE FALSE FALSE  TRUE  TRUE</code></pre>
+<p>No exemplo anterior, a condição <code>num &gt; 4</code> é uma <strong>expressão condicional</strong>, e o símbolo <code>&gt;</code> um <strong>operador lógico</strong>. Os operadores lógicos utilizados no R são:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Símbolo</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>&lt;</code></td>
+<td align="left">menor</td>
+</tr>
+<tr class="even">
+<td align="center"><code>&lt;=</code></td>
+<td align="left">menor igual</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>&gt;</code></td>
+<td align="left">maior</td>
+</tr>
+<tr class="even">
+<td align="center"><code>&gt;=</code></td>
+<td align="left">maior igual</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>==</code></td>
+<td align="left">igual</td>
+</tr>
+<tr class="even">
+<td align="center"><code>!=</code></td>
+<td align="left">diferente</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>&amp;</code></td>
+<td align="left">e</td>
+</tr>
+<tr class="even">
+<td align="center"><code>|</code></td>
+<td align="left">ou</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="fator" class="section level3">
+<h3>Fator</h3>
+<p>Características:</p>
+<ul>
+<li>Coleção de categorias ou <strong>níveis</strong> (<em>levels</em>)</li>
+<li>Estrutura unidimensional</li>
+</ul>
+<p>Utilizando as funções <code>factor()</code> e <code>c()</code>:</p>
+<pre class="r"><code>fator &lt;- factor(c(&quot;alta&quot;,&quot;baixa&quot;,&quot;baixa&quot;,&quot;media&quot;,
+                  &quot;alta&quot;,&quot;media&quot;,&quot;baixa&quot;,&quot;media&quot;,&quot;media&quot;))
+fator</code></pre>
+<pre><code>[1] alta  baixa baixa media alta  media baixa media media
+Levels: alta baixa media</code></pre>
+<pre class="r"><code>class(fator)</code></pre>
+<pre><code>[1] &quot;factor&quot;</code></pre>
+<p>Caso haja uma hierarquia, os níveis dos fatores podem ser ordenados:</p>
+<pre class="r"><code>fator &lt;- factor(c(&quot;alta&quot;,&quot;baixa&quot;,&quot;baixa&quot;,&quot;media&quot;,
+                  &quot;alta&quot;,&quot;media&quot;,&quot;baixa&quot;,&quot;media&quot;,&quot;media&quot;),
+                levels = c(&quot;alta&quot;,&quot;media&quot;,&quot;baixa&quot;))
+fator</code></pre>
+<pre><code>[1] alta  baixa baixa media alta  media baixa media media
+Levels: alta media baixa</code></pre>
+</div>
+</div>
+<div id="exercicios-3" class="section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li>Construa um único objeto com as letras: <code>A</code>, <code>B</code>, e <code>C</code>, repetidas cada uma 15, 12, e 8 vezes, respectivamente.</li>
+<li>Mostre na tela, em forma de verdadeiro ou falso, onde estão as letras <code>B</code> nesse objeto.</li>
+<li>Veja a página de ajuda da função <code>sum()</code> e descubra como fazer para contar o número de letras <code>B</code> neste vetor (usando <code>sum()</code>).</li>
+<li>Crie um objeto com 100 valores aleatórios de uma distribuição uniforme <span class="math inline">\(U(0,1)\)</span>. Conte quantas vezes aparecem valores maiores ou iguais a 0,5.</li>
+</ol>
+<div id="misturando-classes-de-objetos" class="section level3">
+<h3>Misturando classes de objetos</h3>
+<p>Algumas vezes isso acontece por acidente, mas também pode acontecer de propósito.</p>
+<p>O que acontece aqui?</p>
+<pre class="r"><code>w &lt;- c(5L, &quot;a&quot;)
+x &lt;- c(1.7, &quot;a&quot;)
+y &lt;- c(TRUE, 2)
+z &lt;- c(&quot;a&quot;, T)</code></pre>
+<p>Lembre-se da regra:</p>
+<blockquote>
+<p>Um vetor só pode conter elementos de uma mesma classe</p>
+</blockquote>
+<p>Quando objetos de diferentes classes são misturados, ocorre a <strong>coerção</strong>, para que cada elemento possua a mesma classe.</p>
+<p>Nos exemplos acima, nós vemos o efeito da <strong>coerção implícita</strong>, quando o R tenta representar todos os objetos de uma única forma.</p>
+<p>Nós podemos forçar um objeto a mudar de classe, através da <strong>coerção explícita</strong>, realizada pelas funções <code>as.*</code>:</p>
+<pre class="r"><code>x &lt;- 0:6
+class(x)</code></pre>
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>as.numeric(x)</code></pre>
+<pre><code>[1] 0 1 2 3 4 5 6</code></pre>
+<pre class="r"><code>as.logical(x)</code></pre>
+<pre><code>[1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>as.character(x)</code></pre>
+<pre><code>[1] &quot;0&quot; &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot;</code></pre>
+<pre class="r"><code>as.factor(x)</code></pre>
+<pre><code>[1] 0 1 2 3 4 5 6
+Levels: 0 1 2 3 4 5 6</code></pre>
+<p>De <code>?logical</code>:</p>
+<pre><code> Logical vectors are coerced to integer vectors in contexts where a
+ numerical value is required, with ‘TRUE’ being mapped to ‘1L’,
+ ‘FALSE’ to ‘0L’ and ‘NA’ to ‘NA_integer_’.</code></pre>
+<pre class="r"><code>(x &lt;- c(FALSE, TRUE))</code></pre>
+<pre><code>[1] FALSE  TRUE</code></pre>
+<pre class="r"><code>class(x)</code></pre>
+<pre><code>[1] &quot;logical&quot;</code></pre>
+<pre class="r"><code>as.numeric(x)</code></pre>
+<pre><code>[1] 0 1</code></pre>
+<p>Algumas vezes não é possível fazer a coerção, então:</p>
+<pre class="r"><code>x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+as.numeric(x)</code></pre>
+<pre><code>Warning: NAs introduced by coercion</code></pre>
+<pre><code>[1] NA NA NA</code></pre>
+<pre class="r"><code>as.logical(x)</code></pre>
+<pre><code>[1] NA NA NA</code></pre>
+</div>
+<div id="valores-perdidos-e-especiais" class="section level2">
+<h2>Valores perdidos e especiais</h2>
+<p>Valores perdidos devem ser definidos como <code>NA</code> (<em>not available</em>):</p>
+<pre class="r"><code>perd &lt;- c(3, 5, NA, 2)
+perd</code></pre>
+<pre><code>[1]  3  5 NA  2</code></pre>
+<pre class="r"><code>class(perd)</code></pre>
+<pre><code>[1] &quot;numeric&quot;</code></pre>
+<p>Podemos testar a presença de <code>NA</code>s com a função <code>is.na()</code>:</p>
+<pre class="r"><code>is.na(perd)</code></pre>
+<pre><code>[1] FALSE FALSE  TRUE FALSE</code></pre>
+<p>Ou:</p>
+<pre class="r"><code>any(is.na(perd))</code></pre>
+<pre><code>[1] TRUE</code></pre>
+<p>Outros valores especiais são:</p>
+<ul>
+<li><code>NaN</code> (<em>not a number</em>) - exemplo: <code>0/0</code></li>
+<li><code>-Inf</code> e <code>Inf</code> - exemplo: <code>1/0</code></li>
+</ul>
+<p>A função <code>is.na()</code> também testa a presença de <code>NaN</code>s:</p>
+<pre class="r"><code>perd &lt;- c(-1,0,1)/0
+perd</code></pre>
+<pre><code>[1] -Inf  NaN  Inf</code></pre>
+<pre class="r"><code>is.na(perd)</code></pre>
+<pre><code>[1] FALSE  TRUE FALSE</code></pre>
+<p>A função <code>is.infinite()</code> testa se há valores infinitos</p>
+<pre class="r"><code>is.infinite(perd)</code></pre>
+<pre><code>[1]  TRUE FALSE  TRUE</code></pre>
+<div id="matriz" class="section level3">
+<h3>Matriz</h3>
+<p>Características:</p>
+<ul>
+<li>Podem conter apenas um tipo de informação (números, caracteres)</li>
+<li>Estrutura bidimensional</li>
+</ul>
+<p>Utilizando a função <code>matrix()</code>:</p>
+<pre class="r"><code>matriz &lt;- matrix(1:12, nrow = 3, ncol = 4)
+matriz</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12</code></pre>
+<pre class="r"><code>class(matriz)</code></pre>
+<pre><code>[1] &quot;matrix&quot;</code></pre>
+<p>Alterando a ordem de preenchimento da matriz (por linhas):</p>
+<pre class="r"><code>matriz &lt;- matrix(1:12, nrow = 3, ncol = 4, byrow = TRUE)
+matriz</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12</code></pre>
+<p>Para verificar a dimensão da matriz:</p>
+<pre class="r"><code>dim(matriz)</code></pre>
+<pre><code>[1] 3 4</code></pre>
+<p>Adicionando colunas com <code>cbind()</code></p>
+<pre class="r"><code>cbind(matriz, rep(99, 3))</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    2    3    4   99
+[2,]    5    6    7    8   99
+[3,]    9   10   11   12   99</code></pre>
+<p>Adicionando linhas com <code>rbind()</code></p>
+<pre class="r"><code>rbind(matriz, rep(99, 4))</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12
+[4,]   99   99   99   99</code></pre>
+<p>Matrizes também podem ser criadas a partir de vetores adicionando um atributo de dimensão</p>
+<pre class="r"><code>m &lt;- 1:10
+m</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code>class(m)</code></pre>
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>dim(m)</code></pre>
+<pre><code>NULL</code></pre>
+<pre class="r"><code>dim(m) &lt;- c(2, 5)
+m</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    3    5    7    9
+[2,]    2    4    6    8   10</code></pre>
+<pre class="r"><code>class(m)</code></pre>
+<pre><code>[1] &quot;matrix&quot;</code></pre>
+<div id="operacoes-matematicas-em-matrizes" class="section level4">
+<h4>Operações matemáticas em matrizes</h4>
+<p>Matriz multiplicada por um escalar</p>
+<pre class="r"><code>matriz * 2</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    2    4    6    8
+[2,]   10   12   14   16
+[3,]   18   20   22   24</code></pre>
+<p>Multiplicação de matrizes (observe as dimensões!)</p>
+<pre class="r"><code>matriz2 &lt;- matrix(1, nrow = 4, ncol = 3)
+matriz %*% matriz2</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]   10   10   10
+[2,]   26   26   26
+[3,]   42   42   42</code></pre>
+</div>
+</div>
+<div id="lista" class="section level3">
+<h3>Lista</h3>
+<p>Características:</p>
+<ul>
+<li>Pode combinar uma coleção de objetos de diferentes classes (é um tipo especial de vetor)</li>
+<li>Estrutura “unidimensional”: apenas o número de elementos é contado</li>
+</ul>
+<p>Utilizando a função <code>list()</code>:</p>
+<pre class="r"><code>lista &lt;- list(a = 1:10, b = c(&quot;T1&quot;, &quot;T2&quot;, &quot;T3&quot;, &quot;T4&quot;), TRUE, 2 + 2)
+lista</code></pre>
+<pre><code>$a
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$b
+[1] &quot;T1&quot; &quot;T2&quot; &quot;T3&quot; &quot;T4&quot;
+
+[[3]]
+[1] TRUE
+
+[[4]]
+[1] 4</code></pre>
+<pre class="r"><code>class(lista)</code></pre>
+<pre><code>[1] &quot;list&quot;</code></pre>
+<pre class="r"><code>dim(lista)</code></pre>
+<pre><code>NULL</code></pre>
+<pre class="r"><code>length(lista)</code></pre>
+<pre><code>[1] 4</code></pre>
+<p>Formando uma lista com objetos criados anteriormente:</p>
+<pre class="r"><code>lista &lt;- list(fator = fator, matriz = matriz)
+lista</code></pre>
+<pre><code>$fator
+[1] alta  baixa baixa media alta  media baixa media media
+Levels: alta media baixa
+
+$matriz
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12</code></pre>
+<pre class="r"><code>length(lista)</code></pre>
+<pre><code>[1] 2</code></pre>
+</div>
+<div id="data-frame" class="section level3">
+<h3>Data frame</h3>
+<p>Características:</p>
+<ul>
+<li>Uma lista de vetores e/ou fatores, de <strong>mesmo comprimento</strong></li>
+<li>Pode conter diferentes tipos de dados (numérico, fator, …)</li>
+<li>Estrutura bidimensional</li>
+</ul>
+<p>Utilizando a função <code>data.frame()</code>:</p>
+<pre class="r"><code>da &lt;- data.frame(ano = 2000:2004,
+                 prod = c(32, 54, 25, 48, 29))
+da</code></pre>
+<pre><code>   ano prod
+1 2000   32
+2 2001   54
+3 2002   25
+4 2003   48
+5 2004   29</code></pre>
+<pre class="r"><code>class(da)</code></pre>
+<pre><code>[1] &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>dim(da)</code></pre>
+<pre><code>[1] 5 2</code></pre>
+<p>Data frames podem ser formados com objetos criados anteriormente, desde que tenham o mesmo comprimento!</p>
+<pre class="r"><code>length(num)</code></pre>
+<pre><code>[1] 6</code></pre>
+<pre class="r"><code>length(fator)</code></pre>
+<pre><code>[1] 9</code></pre>
+<pre class="r"><code>da &lt;- data.frame(numerico = c(num, NA, NA, NA),
+                        fator = fator)
+da</code></pre>
+<pre><code>  numerico fator
+1       10  alta
+2        5 baixa
+3        2 baixa
+4        4 media
+5        8  alta
+6        9 media
+7       NA baixa
+8       NA media
+9       NA media</code></pre>
+<pre class="r"><code>class(da)</code></pre>
+<pre><code>[1] &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>dim(da)</code></pre>
+<pre><code>[1] 9 2</code></pre>
+<pre class="r"><code>## Estrutura dos dados
+str(da)</code></pre>
+<pre><code>&#39;data.frame&#39;:   9 obs. of  2 variables:
+ $ numerico: num  10 5 2 4 8 9 NA NA NA
+ $ fator   : Factor w/ 3 levels &quot;alta&quot;,&quot;media&quot;,..: 1 3 3 2 1 2 3 2 2</code></pre>
+<blockquote>
+<p>A função <code>str()</code> é uma das que você precisa decorar!</p>
+</blockquote>
+<p>Para converter um data frame para uma matriz</p>
+<pre class="r"><code>as.matrix(da)</code></pre>
+<pre><code>      numerico fator  
+ [1,] &quot;10&quot;     &quot;alta&quot; 
+ [2,] &quot; 5&quot;     &quot;baixa&quot;
+ [3,] &quot; 2&quot;     &quot;baixa&quot;
+ [4,] &quot; 4&quot;     &quot;media&quot;
+ [5,] &quot; 8&quot;     &quot;alta&quot; 
+ [6,] &quot; 9&quot;     &quot;media&quot;
+ [7,] NA       &quot;baixa&quot;
+ [8,] NA       &quot;media&quot;
+ [9,] NA       &quot;media&quot;</code></pre>
+<pre class="r"><code>data.matrix(da)</code></pre>
+<pre><code>      numerico fator
+ [1,]       10     1
+ [2,]        5     3
+ [3,]        2     3
+ [4,]        4     2
+ [5,]        8     1
+ [6,]        9     2
+ [7,]       NA     3
+ [8,]       NA     2
+ [9,]       NA     2</code></pre>
+<p>Geralmente é o resultado de <code>data.matrix()</code> o qeu você está procurando.</p>
+<blockquote>
+<p>Note que os níveis de um fator são armazenados internamente como números: <span class="math inline">\(1^\circ\)</span> nível = 1, <span class="math inline">\(2^\circ\)</span> nível = 2, <span class="math inline">\(\ldots\)</span></p>
+</blockquote>
+</div>
+</div>
+<div id="nomes" class="section level2">
+<h2>Nomes</h2>
+<p>Objetos do R podem ter nomes, que facilitam a auto-descrição</p>
+<pre class="r"><code>x &lt;- 1:3
+names(x)</code></pre>
+<pre><code>NULL</code></pre>
+<pre class="r"><code>names(x) &lt;- c(&quot;Curitiba&quot;, &quot;Paraná&quot;, &quot;Brasil&quot;)
+x</code></pre>
+<pre><code>Curitiba   Paraná   Brasil 
+       1        2        3 </code></pre>
+<pre class="r"><code>names(x)</code></pre>
+<pre><code>[1] &quot;Curitiba&quot; &quot;Paraná&quot;   &quot;Brasil&quot;  </code></pre>
+<p>Listas também podem ter nomes</p>
+<pre class="r"><code>x &lt;- list(Curitiba = 1, Paraná = 2, Brasil = 3)
+x</code></pre>
+<pre><code>$Curitiba
+[1] 1
+
+$Paraná
+[1] 2
+
+$Brasil
+[1] 3</code></pre>
+<pre class="r"><code>names(x)</code></pre>
+<pre><code>[1] &quot;Curitiba&quot; &quot;Paraná&quot;   &quot;Brasil&quot;  </code></pre>
+<p>Associando nomes às <em>linhas</em> e <em>colunas</em> de uma matriz:</p>
+<pre class="r"><code>rownames(matriz) &lt;- c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;)
+colnames(matriz) &lt;- c(&quot;T1&quot;,&quot;T2&quot;,&quot;T3&quot;,&quot;T4&quot;)
+matriz</code></pre>
+<pre><code>  T1 T2 T3 T4
+A  1  2  3  4
+B  5  6  7  8
+C  9 10 11 12</code></pre>
+<p>Para data frames existe uma função especial para os nomes de linhas, <code>row.names()</code>. Data frames também não possuem nomes de colunas, apenas nomes, já que é um caso particular de lista. Então para verificar/alterar nomes de colunas de um data frame também use <code>names()</code>.</p>
+<pre class="r"><code>names(da)</code></pre>
+<pre><code>[1] &quot;numerico&quot; &quot;fator&quot;   </code></pre>
+<pre class="r"><code>row.names(da)</code></pre>
+<pre><code>[1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot; &quot;7&quot; &quot;8&quot; &quot;9&quot;</code></pre>
+<p>Um resumo das funções para alterar/acessar nomes de linhas e colunas em matrizes e data frames.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Classe</th>
+<th align="left">Nomes de colunas</th>
+<th align="left">Nomes de linhas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>data.frame</code></td>
+<td align="left"><code>names()</code></td>
+<td align="left"><code>row.names()</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>matrix</code></td>
+<td align="left"><code>colnames()</code></td>
+<td align="left"><code>rownames()</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="exercicios-4" class="section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li>Crie um objeto para armazenar a seguinte matriz <span class="math display">\[\left[ \begin{array}{ccc}
+        2 &amp; 8 &amp; 4 \\
+        0 &amp; 4 &amp; 1 \\
+        9 &amp; 7 &amp; 5
+        \end{array} \right]\]</span></li>
+<li>Atribua nomes para as linhas e colunas dessa matriz.</li>
+<li>Crie uma lista com dois componentes: (1) um vetor com as letras <code>A</code>, <code>B</code>, e <code>C</code>, repetidas 2, 5, e 4 vezes respectivamente; (2) a matriz do exemplo anterior.</li>
+<li>Atribua nomes para estes dois componentes da lista.</li>
+<li>Inclua mais um componente nesta lista, com o nome de <code>fator</code>, e que seja um vetor da classe fator, idêntico ao objeto <code>caracter</code> criado acima (que possui apenas os nomes <code>brava</code>, <code>joaquina</code>, <code>armação</code>).</li>
+<li>Você contou 42 caranguejos na Joaquina, 34 no Campeche, 59 na Armação, e 18 na Praia Mole. Crie um data frame para armazenar estas informações (número de caranguejos observados e local).</li>
+</ol>
+</div>
+
+<center>
+  <hr width="100%" size="3px">
+  <p> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR">
+      <img src="img/CC_by-nc-sa_80x15.png" alt="Licença Creative Commons 4.0"> </a>
+  </p>
+  <p> <font size="2"> Este conteúdo
+      está disponível por meio da Licença Creative Commons 4.0 </font>
+  </p>
+</center>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

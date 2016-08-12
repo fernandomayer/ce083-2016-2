@@ -32,6 +32,7 @@ install:
 
 before_script:
   - rm -rf figures
+  - rm 01_shell-linux.Rmd 01_shell-linux.html
 
 script:
   - Rscript -e 'rmarkdown::render_site()'

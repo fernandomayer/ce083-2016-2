@@ -26,6 +26,10 @@ classe aplicadas.
   [Introdução ao uso do Linux](http://fernandomayer.github.io/linux-intro).
 - **16/08**: Aula especial com o Prof.
   [Paulo Justiniano Ribeiro Jr](http://www.leg.ufpr.br/~paulojus/).
+- **18/08**: Aula especial com o Prof.
+  [Paulo Justiniano Ribeiro Jr](http://www.leg.ufpr.br/~paulojus/).
+  [Exercícios](ex01_intro.html) de probabilidade.
+- **23/08**: [Exercícios](ex01_intro.html) de estatística descritiva.
 
 ## Exercícios
 

@@ -355,10 +355,14 @@ n <- 400
 xbarra <- 1000
 ##----------------------------------------------------------------------
 ## a.
-xbarra + (qnorm(0.10/2) * (sigma/sqrt(n))) * c(1, -1)
+# valor de z
+qnorm(0.05); qnorm(0.95)
+xbarra + (qnorm(0.95) * (sigma/sqrt(n))) * c(-1, 1)
 ##----------------------------------------------------------------------
 ## b.
-xbarra + (qnorm(0.05/2) * (sigma/sqrt(n))) * c(1, -1)
+# valor de z
+qnorm(0.025); qnorm(0.975)
+xbarra + (qnorm(0.975) * (sigma/sqrt(n))) * c(-1, 1)
 ```
 
 1. Uma fábrica de automóveis anuncia que seus carros consomem, em
@@ -373,6 +377,11 @@ mu0 <- 11
 sigma <- 0.8
 n <- 35
 xbarra <- 11.4
+##----------------------------------------------------------------------
+zcalc <- (xbarra - mu0)/(sigma/sqrt(n))
+zcrit <- qnorm(0.95)
+zcalc > zcrit
+pnorm(zcalc, lower.tail = FALSE) * 2
 ```
 
 1. Um investidor interessado em desenvolver um centro comercial, é
@@ -384,22 +393,99 @@ xbarra <- 11.4
   2.000,00. Com base nessa amostra, teste a hipótese do salário médio na
   comunidade ser no mínimo R$ 15.000,00, ao nível de 5% de
   significância.
+```{r, eval=FALSE, include=FALSE}
+##----------------------------------------------------------------------
+mu0 <- 15000
+n <- 15
+xbarra <- 14000
+s <- 2000
+##----------------------------------------------------------------------
+tcalc <- (xbarra - mu0)/(s/sqrt(n))
+tcrit <- qt(0.05, df = n - 1)
+abs(tcalc) > abs(tcrit)
+pt(tcalc, df = n - 1)
+```
 
 1. Em um estudo sobre caranguejos, 156 indivíduos de duas espécies
   ("azul" e "laranja") foram medidos. Os dados estão disponíveis
   [neste endereço](http://www.leg.ufpr.br/~fernandomayer/dados/crabs.csv).
     a. Testar a hipótese de que a média ($\mu$) de CL (comprimento da
-       carapaça) é igual a 30 mm (com 95\% de confiança).
+       carapaça) é igual a 30 mm (com 95% de confiança).
     b. Testar a hipótese de que a média ($\mu$) de CL é menor ou igual a 30
-       mm (com 95\% de confiança).
+       mm (com 95% de confiança).
     c. Testar a hipótese de que a média ($\mu$) de CL é maior ou igual a 30
-       mm (com 95\% de confiança).
+       mm (com 95% de confiança).
     d. Faça dois histogramas lado-a-lado da medida CL para cada uma das
        espécies.
     e. Testar a hipótese de que a **diferença** entre a média de CL da
     espécie azul ($\mu_A$) e a média de CL da espécie laranja ($\mu_L$)
-    é igual a 0 (zero) (com 95\% de confiança).
+    é igual a 0 (zero) (com 95% de confiança).
     f. Testar a hipótese de que a **diferença** entre a média de
        CL da espécie azul ($\mu_A$) e a média de CL da espécie laranja
-       ($\mu_L$) é **menor** ou iual a 0 (zero) (com 95\% de confiança).
+       ($\mu_L$) é **menor** ou iual a 0 (zero) (com 95% de confiança).
        Em outras palavras: *O CL médio é menor para a espécie azul?*
+```{r, eval=FALSE, include=FALSE}
+##----------------------------------------------------------------------
+url <- "http://www.leg.ufpr.br/~fernandomayer/dados/crabs.csv"
+dados <- read.table(url, header = TRUE, sep = ";", dec = ",")
+str(dados)
+##----------------------------------------------------------------------
+## a. Testar a hipótese de que a média de CL (comprimento da carapaça) é
+## igual a 30 mm (com 95% de confiança).
+t.test(x = dados$CL, mu = 30)
+## Fazendo a mao
+mu0 <- 30
+n <- length(dados$CL)
+xbarra <- mean(dados$CL)
+s <- sd(dados$CL)
+tcalc <- (xbarra - mu0)/(s/sqrt(n))
+tcrit <- qt(0.975, df = n - 1)
+abs(tcalc) > abs(tcrit)
+pt(tcalc, df = n - 1, lower.tail = FALSE) * 2
+##----------------------------------------------------------------------
+## b. Testar a hipótese de que a média de CL é menor ou igual a 30 mm
+## (com 95% de confiança).
+t.test(x = dados$CL, alternative = "greater", mu = 30)
+## Fazendo a mao
+mu0 <- 30
+n <- length(dados$CL)
+xbarra <- mean(dados$CL)
+s <- sd(dados$CL)
+tcalc <- (xbarra - mu0)/(s/sqrt(n))
+tcrit <- qt(0.95, df = n - 1)
+abs(tcalc) > abs(tcrit)
+pt(tcalc, df = n - 1, lower.tail = FALSE)
+##----------------------------------------------------------------------
+## c. Testar a hipótese de que a média ($\mu$) de CL é maior ou igual a
+## 30 mm (com 95% de confiança).
+t.test(x = dados$CL, alternative = "less", mu = 30)
+## Fazendo a mao
+mu0 <- 30
+n <- length(dados$CL)
+xbarra <- mean(dados$CL)
+s <- sd(dados$CL)
+tcalc <- (xbarra - mu0)/(s/sqrt(n))
+tcrit <- qt(0.05, df = n - 1)
+pt(tcalc, df = n - 1, lower.tail = TRUE)
+##----------------------------------------------------------------------
+## d. Faça dois histogramas lado-a-lado da medida CL para cada uma das
+## espécies.
+par(mfrow = c(1,2))
+hist(dados$CL[dados$especie == "azul"])
+hist(dados$CL[dados$especie == "laranja"])
+par(mfrow = c(1,1))
+## Usando o pacote lattice
+library(lattice)
+histogram(~ CL | especie, data = dados)
+##----------------------------------------------------------------------
+## e. Testar a hipótese de que a diferença entre a média de CL da
+## espécie azul e a média de CL da espécie laranja é igual a 0 (zero)
+## (com 95% de confiança).
+t.test(CL ~ especie, data = dados, mu = 0)
+##----------------------------------------------------------------------
+## f. Testar a hipótese de que a diferença entre a média de CL da espécie
+## azul e a média de CL da espécie laranja é menor ou igual a 0 (com
+## 95% de confiança). Em outras palavras: O CL médio é menor para a
+## espécie azul?
+t.test(CL ~ especie, data = dados, mu = 0, alternative = "greater")
+```

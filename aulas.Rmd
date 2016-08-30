@@ -30,6 +30,8 @@ classe aplicadas.
   [Paulo Justiniano Ribeiro Jr](http://www.leg.ufpr.br/~paulojus/).
   [Exercícios](ex01_intro.html) de probabilidade.
 - **23/08**: [Exercícios](ex01_intro.html) de estatística descritiva.
+- **25/08**: [Exercícios](ex01_intro.html) de estatística descritiva e
+  inferencial.
 
 ## Exercícios
 

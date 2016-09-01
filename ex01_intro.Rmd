@@ -52,7 +52,7 @@ source("setup_knitr.R")
         a. Faça um gráfico para explorar a relação entre estas duas
            variáveis
         b. Calcule a correlação entre estas duas variáveis
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=TRUE}
 ##----------------------------------------------------------------------
 ## 1. Faça a importação destes dados para o R.
 url <- "http://www.leg.ufpr.br/~fernandomayer/dados/milsa.csv"
@@ -138,7 +138,7 @@ cor(milsa$Idade, milsa$Salario)
 1. Experimente as funções `mean()`, `var()`, `sd()`, `median()`,
    `quantile()` nos dados mostrados anteriormente ("milsa"). Veja a
    documentação das funções e as opções de uso.
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=TRUE}
 ##----------------------------------------------------------------------
 ## Usando a variável Salario
 mean(milsa$Salario)
@@ -174,7 +174,7 @@ quantile(milsa$Filhos, na.rm = TRUE)
 		crimes.
     k. Calcule a média de crimes (entre `Murder`, `Assault` e `Rape`)
         para cada estado.
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=TRUE}
 ##----------------------------------------------------------------------
 data(USArrests)
 str(USArrests)
@@ -275,7 +275,7 @@ Binomial com parâmetros $n = 15$ e $p = 0.4$, pergunta-se:
     a. Nenhuma conta estar vencida
 	b. Exatamente duas contas estarem vencidas
 	c. Três ou mais contas estarem vencidas
-```{r, eval=FALSE, echo=FALSE, include=FALSE}
+```{r, eval=FALSE, echo=FALSE, include=TRUE}
 ## a
 pbinom(0, size = 5, prob = 0.3)
 dbinom(0, size = 5, prob = 0.3)
@@ -289,7 +289,7 @@ pbinom(2, size = 5, prob = 0.3, lower.tail = FALSE)
    probabilidade de que:
     a. Em 6 minutos receba pelo menos 3 emails?
 	b. Em 4 minutos não receba nenhum email?
-```{r, echo=FALSE, eval=FALSE, include=FALSE}
+```{r, echo=FALSE, eval=FALSE, include=TRUE}
 # multiplica horas por 60 minutos para ter emails/min
 (lambda <- 720/(8*60))
 
@@ -318,7 +318,7 @@ dpois(0, mu)
 	b. Tenha um peso maior do que 13,25 kg.
 	c. Pese entre 12,8 e 13,1 kg.
 	d. Pese entre 13,1 e 13,2 kg.
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=TRUE}
 ## a
 pnorm(13.2, 13, 0.1) - pnorm(13, 13, 0.1)
 ## b
@@ -348,7 +348,7 @@ pnorm(13.2, 13, 0.1) - pnorm(13.1, 13, 0.1)
   com níveis de confiança de
     a. $\gamma = 0,90$
     b. $\gamma = 0,95$
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=TRUE}
 ##----------------------------------------------------------------------
 sigma <- 200
 n <- 400
@@ -371,7 +371,7 @@ xbarra + (qnorm(0.975) * (sigma/sqrt(n))) * c(-1, 1)
   obtendo 11,4 litros por 100 km como consumo médio. Admintindo que o
   consumo tenha distribuição normal, ao nível de 10%, o que a revista
   concluirá sobre o anúncio da fábrica?
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=TRUE}
 ##----------------------------------------------------------------------
 mu0 <- 11
 sigma <- 0.8
@@ -393,7 +393,7 @@ pnorm(zcalc, lower.tail = FALSE) * 2
   2.000,00. Com base nessa amostra, teste a hipótese do salário médio na
   comunidade ser no mínimo R$ 15.000,00, ao nível de 5% de
   significância.
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=TRUE}
 ##----------------------------------------------------------------------
 mu0 <- 15000
 n <- 15
@@ -424,7 +424,7 @@ pt(tcalc, df = n - 1)
        CL da espécie azul ($\mu_A$) e a média de CL da espécie laranja
        ($\mu_L$) é **menor** ou iual a 0 (zero) (com 95% de confiança).
        Em outras palavras: *O CL médio é menor para a espécie azul?*
-```{r, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=TRUE}
 ##----------------------------------------------------------------------
 url <- "http://www.leg.ufpr.br/~fernandomayer/dados/crabs.csv"
 dados <- read.table(url, header = TRUE, sep = ";", dec = ",")

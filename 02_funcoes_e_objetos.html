@@ -193,7 +193,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -370,10 +370,6 @@ div.tocify {
 </div>
 
 
-<div id="sumario" class="section level1">
-<h1>Sumário</h1>
-<p>Funções e objetos. Classes de objetos.</p>
-</div>
 <div id="funcoes-e-argumentos" class="section level1">
 <h1>Funções e argumentos</h1>
 <p>As funções no R são definidas como:</p>
@@ -389,8 +385,8 @@ div.tocify {
 <pre class="r"><code>runif(min = 1, max = 100, n = 10)</code></pre>
 <p>Argumentos nomeados e não nomeados podem ser utilizados, desde que os não nomeados estejam na posição correta:</p>
 <pre class="r"><code>runif(10, max = 100, min = 1)</code></pre>
-<div id="outros-tipos-de-argumentos" class="section level3">
-<h3>Outros tipos de argumentos</h3>
+<div id="outros-tipos-de-argumentos" class="section level2">
+<h2>Outros tipos de argumentos</h2>
 <p>Exemplo: função <code>sample()</code>:</p>
 <pre class="r"><code>sample(x, size, replace = FALSE, prob = NULL)</code></pre>
 <ul>
@@ -541,8 +537,8 @@ y</code></pre>
 </blockquote>
 </div>
 </div>
-<div id="gerenciando-a-area-de-trabalho-workspace" class="section level1">
-<h1>Gerenciando a área de trabalho (<em>workspace</em>)</h1>
+<div id="gerenciando-a-area-de-trabalho" class="section level1">
+<h1>Gerenciando a área de trabalho</h1>
 <p>Liste os objetos criados com a função <code>ls()</code>:</p>
 <pre class="r"><code>ls()</code></pre>
 <p>Para remover apenas um objeto:</p>
@@ -580,8 +576,8 @@ y</code></pre>
 <p>Um vetor só pode conter elementos de uma mesma classe</p>
 </blockquote>
 <p>(A única excessão é a lista).</p>
-<div id="vetor" class="section level3">
-<h3>Vetor</h3>
+<div id="vetor" class="section level2">
+<h2>Vetor</h2>
 <p>Características:</p>
 <ul>
 <li>Coleção ordenada de valores</li>
@@ -606,8 +602,9 @@ x</code></pre>
 <pre class="r"><code>object.size(x)</code></pre>
 <pre><code>72 bytes</code></pre>
 <p>A diferença pode parecer pequena, mas pode ter um grande impacto computacional quando os vetores são formados por milhares ou milhões de números.</p>
-<div id="notas-sobre-representacao-numerica-dentro-do-r" class="section level4">
-<h4>Notas sobre representação numérica dentro do R</h4>
+</div>
+<div id="representacao-numerica-dentro-do-r" class="section level2">
+<h2>Representação numérica dentro do R</h2>
 <p>Os números que aparecem na tela do console do R são apenas representações simplificadas do número real armazenado na memória. Por exemplo,</p>
 <pre class="r"><code>x &lt;- runif(10)
 x</code></pre>
@@ -640,8 +637,8 @@ y</code></pre>
  [9] &quot;5.514350e-01&quot; &quot;4.566147e-01&quot;</code></pre>
 <p>Nessa representação, o valor 2.875775e-01 = <span class="math inline">\(2.875775 \times 10^{-01}\)</span> = 0.2875775.</p>
 </div>
-<div id="sequencias-de-numeros" class="section level4">
-<h4>Sequências de números</h4>
+<div id="sequencias-de-numeros" class="section level2">
+<h2>Sequências de números</h2>
 <p>Usando a função <code>seq()</code></p>
 <pre class="r"><code>seq(1, 10)</code></pre>
 <pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
@@ -663,8 +660,8 @@ y</code></pre>
 <pre class="r"><code>rep(c(1, 2, 3), each = 5)</code></pre>
 <pre><code> [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3</code></pre>
 </div>
-<div id="operacoes-matematicas-em-vetores" class="section level4">
-<h4>Operações matemáticas em vetores</h4>
+<div id="operacoes-matematicas-em-vetores" class="section level2">
+<h2>Operações matemáticas em vetores</h2>
 <p>Operações podem ser feitas entre um vetor e um número:</p>
 <pre class="r"><code>num * 2</code></pre>
 <pre><code>[1] 20 10  4  8 16 18</code></pre>
@@ -674,8 +671,8 @@ y</code></pre>
 <pre class="r"><code>num + c(2, 4, 1)</code></pre>
 <pre><code>[1] 12  9  3  6 12 10</code></pre>
 </div>
-<div id="a-regra-da-reciclagem" class="section level4">
-<h4>A Regra da Reciclagem</h4>
+<div id="a-regra-da-reciclagem" class="section level2">
+<h2>A Regra da Reciclagem</h2>
 <div class="figure">
 <img src="img/reciclagem.png" alt="Regra da reciclagem" />
 <p class="caption">Regra da reciclagem</p>
@@ -683,16 +680,16 @@ y</code></pre>
 <p>Agora tente:</p>
 <pre class="r"><code>num + c(2, 4, 1, 3)</code></pre>
 </div>
-</div>
-</div>
-<div id="exercicios-2" class="section level1">
-<h1>Exercícios</h1>
+<div id="exercicios-2" class="section level2">
+<h2>Exercícios</h2>
 <ol style="list-style-type: decimal">
 <li>Crie um objeto com os valores 54, 0, 17, 94, 12.5, 2, 0.9, 15.</li>
 <li>Some o objeto acima com os valores 5, 6.</li>
 </ol>
-<div id="atributos-de-objetos" class="section level4">
-<h4>Atributos de objetos</h4>
+</div>
+</div>
+<div id="atributos-de-objetos" class="section level1">
+<h1>Atributos de objetos</h1>
 <p>Os objetos possuem <strong>atributos</strong>, que servem para descrever o formato do objeto:</p>
 <ul>
 <li><code>names</code>, <code>dimnames</code></li>
@@ -767,8 +764,8 @@ logico</code></pre>
 </tbody>
 </table>
 </div>
-<div id="fator" class="section level3">
-<h3>Fator</h3>
+<div id="fator" class="section level1">
+<h1>Fator</h1>
 <p>Características:</p>
 <ul>
 <li>Coleção de categorias ou <strong>níveis</strong> (<em>levels</em>)</li>
@@ -790,7 +787,6 @@ fator</code></pre>
 <pre><code>[1] alta  baixa baixa media alta  media baixa media media
 Levels: alta media baixa</code></pre>
 </div>
-</div>
 <div id="exercicios-3" class="section level1">
 <h1>Exercícios</h1>
 <ol style="list-style-type: decimal">
@@ -799,8 +795,9 @@ Levels: alta media baixa</code></pre>
 <li>Veja a página de ajuda da função <code>sum()</code> e descubra como fazer para contar o número de letras <code>B</code> neste vetor (usando <code>sum()</code>).</li>
 <li>Crie um objeto com 100 valores aleatórios de uma distribuição uniforme <span class="math inline">\(U(0,1)\)</span>. Conte quantas vezes aparecem valores maiores ou iguais a 0,5.</li>
 </ol>
-<div id="misturando-classes-de-objetos" class="section level3">
-<h3>Misturando classes de objetos</h3>
+</div>
+<div id="misturando-classes-de-objetos" class="section level1">
+<h1>Misturando classes de objetos</h1>
 <p>Algumas vezes isso acontece por acidente, mas também pode acontecer de propósito.</p>
 <p>O que acontece aqui?</p>
 <pre class="r"><code>w &lt;- c(5L, &quot;a&quot;)
@@ -844,8 +841,8 @@ as.numeric(x)</code></pre>
 <pre class="r"><code>as.logical(x)</code></pre>
 <pre><code>[1] NA NA NA</code></pre>
 </div>
-<div id="valores-perdidos-e-especiais" class="section level2">
-<h2>Valores perdidos e especiais</h2>
+<div id="valores-perdidos-e-especiais" class="section level1">
+<h1>Valores perdidos e especiais</h1>
 <p>Valores perdidos devem ser definidos como <code>NA</code> (<em>not available</em>):</p>
 <pre class="r"><code>perd &lt;- c(3, 5, NA, 2)
 perd</code></pre>
@@ -872,8 +869,9 @@ perd</code></pre>
 <p>A função <code>is.infinite()</code> testa se há valores infinitos</p>
 <pre class="r"><code>is.infinite(perd)</code></pre>
 <pre><code>[1]  TRUE FALSE  TRUE</code></pre>
-<div id="matriz" class="section level3">
-<h3>Matriz</h3>
+</div>
+<div id="matriz" class="section level1">
+<h1>Matriz</h1>
 <p>Características:</p>
 <ul>
 <li>Podem conter apenas um tipo de informação (números, caracteres)</li>
@@ -926,8 +924,8 @@ m</code></pre>
 [2,]    2    4    6    8   10</code></pre>
 <pre class="r"><code>class(m)</code></pre>
 <pre><code>[1] &quot;matrix&quot;</code></pre>
-<div id="operacoes-matematicas-em-matrizes" class="section level4">
-<h4>Operações matemáticas em matrizes</h4>
+<div id="operacoes-matematicas-em-matrizes" class="section level2">
+<h2>Operações matemáticas em matrizes</h2>
 <p>Matriz multiplicada por um escalar</p>
 <pre class="r"><code>matriz * 2</code></pre>
 <pre><code>     [,1] [,2] [,3] [,4]
@@ -943,8 +941,8 @@ matriz %*% matriz2</code></pre>
 [3,]   42   42   42</code></pre>
 </div>
 </div>
-<div id="lista" class="section level3">
-<h3>Lista</h3>
+<div id="lista" class="section level1">
+<h1>Lista</h1>
 <p>Características:</p>
 <ul>
 <li>Pode combinar uma coleção de objetos de diferentes classes (é um tipo especial de vetor)</li>
@@ -985,8 +983,8 @@ $matriz
 <pre class="r"><code>length(lista)</code></pre>
 <pre><code>[1] 2</code></pre>
 </div>
-<div id="data-frame" class="section level3">
-<h3>Data frame</h3>
+<div id="data-frame" class="section level1">
+<h1>Data frame</h1>
 <p>Características:</p>
 <ul>
 <li>Uma lista de vetores e/ou fatores, de <strong>mesmo comprimento</strong></li>
@@ -1060,14 +1058,13 @@ str(da)</code></pre>
  [7,]       NA     3
  [8,]       NA     2
  [9,]       NA     2</code></pre>
-<p>Geralmente é o resultado de <code>data.matrix()</code> o qeu você está procurando.</p>
+<p>Geralmente é o resultado de <code>data.matrix()</code> o que você está procurando.</p>
 <blockquote>
 <p>Note que os níveis de um fator são armazenados internamente como números: <span class="math inline">\(1^\circ\)</span> nível = 1, <span class="math inline">\(2^\circ\)</span> nível = 2, <span class="math inline">\(\ldots\)</span></p>
 </blockquote>
 </div>
-</div>
-<div id="nomes" class="section level2">
-<h2>Nomes</h2>
+<div id="nomes-atributo" class="section level1">
+<h1>Nomes (atributo)</h1>
 <p>Objetos do R podem ter nomes, que facilitam a auto-descrição</p>
 <pre class="r"><code>x &lt;- 1:3
 names(x)</code></pre>
@@ -1126,7 +1123,6 @@ C  9 10 11 12</code></pre>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 <div id="exercicios-4" class="section level1">
 <h1>Exercícios</h1>

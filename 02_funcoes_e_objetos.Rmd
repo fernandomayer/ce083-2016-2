@@ -3,17 +3,12 @@ title: "Funções, objetos e classes"
 output:
   html_document:
     code_folding: show
-    toc_depth: 3
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
 source("setup_knitr.R")
 ```
-
-
-# Sumário
-
-Funções e objetos. Classes de objetos.
 
 # Funções e argumentos
 
@@ -54,7 +49,7 @@ não nomeados estejam na posição correta:
 runif(10, max = 100, min = 1)
 ```
 
-### Outros tipos de argumentos
+## Outros tipos de argumentos
 
 Exemplo: função `sample()`:
 
@@ -273,7 +268,7 @@ armazenado em `y` foi sobrescrito pelos valores acima.)
 
 > `dados` $\neq$ `Dados` $\neq$ `DADOS`
 
-# Gerenciando a área de trabalho (*workspace*)
+# Gerenciando a área de trabalho
 
 Liste os objetos criados com a função `ls()`:
 
@@ -330,7 +325,7 @@ O R possui 5 classes básicas de objetos, também chamados de objetos
 
 (A única excessão é a lista).
 
-### Vetor
+## Vetor
 
 Características:
 
@@ -371,7 +366,7 @@ A diferença pode parecer pequena, mas pode ter um grande impacto
 computacional quando os vetores são formados por milhares ou milhões de
 números.
 
-#### Notas sobre representação numérica dentro do R
+## Representação numérica dentro do R
 
 Os números que aparecem na tela do console do R são apenas
 representações simplificadas do número real armazenado na memória. Por
@@ -424,9 +419,7 @@ format(x, scientific = TRUE)
 Nessa representação, o valor `r xf[1]` = $2.875775 \times 10^{-01}$ =
 `r x[1]`.
 
-
-
-#### Sequências de números
+## Sequências de números
 
 Usando a função `seq()`
 
@@ -464,7 +457,7 @@ Para repetir um número da sequência várias vezes
 rep(c(1, 2, 3), each = 5)
 ```
 
-#### Operações matemáticas em vetores
+## Operações matemáticas em vetores
 
 Operações podem ser feitas entre um vetor e um número:
 
@@ -480,7 +473,7 @@ num * num
 num + c(2, 4, 1)
 ```
 
-#### A Regra da Reciclagem
+## A Regra da Reciclagem
 
 ![Regra da reciclagem](img/reciclagem.png)
 
@@ -490,12 +483,12 @@ Agora tente:
 num + c(2, 4, 1, 3)
 ```
 
-# Exercícios
+## Exercícios
 
 1.  Crie um objeto com os valores 54, 0, 17, 94, 12.5, 2, 0.9, 15.
 1.  Some o objeto acima com os valores 5, 6.
 
-#### Atributos de objetos
+# Atributos de objetos
 
 Os objetos possuem **atributos**, que servem para descrever o formato
 do objeto:
@@ -550,7 +543,7 @@ lógicos utilizados no R são:
 |   `|`   | ou          |
 
 
-### Fator
+# Fator
 
 Características:
 
@@ -586,7 +579,7 @@ fator
 4. Crie um objeto com 100 valores aleatórios de uma distribuição uniforme
    $U(0,1)$. Conte quantas vezes aparecem valores maiores ou iguais a 0,5.
 
-### Misturando classes de objetos
+# Misturando classes de objetos
 
 Algumas vezes isso acontece por acidente, mas também pode acontecer de
 propósito.
@@ -642,7 +635,7 @@ as.numeric(x)
 as.logical(x)
 ```
 
-## Valores perdidos e especiais
+# Valores perdidos e especiais
 
 Valores perdidos devem ser definidos como `NA` (*not available*):
 
@@ -683,7 +676,7 @@ A função `is.infinite()` testa se há valores infinitos
 is.infinite(perd)
 ```
 
-### Matriz
+# Matriz
 
 Características:
 
@@ -736,7 +729,7 @@ m
 class(m)
 ```
 
-#### Operações matemáticas em matrizes
+## Operações matemáticas em matrizes
 
 Matriz multiplicada por um escalar
 
@@ -751,7 +744,7 @@ matriz2 <- matrix(1, nrow = 4, ncol = 3)
 matriz %*% matriz2
 ```
 
-### Lista
+# Lista
 
 Características:
 
@@ -777,7 +770,7 @@ lista
 length(lista)
 ```
 
-### Data frame
+# Data frame
 
 Características:
 
@@ -819,12 +812,12 @@ as.matrix(da)
 data.matrix(da)
 ```
 
-Geralmente é o resultado de `data.matrix()` o qeu você está procurando.
+Geralmente é o resultado de `data.matrix()` o que você está procurando.
 
 > Note que os níveis de um fator são armazenados internamente como
 > números: $1^\circ$ nível = 1, $2^\circ$ nível = 2, $\ldots$
 
-## Nomes
+# Nomes (atributo)
 
 Objetos do R podem ter nomes, que facilitam a auto-descrição
 

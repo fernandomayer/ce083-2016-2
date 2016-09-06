@@ -65,3 +65,166 @@ dados$time <- as.character(dados$time)
 dados <- rbind(dados, list("Ze", 30, FALSE, "rosa", "D"))
 str(dados)
 dados
+
+##======================================================================
+## Classes
+
+##----------------------------------------------------------------------
+## Vetores
+num <- c(10, 5, 2, 4, 8, 9)
+num
+typeof(num)
+class(num)
+
+## Para criar inteiros
+x <- c(10L, 5L, 2L, 4L, 8L, 9L)
+## ou use as.character
+x
+class(x)
+
+## Compare os tamanhos de armazenamento
+object.size(num)
+object.size(x)
+
+## Representacao numerica
+set.seed(123)
+x <- runif(10)
+x
+## numero de digitos significativos
+getOption("digits")
+
+## Para alterar em tela
+print(x, digits = 1)
+print(x, digits = 7) # padrão
+print(x, digits = 22)
+## Alterando para o formato cientifico
+format(x, scientific = TRUE)
+
+##----------------------------------------------------------------------
+## Sequencias de numeros
+
+## seq
+1:10
+seq(1, 10)
+seq(from = 1, to = 10, by = 2)
+seq(from = 1, to = 10, length.out = 15)
+
+## rep
+rep(1, 10)
+rep(c(1, 2, 3), 5)
+rep(c(1, 2, 3), times = 5)
+rep(c(1, 2, 3), times = c(5, 2, 2))
+rep(c(1, 2, 3), each = 5)
+rep(c(1, 2, 3), times = c(5, 5, 5))
+
+##----------------------------------------------------------------------
+## Regra da reciclagem
+num
+num * 2
+num * num
+num + c(2, 4, 1)
+num + c(2, 4, 1, 3)
+
+##----------------------------------------------------------------------
+## Atributos de vetores
+names(num)
+length(num)
+class(num)
+names(num) <- LETTERS[1:6]
+num
+names(num)
+
+##----------------------------------------------------------------------
+## Outras classes de vetores
+
+## caracter
+caracter <- c("brava", "joaquina", "armação")
+caracter
+typeof(caracter)
+class(caracter)
+
+## logical
+logico <- caracter == "armação"
+logico
+logico <- num > 4
+logico
+typeof(logico)
+class(logico)
+
+## Expressoes condicionais e operadores logicos (ver pagina)
+
+##----------------------------------------------------------------------
+## Fator
+fator <- factor(c("alta","baixa","baixa","media",
+                  "alta","media","baixa","media","media"))
+fator
+class(fator)
+levels(fator)
+typeof(fator) ## PORQUE?
+as.numeric(fator)
+
+## Fatores ordenados
+fator <- factor(c("alta","baixa","baixa","media",
+                  "alta","media","baixa","media","media"),
+                levels = c("alta","media","baixa"))
+fator
+levels(fator)
+
+## Exercicio
+ex <- rep(c("A", "B", "C"), times = c(15, 12, 8))
+ex
+ex == "B"
+sum(ex == "B")
+ex2 <- runif(100)
+ex2
+sum(ex >= 0.5)
+
+##----------------------------------------------------------------------
+## Misturando classes de objetos
+
+## Coerçaõ implícita
+w <- c(5L, "a")
+x <- c(1.7, "a")
+y <- c(TRUE, 2)
+z <- c("a", T)
+
+## > Um vetor só pode conter elementos de uma mesma classe
+
+## Coerção explícita
+x <- 0:6
+class(x)
+as.numeric(x)
+as.logical(x)
+as.character(x)
+as.factor(x)
+
+## Lógicos são mapeados como 0 e 1
+x <- c(FALSE, TRUE)
+x
+class(x)
+as.numeric(x)
+
+## Quando não é possível fazer a coerção
+x <- c("a", "b", "c")
+as.numeric(x)
+as.logical(x)
+
+##----------------------------------------------------------------------
+## Valores perdidos e especiais
+
+## Valores perdidos devem ser definidos como `NA` (*not available*):
+perd <- c(3, 5, NA, 2)
+perd
+class(perd)
+
+## Para testar a presença de NAs
+is.na(perd)
+any(is.na(perd))
+
+## Outros valores especiais são:
+## - `NaN` (*not a number*) - exemplo: `0/0`
+## - `-Inf` e `Inf` - exemplo: `1/0`
+perd <- c(-1,0,1)/0
+perd
+is.na(perd)
+is.infinite(perd)

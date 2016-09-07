@@ -32,6 +32,15 @@ classe aplicadas.
 - **23/08**: [Exercícios](ex01_intro.html) de estatística descritiva.
 - **25/08**: [Exercícios](ex01_intro.html) de estatística descritiva e
   inferencial.
+- **30/08**: [Exercícios](ex01_intro.html) de estatística inferencial e
+  conexão aos servidores do C3SL via `ssh`.
+- **01/09**: Dùvidas sobre exercícios enteriores. Estrutura de dados:
+  tipos primitivos. [Material](02_funcoes_e_objetos.html)
+  e [script de aula](scripts/script_tipos.R).
+- **06/09**: Estrutura de dados: vetores, sequências, classes e
+  atributos. Representação numérica no
+  R. [Material](02_funcoes_e_objetos.html)
+  e [script de aula](scripts/script_tipos.R).
 
 ## Exercícios
 

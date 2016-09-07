@@ -39,6 +39,8 @@ navbar:
       - text: "Introdução"
       - text: "Computação científica e interação com R [HTML]"
         href: 00_ce083-intro.html
+      - text: "Estrutura de dados [HTML]"
+        href: 02_funcoes_e_objetos.html
       - text: "----------"
       - text: "Exercícios"
       - text: "Estatística básica"

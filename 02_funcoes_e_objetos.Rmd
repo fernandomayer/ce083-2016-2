@@ -509,6 +509,8 @@ Comprimento:
 length(num)
 ```
 
+# Outras classes de vetores
+
 Vetores também podem ter outras classes:
 
 - Vetor de caracteres:

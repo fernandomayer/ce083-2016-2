@@ -153,6 +153,11 @@ class(logico)
 
 ## Expressoes condicionais e operadores logicos (ver pagina)
 
+## Operadores & (~interseção) e | (união)
+num > 4 & num < 8
+num > 4 | num < 8
+num > 10 | num < 8
+
 ##----------------------------------------------------------------------
 ## Fator
 fator <- factor(c("alta","baixa","baixa","media",
@@ -170,7 +175,7 @@ fator <- factor(c("alta","baixa","baixa","media",
 fator
 levels(fator)
 
-## Exercicio
+## Exercicios (ver página)
 ex <- rep(c("A", "B", "C"), times = c(15, 12, 8))
 ex
 ex == "B"
@@ -182,7 +187,7 @@ sum(ex >= 0.5)
 ##----------------------------------------------------------------------
 ## Misturando classes de objetos
 
-## Coerçaõ implícita
+## Coerção implícita
 w <- c(5L, "a")
 x <- c(1.7, "a")
 y <- c(TRUE, 2)
@@ -228,3 +233,108 @@ perd <- c(-1,0,1)/0
 perd
 is.na(perd)
 is.infinite(perd)
+is.na(perd) | is.infinite(perd)
+any(is.na(perd) | is.infinite(perd))
+
+##----------------------------------------------------------------------
+## Matriz
+matriz <- matrix(1:12, nrow = 3, ncol = 4)
+matriz
+class(matriz)
+typeof(matriz) ## PORQUE?
+str(matriz)
+
+## Mudando a ordem de preenchimento
+matriz <- matrix(1:12, nrow = 3, ncol = 4, byrow = TRUE)
+matriz
+
+## Dimensão
+dim(matriz)
+
+## Adicionando colunas com `cbind()`
+cbind(matriz, rep(99, 3))
+
+## Adicionando linhas com `rbind()`
+rbind(matriz, rep(99, 4))
+
+## Matrizes também podem ser criadas a partir de vetores adicionando um
+## atributo de dimensão
+m <- 1:10
+m
+class(m)
+dim(m)
+dim(m) <- c(2, 5)
+m
+class(m)
+
+## Operações matemáticas em matrizes
+matriz * 2
+matriz2 <- matrix(1, nrow = 4, ncol = 3)
+matriz %*% matriz2
+
+##----------------------------------------------------------------------
+## Lista
+lista <- list(a = 1:10, b = c("T1", "T2", "T3", "T4"), TRUE, 2 + 2)
+lista
+class(lista)
+typeof(lista)
+dim(lista)
+length(lista)
+str(lista)
+
+## Formando uma lista com objetos criados anteriormente:
+lista <- list(fator = fator, matriz = matriz)
+lista
+length(lista)
+
+##----------------------------------------------------------------------
+## Data frame
+da <- data.frame(ano = 2000:2004,
+                 prod = c(32, 54, 25, 48, 29))
+da
+class(da)
+typeof(da) ## PORQUE??
+str(da)
+dim(da)
+
+## Data frames podem ser formados com objetos criados anteriormente,
+## desde que tenham o mesmo comprimento!
+length(num)
+length(fator)
+da <- data.frame(numerico = c(num, NA, NA, NA),
+                 fator = fator)
+da
+class(da)
+dim(da)
+## Estrutura dos dados
+str(da)
+
+## Para converter um data frame para uma matriz
+as.matrix(da)
+data.matrix(da)
+
+##----------------------------------------------------------------------
+## Nomes (atributo)
+
+## Objetos do R podem ter nomes, que facilitam a auto-descrição
+x <- 1:3
+names(x)
+names(x) <- c("Curitiba", "Paraná", "Brasil")
+x
+names(x)
+
+## Listas também podem ter nomes
+x <- list(Curitiba = 1, Paraná = 2, Brasil = 3)
+x
+names(x)
+
+## Associando nomes às *linhas* e *colunas* de uma matriz:
+rownames(matriz) <- c("A","B","C")
+colnames(matriz) <- c("T1","T2","T3","T4")
+matriz
+
+## Em data frames
+names(da) # colunas
+row.names(da) # linhas != rownames
+
+## Veja tabela na página

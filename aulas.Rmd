@@ -41,6 +41,7 @@ classe aplicadas.
   atributos. Representação numérica no
   R. [Material](02_funcoes_e_objetos.html)
   e [script de aula](scripts/script_tipos.R).
+- **08/09**: Feriado
 
 ## Exercícios
 

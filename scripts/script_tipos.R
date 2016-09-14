@@ -133,3 +133,83 @@ class(num)
 names(num) <- LETTERS[1:6]
 num
 names(num)
+
+##----------------------------------------------------------------------
+## Outras classes de vetores
+
+## caracter
+caracter <- c("brava", "joaquina", "armação")
+caracter
+typeof(caracter)
+class(caracter)
+
+## logical
+logico <- caracter == "armação"
+logico
+logico <- num > 4
+logico
+typeof(logico)
+class(logico)
+
+## Expressoes condicionais e operadores logicos (ver pagina)
+
+## Operadores & (~interseção) e | (união)
+num > 4 & num < 8
+num > 4 | num < 8
+num > 10 | num < 8
+
+##----------------------------------------------------------------------
+## Fator
+fator <- factor(c("alta","baixa","baixa","media",
+                  "alta","media","baixa","media","media"))
+fator
+class(fator)
+levels(fator)
+typeof(fator) ## PORQUE?
+as.numeric(fator)
+
+## Fatores ordenados
+fator <- factor(c("alta","baixa","baixa","media",
+                  "alta","media","baixa","media","media"),
+                levels = c("alta","media","baixa"))
+fator
+levels(fator)
+
+## Exercicios (ver página)
+ex <- rep(c("A", "B", "C"), times = c(15, 12, 8))
+ex
+ex == "B"
+sum(ex == "B")
+ex2 <- runif(100)
+ex2
+sum(ex >= 0.5)
+
+##----------------------------------------------------------------------
+## Misturando classes de objetos
+
+## Coerção implícita
+w <- c(5L, "a")
+x <- c(1.7, "a")
+y <- c(TRUE, 2)
+z <- c("a", T)
+
+## > Um vetor só pode conter elementos de uma mesma classe
+
+## Coerção explícita
+x <- 0:6
+class(x)
+as.numeric(x)
+as.logical(x)
+as.character(x)
+as.factor(x)
+
+## Lógicos são mapeados como 0 e 1
+x <- c(FALSE, TRUE)
+x
+class(x)
+as.numeric(x)
+
+## Quando não é possível fazer a coerção
+x <- c("a", "b", "c")
+as.numeric(x)
+as.logical(x)

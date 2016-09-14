@@ -42,6 +42,10 @@ classe aplicadas.
   R. [Material](02_funcoes_e_objetos.html)
   e [script de aula](scripts/script_tipos.R).
 - **08/09**: Feriado
+- **13/09**: Estrutura de dados: outras classes de vetores. Expressões
+  condicionais e operadores lógicos. Fator. Coerção implícita e
+  explícita. [Material](02_funcoes_e_objetos.html)
+  e [script de aula](scripts/script_tipos.R).
 
 ## Exercícios
 

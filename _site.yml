@@ -45,6 +45,8 @@ navbar:
       - text: "Exercícios"
       - text: "Estatística básica"
         href: ex01_intro.html
+      - text: "Comandos básicos e classes de objetos"
+        href: exercicios/ex02_basico.pdf
   right:
     - text: GitHub
       icon: fa-github fa-lg

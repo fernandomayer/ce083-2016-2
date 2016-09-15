@@ -329,7 +329,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>[1] 4</code></pre>
 <p>O símbolo <code>&gt;</code> muda para <code>+</code> se o comando estiver incompleto:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">2</span> *
-+<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<span class="st">  </span><span class="dv">2</span></code></pre></div>
 <pre><code>[1] 4</code></pre>
 <p>Espaços entre os números não fazem diferença:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="dv">2</span>+<span class="st">         </span><span class="dv">2</span></code></pre></div>
@@ -452,7 +452,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><img src="img/script-assign.png" width="400px" /></p>
 <p>Para saber quais objetos estão criados, usamos a <strong>função</strong> <code>ls()</code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">ls</span>()</code></pre></div>
-<pre><code>[1] &quot;x&quot; &quot;y&quot;</code></pre>
+<pre><code> [1] &quot;caracter&quot;  &quot;da&quot;        &quot;dados&quot;     &quot;dados2&quot;    &quot;fator&quot;    
+ [6] &quot;lista&quot;     &quot;logico&quot;    &quot;m&quot;         &quot;matriz&quot;    &quot;matriz2&quot;  
+[11] &quot;num&quot;       &quot;ola.mundo&quot; &quot;perd&quot;      &quot;thm&quot;       &quot;w&quot;        
+[16] &quot;x&quot;         &quot;xf&quot;        &quot;y&quot;         &quot;z&quot;        </code></pre>
 </section>
 <section id="salvando-resultados-2" class="slide level1">
 <h1>“Salvando” resultados</h1>

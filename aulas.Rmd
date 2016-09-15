@@ -51,6 +51,7 @@ classe aplicadas.
 
 - [Exercícios de estatística básica](ex01_intro.html) (estatística
   descritiva, inferencial e probabilidade)
+- [Exercícios de comandos básicos e classes de objetos](exercicios/ex02_basico.pdf).
 
 ## Notas
 

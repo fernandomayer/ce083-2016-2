@@ -151,7 +151,7 @@ require(xtable, quietly = TRUE)
 \begin{minipage}[c]{.85\textwidth}
   Estatística Computacional I --- CE083 \\
   Prof. Fernando de Pol Mayer --- Departamento de Estatística --- DEST \\
-  Exrecícios: comandos básicos e classes de objetos \\
+  Exercícios: comandos básicos e classes de objetos \\
   Nome:  \hfill GRR: \hspace{2cm}
 \end{minipage}\hfill
 \begin{minipage}[c]{.15\textwidth}

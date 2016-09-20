@@ -11,6 +11,10 @@ output:
 - Dalgaard, P.
   [Introductory statistics with R](http://www.springer.com/us/book/9780387790534).
   New York: Springer, 2008.
+- Krause, A; Olson,
+  M.
+  [The basics of S-Plus](http://www.springer.com/gp/book/9780387261096).
+  New York: Springer, 2005.
 - Murrell, P.
   [Introduction to data technologies](https://www.crcpress.com/Introduction-to-Data-Technologies/Murrell/9781420065176).
   Boca Raton: Chapman & Hall/CRC, 2009. Disponível em

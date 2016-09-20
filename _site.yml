@@ -41,6 +41,8 @@ navbar:
         href: 00_ce083-intro.html
       - text: "Estrutura de dados [HTML]"
         href: 02_funcoes_e_objetos.html
+      - text: "Indexação e seleção condicional [HTML]"
+        href: 03_indexacao_e_selecao.html
       - text: "----------"
       - text: "Exercícios"
       - text: "Estatística básica"

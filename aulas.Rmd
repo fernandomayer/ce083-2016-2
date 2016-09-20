@@ -46,6 +46,10 @@ classe aplicadas.
   condicionais e operadores lógicos. Fator. Coerção implícita e
   explícita. [Material](02_funcoes_e_objetos.html)
   e [script de aula](scripts/script_tipos.R).
+- **15/09**: Estrutura de dados: valores perdidos e especiais. Matriz,
+  lista e data frame. Nomes como atributos de
+  objetos. [Material](02_funcoes_e_objetos.html)
+  e [script de aula](scripts/script_tipos.R).
 
 ## Exercícios
 

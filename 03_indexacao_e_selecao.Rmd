@@ -192,7 +192,7 @@ pode ser feita com os nomes.
 ##----------------------------------------------------------------------
 ## Nomes das colunas
 colnames(mat) <- LETTERS[1:3]
-## Toas as linhas da colua B
+## Toas as linhas da coluna B
 mat[, "B"]
 ## Elemento da linha 1 e coluna C
 mat[1, "C"]

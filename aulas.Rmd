@@ -50,6 +50,9 @@ classe aplicadas.
   lista e data frame. Nomes como atributos de
   objetos. [Material](02_funcoes_e_objetos.html)
   e [script de aula](scripts/script_tipos.R).
+- **20/09**: Exercícios da aula passada. Indexação de
+  vetores. [Material](03_indexacao_e_selecao.html)
+  e [script de aula](scripts/script_index.R)
 
 ## Exercícios
 

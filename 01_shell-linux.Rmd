@@ -109,7 +109,7 @@ algum outro seja especificado explicitamente.
 ```{sh, eval=FALSE}
 pwd
 ```
-```{sh, echo=FALSE}
+```{sh, echo=FALSE, eval=FALSE}
 cd /home/fpmayer && pwd
 ```
 A resposta para esse comando é `/home/fpmayer` que é denominado de
@@ -134,7 +134,7 @@ Agora, para visualizar o conteúdo de um diretório, usamos o comando `ls`
 ```{sh, eval=FALSE}
 ls
 ```
-```{sh, echo=FALSE}
+```{sh, echo=FALSE, eval=FALSE}
 ls /home/fpmayer
 ```
 (Note que o seu resultado pode ser diferente dependendo do seu sistema
@@ -148,7 +148,7 @@ de diretórios:
 ```{sh, eval=FALSE}
 ls -F
 ```
-```{sh, echo=FALSE}
+```{sh, echo=FALSE, eval=FALSE}
 ls -F /home/fpmayer
 ```
 
@@ -177,7 +177,7 @@ conteúdo do diretório `Documents`:
 ```{sh, eval=FALSE}
 ls -F Documents
 ```
-```{sh, echo=FALSE}
+```{sh, echo=FALSE, eval=FALSE}
 ls -F /home/fpmayer/Documents
 ```
 Note que agora aparecem diretórios e também arquivos (os nomes sem a

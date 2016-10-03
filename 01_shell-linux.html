@@ -414,7 +414,7 @@ Daqui em diante só serão mostrados os comandos do shell, omitindo o prompt e q
 </div>
 <p>Digite o comando <code>whoami</code> e aperte <kbd>Enter</kbd>. O resultado deste comando deve ser seu nome de usuário:</p>
 <pre class="sh"><code>whoami</code></pre>
-<pre><code>fpmayer</code></pre>
+<pre><code>fernando</code></pre>
 <p>Mais especificamente, quando digitamos <code>whoami</code> o shell:</p>
 <ol style="list-style-type: decimal">
 <li>Encontra um programa chamado <code>whoami</code></li>
@@ -424,7 +424,6 @@ Daqui em diante só serão mostrados os comandos do shell, omitindo o prompt e q
 </ol>
 <p>Agora podemos descobrir aonde estamos (em qual diretório do sistema de arquivos) com o comando <code>pwd</code> (<em>print working directory</em>). Daqui em diante os termos “diretório de trabalho” ou “diretório atual” ou “diretório padrão” se referem sempre à mesma coisa, ou seja, o diretório que o computador assume que queremos executar o comando, a não ser que algum outro seja especificado explicitamente.</p>
 <pre class="sh"><code>pwd</code></pre>
-<pre><code>/home/fpmayer</code></pre>
 <p>A resposta para esse comando é <code>/home/fpmayer</code> que é denominado de diretório <em>home</em> de um usuário. Normalmente quando se inicia um terminal, ele começa nesse diretório. Como usuário comum, este é o único diretório ao qual você terá permissão de acesso, ou seja, permissão para criar, modificar ou deletar arquivos e diretórios.</p>
 <!-- colocar figuras -->
 <div class="panel panel-warning">
@@ -437,51 +436,9 @@ Note que a barra que divide diretórios no Linux é deitada para a direita (<cod
 </div>
 <p>Agora, para visualizar o conteúdo de um diretório, usamos o comando <code>ls</code> (<em>listing</em>):</p>
 <pre class="sh"><code>ls</code></pre>
-<pre><code>ce083
-Desktop
-Documents
-Downloads
-Dropbox
-GitHub
-GitLab
-Google Drive
-Music
-Música
-PericiaFM
-Pictures
-Programas
-Public
-R
-render.R
-R_environment
-Rmarkdown-rautu.git
-Templates
-teste
-Videos</code></pre>
 <p>(Note que o seu resultado pode ser diferente dependendo do seu sistema operacional e de customizações).</p>
 <p>O comando <code>ls</code> mostra os nomes dos arquivos e diretórios no diretório atual em ordem alfabetica. Podemos fazer essa saída ficar um pouco mais informativa usando um <strong>argumento adicional ao comando</strong> (também chamado de <em>flag</em>) <code>-F</code>, que diz para o <code>ls</code> adicionar uma barra (<code>/</code>) aos nomes de diretórios:</p>
 <pre class="sh"><code>ls -F</code></pre>
-<pre><code>ce083/
-Desktop/
-Documents/
-Downloads/
-Dropbox/
-GitHub/
-GitLab/
-Google Drive/
-Music/
-Música/
-PericiaFM/
-Pictures/
-Programas/
-Public/
-R/
-render.R*
-R_environment/
-Rmarkdown-rautu.git/
-Templates/
-teste/
-Videos/</code></pre>
 <p>O comando <code>ls</code> possui muitas opções (<em>flags</em>) para alterar a saída do resultado. Isso é muito comum em diversos comandos shell, e para visualizar as opções podemos digitar</p>
 <pre class="sh"><code>ls --help</code></pre>
 <pre><code>Usage: ls [OPTION]... [FILE]...
@@ -605,12 +562,6 @@ or available locally via: info &#39;(coreutils) ls invocation&#39;</code></pre>
 <p>Você entrará em uma página de documentação mais detalhada e possivelmente com exemplos de uso. Para navegar por essa página, use as setas para baixo e para cime, e para sair e voltar ao terminal digite <code>q</code>.</p>
 <p>No exemplo acima, vimos que todo o conteúdo do diretório atual é composto por <strong>sub-diretórios</strong>, pois todos os nomes contém uma barra no final. Nomes sem a barra seriam arquivos. Nós também podemos usar o <code>ls</code> para mostrar o conteúdo de outros diretórios. Por exemplo, para ver o conteúdo do diretório <code>Documents</code>:</p>
 <pre class="sh"><code>ls -F Documents</code></pre>
-<pre><code>backups/
-dados/
-notas.txt
-pizza
-solar.pdf
-teste.csv</code></pre>
 <p>Note que agora aparecem diretórios e também arquivos (os nomes sem a barra no final).</p>
 <p>Como você já deve estar percebendo, o uso do shell é altamente dependente da ideia de que seus arquivos são organizados em um sistema de arquivos hierárquico. Organizar arquivos e diretórios desta forma ajuda-nos a organizar nosso trabalho. É possível colocar centenas de arquivos em nossa pasta pessoal, assim como é possível empilhar centenas de papéis na sua mesa, mas não é uma estratégia adequada.</p>
 </div>

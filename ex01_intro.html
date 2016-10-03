@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Exercícios: estatística básica</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38898840-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/default.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+  padding-left: 10px;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CE083</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="aulas.html">Aulas</a>
+</li>
+<li>
+  <a href="referencias.html">Referências</a>
+</li>
+<li>
+  <a href="recursos.html">Recursos</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Materiais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Configurações iniciais</li>
+    <li>
+      <a href="R-instalacao.html">Guia de instalação do R</a>
+    </li>
+    <li>
+      <a href="http://fernandomayer.github.io/linux-intro">Introdução ao uso do Linux</a>
+    </li>
+    <li>
+      <a href="c3sl-sistemas.html">Uso dos sistemas do C3SL</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Introdução</li>
+    <li>
+      <a href="00_ce083-intro.html">Computação científica e interação com R [HTML]</a>
+    </li>
+    <li>
+      <a href="02_funcoes_e_objetos.html">Estrutura de dados [HTML]</a>
+    </li>
+    <li>
+      <a href="03_indexacao_e_selecao.html">Indexação e seleção condicional [HTML]</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Exercícios</li>
+    <li>
+      <a href="ex01_intro.html">Estatística básica</a>
+    </li>
+    <li>
+      <a href="exercicios/ex02_basico.pdf">Comandos básicos e classes de objetos</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/fernandomayer">
+    <span class="fa fa-github fa-lg"></span>
+     
+    GitHub
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Exercícios: estatística básica</h1>
+
+</div>
+
+
+<div id="estatistica-descritiva" class="section level1">
+<h1><span class="header-section-number">1</span> Estatística descritiva</h1>
+<ol style="list-style-type: decimal">
+<li>O livro “Estatística Básica” de W. O. Bussab e P. A. Morettin traz no segundo capítulo um conjunto de dados hipotético de atributos de 36 funcionários da companhia “Milsa”. Este conjunto de dados está disponível em formato CSV <a href="http://www.leg.ufpr.br/~fernandomayer/dados/milsa.csv">neste endereço</a>. Com isso:
+<ol style="list-style-type: decimal">
+<li>Faça a importação destes dados para o R.</li>
+<li>Considerando a variável “estado civil” (<code>Est.civil</code>):
+<ol style="list-style-type: lower-alpha">
+<li>Faça tabelas de frequência absoluta e relativa</li>
+<li>Faça um gráfico de barras e um de setores (“pizza”)</li>
+</ol></li>
+<li>Considerando a variável “grau de instrução” (<code>Inst</code>):
+<ol style="list-style-type: lower-alpha">
+<li>Faça tabelas de frequência absoluta e relativa</li>
+<li>Faça um gráfico de barras e um de setores (“pizza”)</li>
+</ol></li>
+<li>Considerando a variável “número de filhos” (<code>Filhos</code>):
+<ol style="list-style-type: lower-alpha">
+<li>Faça tabelas de frequência absoluta, relativa e acumulada</li>
+<li>Faça um gráfico com as frequências relativas e outro com as frequências relativas acumuladas</li>
+</ol></li>
+<li>Considerando a variável “salário” (<code>Salario</code>):
+<ol style="list-style-type: lower-alpha">
+<li>Verifique os valores máximo e mínimo e qual seria o número adequado de classes para a construção de uma tabela de frequência para resumir esta variável</li>
+<li>Faça um histograma</li>
+</ol></li>
+<li>Considerando as variáveis “estado civil” (<code>Est.civil</code>) e “grau de instrução” (<code>Inst</code>):
+<ol style="list-style-type: lower-alpha">
+<li>Faça uma tabela de contingência para resumir o cruzamento destas duas variáveis</li>
+<li>A partir da tabela de contingância, faça um gráfico de barras (veja como ficam as barras sobrepostas e lado a lado)</li>
+</ol></li>
+<li>Considerando as variáveis “grau de instrução” (<code>Inst</code>) e “salário” (<code>Salario</code>):
+<ol style="list-style-type: lower-alpha">
+<li>Faça um <em>boxplot</em> para verificar a relação entre estas duas variáveis</li>
+<li>Calcule a média e o desvio-padrão dos salários para cada grau de instrução</li>
+</ol></li>
+<li>Considerando as variáveis <code>Anos</code> e <code>Meses</code>:
+<ol style="list-style-type: lower-alpha">
+<li>Calcule a idade como <span class="math inline">\(\text{Anos} + \text{Meses}/12\)</span> (criando uma nova “coluna” chamada <code>Idade</code>)</li>
+</ol></li>
+<li>Considerando as variáveis <code>Salario</code> e <code>Idade</code>:
+<ol style="list-style-type: lower-alpha">
+<li>Faça um gráfico para explorar a relação entre estas duas variáveis</li>
+<li>Calcule a correlação entre estas duas variáveis</li>
+</ol></li>
+</ol></li>
+</ol>
+<pre class="r"><code>##----------------------------------------------------------------------
+## 1. Faça a importação destes dados para o R.
+url &lt;- &quot;http://www.leg.ufpr.br/~fernandomayer/dados/milsa.csv&quot;
+milsa &lt;- read.table(url, header = TRUE, sep = &quot;,&quot;, dec = &quot;.&quot;)
+str(milsa)
+##----------------------------------------------------------------------
+## 2. Considerando a variável &quot;estado civil&quot; (`Est.civil`):
+# a. Faça tabelas de frequência absoluta e relativa
+table(milsa$Est.civil)
+prop.table(table(milsa$Est.civil))
+# b. Faça um gráfico de barras e um de setores (&quot;pizza&quot;)
+barplot(table(milsa$Est.civil))
+pie(table(milsa$Est.civil))
+##----------------------------------------------------------------------
+## 3. Considerando a variável &quot;grau de instrução&quot; (`Inst`):
+# a. Faça tabelas de frequência absoluta e relativa
+table(milsa$Inst)
+prop.table(table(milsa$Inst))
+# b. Faça um gráfico de barras e um de setores (&quot;pizza&quot;)
+barplot(table(milsa$Inst))
+pie(table(milsa$Inst))
+##----------------------------------------------------------------------
+## 4. Considerando a variável &quot;número de filhos&quot; (`Filhos`):
+# a. Faça tabelas de frequência absoluta, relativa e acumulada
+table(milsa$Filhos)
+prop.table(table(milsa$Filhos))
+cumsum(table(milsa$Filhos))
+# b. Faça um gráfico com as frequências relativas e outro com as
+# frequências relativas acumuladas
+plot(prop.table(table(milsa$Filhos)))
+plot(cumsum(prop.table(table(milsa$Filhos))), type = &quot;S&quot;,
+     axes = FALSE)
+axis(1, at = 1:5, labels = c(0, 1, 2, 3, 5))
+axis(2)
+box()
+##----------------------------------------------------------------------
+## 5. Considerando a variável &quot;salário&quot; (`Salario`):
+# a. Verifique os valores máximo e mínimo e qual seria o número
+# adequado de classes para a construção de uma tabela de
+# frequência para resumir esta variável
+range(milsa$Salario)
+nclass.Sturges(milsa$Salario)
+classes &lt;- cut(milsa$Salario, breaks = nclass.Sturges(milsa$Salario))
+table(classes)
+# b. Faça um histograma
+hist(milsa$Salario)
+##----------------------------------------------------------------------
+## 6. Considerando as variáveis &quot;estado civil&quot; (`Est.civil`) e &quot;grau de
+## instrução&quot; (`Inst`):
+# a. Faça uma tabela de contingência para resumir o cruzamento
+# destas duas variáveis
+tab &lt;- table(milsa$Est.civil, milsa$Inst)
+# b. A partir da tabela de contingância, faça um gráfico de barras
+# (veja como ficam as barras sobrepostas e lado a lado)
+par(mfrow = c(1,2))
+barplot(tab, legend = TRUE)
+barplot(tab, beside = TRUE, legend = TRUE)
+par(mfrow = c(1,1))
+##----------------------------------------------------------------------
+## 7. Considerando as variáveis &quot;grau de instrução&quot; (`Inst`) e
+## &quot;salário&quot; (`Salario`):
+# a. Faça um *boxplot* para verificar a relação entre estas duas
+# variáveis
+boxplot(Salario ~ Inst, data = milsa)
+# b. Calcule a média e o desvio-padrão dos salários para cada grau
+# de instrução
+with(milsa, tapply(Salario, Inst, mean))
+with(milsa, tapply(Salario, Inst, sd))
+##----------------------------------------------------------------------
+## 8. Considerando as variáveis `Anos` e `Meses`:
+# a. Calcule a idade como $\text{Anos} + \text{Meses}/12$ (criando
+# uma nova &quot;coluna&quot; chamada `Idade`)
+milsa$Idade &lt;- milsa$Anos + milsa$Meses/12
+##----------------------------------------------------------------------
+## 9. Considerando as variáveis `Salario` e `Idade`:
+# a. Faça um gráfico para explorar a relação entre estas duas
+# variáveis
+plot(Salario ~ Idade, data = milsa)
+# b. Calcule a correlação entre estas duas variáveis
+cor(milsa$Idade, milsa$Salario)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Experimente as funções <code>mean()</code>, <code>var()</code>, <code>sd()</code>, <code>median()</code>, <code>quantile()</code> nos dados mostrados anteriormente (“milsa”). Veja a documentação das funções e as opções de uso.</li>
+</ol>
+<pre class="r"><code>##----------------------------------------------------------------------
+## Usando a variável Salario
+mean(milsa$Salario)
+var(milsa$Salario)
+sd(milsa$Salario)
+median(milsa$Salario)
+quantile(milsa$Salario)
+##----------------------------------------------------------------------
+## Usando a variável Filhos
+mean(milsa$Filhos, na.rm = TRUE)
+var(milsa$Filhos, na.rm = TRUE)
+sd(milsa$Filhos, na.rm = TRUE)
+median(milsa$Filhos, na.rm = TRUE)
+quantile(milsa$Filhos, na.rm = TRUE)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Carregue o conjunto de dados <code>USArrests</code> com <code>data(USArrests)</code>. Examine a sua documentação com <code>help(USArrests)</code> e responda as perguntas a seguir:
+<ol style="list-style-type: lower-alpha">
+<li>Qual o número médio e mediano de cada um dos crimes?</li>
+<li>Encontre a mediana e quartis para cada crime.</li>
+<li>Encontre o número máximo e mínimo para cada crime.</li>
+<li>Faça um gráfico adequado para o número de assassinatos (<code>Murder</code>).</li>
+<li>Faça um <em>boxplot</em> para o número de estupros (<code>Rape</code>).</li>
+<li>Verifique se há correlação entre os diferentes tipos de crime.</li>
+<li>Verifique se há correlação entre os crimes e a proporção de população urbana.</li>
+<li>Encontre os estados com maior e menor ocorrência de cada tipo de crime.</li>
+<li>Encontre os estados com maior e menor ocorrência per capta de cada tipo de crime.</li>
+<li>Encontre os estados com maior e menor ocorrência do total de crimes.</li>
+<li>Calcule a média de crimes (entre <code>Murder</code>, <code>Assault</code> e <code>Rape</code>) para cada estado.</li>
+</ol></li>
+</ol>
+<pre class="r"><code>##----------------------------------------------------------------------
+data(USArrests)
+str(USArrests)
+##----------------------------------------------------------------------
+## a. Qual o número médio e mediano de cada um dos crimes?
+crimes &lt;- c(&quot;Murder&quot;, &quot;Assault&quot;, &quot;Rape&quot;)
+apply(USArrests[, crimes], 2,
+      function(x) c(Media = mean(x), Mediana = median(x)))
+##----------------------------------------------------------------------
+## b. Encontre a mediana e quartis para cada crime.
+apply(USArrests[, crimes], 2, quantile)
+##----------------------------------------------------------------------
+## c. Encontre o número máximo e mínimo para cada crime.
+apply(USArrests[, crimes], 2, range)
+apply(USArrests[, crimes], 2,
+      function(x) c(Min = min(x), Max = max(x)))
+##----------------------------------------------------------------------
+## d. Faça um gráfico adequado para o número de assassinatos
+## (`Murder`).
+hist(USArrests$Murder)
+##----------------------------------------------------------------------
+## e. Faça um *boxplot* para o número de estupros (`Rape`).
+boxplot(USArrests$Rape)
+##----------------------------------------------------------------------
+## f. Verifique se há correlação entre os diferentes tipos de crime.
+plot(USArrests[, crimes])
+cor(USArrests[, crimes])
+##----------------------------------------------------------------------
+## g. Verifique se há correlação entre os crimes e a proporção de
+## população urbana.
+plot(USArrests)
+cor(USArrests)
+##----------------------------------------------------------------------
+## h. Encontre os estados com maior e menor ocorrência de cada tipo de
+## crime.
+# Murder
+row.names(USArrests)[which.min(USArrests$Murder)]
+row.names(USArrests)[which.max(USArrests$Murder)]
+# Assault
+row.names(USArrests)[which.min(USArrests$Assault)]
+row.names(USArrests)[which.max(USArrests$Assault)]
+# Rape
+row.names(USArrests)[which.min(USArrests$Rape)]
+row.names(USArrests)[which.max(USArrests$Rape)]
+##----------------------------------------------------------------------
+## i. Encontre os estados com maior e menor ocorrência per capta de cada
+## tipo de crime.
+# Os crimes estao em numeros por 100.000 habitantes. Para calcular o
+# numero de crimes per capta (por habitante), basta dividir cada coluna
+# por 100.000, e multiplicar pela porporcao de populacao urbana
+USArrests &lt;- transform(USArrests, Murder2 = Murder/100000 * UrbanPop,
+                       Assault2 = Assault/100000 * UrbanPop,
+                       Rape2 = Rape/100000 * UrbanPop)
+# Murder per capta
+row.names(USArrests)[which.min(USArrests$Murder2)]
+row.names(USArrests)[which.max(USArrests$Murder2)]
+# Assault per capta
+row.names(USArrests)[which.min(USArrests$Assault2)]
+row.names(USArrests)[which.max(USArrests$Assault2)]
+# Rape per capta
+row.names(USArrests)[which.min(USArrests$Rape2)]
+row.names(USArrests)[which.max(USArrests$Rape2)]
+##----------------------------------------------------------------------
+## j. Encontre os estados com maior e menor ocorrência do total de crimes.
+# Cria uma coluna com o total de crimes
+USArrests &lt;- transform(USArrests, Total = Murder + Assault + Rape)
+row.names(USArrests)[which.min(USArrests$Total)]
+row.names(USArrests)[which.max(USArrests$Total)]
+##----------------------------------------------------------------------
+## k. Calcule a média de crimes (entre `Murder`, `Assault` e `Rape`)
+## para cada estado.
+apply(USArrests[, crimes], 1, mean)</code></pre>
+</div>
+<div id="probabilidade" class="section level1">
+<h1><span class="header-section-number">2</span> Probabilidade</h1>
+<ol style="list-style-type: decimal">
+<li>Para <span class="math inline">\(X \sim N(90, 100)\)</span>, obtenha:
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \leq 115)\)</span></li>
+<li><span class="math inline">\(P(X \geq 80)\)</span></li>
+<li><span class="math inline">\(P(X \leq 75)\)</span></li>
+<li><span class="math inline">\(P(85 \leq X \leq 110)\)</span> <!-- e. $P(|X - 90| \leq 10)$ --> <!-- f. O valor de $a$ tal que $P(90-a \leq X \leq 90+a) = \gamma, \; --> <!-- \gamma=0.95$ --></li>
+</ol></li>
+<li>Sendo <span class="math inline">\(X\)</span> uma variável seguindo o modelo Binomial com parâmetros <span class="math inline">\(n = 15\)</span> e <span class="math inline">\(p = 0.4\)</span>, pergunta-se:
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \geq 14)\)</span></li>
+<li><span class="math inline">\(P(8 &lt; X \leq 10)\)</span> <!-- c. $P(X < 2 \; \mbox{ ou } \;\; X \geq 11)$ --> <!-- d. $P(X \geq 11 \;  \mbox{ ou } \;\; X > 13)$ --> <!-- e. $P(X > 3 \;  \mbox{ e } \;\; X < 6)$ --> <!-- f. $P(X \leq 13 \; | \; X \geq 11)$ --></li>
+</ol></li>
+<li>Uma empresa informa que 30% de suas contas a receber de outras empresas encontram-se vencidas. Se o contador da empresa seleciona aleatoriamente 5 contas, determine a probabilidade de:
+<ol style="list-style-type: lower-alpha">
+<li>Nenhuma conta estar vencida</li>
+<li>Exatamente duas contas estarem vencidas</li>
+<li>Três ou mais contas estarem vencidas</li>
+</ol></li>
+<li>Uma empresa recebe 720 emails em um intervalo de 8 horas. Qual a probabilidade de que:
+<ol style="list-style-type: lower-alpha">
+<li>Em 6 minutos receba pelo menos 3 emails?</li>
+<li>Em 4 minutos não receba nenhum email?</li>
+</ol></li>
+<li>O processo de empacotamento de uma fábrica de cereais foi ajustado de maneira que uma média de <span class="math inline">\(\mu = 13,0\)</span> kg de cereal seja colocado em cada caixa. Sabe-se que existe uma pequena variabilidade no enchimento dos pacotes devido à fatores aleatórios, e que o desvio-padrão do peso de enchimento é de <span class="math inline">\(\sigma = 0,1\)</span> kg. Assume-se que a distribuição dos pesos tem distribuição normal. Com isso, determine as probabilidades de que uma caixa escolhida ao acaso:
+<ol style="list-style-type: lower-alpha">
+<li>Pese entre 13,0 e 13,2 kg.</li>
+<li>Tenha um peso maior do que 13,25 kg.</li>
+<li>Pese entre 12,8 e 13,1 kg.</li>
+<li>Pese entre 13,1 e 13,2 kg.</li>
+</ol></li>
+</ol>
+<pre class="r"><code>## a
+pnorm(13.2, 13, 0.1) - pnorm(13, 13, 0.1)
+## b
+pnorm(13.25, 13, 0.1, lower.tail = FALSE)
+## c
+pnorm(13.1, 13, 0.1) - pnorm(12.8, 13, 0.1)
+## d
+pnorm(13.2, 13, 0.1) - pnorm(13.1, 13, 0.1)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Faça os seguintes gráficos:
+<ol style="list-style-type: lower-alpha">
+<li>da função de densidade de uma variável com distribuição de Poisson com parâmetro <span class="math inline">\(\lambda = 5\)</span></li>
+<li>da densidade de uma variável <span class="math inline">\(X \sim N(90, 100)\)</span></li>
+<li>sobreponha ao gráfico anterior a densidade de uma variável <span class="math inline">\(Y \sim N(90, 80)\)</span> e outra <span class="math inline">\(Z \sim N(85, 100)\)</span></li>
+<li>densidades de distribuições <span class="math inline">\(\chi^2\)</span> com 1, 2 e 5 graus de liberdade.</li>
+</ol></li>
+</ol>
+</div>
+<div id="estatistica-inferencial" class="section level1">
+<h1><span class="header-section-number">3</span> Estatística inferencial</h1>
+<ol style="list-style-type: decimal">
+<li>Um fabricante sabe que a vida útil das lâmpadas que fabrica tem dstribuição aproximadamente normal, com desvio-padrão populacional (conhecido) de 200 horas. Para estimar a vida média das lâmpadas, foram amostradas 400 delas, obtendo uma vida média de 1000 horas. Construa intervalos de confiança para estimar a média da população, com níveis de confiança de
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\gamma = 0,90\)</span></li>
+<li><span class="math inline">\(\gamma = 0,95\)</span></li>
+</ol></li>
+</ol>
+<pre class="r"><code>##----------------------------------------------------------------------
+sigma &lt;- 200
+n &lt;- 400
+xbarra &lt;- 1000
+##----------------------------------------------------------------------
+## a.
+# valor de z
+qnorm(0.05); qnorm(0.95)
+xbarra + (qnorm(0.95) * (sigma/sqrt(n))) * c(-1, 1)
+##----------------------------------------------------------------------
+## b.
+# valor de z
+qnorm(0.025); qnorm(0.975)
+xbarra + (qnorm(0.975) * (sigma/sqrt(n))) * c(-1, 1)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Uma fábrica de automóveis anuncia que seus carros consomem, em média, 11 litros por 100 km, com desvio-padrão de 0,8 litro. Uma revista decide testar essa afirmação e analisa 35 carros dessa marca, obtendo 11,4 litros por 100 km como consumo médio. Admintindo que o consumo tenha distribuição normal, ao nível de 10%, o que a revista concluirá sobre o anúncio da fábrica?</li>
+</ol>
+<pre class="r"><code>##----------------------------------------------------------------------
+mu0 &lt;- 11
+sigma &lt;- 0.8
+n &lt;- 35
+xbarra &lt;- 11.4
+##----------------------------------------------------------------------
+zcalc &lt;- (xbarra - mu0)/(sigma/sqrt(n))
+zcrit &lt;- qnorm(0.95)
+zcalc &gt; zcrit
+pnorm(zcalc, lower.tail = FALSE) * 2</code></pre>
+<ol style="list-style-type: decimal">
+<li>Um investidor interessado em desenvolver um centro comercial, é informado por um representante de um grupo comunitário que a renda média familiar na comunidade é de no mínimo R$ 15.000,00 por ano. Supõe-se que os valores de renda na população sejam normalmente distribuídos. Para uma amostra aleatória de <span class="math inline">\(n=15\)</span> famílias, a média amostral foi de R$ 14.000,00, e o desvio-padrão amostral foi de R$ 2.000,00. Com base nessa amostra, teste a hipótese do salário médio na comunidade ser no mínimo R$ 15.000,00, ao nível de 5% de significância.</li>
+</ol>
+<pre class="r"><code>##----------------------------------------------------------------------
+mu0 &lt;- 15000
+n &lt;- 15
+xbarra &lt;- 14000
+s &lt;- 2000
+##----------------------------------------------------------------------
+tcalc &lt;- (xbarra - mu0)/(s/sqrt(n))
+tcrit &lt;- qt(0.05, df = n - 1)
+abs(tcalc) &gt; abs(tcrit)
+pt(tcalc, df = n - 1)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Em um estudo sobre caranguejos, 156 indivíduos de duas espécies (“azul” e “laranja”) foram medidos. Os dados estão disponíveis <a href="http://www.leg.ufpr.br/~fernandomayer/dados/crabs.csv">neste endereço</a>.
+<ol style="list-style-type: lower-alpha">
+<li>Testar a hipótese de que a média (<span class="math inline">\(\mu\)</span>) de CL (comprimento da carapaça) é igual a 30 mm (com 95% de confiança).</li>
+<li>Testar a hipótese de que a média (<span class="math inline">\(\mu\)</span>) de CL é menor ou igual a 30 mm (com 95% de confiança).</li>
+<li>Testar a hipótese de que a média (<span class="math inline">\(\mu\)</span>) de CL é maior ou igual a 30 mm (com 95% de confiança).</li>
+<li>Faça dois histogramas lado-a-lado da medida CL para cada uma das espécies.</li>
+<li>Testar a hipótese de que a <strong>diferença</strong> entre a média de CL da espécie azul (<span class="math inline">\(\mu_A\)</span>) e a média de CL da espécie laranja (<span class="math inline">\(\mu_L\)</span>) é igual a 0 (zero) (com 95% de confiança).</li>
+<li>Testar a hipótese de que a <strong>diferença</strong> entre a média de CL da espécie azul (<span class="math inline">\(\mu_A\)</span>) e a média de CL da espécie laranja (<span class="math inline">\(\mu_L\)</span>) é <strong>menor</strong> ou iual a 0 (zero) (com 95% de confiança). Em outras palavras: <em>O CL médio é menor para a espécie azul?</em></li>
+</ol></li>
+</ol>
+<pre class="r"><code>##----------------------------------------------------------------------
+url &lt;- &quot;http://www.leg.ufpr.br/~fernandomayer/dados/crabs.csv&quot;
+dados &lt;- read.table(url, header = TRUE, sep = &quot;;&quot;, dec = &quot;,&quot;)
+str(dados)
+##----------------------------------------------------------------------
+## a. Testar a hipótese de que a média de CL (comprimento da carapaça) é
+## igual a 30 mm (com 95% de confiança).
+t.test(x = dados$CL, mu = 30)
+## Fazendo a mao
+mu0 &lt;- 30
+n &lt;- length(dados$CL)
+xbarra &lt;- mean(dados$CL)
+s &lt;- sd(dados$CL)
+tcalc &lt;- (xbarra - mu0)/(s/sqrt(n))
+tcrit &lt;- qt(0.975, df = n - 1)
+abs(tcalc) &gt; abs(tcrit)
+pt(tcalc, df = n - 1, lower.tail = FALSE) * 2
+##----------------------------------------------------------------------
+## b. Testar a hipótese de que a média de CL é menor ou igual a 30 mm
+## (com 95% de confiança).
+t.test(x = dados$CL, alternative = &quot;greater&quot;, mu = 30)
+## Fazendo a mao
+mu0 &lt;- 30
+n &lt;- length(dados$CL)
+xbarra &lt;- mean(dados$CL)
+s &lt;- sd(dados$CL)
+tcalc &lt;- (xbarra - mu0)/(s/sqrt(n))
+tcrit &lt;- qt(0.95, df = n - 1)
+abs(tcalc) &gt; abs(tcrit)
+pt(tcalc, df = n - 1, lower.tail = FALSE)
+##----------------------------------------------------------------------
+## c. Testar a hipótese de que a média de CL é maior ou igual a
+## 30 mm (com 95% de confiança).
+t.test(x = dados$CL, alternative = &quot;less&quot;, mu = 30)
+## Fazendo a mao
+mu0 &lt;- 30
+n &lt;- length(dados$CL)
+xbarra &lt;- mean(dados$CL)
+s &lt;- sd(dados$CL)
+tcalc &lt;- (xbarra - mu0)/(s/sqrt(n))
+tcrit &lt;- qt(0.05, df = n - 1)
+pt(tcalc, df = n - 1, lower.tail = TRUE)
+##----------------------------------------------------------------------
+## d. Faça dois histogramas lado-a-lado da medida CL para cada uma das
+## espécies.
+par(mfrow = c(1,2))
+hist(dados$CL[dados$especie == &quot;azul&quot;])
+hist(dados$CL[dados$especie == &quot;laranja&quot;])
+par(mfrow = c(1,1))
+## Usando o pacote lattice
+library(lattice)
+histogram(~ CL | especie, data = dados)
+##----------------------------------------------------------------------
+## e. Testar a hipótese de que a diferença entre a média de CL da
+## espécie azul e a média de CL da espécie laranja é igual a 0 (zero)
+## (com 95% de confiança).
+t.test(CL ~ especie, data = dados, mu = 0)
+##----------------------------------------------------------------------
+## f. Testar a hipótese de que a diferença entre a média de CL da espécie
+## azul e a média de CL da espécie laranja é menor ou igual a 0 (com
+## 95% de confiança). Em outras palavras: O CL médio é menor para a
+## espécie azul?
+t.test(CL ~ especie, data = dados, mu = 0, alternative = &quot;greater&quot;)</code></pre>
+</div>
+
+<center>
+  <hr width="100%" size="3px">
+  <p> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR">
+      <img src="img/CC_by-nc-sa_80x15.png" alt="Licença Creative Commons 4.0"> </a>
+  </p>
+  <p> <font size="2"> Este conteúdo
+      está disponível por meio da Licença Creative Commons 4.0 </font>
+  </p>
+</center>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

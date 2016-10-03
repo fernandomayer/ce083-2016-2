@@ -16,7 +16,8 @@ source("setup_knitr.R")
 
 - Não haverá aula no dia 04/10 devido ao [EVINCI](http://www.prppg.ufpr.br/evinci_einti)
 
-</div> -->
+</div>
+
 
 # Detalhes da oferta da disciplina
 
@@ -25,8 +26,8 @@ source("setup_knitr.R")
 - **Professor Responsável:** [Fernando de Pol Mayer][], ([LEG][]:
   Laboratório de Estatística e Geoinformação)
 - **Horários e Locais:**
-    - Terça, 19:00 - 20:30h, **a confirmar**
-    - Quinta, 20:40 - 22:00h, **a confirmar**
+    - Terça, 19:00 - 20:30h, **LABEST**
+    - Quinta, 20:40 - 22:00h, **Lab. 1 (Departamento de Informática)**
 - **Horários de atendimento do professor:**
     - Terças e quintas, 14:00-18:00 (preferenciais). Outros horários
       podem ser agendados previamente por email.

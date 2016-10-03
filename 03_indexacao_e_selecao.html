@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Indexação e seleção condicional</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38898840-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/default.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+  padding-left: 10px;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CE083</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="aulas.html">Aulas</a>
+</li>
+<li>
+  <a href="referencias.html">Referências</a>
+</li>
+<li>
+  <a href="recursos.html">Recursos</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Materiais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Configurações iniciais</li>
+    <li>
+      <a href="R-instalacao.html">Guia de instalação do R</a>
+    </li>
+    <li>
+      <a href="http://fernandomayer.github.io/linux-intro">Introdução ao uso do Linux</a>
+    </li>
+    <li>
+      <a href="c3sl-sistemas.html">Uso dos sistemas do C3SL</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Introdução</li>
+    <li>
+      <a href="00_ce083-intro.html">Computação científica e interação com R [HTML]</a>
+    </li>
+    <li>
+      <a href="02_funcoes_e_objetos.html">Estrutura de dados [HTML]</a>
+    </li>
+    <li>
+      <a href="03_indexacao_e_selecao.html">Indexação e seleção condicional [HTML]</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Exercícios</li>
+    <li>
+      <a href="ex01_intro.html">Estatística básica</a>
+    </li>
+    <li>
+      <a href="exercicios/ex02_basico.pdf">Comandos básicos e classes de objetos</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/fernandomayer">
+    <span class="fa fa-github fa-lg"></span>
+     
+    GitHub
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Indexação e seleção condicional</h1>
+
+</div>
+
+
+<div id="indexacao" class="section level1">
+<h1>Indexação</h1>
+<p>Existem três tipos de operadores que podem ser usados para indexar (e selecionar) <strong>sub-conjuntos</strong> (<em>subsets</em>) de objetos no R:</p>
+<ul>
+<li>O operador <code>[ ]</code> sempre retorna um objeto da mesma classe que o original. Pode ser usado para selecionar múltiplos elementos de um objeto</li>
+<li>O operador<code>[[ ]]</code> é usado para extrair elementos de uma <strong>lista</strong> ou <strong>data frame</strong>. Pode ser usado para extrair um único elemento, e a classe do objeto retornado não precisa necessariamente ser uma lista ou data frame.</li>
+<li>O operador <code>$</code> é usado para extrair elementos <strong>nomeados</strong> de uma lista ou data frame. É similar ao operador <code>[[ ]]</code>.</li>
+</ul>
+<div id="indexacao-de-vetores" class="section level2">
+<h2>Indexação de vetores</h2>
+<p>Observe o seguinte vetor de contagens</p>
+<pre class="r"><code>cont &lt;- c(8, 4, NA, 9, 6, 1, 7, 9)
+cont</code></pre>
+<pre><code>[1]  8  4 NA  9  6  1  7  9</code></pre>
+<p>Para acessar o valor que está na posição 4, faça:</p>
+<pre class="r"><code>cont[4]</code></pre>
+<pre><code>[1] 9</code></pre>
+<blockquote>
+<p>Os colchetes <code>[ ]</code> são utilizados para <strong>extração</strong> (seleção de um intervalo de dados) ou <strong>substituição</strong> de elementos. O valor dentro dos colchetes é chamado de <strong>índice</strong>.</p>
+</blockquote>
+<p>Para acessar os valores nas posições 1, 4 e 8 é necessário o uso da função <code>c()</code>:</p>
+<pre class="r"><code>cont[c(1, 4, 8)]</code></pre>
+<pre><code>[1] 8 9 9</code></pre>
+<p>Ou:</p>
+<pre class="r"><code>ind &lt;- c(1, 4, 8)
+cont[ind]</code></pre>
+<pre><code>[1] 8 9 9</code></pre>
+<p>Para selecionar todos os valores, <strong>excluindo</strong> aqueles das posições 1, 4 e 8:</p>
+<pre class="r"><code>cont[-c(1, 4, 8)]</code></pre>
+<pre><code>[1]  4 NA  6  1  7</code></pre>
+<p>Também é possível selecionar uma sequência de elementos (com qualquer uma das funções de gerar sequências que já vimos antes):</p>
+<pre class="r"><code>## Seleciona os elementos de 1 a 5
+cont[1:5]</code></pre>
+<pre><code>[1]  8  4 NA  9  6</code></pre>
+<pre class="r"><code>## Seleciona os elementos nas posições ímpar
+cont[seq(1, 8, by = 2)]</code></pre>
+<pre><code>[1]  8 NA  6  7</code></pre>
+<div id="exercicios" class="section level3">
+<h3>Exercícios</h3>
+<ol style="list-style-type: decimal">
+<li>Crie um vetor com os valores: <code>88, 5, 12, 13</code></li>
+<li>Selecione o elemento na posição 3</li>
+<li>Selecione o valor 88</li>
+<li>Selecione os valores 13 e 5</li>
+<li>Selecione todos os valores, menos o 88 e o 13</li>
+<li>Insira o valor 168 <strong>entre</strong> os valores 12 e 13, criando um novo objeto</li>
+</ol>
+<p>Para selecionar todos os elementos que sejam <code>NA</code>, ou todos menos os <code>NA</code>s, precisamos usar a função <code>is.na()</code></p>
+<pre class="r"><code>## Para selecionar os NAs
+cont[is.na(cont)]</code></pre>
+<pre><code>[1] NA</code></pre>
+<pre class="r"><code>## Para selecionar todos menos os NAs
+cont[!is.na(cont)]</code></pre>
+<pre><code>[1] 8 4 9 6 1 7 9</code></pre>
+<p>Para substituir os <code>NA</code>s por algum valor (<em>e.g.</em> 0):</p>
+<pre class="r"><code>cont[is.na(cont)] &lt;- 0
+cont</code></pre>
+<pre><code>[1] 8 4 0 9 6 1 7 9</code></pre>
+<p>E para especificar <code>NA</code> para algum valor</p>
+<pre class="r"><code>is.na(cont) &lt;- 3
+cont</code></pre>
+<pre><code>[1]  8  4 NA  9  6  1  7  9</code></pre>
+<pre class="r"><code>## Mais seguro do que
+# cont[3] &lt;- NA</code></pre>
+<blockquote>
+<p>Note que se utilizarmos o operador de atribuição <code>&lt;-</code> em conjunto com uma indexação, estaremos <strong>substituindo</strong> os valores selecionados pelos valores do lado direito do operador de atribuição.</p>
+</blockquote>
+</div>
+<div id="vetores-nomeados" class="section level3">
+<h3>Vetores nomeados</h3>
+<p>Quando vetores possuem seus componentes <strong>nomeados</strong>, a indexação pode ser realizada pelos nomes destes componentes.</p>
+<pre class="r"><code>## Atribui as letras &quot;a&quot;, &quot;b&quot;, ..., &quot;h&quot; para os componentes de cont
+names(cont) &lt;- letters[1:length(cont)]
+## Acessando o quarto elemento
+cont[&quot;d&quot;]</code></pre>
+<pre><code>d 
+9 </code></pre>
+<pre class="r"><code>## Acessando o sexto e o primeiro elemento
+cont[c(&quot;f&quot;, &quot;a&quot;)]</code></pre>
+<pre><code>f a 
+1 8 </code></pre>
+<blockquote>
+<p>Dica: veja <code>?letters</code></p>
+</blockquote>
+</div>
+</div>
+<div id="indexacao-de-matrizes" class="section level2">
+<h2>Indexação de matrizes</h2>
+<p>Considere a seguinte matriz</p>
+<pre class="r"><code>mat &lt;- matrix(1:9, nrow = 3)
+mat</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9</code></pre>
+<p>Acesse o valor que está na linha 2 da coluna 3:</p>
+<pre class="r"><code>mat[2,3]</code></pre>
+<pre><code>[1] 8</code></pre>
+<blockquote>
+<p>A indexação de matrizes sempre segue a ordem <code>[linha, coluna]</code></p>
+</blockquote>
+<p>Para acessar todas as linhas da coluna 1:</p>
+<pre class="r"><code>mat[, 1]</code></pre>
+<pre><code>[1] 1 2 3</code></pre>
+<p>Para acessar todas as colunas da linha 1:</p>
+<pre class="r"><code>mat[1, ]</code></pre>
+<pre><code>[1] 1 4 7</code></pre>
+<p>Note que o resultado destas extrações trazem os valores internos das matrizes, mas com a dimensão reduzida (nestes casos para uma dimensão). Se o objetivo for, por exemplo, extrair uma parte da matriz, mas mantendo as duas dimensões, então precisamos usar o argumento <code>drop</code> da “função” <code>[</code> (sim, também é uma função; veja <code>&quot;[&quot;</code>). Veja as diferenças:</p>
+<pre class="r"><code>mat[3, 2]</code></pre>
+<pre><code>[1] 6</code></pre>
+<pre class="r"><code>mat[3, 2, drop = FALSE]</code></pre>
+<pre><code>     [,1]
+[1,]    6</code></pre>
+<pre class="r"><code>mat[1, ]</code></pre>
+<pre><code>[1] 1 4 7</code></pre>
+<pre class="r"><code>mat[1, , drop = FALSE]</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    4    7</code></pre>
+<p>Para acessar as linhas 1 e 3 das colunas 2 e 3:</p>
+<pre class="r"><code>mat[c(1, 3), c(2, 3)]</code></pre>
+<pre><code>     [,1] [,2]
+[1,]    4    7
+[2,]    6    9</code></pre>
+<p>E note que aqui a dimensão já é 2 pois naturalmente o resultado preisa ser representado em duas dimensões.</p>
+<div id="matrizes-nomeadas" class="section level3">
+<h3>Matrizes nomeadas</h3>
+<p>Se as matrizes tiverem linhas e/ou colunas nomeados, a indexação também pode ser feita com os nomes.</p>
+<pre class="r"><code>##----------------------------------------------------------------------
+## Nomes das colunas
+colnames(mat) &lt;- LETTERS[1:3]
+## Toas as linhas da coluna B
+mat[, &quot;B&quot;]</code></pre>
+<pre><code>[1] 4 5 6</code></pre>
+<pre class="r"><code>## Elemento da linha 1 e coluna C
+mat[1, &quot;C&quot;]</code></pre>
+<pre><code>C 
+7 </code></pre>
+<pre class="r"><code>##----------------------------------------------------------------------
+## Nomes das linhas
+rownames(mat) &lt;- LETTERS[24:26]
+## Todas as colunas da linha X
+mat[&quot;X&quot;, ]</code></pre>
+<pre><code>A B C 
+1 4 7 </code></pre>
+<pre class="r"><code>## Elemento da linha Y e coluna A
+mat[&quot;Y&quot;, &quot;A&quot;]</code></pre>
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<div id="indexacao-de-listas" class="section level2">
+<h2>Indexação de listas</h2>
+<p>Considere a seguinte lista:</p>
+<pre class="r"><code>lis &lt;- list(c(3, 8, 7, 4), mat, 5:0)
+lis</code></pre>
+<pre><code>[[1]]
+[1] 3 8 7 4
+
+[[2]]
+  A B C
+X 1 4 7
+Y 2 5 8
+Z 3 6 9
+
+[[3]]
+[1] 5 4 3 2 1 0</code></pre>
+<p>Para acessar o segundo <strong>componente</strong> da lista:</p>
+<pre class="r"><code>lis[[2]]</code></pre>
+<pre><code>  A B C
+X 1 4 7
+Y 2 5 8
+Z 3 6 9</code></pre>
+<p>Para acessar o terceiro valor do primeiro componente:</p>
+<pre class="r"><code>lis[[1]][3]</code></pre>
+<pre><code>[1] 7</code></pre>
+<p>Note que o segundo elemento da lista é uma matriz, portanto a indexação da matriz <em>dentro da lista</em> também segue o mesmo padrão</p>
+<pre class="r"><code>lis[[2]][2, 3]</code></pre>
+<pre><code>[1] 8</code></pre>
+<p>Se a lista tiver componentes <strong>nomeados</strong>, eles podem ser acessados com o operador <code>$</code>:</p>
+<pre class="r"><code>lis &lt;- list(vetor1 = c(3, 8, 7, 4), mat = mat, vetor2 = 5:0)
+## Ou
+## names(lis) &lt;- c(&quot;vetor1&quot;, &quot;mat&quot;, &quot;vetor2&quot;)
+lis</code></pre>
+<pre><code>$vetor1
+[1] 3 8 7 4
+
+$mat
+  A B C
+X 1 4 7
+Y 2 5 8
+Z 3 6 9
+
+$vetor2
+[1] 5 4 3 2 1 0</code></pre>
+<pre class="r"><code>## Acesando o segundo componente
+lis$mat</code></pre>
+<pre><code>  A B C
+X 1 4 7
+Y 2 5 8
+Z 3 6 9</code></pre>
+<pre class="r"><code>## Linha 2 e coluna 3
+lis$mat[2, 3]</code></pre>
+<pre><code>[1] 8</code></pre>
+<pre class="r"><code>## Terceiro elemento do primeiro componente
+lis$vetor1[3]</code></pre>
+<pre><code>[1] 7</code></pre>
+<p>Ou então</p>
+<pre class="r"><code>lis[[&quot;mat&quot;]]</code></pre>
+<pre><code>  A B C
+X 1 4 7
+Y 2 5 8
+Z 3 6 9</code></pre>
+<pre class="r"><code>lis[[&quot;vetor1&quot;]][3]</code></pre>
+<pre><code>[1] 7</code></pre>
+<blockquote>
+<p>O símbolo <code>$</code> é utilizado para acessar componentes <strong>nomeados</strong> de listas ou data frames.</p>
+</blockquote>
+</div>
+<div id="indexacao-de-data-frames" class="section level2">
+<h2>Indexação de data frames</h2>
+<p>Considere o seguinte data frame</p>
+<pre class="r"><code>da &lt;- data.frame(A = 4:1, B = c(2, NA, 5, 8))
+da</code></pre>
+<pre><code>  A  B
+1 4  2
+2 3 NA
+3 2  5
+4 1  8</code></pre>
+<p>Para acessar o segundo elemento da primeira coluna (segue a mesma lógica da indexação de matrizes pois também possui duas dimensões):</p>
+<pre class="r"><code>da[2, 1]</code></pre>
+<pre><code>[1] 3</code></pre>
+<p>Acesse todas as linhas da coluna B:</p>
+<pre class="r"><code>da[, 2]</code></pre>
+<pre><code>[1]  2 NA  5  8</code></pre>
+<p>Ou usando o nome da coluna:</p>
+<pre class="r"><code>da[,&quot;B&quot;]</code></pre>
+<pre><code>[1]  2 NA  5  8</code></pre>
+<p>Todas as colunas da linha 1:</p>
+<pre class="r"><code>da[1, ]</code></pre>
+<pre><code>  A B
+1 4 2</code></pre>
+<p>Ou usando o “nome” da linha:</p>
+<pre class="r"><code>da[&quot;1&quot;, ]</code></pre>
+<pre><code>  A B
+1 4 2</code></pre>
+<p>Como o data frame é um caso particular de uma lista (onde todos os componentes tem o mesmo comprimento), as colunas de um data frame também podem ser acessadas com <code>$</code>:</p>
+<pre class="r"><code>da$A</code></pre>
+<pre><code>[1] 4 3 2 1</code></pre>
+<p>Para acessar o terceiro elemento da coluna B:</p>
+<pre class="r"><code>da$B[3]</code></pre>
+<pre><code>[1] 5</code></pre>
+<p>Para acessar os elementos nas posições 2 e 4 da coluna B:</p>
+<pre class="r"><code>da$B[c(2, 4)]</code></pre>
+<pre><code>[1] NA  8</code></pre>
+<blockquote>
+<p>Tamém é possível indexar data frames com <code>[[ ]]</code> assim como em listas, mas não é muito funcional.</p>
+</blockquote>
+<p>Para lidar com <code>NA</code>s em data frames, podemos também usar a função <code>is.na()</code></p>
+<pre class="r"><code>da[is.na(da), ] # nao retorna o resultado esperado</code></pre>
+<pre><code>    A  B
+NA NA NA</code></pre>
+<pre class="r"><code>## É necessário especificar as colunas
+da[is.na(da$A), ]</code></pre>
+<pre><code>[1] A B
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<pre class="r"><code>da[is.na(da$B), ]</code></pre>
+<pre><code>  A  B
+2 3 NA</code></pre>
+<p>Para remover as linhas que possuem <code>NA</code>, note que será necessário remover todas as colunas daquela linha, pois data frames não podem ter colunas de comprimentos diferentes</p>
+<pre class="r"><code>da[!is.na(da$B), ]</code></pre>
+<pre><code>  A B
+1 4 2
+3 2 5
+4 1 8</code></pre>
+<p>A função <code>complete.cases()</code> facilita esse processo. Veja o resultado</p>
+<pre class="r"><code>complete.cases(da)</code></pre>
+<pre><code>[1]  TRUE FALSE  TRUE  TRUE</code></pre>
+<pre class="r"><code>da[complete.cases(da), ]</code></pre>
+<pre><code>  A B
+1 4 2
+3 2 5
+4 1 8</code></pre>
+<div id="a-funcao-with" class="section level3">
+<h3>A função <code>with()</code></h3>
+<p>Para evitar fazer muitas indexações de um mesmo data frame, por exemplo, podemos utilizar a função <code>with()</code></p>
+<pre class="r"><code>with(da, A)</code></pre>
+<pre><code>[1] 4 3 2 1</code></pre>
+<p>é o mesmo que</p>
+<pre class="r"><code>da$A</code></pre>
+<pre><code>[1] 4 3 2 1</code></pre>
+<p>Também é útil para acessar elementos específicos dentro de data frames. Por exemplo, o terceiro elemento da coluna B</p>
+<pre class="r"><code>with(da, B[3])</code></pre>
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<div id="exercicios-1" class="section level2">
+<h2>Exercícios</h2>
+<ol style="list-style-type: decimal">
+<li>Crie uma matriz (qualquer) com dimensão 4x3</li>
+<li>Acesse o elemento na quarta linha e na segunda coluna</li>
+<li>Acesse todos os elementos, com exceção da segunda coluna e da terceira linha</li>
+<li>Crie uma lista (nomeada) com 3 componentes: um vetor numérico de comprimento 10, um vetor de caracteres de comprimento 7, e a matriz do exercício anterior</li>
+<li>Acesse os elementos nas posições de 5 a 3 do primeiro componente da lista</li>
+<li>Acesse os caracteres de todas as posições, menos na 2 e 6</li>
+<li>Acesse todas as linhas da coluna 3 da matriz dentro desta lista</li>
+<li>“Crie”, um novo componente nessa lista (usando <code>$</code>), contendo 30 valores aleatórios de uma distribuição normal <span class="math inline">\(\text{N}(12, 4)\)</span> (veja <code>?rnorm</code>)</li>
+<li>Crie um data frame que contenha duas colunas: a primeira com as letras de “A” até “J”, e outra com o resultado de uma chamada da função <code>runif(7, 1, 5)</code></li>
+<li>Extraia as duas primeiras linhas desse data frame</li>
+<li>Extraia as duas últimas linhas desse data frame</li>
+<li>Qual é o valor que está na linha 6 e coluna 1?</li>
+<li>Qual é o valor que está na linha 4 da coluna 2?</li>
+<li>(Supondo que você não soubesse) Como você faria para contar quantos valores perdidos (<code>NA</code>s) existem nesse data frame?</li>
+<li>Elimine os <code>NA</code>s deste data frame.</li>
+<li>Crie uma nova coluna neste data frame, com valores numéricos (quaisquer)</li>
+<li>Crie mais um componente na lista anterior, que será também uma lista com dois componentes: <code>A</code> com os valores <code>1:5</code>, e <code>B</code> com as letras de “a” a “f”</li>
+<li>Acesse o número 4 de <code>A</code></li>
+<li>Acesse a letra “c” de <code>B</code></li>
+</ol>
+</div>
+</div>
+<div id="selecao-condicional" class="section level1">
+<h1>Seleção condicional</h1>
+<div id="selecao-condicional-em-vetores" class="section level2">
+<h2>Seleção condicional em vetores</h2>
+<blockquote>
+<p>A <strong>seleção condicional</strong> serve para extrair dados que satisfaçam algum critério, usando <strong>expressões condicionais</strong> e <strong>operadores lógicos</strong>.</p>
+</blockquote>
+<p>Considere o seguinte vetor</p>
+<pre class="r"><code>dados &lt;- c(5, 15, 42, 28, 79, 4, 7, 14)</code></pre>
+<p>Selecione apenas os valores maiores do que 15:</p>
+<pre class="r"><code>dados[dados &gt; 15]</code></pre>
+<pre><code>[1] 42 28 79</code></pre>
+<p>Selecione os valores maiores que 15 E menores ou iguais a 35:</p>
+<pre class="r"><code>dados[dados &gt; 15 &amp; dados &lt;= 35]</code></pre>
+<pre><code>[1] 28</code></pre>
+<p>Para entender como funciona a seleção condicional, observe apenas o resultado da condição dentro do colchetes:</p>
+<pre class="r"><code>## Usando &amp; (e)
+dados &gt; 15 &amp; dados &lt;= 35</code></pre>
+<pre><code>[1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>## Usando | (ou)
+dados &gt; 15 | dados &lt;= 35</code></pre>
+<pre><code>[1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<p>Os valores selecionados serão aqueles em que a condição for <code>TRUE</code>, nesse caso apenas o quarto elemento do vetor <code>dados</code>.</p>
+<p>A seleção condicional também é muito útil para selecionar elementos de um vetor, baseado em uma condição de outro vetor.</p>
+<p>Considere o seguinte vetor de caracteres</p>
+<pre class="r"><code>cara &lt;- letters[1:length(dados)]</code></pre>
+<p>Considere que de alguma forma, os objetos <code>dados</code> e <code>cara</code> possuem alguma relação. Sendo assim, podemos selecionar elementos de <code>dados</code>, baseados em alguma condição de <code>cara</code></p>
+<pre class="r"><code>## Elemento de dados onde cara é igual a &quot;c&quot;
+dados[cara == &quot;c&quot;]</code></pre>
+<pre><code>[1] 42</code></pre>
+<p>Se quisermos selecionar mais de um elemento de <code>dados</code>, baseado em uma condição de <code>cara</code>?</p>
+<pre class="r"><code>## Elementos de dados onde cara é igual a &quot;a&quot; e &quot;c&quot;
+cara == &quot;a&quot; &amp; cara == &quot;c&quot; # porque não funciona?</code></pre>
+<pre><code>[1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>cara == &quot;a&quot; | cara == &quot;c&quot;</code></pre>
+<pre><code>[1]  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>dados[cara == &quot;a&quot; | cara == &quot;c&quot;]</code></pre>
+<pre><code>[1]  5 42</code></pre>
+<p>Uma solução melhor seria se pudessemos usar</p>
+<pre class="r"><code>dados[cara == c(&quot;a&quot;, &quot;c&quot;)]</code></pre>
+<pre><code>[1] 5</code></pre>
+<p>mas nesse caso só temos o primeiro elemento. Um operador muito útil nestes casos é o <code>%in%</code></p>
+<pre class="r"><code>dados[cara %in% c(&quot;a&quot;, &quot;c&quot;)]</code></pre>
+<pre><code>[1]  5 42</code></pre>
+<pre class="r"><code>cara %in% c(&quot;a&quot;, &quot;c&quot;)</code></pre>
+<pre><code>[1]  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>Veja a diferença</p>
+<pre class="r"><code>cara == c(&quot;a&quot;, &quot;c&quot;)</code></pre>
+<pre><code>[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>cara %in% c(&quot;a&quot;, &quot;c&quot;)</code></pre>
+<pre><code>[1]  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>Também é possível fazer a seleção de <code>cara</code>, baseado em uma condição em <code>dados</code></p>
+<pre class="r"><code>## Elemento de cara onde dados é igual a 15
+cara[dados == 15]</code></pre>
+<pre><code>[1] &quot;b&quot;</code></pre>
+<pre class="r"><code>## Elemento de cara onde dados for maior do que 30
+cara[dados &gt; 30]</code></pre>
+<pre><code>[1] &quot;c&quot; &quot;e&quot;</code></pre>
+<pre class="r"><code>## Elemento de cara onde dados for igual a 4 ou 14
+cara[dados %in% c(4, 14)]</code></pre>
+<pre><code>[1] &quot;f&quot; &quot;h&quot;</code></pre>
+</div>
+<div id="a-funcao-which" class="section level2">
+<h2>A função <code>which()</code></h2>
+<p>Até agora vimos seleções condicionais que nos retornavam o resultado de uma expressão condicional em vetores. No entanto, muitas vezes estamos interessados em saber a <strong>posição</strong> do resultado de uma expressão condicional, ao invés do resultado em si.</p>
+<p>A fução <code>which()</code> retorna as posições dos elementos que retornarem <code>TRUE</code> em uma expressão condicional.</p>
+<pre class="r"><code>## Elementos maiores de 15
+dados[dados &gt; 15]</code></pre>
+<pre><code>[1] 42 28 79</code></pre>
+<pre class="r"><code>which(dados &gt; 15)</code></pre>
+<pre><code>[1] 3 4 5</code></pre>
+<pre class="r"><code>## Elementos maiores de 15 e menores ou iguais a 35
+dados[dados &gt; 15 &amp; dados &lt;= 35]</code></pre>
+<pre><code>[1] 28</code></pre>
+<pre class="r"><code>which(dados &gt; 15 &amp; dados &lt;= 35)</code></pre>
+<pre><code>[1] 4</code></pre>
+<pre class="r"><code>## Elementos de dadaos onde cara igual a &quot;c&quot;
+dados[cara == &quot;c&quot;]</code></pre>
+<pre><code>[1] 42</code></pre>
+<pre class="r"><code>which(cara == &quot;c&quot;)</code></pre>
+<pre><code>[1] 3</code></pre>
+<pre class="r"><code>## Elementos de dadaos onde cara igual a &quot;a&quot; ou &quot;c&quot;
+dados[cara %in% c(&quot;a&quot;, &quot;c&quot;)]</code></pre>
+<pre><code>[1]  5 42</code></pre>
+<pre class="r"><code>which(cara %in% c(&quot;a&quot;, &quot;c&quot;))</code></pre>
+<pre><code>[1] 1 3</code></pre>
+</div>
+<div id="exercicios-2" class="section level2">
+<h2>Exercícios</h2>
+<ol style="list-style-type: decimal">
+<li>Crie um vetor (<code>x</code>) com os valores 3, 8, 10, 4, 9, 7, 1, 9, 2, 4.</li>
+<li>Selecione os elemntos maiores ou iguais a 5</li>
+<li>Selecione todos os elementos menos o 4</li>
+<li>Selecione os elementos maiores que 4 e menores que 8</li>
+<li>Crie um vetor (<code>a</code>) com as letras de A até J</li>
+<li>Selecione os elementos de x onde a for igual a “F”</li>
+<li>Selecione os elementos de x onde a for igual a “B”, “D”, e “H”</li>
+<li>Qual a posição do número 10 em x?</li>
+<li>Quais as posições dos valores maiores ou iguais a 8 e menores ou iguais a 10 em x?</li>
+<li>Quais as posições das letras “A”, “B”, “D” em a?</li>
+</ol>
+</div>
+<div id="selecao-condicional-em-data-frames" class="section level2">
+<h2>Seleção condicional em data frames</h2>
+<p>Considere o seguinte data frame</p>
+<pre class="r"><code>dados &lt;- data.frame(ano = c(2001, 2002, 2003, 2004, 2005),
+                    captura = c(26, 18, 25, 32, NA),
+                    porto = c(&quot;SP&quot;, &quot;RS&quot;, &quot;SC&quot;, &quot;SC&quot;, &quot;RN&quot;))</code></pre>
+<p>Extraia deste objeto apenas a linha correspondente ao ano 2004:</p>
+<pre class="r"><code>dados[dados$ano == 2004, ]</code></pre>
+<pre><code>   ano captura porto
+4 2004      32    SC</code></pre>
+<p>Mostre as linhas apenas do porto “SC”:</p>
+<pre class="r"><code>dados[dados$porto == &quot;SC&quot;, ]</code></pre>
+<pre><code>   ano captura porto
+3 2003      25    SC
+4 2004      32    SC</code></pre>
+<p>Observe as linhas onde a captura seja maior que 20, selecionando apenas a coluna <code>captura</code>:</p>
+<pre class="r"><code>dados[dados$captura &gt; 20, &quot;captura&quot;]</code></pre>
+<pre><code>[1] 26 25 32 NA</code></pre>
+<p>Também exclua as linhas com <code>NA</code>s (agora com todas as colunas):</p>
+<pre class="r"><code>dados[dados$captura &gt; 20 &amp; !is.na(dados$captura), ]</code></pre>
+<pre><code>   ano captura porto
+1 2001      26    SP
+3 2003      25    SC
+4 2004      32    SC</code></pre>
+<pre class="r"><code>dados[dados$captura &gt; 20 &amp; complete.cases(dados), ]</code></pre>
+<pre><code>   ano captura porto
+1 2001      26    SP
+3 2003      25    SC
+4 2004      32    SC</code></pre>
+<p>A condição pode ser feita com diferentes colunas:</p>
+<pre class="r"><code>dados[dados$captura &gt; 25 &amp; dados$porto == &quot;SP&quot;, ]</code></pre>
+<pre><code>   ano captura porto
+1 2001      26    SP</code></pre>
+<p>A função <code>subset()</code> serve para os mesmos propósitos, e facilita todo o processo de seleção condicional:</p>
+<pre class="r"><code>dados[dados$porto == &quot;SC&quot;, ]</code></pre>
+<pre><code>   ano captura porto
+3 2003      25    SC
+4 2004      32    SC</code></pre>
+<pre class="r"><code>subset(dados, porto == &quot;SC&quot;)</code></pre>
+<pre><code>   ano captura porto
+3 2003      25    SC
+4 2004      32    SC</code></pre>
+<pre class="r"><code>dados[dados$captura &gt; 20, ]</code></pre>
+<pre><code>    ano captura porto
+1  2001      26    SP
+3  2003      25    SC
+4  2004      32    SC
+NA   NA      NA  &lt;NA&gt;</code></pre>
+<pre class="r"><code>subset(dados, captura &gt; 20)</code></pre>
+<pre><code>   ano captura porto
+1 2001      26    SP
+3 2003      25    SC
+4 2004      32    SC</code></pre>
+<pre class="r"><code>dados[dados$captura &gt; 20 &amp; !is.na(dados$captura), ]</code></pre>
+<pre><code>   ano captura porto
+1 2001      26    SP
+3 2003      25    SC
+4 2004      32    SC</code></pre>
+<pre class="r"><code>dados[dados$captura &gt; 20, &quot;captura&quot;]</code></pre>
+<pre><code>[1] 26 25 32 NA</code></pre>
+<pre class="r"><code>subset(dados, captura &gt; 20, select = captura)</code></pre>
+<pre><code>  captura
+1      26
+3      25
+4      32</code></pre>
+<p>A grande vantagem é que a função <code>subset()</code> já lida com os <code>NA</code>s (se isso for o que você precisa).</p>
+</div>
+<div id="exercicios-3" class="section level2">
+<h2>Exercícios</h2>
+<ol style="list-style-type: decimal">
+<li>Você contou 42 caranguejos na Joaquina, 34 no Campeche, 59 na Armação, e 18 na Praia Mole. Crie um data frame para armazenar estas informações (número de caranguejos observados e local).</li>
+<li>Com o data frame criado no exercício anterior, mostre qual a praia onde foram coletadas menos de 30 caranguejos (usando seleção condicional!).</li>
+<li>Crie uma nova coluna (região) neste data frame indicando que Joaquina e Praia Mole estão localizadas no leste da ilha (leste), e Campeche e Armação estão no sul (sul).</li>
+<li>Selecione as praias de região leste que possuem menos de 15 caranguejos contados.</li>
+<li>Você está interessado em saber em qual das duas praias do sul, o número de caranguejos contados foi maior do que 40. Usando a seleção condicional, mostre essa informação na tela.</li>
+<li>Qual região possui praias com mais de 40 caranguejos contados?</li>
+</ol>
+</div>
+</div>
+
+<center>
+  <hr width="100%" size="3px">
+  <p> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR">
+      <img src="img/CC_by-nc-sa_80x15.png" alt="Licença Creative Commons 4.0"> </a>
+  </p>
+  <p> <font size="2"> Este conteúdo
+      está disponível por meio da Licença Creative Commons 4.0 </font>
+  </p>
+</center>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

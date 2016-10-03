@@ -5,6 +5,11 @@ output:
     toc: false
 ---
 
+Os recursos computacionais físicos nos laboratórios de aula são mantidos
+pelo [C3SL]() (Centro de Computação Científica e Software Livre). Para
+acesso ao sistema e dicas computacionais leia:
+[Uso do sistema computacional do C3SL](c3sl-sistemas.html).
+
 ## R
 
 O R é um programa para análise estatística de livre distribuição e de
@@ -18,7 +23,7 @@ Para instalar o R, veja este [guia de instalação](R-instalacao.html).
 [The R project for Statistical Computing](http://www.r-project.org):
 página do programa **R**
 
-- [Curso sobre o uso do R](sofware:material-r) no LEG
+- [Curso sobre o uso do R](http://www.leg.ufpr.br/doku.php/sofware:material-r) no LEG
 - [R-rautu](http://git.leg.ufpr.br/fernandomayer/R-rautu) uma introdução
   ao uso do R
 - [R-Studio](http://www.rstudio.org) um ambiente para facilitar uso do R
@@ -45,3 +50,7 @@ mas não são recomendadas para estatística.
   semelhante ao MS-Office (editor de texto, banco de dados, apresentação
   e planilha) gratuito
 - [Google sheets](https://www.google.com/sheets/about)
+
+<!-- links -->
+
+[C3SL]: http://www.c3sl.ufpr.br/

@@ -11,6 +11,10 @@ output:
 - Dalgaard, P.
   [Introductory statistics with R](http://www.springer.com/us/book/9780387790534).
   New York: Springer, 2008.
+- Krause, A; Olson,
+  M.
+  [The basics of S-Plus](http://www.springer.com/gp/book/9780387261096).
+  New York: Springer, 2005.
 - Murrell, P.
   [Introduction to data technologies](https://www.crcpress.com/Introduction-to-Data-Technologies/Murrell/9781420065176).
   Boca Raton: Chapman & Hall/CRC, 2009. Disponível em
@@ -24,7 +28,8 @@ output:
   Leanpub, 2015. (Gratuito)
 - Ribeiro Jr., PJ.
   [Introdução ao ambiente estatístico R](http://www.leg.ufpr.br/~paulojus/embrapa/Rembrapa/).
-  (*on-line*)
+  (HTML). Versão em
+  [PDF](http://www.leg.ufpr.br/~paulojus/embrapa/Rembrapa/Rembrapa.pdf).
 
 ## Referências complementares
 
@@ -81,3 +86,11 @@ output:
 - Wheelan, C.
   [Estatística: o que é, para que serve, como funciona](http://www.zahar.com.br/livro/estatistica).
   Rio de Janeiro: Zahar, 2016.
+
+## Referências sobre Linux
+
+- [Guia Foca GNU/Linux](http://www.guiafoca.org)
+- [Apostila de Linux](http://www.inf.ufpr.br/cursos/ci055/linux.pdf) do
+  Departamento de Informática (UFPR)
+- [Introdução ao Linux](http://br-linux.org/tutoriais/apostila_linux.sxw.pdf)
+  de Augusto C. Campos

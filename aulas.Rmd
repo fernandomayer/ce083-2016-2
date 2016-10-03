@@ -13,10 +13,52 @@ Abaixo o histórico de atividades realizadas em classe e atividades extra
 classe aplicadas.
 
 - **02/08**: Apresentação da disciplina.
+- **04/08**: Não haverá aula.
+    - Ver slides:
+      [Introdução ao uso do Linux](http://fernandomayer.github.io/linux-intro)
+    - Ler o [guia de instalação do R](R-instalacao.html), baixar e
+      instalar no seu computador pessoal o R e o RStudio.
+- **09/08**: Conceitos iniciais de computação científica. Configuração
+  do diretório de trabalho. Salvando scripts.
+  [Slides](00_ce083-intro.html).
+- **11/08**: Conceitos de software livre e comandos básicos do Shell
+  Linux. Slides de
+  [Introdução ao uso do Linux](http://fernandomayer.github.io/linux-intro).
+- **16/08**: Aula especial com o Prof.
+  [Paulo Justiniano Ribeiro Jr](http://www.leg.ufpr.br/~paulojus/).
+- **18/08**: Aula especial com o Prof.
+  [Paulo Justiniano Ribeiro Jr](http://www.leg.ufpr.br/~paulojus/).
+  [Exercícios](ex01_intro.html) de probabilidade.
+- **23/08**: [Exercícios](ex01_intro.html) de estatística descritiva.
+- **25/08**: [Exercícios](ex01_intro.html) de estatística descritiva e
+  inferencial.
+- **30/08**: [Exercícios](ex01_intro.html) de estatística inferencial e
+  conexão aos servidores do C3SL via `ssh`.
+- **01/09**: Dùvidas sobre exercícios enteriores. Estrutura de dados:
+  tipos primitivos. [Material](02_funcoes_e_objetos.html)
+  e [script de aula](scripts/script_tipos.R).
+- **06/09**: Estrutura de dados: vetores, sequências, classes e
+  atributos. Representação numérica no
+  R. [Material](02_funcoes_e_objetos.html)
+  e [script de aula](scripts/script_tipos.R).
+- **08/09**: Feriado
+- **13/09**: Estrutura de dados: outras classes de vetores. Expressões
+  condicionais e operadores lógicos. Fator. Coerção implícita e
+  explícita. [Material](02_funcoes_e_objetos.html)
+  e [script de aula](scripts/script_tipos.R).
+- **15/09**: Estrutura de dados: valores perdidos e especiais. Matriz,
+  lista e data frame. Nomes como atributos de
+  objetos. [Material](02_funcoes_e_objetos.html)
+  e [script de aula](scripts/script_tipos.R).
+- **20/09**: Exercícios da aula passada. Indexação de
+  vetores. [Material](03_indexacao_e_selecao.html)
+  e [script de aula](scripts/script_index.R)
 
 ## Exercícios
 
-- Em breve
+- [Exercícios de estatística básica](ex01_intro.html) (estatística
+  descritiva, inferencial e probabilidade)
+- [Exercícios de comandos básicos e classes de objetos](exercicios/ex02_basico.pdf).
 
 ## Notas
 

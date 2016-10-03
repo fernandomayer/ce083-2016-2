@@ -29,8 +29,26 @@ navbar:
     - text: "Materiais"
       menu:
       - text: "Configurações iniciais"
-      - text: "Guia de instalação"
+      - text: "Guia de instalação do R"
         href: R-instalacao.html
+      - text: "Introdução ao uso do Linux"
+        href: http://fernandomayer.github.io/linux-intro
+      - text: "Uso dos sistemas do C3SL"
+        href: c3sl-sistemas.html
+      - text: "----------"
+      - text: "Introdução"
+      - text: "Computação científica e interação com R [HTML]"
+        href: 00_ce083-intro.html
+      - text: "Estrutura de dados [HTML]"
+        href: 02_funcoes_e_objetos.html
+      - text: "Indexação e seleção condicional [HTML]"
+        href: 03_indexacao_e_selecao.html
+      - text: "----------"
+      - text: "Exercícios"
+      - text: "Estatística básica"
+        href: ex01_intro.html
+      - text: "Comandos básicos e classes de objetos"
+        href: exercicios/ex02_basico.pdf
   right:
     - text: GitHub
       icon: fa-github fa-lg

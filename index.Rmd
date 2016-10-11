@@ -14,7 +14,7 @@ source("setup_knitr.R")
 <div class="alert alert-danger" role="alert">
 **ATENÇÃO!**
 
-- Não haverá aula no dia 04/10 devido ao [EVINCI](http://www.prppg.ufpr.br/evinci_einti)
+- Não haverá aula no dia 11/10 (terça-feira)
 
 </div>
 

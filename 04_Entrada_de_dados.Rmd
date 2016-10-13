@@ -24,9 +24,9 @@ primeiros casos são adequados para entrada de dados diretamente no R, os
 seguintes descrevem como importar dados já disponíveis eletronicamentede
 um arquivo texto, em outro sistema ou no próprio R.
 
-## Entrada de dados diretamente no R
+# Entrada de dados diretamente no R
 
-### Vetores
+## Vetores
 
 A forma mais básica de entrada de dados no R é através da função `c()`
 (como já vimos). A partir dela pode se criar os outros tipos de objetos
@@ -45,9 +45,9 @@ específicas com
 - `list()`
 - `data.frame()`
 
-### Entrada via teclado
+## Entrada via teclado
 
-#### Usando a função `scan()`
+### Usando a função `scan()`
 
 Esta função lê dados diretamento do console, isto é, coloca o R em modo
 *prompt* onde o usuário deve digitar cada dado seguido da tecla
@@ -121,7 +121,7 @@ x
 Outras classe possíveis para o argumento `what` são: `logical`,
 `integer`, `numeric`, `complex`, `character`, `raw` e `list`.
 
-## Exercícios
+### Exercícios
 
 1. Usnado a função `scan()` crie objetos para armazenar os seguintes
 valores:
@@ -129,7 +129,7 @@ valores:
 - `joaquina`, `armação`, `praia brava`, `praia mole`, `morro das pedras`
 - `TRUE`, `TRUE`, `FALSE`, `FALSE`, `TRUE`
 
-#### Uso da função `readLines()`
+### Uso da função `readLines()`
 
 Esta função é particularmente útil para ler entradas na forma de texto
 (*strings*). Por exemplo, para ler uma linha a ser digitada na tela do
@@ -207,7 +207,7 @@ detalhes e exemplos.
 <!-- cat(foo, sep = "\n") -->
 <!-- ``` -->
 
-## Entrada de dados em arquivos texto
+# Entrada de dados em arquivos texto
 
 Se os dados já estão disponíveis em formato eletrônico, isto é, já foram
 digitados em outro programa, voce pode importar os dados para o R sem a
@@ -250,7 +250,7 @@ Antes de importar para o R:
 	`;` automaticamente (o que é mais comum nos sistemas
 	em português).
 
-### A função `read.table()`
+## A função `read.table()`
 
 O método mais comum de importação de dados para o R, é utilizando a
 função `read.table()`. Para importar um arquivo `.csv` faça:
@@ -824,7 +824,7 @@ save(da, ma, file = "dados.rda")
 ```
 
 A função `save.image()` pode ser utilizada se a intenção é salvar
-**todod** os objetos criados na sua área de trabalho (isso inclui
+**todos** os objetos criados na sua área de trabalho (isso inclui
 qualquer objeto, não só os conjuntos de dados). Nesse caso, podemos
 fazer
 

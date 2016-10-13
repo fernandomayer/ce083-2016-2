@@ -611,9 +611,9 @@ x</code></pre>
 <p>Para forçar a representação de um número para inteiro é necessário usar o sufixo <code>L</code>.</p>
 <p>Note que a diferença entre <code>numeric</code> e <code>integer</code> também possui impacto computacional, pois o armazenamento de números inteiros ocupa menos espaço na memória. Dessa forma, esperamos que o vetor <code>x</code> acima ocupe menos espaço na memória do que o vetor <code>num</code>, embora sejam aparentemente idênticos. Veja:</p>
 <pre class="r"><code>object.size(num)</code></pre>
-<pre><code>88 bytes</code></pre>
+<pre><code>[1] 88 bytes</code></pre>
 <pre class="r"><code>object.size(x)</code></pre>
-<pre><code>72 bytes</code></pre>
+<pre><code>[1] 72 bytes</code></pre>
 <p>A diferença pode parecer pequena, mas pode ter um grande impacto computacional quando os vetores são formados por milhares ou milhões de números.</p>
 </div>
 <div id="representacao-numerica-dentro-do-r" class="section level2">

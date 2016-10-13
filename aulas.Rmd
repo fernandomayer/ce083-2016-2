@@ -52,7 +52,17 @@ classe aplicadas.
   e [script de aula](scripts/script_tipos.R).
 - **20/09**: Exercícios da aula passada. Indexação de
   vetores. [Material](03_indexacao_e_selecao.html)
-  e [script de aula](scripts/script_index.R)
+  e [script de aula](scripts/script_index.R).
+- **22/09**: Indexação de matrizes e
+  listas. [Material](03_indexacao_e_selecao.html)
+  e [script de aula](scripts/script_index.R).
+- **27/09**: Indexação de data frames e seleção
+  condicional. [Material](03_indexacao_e_selecao.html)
+  e [script de aula](scripts/script_index.R).
+- **29/09**: Primeira prova
+- **04/10**: Não houve aula devido ao EVINCI.
+- **06/10**: Correção da primeira prova.
+- **11/10**: Não houve aula.
 
 ## Exercícios
 

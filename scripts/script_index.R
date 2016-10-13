@@ -231,3 +231,80 @@ dd
 ll$l1 <- list(A = 1:5, B = letters[1:6])
 ll$l1$A[4]
 ll$l1$B[3]
+
+##----------------------------------------------------------------------
+## Seleção condicional
+
+## Cria um conjunto de dados
+dados <- c(5, 15, 42, 28, 79, 4, 7, 14)
+
+## Dados maior do que 15
+dados[dados > 15]
+
+## Dados maior do que 15 e menor ou igual a 35
+dados[dados > 15 & dados <= 35]
+
+## Usando & (e)
+dados > 15 & dados <= 35
+## Usando | (ou)
+dados > 15 | dados <= 35
+
+## Objeto com letras do mesmo tamanho de dados
+cara <- letters[1:length(dados)]
+
+## Elemento de dados onde cara é igual a "c"
+dados[cara == "c"]
+
+## Elementos de dados onde cara é igual a "a" e "c"
+cara == "a" & cara == "c" # porque não funciona?
+cara == "a" | cara == "c"
+dados[cara == "a" | cara == "c"]
+dados[cara == c("a", "c")]
+dados[cara %in% c("a", "c")]
+cara %in% c("a", "c")
+cara == c("a", "c")
+cara %in% c("a", "c")
+
+## Elemento de cara onde dados é igual a 15
+cara[dados == 15]
+## Elemento de cara onde dados for maior do que 30
+cara[dados > 30]
+## Elemento de cara onde dados for igual a 4 ou 14
+cara[dados %in% c(4, 14)]
+
+## Elementos maiores de 15
+dados[dados > 15]
+which(dados > 15)
+## Elementos maiores de 15 e menores ou iguais a 35
+dados[dados > 15 & dados <= 35]
+which(dados > 15 & dados <= 35)
+## Elementos de dadaos onde cara igual a "c"
+dados[cara == "c"]
+which(cara == "c")
+## Elementos de dadaos onde cara igual a "a" ou "c"
+dados[cara %in% c("a", "c")]
+which(cara %in% c("a", "c"))
+
+## Cria um data frame
+dados <- data.frame(ano = c(2001, 2002, 2003, 2004, 2005),
+                    captura = c(26, 18, 25, 32, NA),
+                    porto = c("SP", "RS", "SC", "SC", "RN"))
+
+dados[dados$ano == 2004, ]
+
+dados[dados$porto == "SC", ]
+
+dados[dados$captura > 20, "captura"]
+
+dados[dados$captura > 20 & !is.na(dados$captura), ]
+dados[dados$captura > 20 & complete.cases(dados), ]
+
+dados[dados$captura > 25 & dados$porto == "SP", ]
+
+dados[dados$porto == "SC", ]
+subset(dados, porto == "SC")
+dados[dados$captura > 20, ]
+subset(dados, captura > 20)
+dados[dados$captura > 20 & !is.na(dados$captura), ]
+dados[dados$captura > 20, "captura"]
+subset(dados, captura > 20, select = captura)

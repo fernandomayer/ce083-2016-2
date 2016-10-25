@@ -63,6 +63,10 @@ classe aplicadas.
 - **04/10**: Não houve aula devido ao EVINCI.
 - **06/10**: Correção da primeira prova.
 - **11/10**: Não houve aula.
+- **13/10**: Entrada de dados: via teclado, arquivos texto, importação
+  direto de planilhas. [Material](04_Entrada_de_dados.html).
+- **18/10**: Saída de dados. Formatos textual e binário para
+  ler/escrever dados. [Material](04_Entrada_de_dados.html).
 
 ## Exercícios
 

@@ -133,3 +133,70 @@ with(dados, tapply(expVida, continente, mean))
 ## mean, sd, var
 ## CV = s/xbarra (criar funcao)
 ```
+
+- Quantitativas
+
+```{r}
+## Tabelas de frequencia
+summary(dados$expVida)
+range(dados$expVida)
+nclass.Sturges(dados$expVida)
+cut(dados$expVida, breaks = nclass.Sturges(dados$expVida))
+classes <- cut(dados$expVida,
+               breaks = seq(23.599, 82.603, length.out = 12))
+classes <- cut(dados$expVida,
+               breaks = seq(23.599, 82.603, length.out = 12),
+               include.lowest = TRUE)
+table(classes)
+## por padrão é no formato (a,b], ou
+## seja, o intervalo é aberto em a (não inclui a) e fechado em b (inclui
+## b). Podemos alterar esse padrão usando o argumento  include.lowest =
+## TRUE
+prop.table(table(classes))
+cbind(table(classes),
+      prop.table(table(classes)))
+cbind(addmargins(table(classes)),
+      addmargins(prop.table(table(classes))))
+hist(dados$expVida)
+hist(dados$expVida, nclass = 20)
+hist(dados$expVida, freq = FALSE, labels = TRUE)
+h <- hist(dados$expVida)
+h
+boxplot(dados$expVida)
+boxplot(dados$expVida, range = 0)
+par(mfrow = c(1,2))
+boxplot(dados$expVida[dados$pais == "Chile"], main = "Chile")
+boxplot(dados$expVida[dados$pais == "Uruguay"], main = "Uruguai")
+par(mfrow = c(1,1))
+```
+
+- Qualitativa vs qualitativa
+
+```{r}
+with(dados, table(ano, continente))
+with(dados, prop.table(table(ano, continente)))
+with(dados, prop.table(table(ano, continente), margin = 1))
+with(dados, prop.table(table(ano, continente), margin = 2))
+with(dados, addmargins(prop.table(table(ano, continente), margin = 2)))
+with(dados, barplot(table(ano, continente)))
+with(dados, barplot(table(continente, ano)))
+with(dados, barplot(table(continente, ano), legend = TRUE))
+```
+
+- Qualitativa vs quantitativa
+
+```{r}
+table(dados$continente, classes)
+boxplot(expVida ~ continente, data = dados)
+with(dados, tapply(expVida, continente, median))
+```
+
+Explorar: fazer calculos por pais, mostra subset...
+
+- Quantitativa vs quantitativa
+
+```{r}
+plot(expVida ~ pibPercap, data = dados)
+```
+
+Fazer com log, filtrar por pais, ...

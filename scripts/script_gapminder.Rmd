@@ -1,0 +1,135 @@
+# Exame de aproveitamento
+
+## Introdução
+
+O site [Gapminder](http://www.gapminder.org/) compilou uma base de dados
+com a população, expectativa de vida, e PIB per capta de 142 países, em
+12 anos diferentes.
+
+## Dados
+
+Os dados do Gapminder mencionados estão disponíveis em
+
+```{r}
+url <- "http://www.leg.ufpr.br/~fernandomayer/dados/pib_gapminder.csv"
+```
+
+Com isso:
+
+- Faça a importação dos dados, verifique sua estrutura e faça um sumário
+  estatístico.
+
+```{r}
+## Importação
+dados <- read.table(url, header = TRUE, sep = ",", dec = ".")
+```
+
+- Verifique a estrutura dos dados
+
+```{r}
+## Estrutura
+str(dados)
+```
+
+- Classifique cada variável de acordo com seu tipo (ex.: qualitativa
+  ordinal, etc)
+
+
+## Análise exploratória
+
+- Faça um sumário estatístico dos dados
+
+```{r}
+## Sumário
+summary(dados)
+```
+
+- Faça uma tabela de frequência absoluta e uma tabela de frequência
+  relativa para verificar o número de observações por continente.
+
+```{r}
+table(dados$continente)
+prop.table(table(dados$continente))
+```
+
+- Faça um gráfico de barras da tabela de frequência absoluta dos
+  continentes
+
+```{r}
+barplot(table(dados$continente))
+```
+
+- Faça um gráfico apropriado para relacionar o PIB per capita (variável
+  `pibPercap`) à expectativa de vida (variável `expVida`). Assume-se que
+  quanto maior for o PIB per capta, maior será a expectativa de vida, ou
+  seja, a expectativa de vida é a variável dependente.
+
+```{r}
+plot(expVida ~ pibPercap, data = dados)
+```
+
+- Em uma mesma janela gráfica, faça um gráfico de caixa (*boxplot*) da
+  expectativa de vida para o Chile, e outro *boxplot* para a expectativa
+  de vida no Uruguai.
+
+```{r}
+par(mfrow = c(1,2))
+boxplot(dados$expVida[dados$pais == "Chile"], main = "Chile")
+boxplot(dados$expVida[dados$pais == "Uruguay"], main = "Uruguai")
+par(mfrow = c(1,1))
+```
+
+- Calcule a média e a variância da expectativa de vida para o Chile e
+  para o Uruguai.
+
+```{r}
+mean(dados$expVida[dados$pais == "Chile"])
+var(dados$expVida[dados$pais == "Chile"])
+mean(dados$expVida[dados$pais == "Uruguay"])
+var(dados$expVida[dados$pais == "Uruguay"])
+```
+
+- Crie duas novas colunas nesta base de dados com o logaritmo de PIB per
+  capta, e o logaritmo da expectativa de vida. Estas colunas devem ter
+  os nomes: `lpibPercap`, e `lexpVida`, respetivamente.
+
+```{r}
+dados$lpibPercap <- log(dados$pibPercap)
+dados$lexpVida <- log(dados$expVida)
+```
+
+- Faça um gráfico apropriado para relacionar estas duas novas variáveis.
+
+```{r}
+plot(lexpVida ~ lpibPercap, data = dados)
+```
+
+
+- Tabelas
+
+```{r}
+table(dados$continente)
+prop.table(table(dados$continente))
+addmargins(table(dados$continente))
+addmargins(prop.table(table(dados$continente)))
+## Moda
+names(table(dados$continente))[which.max(table(dados$continente))]
+barplot(table(dados$continente))
+barplot(sort(table(dados$continente)))
+barplot(sort(table(dados$continente), decreasing = TRUE))
+pie(table(dados$continente))
+## Bivariada
+with(dados, table(ano, continente))
+with(dados, addmargins(table(ano, continente)))
+boxplot(expVida ~ continente, dados)
+with(dados, tapply(expVida, continente, mean))
+```
+
+- Descritivas
+
+```{r}
+## max, min
+## diff, range
+## mean, sd, var
+## CV = s/xbarra (criar funcao)
+```

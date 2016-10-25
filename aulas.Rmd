@@ -12,6 +12,19 @@ source("setup_knitr.R")
 Abaixo o histórico de atividades realizadas em classe e atividades extra
 classe aplicadas.
 
+
+```{r, eval=FALSE, include=FALSE}
+## Gera a lista com as datas de todas as aulas. O resultado do último
+## comando pode ser copiado direto para o documento
+datas.ter <- seq.Date(as.Date("2016-10-25"), as.Date("2016-12-06"),
+                      by = "week")
+datas.ter <- format.Date(datas.ter, format = "%d/%m")
+datas.qui <- seq.Date(as.Date("2016-10-27"), as.Date("2016-12-08"),
+                      by = "week")
+datas.qui <- format.Date(datas.qui, format = "%d/%m")
+cat(paste0("- **", datas.ter, "**:\n", "- **", datas.qui, "**:\n"))
+```
+
 - **02/08**: Apresentação da disciplina.
 - **04/08**: Não haverá aula.
     - Ver slides:
@@ -67,6 +80,25 @@ classe aplicadas.
   direto de planilhas. [Material](04_Entrada_de_dados.html).
 - **18/10**: Saída de dados. Formatos textual e binário para
   ler/escrever dados. [Material](04_Entrada_de_dados.html).
+- **20/10**: Análise exploratória de dados: variáveis qualitativas.
+  Tabelas de frequência absoluta e relativa, gráficos de
+  barra. [Script de aula](scripts/script_exploratoria.R).
+- **25/10**: Análise exploratória de dados: variáveis quantitativas.
+  Tabelas de frequência absoluta e relativa, histograma e
+  boxplot. [Script de aula](scripts/script_exploratoria.R).
+- **27/10**:
+- **01/11**:
+- **03/11**:
+- **08/11**:
+- **10/11**: Segunda prova.
+- **15/11**: Feriado.
+- **17/11**:
+- **22/11**:
+- **24/11**:
+- **29/11**:
+- **01/12**:
+- **06/12**:
+- **08/12**: Terceira prova.
 
 ## Exercícios
 

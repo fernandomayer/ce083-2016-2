@@ -343,6 +343,10 @@ div.tocify {
     <li>
       <a href="04_Entrada_de_dados.html">Entrada de dados [HTML]</a>
     </li>
+    <li class="dropdown-header">Estatística</li>
+    <li>
+      <a href="05_Analise_exploratoria.html">Análise exploratória de dados [HTML]</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Exercícios</li>
     <li>
@@ -666,25 +670,37 @@ str(dados.xls)</code></pre>
 <p>Para carregar conjuntos de dados que são disponibilizados com o R, use o comando <code>data()</code>. Por exemplo, abaixo mostramos como carregar o conjunto <code>mtcars</code> que está no pacote <strong>datasets</strong>.</p>
 <pre class="r"><code>## Objetos criados até o momento nesta seção
 ls()</code></pre>
-<pre><code> [1] &quot;cara&quot;       &quot;caracter&quot;   &quot;classes&quot;    &quot;cont&quot;       &quot;da&quot;        
- [6] &quot;da2&quot;        &quot;dados&quot;      &quot;dados.clip&quot; &quot;dados.xls&quot;  &quot;dados2&quot;    
-[11] &quot;fator&quot;      &quot;ind&quot;        &quot;iris&quot;       &quot;la&quot;         &quot;lis&quot;       
-[16] &quot;lista&quot;      &quot;logico&quot;     &quot;m&quot;          &quot;ma&quot;         &quot;mat&quot;       
-[21] &quot;matriz&quot;     &quot;matriz2&quot;    &quot;mtcars&quot;     &quot;num&quot;        &quot;ola.mundo&quot; 
-[26] &quot;paises&quot;     &quot;perd&quot;       &quot;texto&quot;      &quot;topo&quot;       &quot;url&quot;       
-[31] &quot;w&quot;          &quot;x&quot;          &quot;xf&quot;         &quot;y&quot;          &quot;z&quot;         </code></pre>
+<pre><code> [1] &quot;cara&quot;         &quot;caracter&quot;     &quot;civ.inst.tb&quot;  &quot;civil.tb&quot;    
+ [5] &quot;classes&quot;      &quot;cont&quot;         &quot;da&quot;           &quot;da2&quot;         
+ [9] &quot;dados&quot;        &quot;dados.clip&quot;   &quot;dados.xls&quot;    &quot;dados2&quot;      
+[13] &quot;fator&quot;        &quot;filhos.qt&quot;    &quot;filhos.tb&quot;    &quot;filhos.tba&quot;  
+[17] &quot;filhos.tbr&quot;   &quot;idade.cut&quot;    &quot;idade.cut2&quot;   &quot;ind&quot;         
+[21] &quot;inst.sal.tb&quot;  &quot;inst.tb&quot;      &quot;iris&quot;         &quot;la&quot;          
+[25] &quot;lis&quot;          &quot;lista&quot;        &quot;logico&quot;       &quot;m&quot;           
+[29] &quot;ma&quot;           &quot;mat&quot;          &quot;matriz&quot;       &quot;matriz2&quot;     
+[33] &quot;milsa&quot;        &quot;mtcars&quot;       &quot;num&quot;          &quot;ola.mundo&quot;   
+[37] &quot;paises&quot;       &quot;perd&quot;         &quot;salario.cut&quot;  &quot;salario.cut2&quot;
+[41] &quot;salario.hist&quot; &quot;salario.qt&quot;   &quot;salario.tb&quot;   &quot;texto&quot;       
+[45] &quot;topo&quot;         &quot;url&quot;          &quot;w&quot;            &quot;x&quot;           
+[49] &quot;xf&quot;           &quot;y&quot;            &quot;z&quot;           </code></pre>
 <pre class="r"><code>## Carregaga a base de dados mtcars
 data(mtcars)
 ## Note como agora o objeto mtcars fica disponível na sua área de
 ## trabalho
 ls()</code></pre>
-<pre><code> [1] &quot;cara&quot;       &quot;caracter&quot;   &quot;classes&quot;    &quot;cont&quot;       &quot;da&quot;        
- [6] &quot;da2&quot;        &quot;dados&quot;      &quot;dados.clip&quot; &quot;dados.xls&quot;  &quot;dados2&quot;    
-[11] &quot;fator&quot;      &quot;ind&quot;        &quot;iris&quot;       &quot;la&quot;         &quot;lis&quot;       
-[16] &quot;lista&quot;      &quot;logico&quot;     &quot;m&quot;          &quot;ma&quot;         &quot;mat&quot;       
-[21] &quot;matriz&quot;     &quot;matriz2&quot;    &quot;mtcars&quot;     &quot;num&quot;        &quot;ola.mundo&quot; 
-[26] &quot;paises&quot;     &quot;perd&quot;       &quot;texto&quot;      &quot;topo&quot;       &quot;url&quot;       
-[31] &quot;w&quot;          &quot;x&quot;          &quot;xf&quot;         &quot;y&quot;          &quot;z&quot;         </code></pre>
+<pre><code> [1] &quot;cara&quot;         &quot;caracter&quot;     &quot;civ.inst.tb&quot;  &quot;civil.tb&quot;    
+ [5] &quot;classes&quot;      &quot;cont&quot;         &quot;da&quot;           &quot;da2&quot;         
+ [9] &quot;dados&quot;        &quot;dados.clip&quot;   &quot;dados.xls&quot;    &quot;dados2&quot;      
+[13] &quot;fator&quot;        &quot;filhos.qt&quot;    &quot;filhos.tb&quot;    &quot;filhos.tba&quot;  
+[17] &quot;filhos.tbr&quot;   &quot;idade.cut&quot;    &quot;idade.cut2&quot;   &quot;ind&quot;         
+[21] &quot;inst.sal.tb&quot;  &quot;inst.tb&quot;      &quot;iris&quot;         &quot;la&quot;          
+[25] &quot;lis&quot;          &quot;lista&quot;        &quot;logico&quot;       &quot;m&quot;           
+[29] &quot;ma&quot;           &quot;mat&quot;          &quot;matriz&quot;       &quot;matriz2&quot;     
+[33] &quot;milsa&quot;        &quot;mtcars&quot;       &quot;num&quot;          &quot;ola.mundo&quot;   
+[37] &quot;paises&quot;       &quot;perd&quot;         &quot;salario.cut&quot;  &quot;salario.cut2&quot;
+[41] &quot;salario.hist&quot; &quot;salario.qt&quot;   &quot;salario.tb&quot;   &quot;texto&quot;       
+[45] &quot;topo&quot;         &quot;url&quot;          &quot;w&quot;            &quot;x&quot;           
+[49] &quot;xf&quot;           &quot;y&quot;            &quot;z&quot;           </code></pre>
 <pre class="r"><code>## Estrutura e visualização do objeto
 str(mtcars)</code></pre>
 <pre><code>&#39;data.frame&#39;:   32 obs. of  11 variables:
@@ -715,13 +731,19 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p>e agora podemos carregar o objeto <code>topo</code> com</p>
 <pre class="r"><code>data(topo)
 ls()</code></pre>
-<pre><code> [1] &quot;cara&quot;       &quot;caracter&quot;   &quot;classes&quot;    &quot;cont&quot;       &quot;da&quot;        
- [6] &quot;da2&quot;        &quot;dados&quot;      &quot;dados.clip&quot; &quot;dados.xls&quot;  &quot;dados2&quot;    
-[11] &quot;fator&quot;      &quot;ind&quot;        &quot;iris&quot;       &quot;la&quot;         &quot;lis&quot;       
-[16] &quot;lista&quot;      &quot;logico&quot;     &quot;m&quot;          &quot;ma&quot;         &quot;mat&quot;       
-[21] &quot;matriz&quot;     &quot;matriz2&quot;    &quot;mtcars&quot;     &quot;num&quot;        &quot;ola.mundo&quot; 
-[26] &quot;paises&quot;     &quot;perd&quot;       &quot;texto&quot;      &quot;topo&quot;       &quot;url&quot;       
-[31] &quot;w&quot;          &quot;x&quot;          &quot;xf&quot;         &quot;y&quot;          &quot;z&quot;         </code></pre>
+<pre><code> [1] &quot;cara&quot;         &quot;caracter&quot;     &quot;civ.inst.tb&quot;  &quot;civil.tb&quot;    
+ [5] &quot;classes&quot;      &quot;cont&quot;         &quot;da&quot;           &quot;da2&quot;         
+ [9] &quot;dados&quot;        &quot;dados.clip&quot;   &quot;dados.xls&quot;    &quot;dados2&quot;      
+[13] &quot;fator&quot;        &quot;filhos.qt&quot;    &quot;filhos.tb&quot;    &quot;filhos.tba&quot;  
+[17] &quot;filhos.tbr&quot;   &quot;idade.cut&quot;    &quot;idade.cut2&quot;   &quot;ind&quot;         
+[21] &quot;inst.sal.tb&quot;  &quot;inst.tb&quot;      &quot;iris&quot;         &quot;la&quot;          
+[25] &quot;lis&quot;          &quot;lista&quot;        &quot;logico&quot;       &quot;m&quot;           
+[29] &quot;ma&quot;           &quot;mat&quot;          &quot;matriz&quot;       &quot;matriz2&quot;     
+[33] &quot;milsa&quot;        &quot;mtcars&quot;       &quot;num&quot;          &quot;ola.mundo&quot;   
+[37] &quot;paises&quot;       &quot;perd&quot;         &quot;salario.cut&quot;  &quot;salario.cut2&quot;
+[41] &quot;salario.hist&quot; &quot;salario.qt&quot;   &quot;salario.tb&quot;   &quot;texto&quot;       
+[45] &quot;topo&quot;         &quot;url&quot;          &quot;w&quot;            &quot;x&quot;           
+[49] &quot;xf&quot;           &quot;y&quot;            &quot;z&quot;           </code></pre>
 <pre class="r"><code>str(topo)</code></pre>
 <pre><code>&#39;data.frame&#39;:   52 obs. of  3 variables:
  $ x: num  0.3 1.4 2.4 3.6 5.7 1.6 2.9 3.4 3.4 4.8 ...

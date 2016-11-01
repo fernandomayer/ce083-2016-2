@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Análise exploratória de dados</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38898840-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+  padding-left: 10px;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CE083</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="aulas.html">Aulas</a>
+</li>
+<li>
+  <a href="referencias.html">Referências</a>
+</li>
+<li>
+  <a href="recursos.html">Recursos</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Materiais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Configurações iniciais</li>
+    <li>
+      <a href="R-instalacao.html">Guia de instalação do R</a>
+    </li>
+    <li>
+      <a href="http://fernandomayer.github.io/linux-intro">Introdução ao uso do Linux</a>
+    </li>
+    <li>
+      <a href="c3sl-sistemas.html">Uso dos sistemas do C3SL</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Introdução</li>
+    <li>
+      <a href="00_ce083-intro.html">Computação científica e interação com R [HTML]</a>
+    </li>
+    <li class="dropdown-header">Dados</li>
+    <li>
+      <a href="02_funcoes_e_objetos.html">Estrutura de dados [HTML]</a>
+    </li>
+    <li>
+      <a href="03_indexacao_e_selecao.html">Indexação e seleção condicional [HTML]</a>
+    </li>
+    <li>
+      <a href="04_Entrada_de_dados.html">Entrada de dados [HTML]</a>
+    </li>
+    <li class="dropdown-header">Estatística</li>
+    <li>
+      <a href="05_Analise_exploratoria.html">Análise exploratória de dados [HTML]</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Exercícios</li>
+    <li>
+      <a href="ex01_intro.html">Estatística básica</a>
+    </li>
+    <li>
+      <a href="exercicios/ex02_basico.pdf">Comandos básicos e classes de objetos</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/fernandomayer">
+    <span class="fa fa-github fa-lg"></span>
+     
+    GitHub
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Análise exploratória de dados</h1>
+
+</div>
+
+
+<div id="introducao" class="section level1">
+<h1>Introdução</h1>
+<p>Nesta sessão vamos ver alguns (mas não todos!) comandos do R para fazer uma análise exploratória descritiva de um conjunto de dados.</p>
+<p>Uma boa forma de iniciar uma análise descritiva adequada é verificar os tipos de de variáveis disponíveis. Variáveis podem ser classificadas da seguinte forma:</p>
+<ul>
+<li>Qualitativas
+<ul>
+<li>Nominais</li>
+<li>Ordinais</li>
+</ul></li>
+<li>Quantitativas
+<ul>
+<li>Discretas</li>
+<li>Contínuas</li>
+</ul></li>
+</ul>
+<p>e podem ser resumidas por tabelas, gráficos e/ou medidas.</p>
+<div id="o-conjunto-de-dados-milsa" class="section level2">
+<h2>O conjunto de dados <code>milsa</code></h2>
+<p>O livro “Estatística Básica” de W. O. Bussab e P. A. Morettin traz no segundo capítulo um conjunto de dados hipotético de atributos de 36 funcionários da companhia “Milsa”. Os dados estão reproduzidos na tabela abaixo. Consulte o livro para mais detalhes sobre este dados.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Funcionario</th>
+<th align="left">Est.civil</th>
+<th align="left">Inst</th>
+<th align="right">Filhos</th>
+<th align="right">Salario</th>
+<th align="right">Anos</th>
+<th align="right">Meses</th>
+<th align="left">Regiao</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">solteiro</td>
+<td align="left">1o Grau</td>
+<td align="right">NA</td>
+<td align="right">4.00</td>
+<td align="right">26</td>
+<td align="right">3</td>
+<td align="left">interior</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">casado</td>
+<td align="left">1o Grau</td>
+<td align="right">1</td>
+<td align="right">4.56</td>
+<td align="right">32</td>
+<td align="right">10</td>
+<td align="left">capital</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">casado</td>
+<td align="left">1o Grau</td>
+<td align="right">2</td>
+<td align="right">5.25</td>
+<td align="right">36</td>
+<td align="right">5</td>
+<td align="left">capital</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">solteiro</td>
+<td align="left">2o Grau</td>
+<td align="right">NA</td>
+<td align="right">5.73</td>
+<td align="right">20</td>
+<td align="right">10</td>
+<td align="left">outro</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">solteiro</td>
+<td align="left">1o Grau</td>
+<td align="right">NA</td>
+<td align="right">6.26</td>
+<td align="right">40</td>
+<td align="right">7</td>
+<td align="left">outro</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">casado</td>
+<td align="left">1o Grau</td>
+<td align="right">0</td>
+<td align="right">6.66</td>
+<td align="right">28</td>
+<td align="right">0</td>
+<td align="left">interior</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">solteiro</td>
+<td align="left">1o Grau</td>
+<td align="right">NA</td>
+<td align="right">6.86</td>
+<td align="right">41</td>
+<td align="right">0</td>
+<td align="left">interior</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">solteiro</td>
+<td align="left">1o Grau</td>
+<td align="right">NA</td>
+<td align="right">7.39</td>
+<td align="right">43</td>
+<td align="right">4</td>
+<td align="left">capital</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">1</td>
+<td align="right">7.59</td>
+<td align="right">34</td>
+<td align="right">10</td>
+<td align="left">capital</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">solteiro</td>
+<td align="left">2o Grau</td>
+<td align="right">NA</td>
+<td align="right">7.44</td>
+<td align="right">23</td>
+<td align="right">6</td>
+<td align="left">outro</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">2</td>
+<td align="right">8.12</td>
+<td align="right">33</td>
+<td align="right">6</td>
+<td align="left">interior</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">solteiro</td>
+<td align="left">1o Grau</td>
+<td align="right">NA</td>
+<td align="right">8.46</td>
+<td align="right">27</td>
+<td align="right">11</td>
+<td align="left">capital</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">solteiro</td>
+<td align="left">2o Grau</td>
+<td align="right">NA</td>
+<td align="right">8.74</td>
+<td align="right">37</td>
+<td align="right">5</td>
+<td align="left">outro</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">casado</td>
+<td align="left">1o Grau</td>
+<td align="right">3</td>
+<td align="right">8.95</td>
+<td align="right">44</td>
+<td align="right">2</td>
+<td align="left">outro</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">0</td>
+<td align="right">9.13</td>
+<td align="right">30</td>
+<td align="right">5</td>
+<td align="left">interior</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="left">solteiro</td>
+<td align="left">2o Grau</td>
+<td align="right">NA</td>
+<td align="right">9.35</td>
+<td align="right">38</td>
+<td align="right">8</td>
+<td align="left">outro</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">1</td>
+<td align="right">9.77</td>
+<td align="right">31</td>
+<td align="right">7</td>
+<td align="left">capital</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="left">casado</td>
+<td align="left">1o Grau</td>
+<td align="right">2</td>
+<td align="right">9.80</td>
+<td align="right">39</td>
+<td align="right">7</td>
+<td align="left">outro</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="left">solteiro</td>
+<td align="left">Superior</td>
+<td align="right">NA</td>
+<td align="right">10.53</td>
+<td align="right">25</td>
+<td align="right">8</td>
+<td align="left">interior</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="left">solteiro</td>
+<td align="left">2o Grau</td>
+<td align="right">NA</td>
+<td align="right">10.76</td>
+<td align="right">37</td>
+<td align="right">4</td>
+<td align="left">interior</td>
+</tr>
+<tr class="odd">
+<td align="right">21</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">1</td>
+<td align="right">11.06</td>
+<td align="right">30</td>
+<td align="right">9</td>
+<td align="left">outro</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="left">solteiro</td>
+<td align="left">2o Grau</td>
+<td align="right">NA</td>
+<td align="right">11.59</td>
+<td align="right">34</td>
+<td align="right">2</td>
+<td align="left">capital</td>
+</tr>
+<tr class="odd">
+<td align="right">23</td>
+<td align="left">solteiro</td>
+<td align="left">1o Grau</td>
+<td align="right">NA</td>
+<td align="right">12.00</td>
+<td align="right">41</td>
+<td align="right">0</td>
+<td align="left">outro</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="left">casado</td>
+<td align="left">Superior</td>
+<td align="right">0</td>
+<td align="right">12.79</td>
+<td align="right">26</td>
+<td align="right">1</td>
+<td align="left">outro</td>
+</tr>
+<tr class="odd">
+<td align="right">25</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">2</td>
+<td align="right">13.23</td>
+<td align="right">32</td>
+<td align="right">5</td>
+<td align="left">interior</td>
+</tr>
+<tr class="even">
+<td align="right">26</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">2</td>
+<td align="right">13.60</td>
+<td align="right">35</td>
+<td align="right">0</td>
+<td align="left">outro</td>
+</tr>
+<tr class="odd">
+<td align="right">27</td>
+<td align="left">solteiro</td>
+<td align="left">1o Grau</td>
+<td align="right">NA</td>
+<td align="right">13.85</td>
+<td align="right">46</td>
+<td align="right">7</td>
+<td align="left">outro</td>
+</tr>
+<tr class="even">
+<td align="right">28</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">0</td>
+<td align="right">14.69</td>
+<td align="right">29</td>
+<td align="right">8</td>
+<td align="left">interior</td>
+</tr>
+<tr class="odd">
+<td align="right">29</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">5</td>
+<td align="right">14.71</td>
+<td align="right">40</td>
+<td align="right">6</td>
+<td align="left">interior</td>
+</tr>
+<tr class="even">
+<td align="right">30</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">2</td>
+<td align="right">15.99</td>
+<td align="right">35</td>
+<td align="right">10</td>
+<td align="left">capital</td>
+</tr>
+<tr class="odd">
+<td align="right">31</td>
+<td align="left">solteiro</td>
+<td align="left">Superior</td>
+<td align="right">NA</td>
+<td align="right">16.22</td>
+<td align="right">31</td>
+<td align="right">5</td>
+<td align="left">outro</td>
+</tr>
+<tr class="even">
+<td align="right">32</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">1</td>
+<td align="right">16.61</td>
+<td align="right">36</td>
+<td align="right">4</td>
+<td align="left">interior</td>
+</tr>
+<tr class="odd">
+<td align="right">33</td>
+<td align="left">casado</td>
+<td align="left">Superior</td>
+<td align="right">3</td>
+<td align="right">17.26</td>
+<td align="right">43</td>
+<td align="right">7</td>
+<td align="left">capital</td>
+</tr>
+<tr class="even">
+<td align="right">34</td>
+<td align="left">solteiro</td>
+<td align="left">Superior</td>
+<td align="right">NA</td>
+<td align="right">18.75</td>
+<td align="right">33</td>
+<td align="right">7</td>
+<td align="left">capital</td>
+</tr>
+<tr class="odd">
+<td align="right">35</td>
+<td align="left">casado</td>
+<td align="left">2o Grau</td>
+<td align="right">2</td>
+<td align="right">19.40</td>
+<td align="right">48</td>
+<td align="right">11</td>
+<td align="left">capital</td>
+</tr>
+<tr class="even">
+<td align="right">36</td>
+<td align="left">casado</td>
+<td align="left">Superior</td>
+<td align="right">3</td>
+<td align="right">23.30</td>
+<td align="right">42</td>
+<td align="right">2</td>
+<td align="left">interior</td>
+</tr>
+</tbody>
+</table>
+<p>Estes dados estão disponíveis em um arquivo <code>csv</code> no endereço <a href="http://www.leg.ufpr.br/~fernandomayer/dados/milsa.csv" class="uri">http://www.leg.ufpr.br/~fernandomayer/dados/milsa.csv</a>.</p>
+<p>O nosso objetivo é, através do R,</p>
+<ul>
+<li>Entrar com os dados</li>
+<li>Fazer uma análise descritiva</li>
+</ul>
+<p>Estes são dados no “estilo planilha”, com variáveis de diferentes tipos: categóricas e numéricas (qualitativas e quantitativas). Portanto o formato ideal de armazenamento destes dados no R é o <code>data.frame</code>.</p>
+<p>Para importar os dados do endereço acima diretamente para o R, usamos</p>
+<pre class="r"><code>url &lt;- &quot;http://www.leg.ufpr.br/~fernandomayer/dados/milsa.csv&quot;
+milsa &lt;- read.csv(url)</code></pre>
+<p>E para conferir a estrutura dos dados podemos usar algumas funções como:</p>
+<pre class="r"><code>str(milsa)</code></pre>
+<pre><code>&#39;data.frame&#39;:   36 obs. of  8 variables:
+ $ Funcionario: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Est.civil  : Factor w/ 2 levels &quot;casado&quot;,&quot;solteiro&quot;: 2 1 1 2 2 1 2 2 1 2 ...
+ $ Inst       : Factor w/ 3 levels &quot;1o Grau&quot;,&quot;2o Grau&quot;,..: 1 1 1 2 1 1 1 1 2 2 ...
+ $ Filhos     : int  NA 1 2 NA NA 0 NA NA 1 NA ...
+ $ Salario    : num  4 4.56 5.25 5.73 6.26 6.66 6.86 7.39 7.59 7.44 ...
+ $ Anos       : int  26 32 36 20 40 28 41 43 34 23 ...
+ $ Meses      : int  3 10 5 10 7 0 0 4 10 6 ...
+ $ Regiao     : Factor w/ 3 levels &quot;capital&quot;,&quot;interior&quot;,..: 2 1 1 3 3 2 2 1 1 3 ...</code></pre>
+<pre class="r"><code>head(milsa)</code></pre>
+<pre><code>  Funcionario Est.civil    Inst Filhos Salario Anos Meses   Regiao
+1           1  solteiro 1o Grau     NA    4.00   26     3 interior
+2           2    casado 1o Grau      1    4.56   32    10  capital
+3           3    casado 1o Grau      2    5.25   36     5  capital
+4           4  solteiro 2o Grau     NA    5.73   20    10    outro
+5           5  solteiro 1o Grau     NA    6.26   40     7    outro
+6           6    casado 1o Grau      0    6.66   28     0 interior</code></pre>
+<pre class="r"><code>tail(milsa)</code></pre>
+<pre><code>   Funcionario Est.civil     Inst Filhos Salario Anos Meses   Regiao
+31          31  solteiro Superior     NA   16.22   31     5    outro
+32          32    casado  2o Grau      1   16.61   36     4 interior
+33          33    casado Superior      3   17.26   43     7  capital
+34          34  solteiro Superior     NA   18.75   33     7  capital
+35          35    casado  2o Grau      2   19.40   48    11  capital
+36          36    casado Superior      3   23.30   42     2 interior</code></pre>
+<p>Podemos classificar todas a svariáveis desse conjunto de dados como:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variável</th>
+<th>Classificação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Funcionario</code></td>
+<td>Quantitativa discreta</td>
+</tr>
+<tr class="even">
+<td><code>Est.civil</code></td>
+<td>Qualitativa nominal</td>
+</tr>
+<tr class="odd">
+<td><code>Inst</code></td>
+<td>Qualitativa ordinal</td>
+</tr>
+<tr class="even">
+<td><code>Filhos</code></td>
+<td>Quantitativa discreta</td>
+</tr>
+<tr class="odd">
+<td><code>Salario</code></td>
+<td>Quantitativa contínua</td>
+</tr>
+<tr class="even">
+<td><code>Anos</code></td>
+<td>Quantitativa contínua</td>
+</tr>
+<tr class="odd">
+<td><code>Meses</code></td>
+<td>Quantitativa contínua</td>
+</tr>
+<tr class="even">
+<td><code>Regiao</code></td>
+<td>Qualitativa nominal</td>
+</tr>
+</tbody>
+</table>
+<p>Como a variável <code>Inst</code> é qualitativa ordinal, podemos indicar para o R que ela deve ser tratada como ordinal. Se observarmos os níveis desse fator:</p>
+<pre class="r"><code>levels(milsa$Inst)</code></pre>
+<pre><code>[1] &quot;1o Grau&quot;  &quot;2o Grau&quot;  &quot;Superior&quot;</code></pre>
+<p>já notamos que a ordenação está correta (da esquerda para a direita), pois sabemos que a classificação interna dos níveis é por ordem alfabética, e nesse caso, por coincidência, a ordem já está na sequência correta. Mesmo assim, podemos indicar que este fator é ordinal, usando o argumento <code>ordered</code> da função <code>factor()</code></p>
+<pre class="r"><code>milsa$Inst &lt;- factor(milsa$Inst, ordered = TRUE)</code></pre>
+<p>Note agora a modificação na classe dessa coluna, e a representação dos níveis:</p>
+<pre class="r"><code>class(milsa$Inst)</code></pre>
+<pre><code>[1] &quot;ordered&quot; &quot;factor&quot; </code></pre>
+<pre class="r"><code>milsa$Inst</code></pre>
+<pre><code> [1] 1o Grau  1o Grau  1o Grau  2o Grau  1o Grau  1o Grau  1o Grau 
+ [8] 1o Grau  2o Grau  2o Grau  2o Grau  1o Grau  2o Grau  1o Grau 
+[15] 2o Grau  2o Grau  2o Grau  1o Grau  Superior 2o Grau  2o Grau 
+[22] 2o Grau  1o Grau  Superior 2o Grau  2o Grau  1o Grau  2o Grau 
+[29] 2o Grau  2o Grau  Superior 2o Grau  Superior Superior 2o Grau 
+[36] Superior
+Levels: 1o Grau &lt; 2o Grau &lt; Superior</code></pre>
+<p>A coluna continua sendo um <code>factor</code>, mas agora também é <code>ordered</code> (sim, um objeto pode ter mais de uma classe, se elas foram compatíveis e/ou complementares). Os níveis agora são representados por</p>
+<pre><code>1o Grau &lt; 2o Grau &lt; Superior</code></pre>
+<p>para indicar explicitamente que existe uma ordem nos níveis desse fator.</p>
+<p>Podemos ainda definir uma nova variável, chamada <code>Idade</code>, a partir das variáveis <code>Anos</code> e <code>Meses</code>:</p>
+<pre class="r"><code>milsa$Idade &lt;- milsa$Anos + milsa$Meses/12</code></pre>
+<p>Os dois comandos acima (de modificação da classe de uma variável, e a criação de uma nova variável) poderiam ser facilmente executadas de uma única vez através do comando <code>transform()</code></p>
+<pre class="r"><code>milsa &lt;- transform(milsa,
+                   Inst = factor(Inst, ordered = TRUE),
+                   Idade = Anos + Meses/12)</code></pre>
+<p>Agora que os dados estão prontos podemos começar a análise descritiva. A seguir mostramos como fazer análises descritivas uni e bi-variadas. Inspecione os comandos mostrados a seguir e os resultados por elas produzidos. Sugerimos ainda que o leitor use o R para reproduzir os resultados mostrados no texto dos capítulos 1 a 3 do livro de Bussab &amp; Morettin, relacionados com este exemplo.</p>
+</div>
+</div>
+<div id="analise-univariada" class="section level1">
+<h1>Análise univariada</h1>
+<p>A análise univariada consiste basicamente em, para cada uma das variáveis individualmente:</p>
+<ul>
+<li>Classificar a variável quanto a seu tipo: qualitativa (nominal ou ordinal) ou quantitativa (discreta ou contínua)</li>
+<li>Obter tabelas, gráficos e/ou medidas que resumam a variável</li>
+</ul>
+<p>A partir destes resultados pode-se montar um resumo geral dos dados.</p>
+<p>A seguir vamos mostrar como obter tabelas, gráficos e medidas com o R. Para isto vamos selecionar uma variável de cada tipo para que o leitor possa, por analogia, obter resultados para as demais.</p>
+<div id="variavel-qualitativa-nominal" class="section level2">
+<h2>Variável Qualitativa Nominal</h2>
+<p>A variável <code>Est.civil</code> é uma qualitativa nominal. Desta forma podemos obter: (i) uma tabela de frequências (absolutas e/ou relativas), (ii) um gráfico de setores, (iii) a “moda”, <em>i.e.</em> o valor que ocorre com maior frequência.</p>
+<p>Já vimos, através do resultado da função <code>str()</code> acima, que esta variável é um fator. A seguir obtemos frequências absolutas e relativas (note duas formas diferentes de obter as frequências relativas).</p>
+<pre class="r"><code>## Frequência absoluta
+civil.tb &lt;- table(milsa$Est.civil)
+civil.tb</code></pre>
+<pre><code>
+  casado solteiro 
+      20       16 </code></pre>
+<pre class="r"><code>## Frequência relativa, calculando manualmente
+civil.tb/length(milsa$Est.civil)</code></pre>
+<pre><code>
+   casado  solteiro 
+0.5555556 0.4444444 </code></pre>
+<pre class="r"><code>## Frequência relativa, com a função prop.table()
+prop.table(civil.tb)</code></pre>
+<pre><code>
+   casado  solteiro 
+0.5555556 0.4444444 </code></pre>
+<p>Os gráficos de barras e de setores são adequados para representar esta variável. Os comandos <code>barplot()</code> e <code>pie()</code> usam o resultado da função <code>table()</code> para gerar os gráficos:</p>
+<pre class="r"><code>barplot(civil.tb)
+pie(civil.tb)</code></pre>
+<p><img src="figures/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>A <em>moda</em> de qualquer variável aleatória é definida como o valor mais frequente encontrado na amostra. No R não há uma função pronta para “calcular” a moda, pois ela pode ser obtida facilmente através do uso de funções básicas. Uma opção seria usar os comandos abaixo:</p>
+<pre class="r"><code>names(civil.tb)[which.max(civil.tb)]</code></pre>
+<pre><code>[1] &quot;casado&quot;</code></pre>
+<p>Deixamos a cargo do leitor entender e interpretar esse comando.</p>
+</div>
+<div id="variavel-qualitativa-ordinal" class="section level2">
+<h2>Variável Qualitativa Ordinal</h2>
+<p>Para exemplificar como obter análises para uma variável qualitativa ordinal vamos selecionar a variável <code>Inst</code>.</p>
+<p>As tabelas de frequências são obtidas de forma semelhante à mostrada anteriormente.</p>
+<pre class="r"><code>## Frequência absoluta
+inst.tb &lt;- table(milsa$Inst)
+inst.tb</code></pre>
+<pre><code>
+ 1o Grau  2o Grau Superior 
+      12       18        6 </code></pre>
+<pre class="r"><code>## Frequência relativa
+prop.table(inst.tb)</code></pre>
+<pre><code>
+  1o Grau   2o Grau  Superior 
+0.3333333 0.5000000 0.1666667 </code></pre>
+<p>O gráfico de setores não é adequado para este tipo de variável por não expressar a ordem dos possíveis valores. Usamos então apenas um gráfico de barras conforme mostrado abaixo</p>
+<pre class="r"><code>barplot(inst.tb)</code></pre>
+<p><img src="figures/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Em alguns casos podemos querer mostrar o gráfico de barras com as barras classificadas da menos para a maior, ou vice-versa, independente da ordem dos níveis. Para isso podemos usar a função <code>sort()</code> para ordenar os valores da tabela e fazer o gráfico</p>
+<pre class="r"><code>## Menor para maior
+barplot(sort(inst.tb))
+## Maior para menor
+barplot(sort(inst.tb, decreasing = TRUE))</code></pre>
+<p><img src="figures/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Para uma variável ordinal, além da moda podemos também calcular outras medidas, tais como a mediana conforme exemplificado a seguir. Note que o comando <code>median()</code> não funciona com variáveis não numéricas, e por isso usamos o comando seguinte.</p>
+<pre class="r"><code>## Moda
+names(inst.tb)[which.max(inst.tb)]</code></pre>
+<pre><code>[1] &quot;2o Grau&quot;</code></pre>
+<pre class="r"><code>## Mediana
+median(milsa$Inst) # só funciona para variáveis numéricas</code></pre>
+<pre><code>Error in median.default(milsa$Inst): need numeric data</code></pre>
+<pre class="r"><code>median(as.numeric(milsa$Inst)) # traz a mediana da codificação do nível</code></pre>
+<pre><code>[1] 2</code></pre>
+<pre class="r"><code>levels(milsa$Inst)[median(as.numeric(milsa$Inst))] # valor correto</code></pre>
+<pre><code>[1] &quot;2o Grau&quot;</code></pre>
+</div>
+<div id="variavel-quantitativa-discreta" class="section level2">
+<h2>Variável quantitativa discreta</h2>
+<p>Vamos agora usar a variável <code>Filhos</code> (número de filhos) para ilustrar algumas análises que podem ser feitas com uma quantitativa discreta.</p>
+<p>Frequências absolutas e relativas são obtidas como anteriormente. Também vamos calcular a frequência acumulada, onde a frequência em uma classe é a soma das frequências das classes anteriores. Para isso usamos a função <code>cumsum()</code>, que já faz a soma acumulada.</p>
+<pre class="r"><code>## Frequência absoluta
+filhos.tb &lt;- table(milsa$Filhos)
+filhos.tb</code></pre>
+<pre><code>
+0 1 2 3 5 
+4 5 7 3 1 </code></pre>
+<pre class="r"><code>## Frequência relativa
+filhos.tbr &lt;- prop.table(filhos.tb)
+filhos.tbr</code></pre>
+<pre><code>
+   0    1    2    3    5 
+0.20 0.25 0.35 0.15 0.05 </code></pre>
+<pre class="r"><code>## Frequência acumulada
+filhos.tba &lt;- cumsum(filhos.tbr)
+filhos.tba</code></pre>
+<pre><code>   0    1    2    3    5 
+0.20 0.45 0.80 0.95 1.00 </code></pre>
+<p>O gráfico adequado para frequências absolutas de uma variável discreta é parecido com um gráfico de barras, mas nesse caso, as frequências são indicadas por linhas. Usando a função <code>plot()</code> em um objeto resultado da função <code>table()</code>, o gráfico adequado já é selecionado:</p>
+<pre class="r"><code>plot(filhos.tb)</code></pre>
+<p><img src="figures/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Outra possibilidade seria fazer gráficos de frequências relativas e de frequências acumuladas conforme mostrado na</p>
+<pre class="r"><code>## Frequência relativa
+plot(filhos.tbr)
+## Frequência relativa acumulada
+plot(filhos.tba, type = &quot;S&quot;) # tipo step (escada)</code></pre>
+<p><img src="figures/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Sendo a variável numérica há uma maior diversidade de medidas estatísticas que podem ser calculadas.</p>
+<p>A seguir mostramos como obter algumas medidas de posição: moda, mediana, média e média aparada. Note que o argumento <code>na.rm = TRUE</code> é necessário porque não há informação sobre número de filhos para alguns indivíduos (<code>NA</code>). Para calcular a média aparada, usamos o argumento <code>trim = 0.1</code> que indica que a média deve ser calculada excluindo-se 10% dos menores e 10% dos maiores valores do vetor de dados. Ao final mostramos como obter os quartis, incluido o mínimo e o máximo.</p>
+<pre class="r"><code>## Moda
+names(filhos.tb)[which.max(filhos.tb)]</code></pre>
+<pre><code>[1] &quot;2&quot;</code></pre>
+<pre class="r"><code>## Mediana
+median(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 2</code></pre>
+<pre class="r"><code>## Média
+mean(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 1.65</code></pre>
+<pre class="r"><code>## Média aparada
+mean(milsa$Filhos, trim = 0.1, na.rm = TRUE)</code></pre>
+<pre><code>[1] 1.5625</code></pre>
+<pre class="r"><code>## Quartis
+quantile(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>  0%  25%  50%  75% 100% 
+   0    1    2    2    5 </code></pre>
+<p>Passando agora para medidas de dispersão, vejamos como obter máximo e mínimo, e com isso a amplitude, além da variância, desvio padrão, e coeficiente de variação. Também obtemos os quartis para calcular a amplitude interquartílica.</p>
+<pre class="r"><code>## Máximo e mínimo
+max(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 5</code></pre>
+<pre class="r"><code>min(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>## As duas informações juntas
+range(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 0 5</code></pre>
+<pre class="r"><code>## Amplitude é a diferença entre máximo e mínimo
+diff(range(milsa$Filhos, na.rm = TRUE))</code></pre>
+<pre><code>[1] 5</code></pre>
+<pre class="r"><code>## Variância
+var(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 1.607895</code></pre>
+<pre class="r"><code>## Desvio-padrão
+sd(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 1.268028</code></pre>
+<pre class="r"><code>## Coeficiente de variação
+sd(milsa$Filhos, na.rm = TRUE)/mean(milsa$Filhos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 0.7685018</code></pre>
+<pre class="r"><code>## Quartis
+(filhos.qt &lt;- quantile(milsa$Filhos, na.rm = TRUE))</code></pre>
+<pre><code>  0%  25%  50%  75% 100% 
+   0    1    2    2    5 </code></pre>
+<pre class="r"><code>## Amplitude interquartílica
+filhos.qt[4] - filhos.qt[2]</code></pre>
+<pre><code>75% 
+  1 </code></pre>
+<p>Finalmente, podemos usar a função <strong>genérica</strong> <code>summary()</code> para resumir od dados de uma só vez</p>
+<pre class="r"><code>summary(milsa$Filhos)</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+   0.00    1.00    2.00    1.65    2.00    5.00      16 </code></pre>
+</div>
+<div id="variavel-quantitativa-continua" class="section level2">
+<h2>Variável quantitativa contínua</h2>
+<p>Para concluir os exemplos para análise univariada vamos considerar a variável quantitativa contínua <code>Salario</code>.</p>
+<p>Para se fazer uma tabela de frequências de uma VA contínua, é preciso primeiro agrupar os dados em classes. Nos comandos mostrados a seguir verificamos inicialmente os valores máximo e mínimo dos dados, depois usamos o critério de Sturges para definir o número de classes. Usamos a função <code>cut()</code> para agrupar os dados em classes e finalmente obtemos as frequências absolutas e relativas.</p>
+<pre class="r"><code>## Máximo e mínimo
+range(milsa$Salario)</code></pre>
+<pre><code>[1]  4.0 23.3</code></pre>
+<pre class="r"><code>## Número de classes estimado, com base no critério de Sturges. Veja
+## outras opções em ?nclass
+nclass.Sturges(milsa$Salario)</code></pre>
+<pre><code>[1] 7</code></pre>
+<pre class="r"><code>## Criando as classes com a função cut(), usando os valores mínimos e
+## máximos dados em range()
+cut(milsa$Salario, breaks = seq(4, 23.3, length.out = 8))</code></pre>
+<pre><code> [1] &lt;NA&gt;        (4,6.76]    (4,6.76]    (4,6.76]    (4,6.76]   
+ [6] (4,6.76]    (6.76,9.51] (6.76,9.51] (6.76,9.51] (6.76,9.51]
+[11] (6.76,9.51] (6.76,9.51] (6.76,9.51] (6.76,9.51] (6.76,9.51]
+[16] (6.76,9.51] (9.51,12.3] (9.51,12.3] (9.51,12.3] (9.51,12.3]
+[21] (9.51,12.3] (9.51,12.3] (9.51,12.3] (12.3,15]   (12.3,15]  
+[26] (12.3,15]   (12.3,15]   (12.3,15]   (12.3,15]   (15,17.8]  
+[31] (15,17.8]   (15,17.8]   (15,17.8]   (17.8,20.5] (17.8,20.5]
+[36] (20.5,23.3]
+7 Levels: (4,6.76] (6.76,9.51] (9.51,12.3] (12.3,15] ... (20.5,23.3]</code></pre>
+<p>Note que uma das classes é <code>NA</code>. Isso ocorre pela definição das classes, que por padrão é no formato <code>(a,b]</code>, ou seja, o intervalo é aberto em <code>a</code> (não inclui <code>a</code>) e fechado em <code>b</code> (inclui <code>b</code>). Podemos alterar esse padrão usando o argumento <code>include.lowest = TRUE</code>,</p>
+<pre class="r"><code>cut(milsa$Salario, breaks = seq(4, 23.3, length.out = 8),
+    include.lowest = TRUE)</code></pre>
+<pre><code> [1] [4,6.76]    [4,6.76]    [4,6.76]    [4,6.76]    [4,6.76]   
+ [6] [4,6.76]    (6.76,9.51] (6.76,9.51] (6.76,9.51] (6.76,9.51]
+[11] (6.76,9.51] (6.76,9.51] (6.76,9.51] (6.76,9.51] (6.76,9.51]
+[16] (6.76,9.51] (9.51,12.3] (9.51,12.3] (9.51,12.3] (9.51,12.3]
+[21] (9.51,12.3] (9.51,12.3] (9.51,12.3] (12.3,15]   (12.3,15]  
+[26] (12.3,15]   (12.3,15]   (12.3,15]   (12.3,15]   (15,17.8]  
+[31] (15,17.8]   (15,17.8]   (15,17.8]   (17.8,20.5] (17.8,20.5]
+[36] (20.5,23.3]
+7 Levels: [4,6.76] (6.76,9.51] (9.51,12.3] (12.3,15] ... (20.5,23.3]</code></pre>
+<p>E note que agora a primeira classe fica <code>[a,b]</code>, ou seja, fechada (incluindo) os dois lados. Para que o intervalo seja fechado à esquerda, usamos o argumento <code>right = FALSE</code>. As combinações possíveis para esses dois argumentos, e as classes resultantes são apresentadas na tabela abaixo:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Argumentos</th>
+<th align="center">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>include.lowest = T, right = T</code></td>
+<td align="center"><code>[a,b], ..., (y,z]</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>include.lowest = F, right = T</code></td>
+<td align="center"><code>(a,b], ..., (y,z]</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>include.lowest = F, right = F</code></td>
+<td align="center"><code>[a,b), ..., [y,z)</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>include.lowest = T, right = F</code></td>
+<td align="center"><code>[a,b), ..., [y,z]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Outra opção para “acomodar” todos os extremos dentro das classes, seria naturalmente atribuir valores um pouco menores que o mínimo, e um pouco maiores que o máximo. Abaixo, usamos essa abordagem e fazemos uma tabela com as frequências absolutas e relativas.</p>
+<pre class="r"><code>salario.cut &lt;- cut(milsa$Salario,
+                   breaks = seq(3.5, 23.5, length.out = 8))
+salario.cut</code></pre>
+<pre><code> [1] (3.5,6.36]  (3.5,6.36]  (3.5,6.36]  (3.5,6.36]  (3.5,6.36] 
+ [6] (6.36,9.21] (6.36,9.21] (6.36,9.21] (6.36,9.21] (6.36,9.21]
+[11] (6.36,9.21] (6.36,9.21] (6.36,9.21] (6.36,9.21] (6.36,9.21]
+[16] (9.21,12.1] (9.21,12.1] (9.21,12.1] (9.21,12.1] (9.21,12.1]
+[21] (9.21,12.1] (9.21,12.1] (9.21,12.1] (12.1,14.9] (12.1,14.9]
+[26] (12.1,14.9] (12.1,14.9] (12.1,14.9] (12.1,14.9] (14.9,17.8]
+[31] (14.9,17.8] (14.9,17.8] (14.9,17.8] (17.8,20.6] (17.8,20.6]
+[36] (20.6,23.5]
+7 Levels: (3.5,6.36] (6.36,9.21] (9.21,12.1] (12.1,14.9] ... (20.6,23.5]</code></pre>
+<pre class="r"><code>## Tabela com as frequencias absolutas por classe
+salario.tb &lt;- table(salario.cut)
+salario.tb</code></pre>
+<pre><code>salario.cut
+ (3.5,6.36] (6.36,9.21] (9.21,12.1] (12.1,14.9] (14.9,17.8] (17.8,20.6] 
+          5          10           8           6           4           2 
+(20.6,23.5] 
+          1 </code></pre>
+<pre class="r"><code>## Tabela com as frequências relativas
+prop.table(salario.tb)</code></pre>
+<pre><code>salario.cut
+ (3.5,6.36] (6.36,9.21] (9.21,12.1] (12.1,14.9] (14.9,17.8] (17.8,20.6] 
+ 0.13888889  0.27777778  0.22222222  0.16666667  0.11111111  0.05555556 
+(20.6,23.5] 
+ 0.02777778 </code></pre>
+<p>Na sequência vamos mostrar dois possíveis gráficos para variáveis contínuas: o histograma e o <em>box-plot</em>.</p>
+<p>Para fazer um histograma usamos a função <code>hist()</code>, por exemplo,</p>
+<pre class="r"><code>hist(milsa$Salario)</code></pre>
+<p><img src="figures/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>A função <code>hist()</code> possui vários argumentos para alterar o comportamento da saída do gráfico. Por exemplo, com <code>labels = TRUE</code> as frequências são mostradas acima de cada barra. Com <code>freq = FALSE</code>, o gráfico é feito com as frequências relativas.</p>
+<pre class="r"><code>hist(milsa$Salario, freq = FALSE, labels = TRUE)</code></pre>
+<p><img src="figures/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Por padrão, a função <code>hist()</code> calcula automaticamente o número de classes e os valores limites de cada classe. No entanto, isto pode ser alterado com o argumento <code>breaks</code>, que pode receber um vetor definindo os limites das classes, uma função para definir as quebras, um nome de critério (por exemplo, <code>&quot;Sturges&quot;</code>), ou um único escalar definido o número de classes. As últimas três opções são apenas sugestões utilizadas pela função. O argumento <code>nclass</code> também funciona dessa forma, recebendo apenas um valor com o número de classes (como sugestão).</p>
+<pre class="r"><code>hist(milsa$Salario, nclass = 15)</code></pre>
+<p><img src="figures/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Assim como na função <code>cut()</code>, os argumentos <code>include.lowest</code> e <code>right</code> são utilizados para controlar a borda das classes.</p>
+<p>Uma característica importante da função <code>hist()</code> é que ela retorna não apenas o gráfico, mas também uma lista com as informações utilizadas para construir o gráfico. Associando um histograma a um objeto, podemos ver o seu conteúdo:</p>
+<pre class="r"><code>salario.hist &lt;- hist(milsa$Salario)</code></pre>
+<p><img src="figures/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>salario.hist</code></pre>
+<pre><code>$breaks
+ [1]  4  6  8 10 12 14 16 18 20 22 24
+
+$counts
+ [1] 4 6 8 5 4 3 3 2 0 1
+
+$density
+ [1] 0.05555556 0.08333333 0.11111111 0.06944444 0.05555556 0.04166667
+ [7] 0.04166667 0.02777778 0.00000000 0.01388889
+
+$mids
+ [1]  5  7  9 11 13 15 17 19 21 23
+
+$xname
+[1] &quot;milsa$Salario&quot;
+
+$equidist
+[1] TRUE
+
+attr(,&quot;class&quot;)
+[1] &quot;histogram&quot;</code></pre>
+<p>Estas informações podem então ser utilizadas para outros propósitos dentro do R.</p>
+<p>Os <strong>boxplots</strong> são úteis para revelar o centro, a dispersão e a distribuição dos dados, além de <strong>outliers</strong>. São construídos da seguinte forma:</p>
+<ul>
+<li>A linha central mais escura representa a mediana. Os extremos da caixa são o <span class="math inline">\(1^{o}\)</span> (<span class="math inline">\(q1\)</span>) e o <span class="math inline">\(3^{o}\)</span> (<span class="math inline">\(q3\)</span>) quartis.</li>
+<li>As linhas que se extendem das caixas são definidas como: <span class="math display">\[q1-1,5\cdot IQR\ \qquad \mathrm{e}\ \qquad q3+1,5\cdot IQR\]</span> onde <span class="math inline">\(IQR\)</span> é o intervalo inter-quartil. As linhas vão até os valores máximo e mínimo que ainda se encontram dentro deste intervalo.</li>
+</ul>
+<pre class="r"><code>boxplot(milsa$Salario)</code></pre>
+<p><img src="figures/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Existem também vários argumentos que permitem variações do <em>boxplot</em>, tais como caixas com tamanho proporcional aos tamanhos dos grupos (<code>varwidth = TRUE</code>), e caixas “acinturadas” (<em>notched boxplot</em>) (<code>notch = TRUE</code>).</p>
+<pre class="r"><code>boxplot(milsa$Salario, varwidth = TRUE, notch = TRUE)</code></pre>
+<p><img src="figures/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Ambas opções são úteis quando há mais de um grupo e a comparação entre os boxplots é facilitada.</p>
+<p>Finalmente, podemos obter as medidas de posição e dispersão da mesma forma que para variáveis discretas. Veja alguns exemplos a seguir. Note que aqui não é necessário o uso do argumento <code>na.rm = TRUE</code>, pois não existem <code>NA</code>s nesta variável.</p>
+<pre class="r"><code>## Mediana
+median(milsa$Salario)</code></pre>
+<pre><code>[1] 10.165</code></pre>
+<pre class="r"><code>## Média
+mean(milsa$Salario)</code></pre>
+<pre><code>[1] 11.12222</code></pre>
+<pre class="r"><code>## Média aparada
+mean(milsa$Salario, trim = 0.1)</code></pre>
+<pre><code>[1] 10.838</code></pre>
+<pre class="r"><code>## Quartis
+quantile(milsa$Salario)</code></pre>
+<pre><code>     0%     25%     50%     75%    100% 
+ 4.0000  7.5525 10.1650 14.0600 23.3000 </code></pre>
+<pre class="r"><code>## Máximo e mínimo
+max(milsa$Salario)</code></pre>
+<pre><code>[1] 23.3</code></pre>
+<pre class="r"><code>min(milsa$Salario)</code></pre>
+<pre><code>[1] 4</code></pre>
+<pre class="r"><code>## As duas informações juntas
+range(milsa$Salario)</code></pre>
+<pre><code>[1]  4.0 23.3</code></pre>
+<pre class="r"><code>## Amplitude é a diferença entre máximo e mínimo
+diff(range(milsa$Salario))</code></pre>
+<pre><code>[1] 19.3</code></pre>
+<pre class="r"><code>## Variância
+var(milsa$Salario)</code></pre>
+<pre><code>[1] 21.04477</code></pre>
+<pre class="r"><code>## Desvio-padrão
+sd(milsa$Salario)</code></pre>
+<pre><code>[1] 4.587458</code></pre>
+<pre class="r"><code>## Coeficiente de variação
+sd(milsa$Salario)/mean(milsa$Salario)</code></pre>
+<pre><code>[1] 0.4124587</code></pre>
+<pre class="r"><code>## Quartis
+salario.qt &lt;- quantile(milsa$Salario)
+## Amplitude interquartílica
+salario.qt[4] - salario.qt[2]</code></pre>
+<pre><code>   75% 
+6.5075 </code></pre>
+</div>
+</div>
+<div id="analise-bivariada" class="section level1">
+<h1>Análise Bivariada</h1>
+<p>Na análise bivariada procuramos identificar relações entre duas variáveis. Assim como na análise univariada, estas relações podem ser resumidas por gráficos, tabelas e/ou medidas estatísticas. O tipo de resumo vai depender dos tipos das variáveis envolvidas. Vamos considerar três possibilidades:</p>
+<ul>
+<li>Qualitativa <em>vs</em> qualitativa</li>
+<li>Qualitativa <em>vs</em> quantitativa</li>
+<li>Quantitativa <em>vs</em> quantitativa</li>
+</ul>
+<p>Salienta-se ainda que:</p>
+<ul>
+<li>As análise mostradas a seguir não esgotam as possibilidades de análises envolvendo duas variáveis e devem ser vistas apenas como uma sugestão inicial</li>
+<li>Relações entre duas variáveis devem ser examinadas com cautela pois podem ser mascaradas por uma ou mais variáveis adicionais não considerada na análise. Estas são chamadas <strong>variáveis de confundimento</strong>. Análises com variáveis de confundimento não serão discutidas neste ponto.</li>
+</ul>
+<blockquote>
+<p><strong>Observação</strong>: de agora em diante, como serão consideradas mais de uma variável, usaremos a função <code>with()</code> para chamar a maioria das funções.</p>
+</blockquote>
+<div id="qualitativa-vs-qualitativa" class="section level2">
+<h2>Qualitativa <em>vs</em> qualitativa</h2>
+<p>Vamos considerar as variáveis <code>Est.civil</code> (estado civil), e <code>Inst</code> (grau de instrução). A tabela envolvendo duas variáveis é chamada <strong>tabela de cruzamento</strong> ou <strong>tabela de contingência</strong>, e pode ser apresentada de várias formas, conforme discutido a seguir.</p>
+<p>A forma mais adequada de apresentação vai depender dos objetivos da análise e da interpretação desejada para os dados. Iniciamente obtemos a tabela de frequências absolutas para o cruzamento das duas variávies, usando a função <code>table()</code>. A tabela extendida incluindo os totais marginais pode ser obtida com a função <code>addmargins()</code>.</p>
+<pre class="r"><code>## Tabela de frequências absolutas
+civ.inst.tb &lt;- with(milsa, table(Est.civil, Inst))
+civ.inst.tb</code></pre>
+<pre><code>          Inst
+Est.civil  1o Grau 2o Grau Superior
+  casado         5      12        3
+  solteiro       7       6        3</code></pre>
+<pre class="r"><code>addmargins(civ.inst.tb)</code></pre>
+<pre><code>          Inst
+Est.civil  1o Grau 2o Grau Superior Sum
+  casado         5      12        3  20
+  solteiro       7       6        3  16
+  Sum           12      18        6  36</code></pre>
+<!-- Ver tambem margin.table() -->
+<p>Tabelas de frequências relativas são obtidas com <code>prop.table()</code>, mas aqui existem três possibilidades para as proporções em cada casela:</p>
+<ul>
+<li>Em relação ao total geral</li>
+<li>Em relação aos totais por linha (<code>margin = 1</code>)</li>
+<li>Em relação aos totais por coluna (<code>margin = 2</code>)</li>
+</ul>
+<pre class="r"><code>## Frequência relativa global
+prop.table(civ.inst.tb)</code></pre>
+<pre><code>          Inst
+Est.civil     1o Grau    2o Grau   Superior
+  casado   0.13888889 0.33333333 0.08333333
+  solteiro 0.19444444 0.16666667 0.08333333</code></pre>
+<pre class="r"><code>## Frequência relativa por linha
+prop.table(civ.inst.tb, margin = 1)</code></pre>
+<pre><code>          Inst
+Est.civil  1o Grau 2o Grau Superior
+  casado    0.2500  0.6000   0.1500
+  solteiro  0.4375  0.3750   0.1875</code></pre>
+<pre class="r"><code>## Frequência relativa por coluna
+prop.table(civ.inst.tb, margin = 2)</code></pre>
+<pre><code>          Inst
+Est.civil    1o Grau   2o Grau  Superior
+  casado   0.4166667 0.6666667 0.5000000
+  solteiro 0.5833333 0.3333333 0.5000000</code></pre>
+<p>Abaixo são representados quatro tipos de gráficos de barras que podem ser usados para representar o cruzamento das variáveis. A transposição da tabela com <code>t()</code> permite alterar a variável que define os grupos no eixo horizontal. O uso de <code>prop.table()</code> permite o obtenção de gráficos com frequências relativas.</p>
+<pre class="r"><code>barplot(civ.inst.tb, legend = TRUE)
+barplot(t(civ.inst.tb), legend = TRUE)
+barplot(civ.inst.tb, beside = TRUE, legend = TRUE)
+barplot(t(prop.table(civ.inst.tb)), beside = TRUE, legend = TRUE)</code></pre>
+<p><img src="figures/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" /></p>
+<!-- Incluir aqui a medida de associacao chi-quadrado -->
+<!-- Incluir reagrupamento -->
+</div>
+<div id="qualitativa-vs-quantitativa" class="section level2">
+<h2>Qualitativa <em>vs</em> quantitativa</h2>
+<p>Para exemplificar este caso vamos considerar as variáveis <code>Inst</code> e <code>Salario</code>.</p>
+<p>Para se obter uma tabela de frequências é necessário agrupar a variável quantitativa em classes. No exemplo a seguir vamos agrupar a variável salário em 4 classes definidas pelos quartis usando a função <code>cut()</code>. Lembre-se que as classes são definidas por intervalos abertos à esquerda, então usamos o argumento <code>include.lowest = TRUE</code> para garantir que todos os dados, incluve o menor (mínimo) seja incluído na primeira classe. Após agrupar esta variável, obtemos a(s) tabela(s) de cruzamento como mostrado no caso anterior.</p>
+<pre class="r"><code>## Quartis de salario
+quantile(milsa$Salario)</code></pre>
+<pre><code>     0%     25%     50%     75%    100% 
+ 4.0000  7.5525 10.1650 14.0600 23.3000 </code></pre>
+<pre class="r"><code>## Classificação de acordo com os quartis
+salario.cut &lt;- cut(milsa$Salario, breaks =  quantile(milsa$Salario),
+                   include.lowest = TRUE)
+## Tabela de frequências absolutas
+inst.sal.tb &lt;- table(milsa$Inst, salario.cut)
+inst.sal.tb</code></pre>
+<pre><code>          salario.cut
+           [4,7.55] (7.55,10.2] (10.2,14.1] (14.1,23.3]
+  1o Grau         7           3           2           0
+  2o Grau         2           6           5           5
+  Superior        0           0           2           4</code></pre>
+<pre class="r"><code>prop.table(inst.sal.tb, margin = 1)</code></pre>
+<pre><code>          salario.cut
+            [4,7.55] (7.55,10.2] (10.2,14.1] (14.1,23.3]
+  1o Grau  0.5833333   0.2500000   0.1666667   0.0000000
+  2o Grau  0.1111111   0.3333333   0.2777778   0.2777778
+  Superior 0.0000000   0.0000000   0.3333333   0.6666667</code></pre>
+<p>No gráfico vamos considerar que neste exemplo a instrução deve ser a variável explicativa e portanto colocada no eixo X, e o salário é a variável resposta, e portanto deve ser colocada no eixo Y. Isto é, consideramos que a instrução deve explicar, ainda que parcialmente, o salário (e não o contrário!).</p>
+<p>Vamos então obter um <em>boxplot</em> dos salários para cada nível de instrução. Note que na função abaixo, usamos a notação de <strong>fórmula</strong> do R, com <code>Salario ~ Inst</code> indicando que a variável <code>Salario</code> é explicada, ou descrita, (<span class="math inline">\(\sim\)</span>) pela variável <code>Inst</code>.</p>
+<pre class="r"><code>boxplot(Salario ~ Inst, data = milsa)</code></pre>
+<p><img src="figures/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Poderíamos ainda fazer gráficos com a variável <code>Salario</code> agrupada em classes, e neste caso os gráficos seriam como no caso anterior com duas variáveis qualitativas.</p>
+<p>Para as medidas descritivas, o usual é obter um resumo da variável quantitativa como mostrado na análise univariada, porém agora informando este resumo para cada nível do fator qualitativo de interesse.</p>
+<p>A seguir mostramos alguns exemplos de como obter a média, desvio padrão e o resumo de cinco números do salário para cada nível de instrução.</p>
+<pre class="r"><code>with(milsa, tapply(Salario, Inst, mean))</code></pre>
+<pre><code>  1o Grau   2o Grau  Superior 
+ 7.836667 11.528333 16.475000 </code></pre>
+<pre class="r"><code>with(milsa, tapply(Salario, Inst, sd))</code></pre>
+<pre><code> 1o Grau  2o Grau Superior 
+2.956464 3.715144 4.502438 </code></pre>
+<pre class="r"><code>with(milsa, tapply(Salario, Inst, quantile))</code></pre>
+<pre><code>$`1o Grau`
+     0%     25%     50%     75%    100% 
+ 4.0000  6.0075  7.1250  9.1625 13.8500 
+
+$`2o Grau`
+     0%     25%     50%     75%    100% 
+ 5.7300  8.8375 10.9100 14.4175 19.4000 
+
+$Superior
+     0%     25%     50%     75%    100% 
+10.5300 13.6475 16.7400 18.3775 23.3000 </code></pre>
+<blockquote>
+<p>NOTE que aqui usamos a função <code>tapply()</code>. Para saber mais sobre os recursos dessa função e de outras da família <code>*apply</code>, veja o <a href="scripts/script_exploratoria.R">script_exploratoria.R</a>.</p>
+</blockquote>
+</div>
+<div id="quantitativa-vs-quantitativa" class="section level2">
+<h2>Quantitativa <em>vs</em> Quantitativa</h2>
+<p>Para ilustrar este caso vamos considerar as variáveis <code>Salario</code> e <code>Idade</code>. Para se obter uma tabela é necessário agrupar as variáveis em classes conforme fizemos no caso anterior.</p>
+<p>Nos comandos abaixo, agrupamos as duas variáveis em classes definidas pelos respectivos quartis, gerando portanto uma tabela de cruzamento <span class="math inline">\(4~\times~4\)</span>.</p>
+<pre class="r"><code>## Classes de Idade
+idade.cut &lt;- with(milsa, cut(Idade, breaks = quantile(Idade),
+                             include.lowest = TRUE))
+table(idade.cut)</code></pre>
+<pre><code>idade.cut
+[20.8,30.7] (30.7,34.9] (34.9,40.5] (40.5,48.9] 
+          9           9           9           9 </code></pre>
+<pre class="r"><code>## Classes de salario
+salario.cut &lt;- with(milsa, cut(Salario, breaks = quantile(Salario),
+                               include.lowest = TRUE))
+table(salario.cut)</code></pre>
+<pre><code>salario.cut
+   [4,7.55] (7.55,10.2] (10.2,14.1] (14.1,23.3] 
+          9           9           9           9 </code></pre>
+<pre class="r"><code>## Tabela cruzada
+table(idade.cut, salario.cut)</code></pre>
+<pre><code>             salario.cut
+idade.cut     [4,7.55] (7.55,10.2] (10.2,14.1] (14.1,23.3]
+  [20.8,30.7]        4           2           2           1
+  (30.7,34.9]        1           3           3           2
+  (34.9,40.5]        1           3           2           3
+  (40.5,48.9]        3           1           2           3</code></pre>
+<pre class="r"><code>prop.table(table(idade.cut, salario.cut), margin = 1)</code></pre>
+<pre><code>             salario.cut
+idade.cut      [4,7.55] (7.55,10.2] (10.2,14.1] (14.1,23.3]
+  [20.8,30.7] 0.4444444   0.2222222   0.2222222   0.1111111
+  (30.7,34.9] 0.1111111   0.3333333   0.3333333   0.2222222
+  (34.9,40.5] 0.1111111   0.3333333   0.2222222   0.3333333
+  (40.5,48.9] 0.3333333   0.1111111   0.2222222   0.3333333</code></pre>
+<p>Caso queiramos definir um número menor de classes podemos fazer como no exemplo a seguir onde cada variável é dividida em 3 classes e gerando um tabela de cruzamento <span class="math inline">\(3~\times~3\)</span>.</p>
+<pre class="r"><code>idade.cut2 &lt;- with(milsa, cut(Idade,
+                              breaks = quantile(Idade, seq(0, 1, length = 4)),
+                              include.lowest = TRUE))
+salario.cut2 &lt;- with(milsa, cut(Salario,
+                                breaks = quantile(Salario, seq(0, 1, length = 4)),
+                                include.lowest = TRUE))
+table(idade.cut2, salario.cut2)</code></pre>
+<pre><code>             salario.cut2
+idade.cut2    [4,8.65] (8.65,12.9] (12.9,23.3]
+  [20.8,32.1]        5           5           2
+  (32.1,37.8]        4           3           5
+  (37.8,48.9]        3           4           5</code></pre>
+<pre class="r"><code>prop.table(table(idade.cut2, salario.cut2), margin = 1)</code></pre>
+<pre><code>             salario.cut2
+idade.cut2     [4,8.65] (8.65,12.9] (12.9,23.3]
+  [20.8,32.1] 0.4166667   0.4166667   0.1666667
+  (32.1,37.8] 0.3333333   0.2500000   0.4166667
+  (37.8,48.9] 0.2500000   0.3333333   0.4166667</code></pre>
+<p>O gráfico adequado para representar duas variáveis quantitativas é um diagrama de dispersão. Note que se as variáveis envolvidas puderem ser classificadas como “explicativa” e “resposta” devemos colocar a primeira no eixo X e a segunda no eixo Y. Neste exemplo é razoável admitir que a idade deve explicar, ao menos parcialmente, o salário e portanto fazemos o gráfico com idade no eixo X. Note que na função <code>plot()</code>, podemos usar tanto os argumentos <code>x</code> e <code>y</code>, quanto o formato de fórmula (como visto anteriormente).</p>
+<pre class="r"><code>plot(x = milsa$Idade, y = milsa$Salario)
+plot(Salario ~ Idade, data = milsa)</code></pre>
+<p><img src="figures/unnamed-chunk-40-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Para quantificar a associação entre variáveis deste tipo, usamos o coeficiente de correlação. A função <code>cor()</code> possui opção para três coeficientes de correlação, tendo como <em>default</em> o coeficiente de correlação linear de Pearson.</p>
+<pre class="r"><code>with(milsa, cor(Idade, Salario))</code></pre>
+<pre><code>[1] 0.3651397</code></pre>
+<pre class="r"><code>with(milsa, cor(Idade, Salario, method = &quot;kendall&quot;))</code></pre>
+<pre><code>[1] 0.214456</code></pre>
+<pre class="r"><code>with(milsa, cor(Idade, Salario, method = &quot;spearman&quot;))</code></pre>
+<pre><code>[1] 0.2895939</code></pre>
+</div>
+</div>
+<div id="exercicios" class="section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li>Experimente as funções <code>mean()</code>, <code>var()</code>, <code>sd()</code>, <code>median()</code>, <code>quantile()</code> nos dados mostrados anteriormente (<code>milsa</code>). Veja a documentação das funções e as opções de uso.</li>
+<li>Carregue o conjunto de dados <code>women</code> com <code>data(women)</code>. Veja o que são os dados com <code>help(women)</code>, e faça uma análise descritiva adequada.</li>
+<li>Carregue o conjunto de dados <code>USArrests</code> com <code>data(USArrests)</code>. Examine a sua documentação com <code>help(USArrests)</code> e responda as perguntas a seguir:
+<ol style="list-style-type: decimal">
+<li>Qual o número médio e mediano de cada um dos crimes?</li>
+<li>Encontre a mediana e quartis para cada crime.</li>
+<li>Encontre o número máximo e mínimo para cada crime.</li>
+<li>Faça um gráfico adequado para o número de assassinatos (<code>Murder</code>).</li>
+<li>Faça um <em>boxplot</em> para o número de estupros (<code>Rape</code>).</li>
+<li>Verifique se há correlação entre os diferentes tipos de crime.</li>
+<li>Verifique se há correlação entre os crimes e a proporção de população urbana.</li>
+<li>Encontre os estados com maior e menor ocorrência de cada tipo de crime.</li>
+<li>Encontre os estados com maior e menor ocorrência per capta de cada tipo de crime.</li>
+<li>Encontre os estados com maior e menor ocorrência do total de crimes.</li>
+<li>Calcule a média de crimes (entre <code>Murder</code>, <code>Assault</code> e <code>Rape</code>) para cada estado.</li>
+</ol></li>
+</ol>
+<p>As respostas estão no script <a href="scripts/script_resposta_exploratoria.R">script_resposta_exploratoria.R</a>.</p>
+<!-- Referencias -->
+</div>
+
+<center>
+  <hr width="100%" size="3px">
+  <p> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR">
+      <img src="img/CC_by-nc-sa_80x15.png" alt="Licença Creative Commons 4.0"> </a>
+  </p>
+  <p> <font size="2"> Este conteúdo
+      está disponível por meio da Licença Creative Commons 4.0 </font>
+  </p>
+</center>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

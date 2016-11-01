@@ -82,17 +82,20 @@ cat(paste0("- **", datas.ter, "**:\n", "- **", datas.qui, "**:\n"))
   ler/escrever dados. [Material](04_Entrada_de_dados.html).
 - **20/10**: Análise exploratória de dados: variáveis qualitativas.
   Tabelas de frequência absoluta e relativa, gráficos de
-  barra. [Script de aula](scripts/script_exploratoria.R).
+  barra. [Material](05_Analise_exploratoria.html) e
+  [script de aula](scripts/script_exploratoria.R).
 - **25/10**: Análise exploratória de dados: variáveis quantitativas.
   Tabelas de frequência absoluta e relativa, histograma e
-  boxplot. [Script de aula](scripts/script_exploratoria.R).
+  boxplot. [Material](05_Analise_exploratoria.html) e
+  [script de aula](scripts/script_exploratoria.R).
 - **27/10**: Não haverá aula por
 [solicitação do TRE](http://www.ufpr.br/portalufpr/blog/noticias/__trashed-10/)
 para as eleições.
 - **01/11**: (Problemas com a rede do C3SL). Ver script com subset
   dentro de funções gráficas, subset para criar novos objetos, família
   de funções `*apply()` e `aggregate()` para criar tabelas resumo.
-  [Script de aula](scripts/script_exploratoria.R).
+  [Material](05_Analise_exploratoria.html) e
+  [script de aula](scripts/script_exploratoria.R).
 - **03/11**:
 - **08/11**:
 - **10/11**: Segunda prova.

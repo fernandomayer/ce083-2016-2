@@ -133,6 +133,92 @@ boxplot(expVida ~ continente, data = dados)
 # Colombia
 # Equador
 ## Veja ?subset
+boxplot(dados$expVida[dados$pais == "Brazil"])
+boxplot(dados$expVida, subset = dados$pais == "Brazil")
+## Usando o argumento subset
+boxplot(expVida ~ pais, data = dados, subset = pais == "Brazil")
+boxplot(expVida ~ pais, data = dados,
+        subset = pais %in% c("Brazil", "Uruguay"))
+boxplot(expVida ~ pais, data = dados,
+        subset = pais %in% c("Brazil", "Uruguay", "Argentina"))
+## Fazendo um subset e criando novo objeto
+paises <- c("Brazil", "Uruguay", "Argentina", "Chile", "Paraguai",
+            "Colombia", "Equador")
+dados2 <- subset(dados, pais %in% paises)
+dim(dados2)
+table(dados2$pais)
+## Não estão todos os paises. Como descobrir os nomes corretos?
+grep("Eq", dados$pais)
+grep("Eq", dados$pais, value = TRUE)
+grep("E", dados$pais, value = TRUE)
+grep("^E", dados$pais, value = TRUE)
+grep("^[E].*r$", dados$pais, value = TRUE)
+grep("Para", dados$pais, value = TRUE)
+paises <- c("Brazil", "Uruguay", "Argentina", "Chile", "Paraguay",
+            "Colombia", "Ecuador")
+dados2 <- subset(dados, pais %in% paises)
+dim(dados2)
+str(dados2)
+table(dados2$pais)
+boxplot(expVida ~ pais, data = dados2)
+boxplot(expVida ~ pais, data = dados2, las = 3) # ver outros las
 
+## Usando o pacote lattice
+library(lattice)
+bwplot(~ expVida | pais, data = dados2)
+bwplot(expVida ~ pais, data = dados2)
+bwplot(expVida ~ pais | ano, data = dados2)
+bwplot(expVida ~ pais | ano, data = dados2,
+       scales = list(x = list(rot = 90)))
+histogram(~ expVida | pais, data = dados2)
+histogram(~ expVida | pais, data = dados2)
 
+##----------------------------------------------------------------------
+## Tabelas resumo (familia *apply)
 
+## FUN por coluna
+apply(dados2[, 5:6], 2, mean)
+apply(dados2[, 5:6], 2, var)
+apply(dados2[, 5:6], 2, sd)
+apply(dados2[, 5:6], 2, fivenum)
+apply(dados2[, 5:6], 2, summary)
+
+## Usando s/lapply
+sapply(dados2[, 5:6], mean)
+lapply(dados2[, 5:6], mean)
+sapply(dados2[, 5:6], summary)
+lapply(dados2[, 5:6], summary)
+## Do exemplo em ?lapply
+x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
+x
+lapply(x, mean)
+lapply(x, quantile)
+sapply(x, quantile)
+
+## tapply calcula por categoria
+with(dados2, tapply(expVida, pais, mean))
+with(dados2, tapply(expVida, pais, var))
+with(dados2, tapply(expVida, pais, summary))
+## Com duas variaveis separadoras
+with(dados2, tapply(expVida, list(pais, ano), mean))
+with(dados2, tapply(expVida, list(ano, pais), mean))
+with(dados2, tapply(expVida, list(continente, pais), mean))
+## Com tres gera um array
+with(dados2, tapply(expVida, list(ano, continente, pais), mean))
+with(dados2, tapply(expVida, list(ano, pais, continente), mean))
+## Com duas variaveis resposta ...
+with(dados2, tapply(data.frame(expVida, pibPercap), pais, mean))
+## ... tem que usar o aggregate
+with(dados2, aggregate(expVida, list(pais), mean))
+aggregate(expVida ~ pais, data = dados2, mean) # mais facil
+## Com mais de uma variavel
+with(dados2, aggregate(cbind(expVida, pibPercap), list(pais), mean))
+aggregate(cbind(expVida, pibPercap) ~ pais, data = dados2, mean)
+## Com mais de um divisor
+with(dados2, aggregate(expVida, list(pais, ano), mean))
+aggregate(expVida ~ pais + ano, data = dados2, mean) # mais facil
+## Com duas variaveis e dois divisores
+with(dados2, aggregate(cbind(expVida, pibPercap), list(pais, ano), mean))
+aggregate(cbind(expVida, pibPercap) ~ pais + ano, data = dados2, mean)
+## E para fazer com mais de uma função?
+## Ver a função ddply do pacote plyr

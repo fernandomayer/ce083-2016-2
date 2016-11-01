@@ -11,12 +11,12 @@ source("setup_knitr.R")
 
 [![Build Status](https://travis-ci.org/fernandomayer/ce083-2016-2.svg)](https://travis-ci.org/fernandomayer/ce083-2016-2)
 
-<div class="alert alert-danger" role="alert">
-**ATENÇÃO!**
+<!-- <div class="alert alert-danger" role="alert"> -->
+<!-- **ATENÇÃO!** -->
 
-- Não haverá aula no dia 27/10 (quinta-feira) por solicitação do TRE
+<!-- - Não haverá aula no dia 27/10 (quinta-feira) por solicitação do TRE -->
 
-</div>
+<!-- </div> -->
 
 
 # Detalhes da oferta da disciplina

@@ -89,7 +89,10 @@ cat(paste0("- **", datas.ter, "**:\n", "- **", datas.qui, "**:\n"))
 - **27/10**: Não haverá aula por
 [solicitação do TRE](http://www.ufpr.br/portalufpr/blog/noticias/__trashed-10/)
 para as eleições.
-- **01/11**:
+- **01/11**: (Problemas com a rede do C3SL). Ver script com subset
+  dentro de funções gráficas, subset para criar novos objetos, família
+  de funções `*apply()` e `aggregate()` para criar tabelas resumo.
+  [Script de aula](scripts/script_exploratoria.R).
 - **03/11**:
 - **08/11**:
 - **10/11**: Segunda prova.

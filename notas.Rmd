@@ -9,8 +9,68 @@ output:
 source("setup_knitr.R")
 ```
 
-```{r pacotes, include=FALSE}
-library(knitr)
+```{r, include=FALSE}
+## Importa
+notas <- read.csv("misc/notas.csv")
+## Converte matriculas para numero
+notas$Matricula <- as.numeric(gsub("GRR", "", notas$Matricula))
+notas <- notas[order(notas$Matricula), ]
+rownames(notas) <- 1:nrow(notas)
+## Seleciona apenas as colunas com as notas de provas (P*)
+notas.col <- grep("^P", names(notas))
 ```
 
-Nada ainda.
+## Histograma e box plot geral
+
+```{r, fig.width=8, fig.height=6}
+## Grafico geral das notas
+breaks <- 0:10
+## table(cut(notas$S1, breaks = breaks,
+##           right = FALSE, include.lowest = TRUE))
+## Junta notas de todas as sabatinas em um único vetor
+notas.all <- do.call(c, notas[, notas.col, drop = FALSE])
+hist(notas.all, breaks = breaks, right = FALSE, include.lowest = TRUE,
+     main = "Notas gerais", xlab = "Notas", ylab = "Frequência absoluta")
+## boxplot(notas.all, horizontal = TRUE, ylim = c(0, 10),
+##         col = "lightgray", add = TRUE, at = 1)
+```
+
+Resumo dos cinco números, média, desvio-padrão, e número de provas não
+realizadas (NA):
+
+```{r}
+statm <- function(x){
+    res <- c(fivenum(x),
+             mean(x, na.rm = TRUE),
+             sd(x, na.rm = TRUE),
+             sum(is.na(x)))
+    names(res) <- c("Min", "Q1", "Q2", "Q3", "Max", "Média", "s", "NAs")
+    return(res)
+}
+round(statm(notas.all), 2)
+```
+
+## Resumos por prova
+
+Box plot de cada prova
+
+```{r, fig.width=8, fig.height=6}
+## Boxplots comparando as notas entre sabatinas
+boxplot(notas[, notas.col], ylim = c(0, 10), ylab = "Notas")
+```
+
+Resumo dos cinco números, média, desvio-padrão, e número de provas não
+realizadas (NA):
+
+```{r}
+round(apply(notas[, notas.col, drop = FALSE], 2, statm), 2)
+```
+
+## Notas individuais
+
+<!-- **Aqui estão apenas as notas individuais de cada sabatina. Veja na seção -->
+<!-- abaixo as médias finais calculadas!** -->
+
+```{r, results='asis'}
+kable(notas[, c(1, notas.col)], align = "c")
+```

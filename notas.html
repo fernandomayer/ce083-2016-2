@@ -284,7 +284,290 @@ $(document).ready(function () {
 </div>
 
 
-<p>Nada ainda.</p>
+<div id="histograma-e-box-plot-geral" class="section level2">
+<h2>Histograma e box plot geral</h2>
+<pre class="r"><code>## Grafico geral das notas
+breaks &lt;- 0:10
+## table(cut(notas$S1, breaks = breaks,
+##           right = FALSE, include.lowest = TRUE))
+## Junta notas de todas as sabatinas em um único vetor
+notas.all &lt;- do.call(c, notas[, notas.col, drop = FALSE])
+hist(notas.all, breaks = breaks, right = FALSE, include.lowest = TRUE,
+     main = &quot;Notas gerais&quot;, xlab = &quot;Notas&quot;, ylab = &quot;Frequência absoluta&quot;)</code></pre>
+<p><img src="figures/unnamed-chunk-2-1.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>## boxplot(notas.all, horizontal = TRUE, ylim = c(0, 10),
+##         col = &quot;lightgray&quot;, add = TRUE, at = 1)</code></pre>
+<p>Resumo dos cinco números, média, desvio-padrão, e número de provas não realizadas (NA):</p>
+<pre class="r"><code>statm &lt;- function(x){
+    res &lt;- c(fivenum(x),
+             mean(x, na.rm = TRUE),
+             sd(x, na.rm = TRUE),
+             sum(is.na(x)))
+    names(res) &lt;- c(&quot;Min&quot;, &quot;Q1&quot;, &quot;Q2&quot;, &quot;Q3&quot;, &quot;Max&quot;, &quot;Média&quot;, &quot;s&quot;, &quot;NAs&quot;)
+    return(res)
+}
+round(statm(notas.all), 2)</code></pre>
+<pre><code>  Min    Q1    Q2    Q3   Max Média     s   NAs 
+ 1.81  5.32  7.14  8.29 10.00  6.71  2.45 13.00 </code></pre>
+</div>
+<div id="resumos-por-prova" class="section level2">
+<h2>Resumos por prova</h2>
+<p>Box plot de cada prova</p>
+<pre class="r"><code>## Boxplots comparando as notas entre sabatinas
+boxplot(notas[, notas.col], ylim = c(0, 10), ylab = &quot;Notas&quot;)</code></pre>
+<p><img src="figures/unnamed-chunk-4-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Resumo dos cinco números, média, desvio-padrão, e número de provas não realizadas (NA):</p>
+<pre class="r"><code>round(apply(notas[, notas.col, drop = FALSE], 2, statm), 2)</code></pre>
+<pre><code>         P1
+Min    1.81
+Q1     5.32
+Q2     7.14
+Q3     8.29
+Max   10.00
+Média  6.71
+s      2.45
+NAs   13.00</code></pre>
+</div>
+<div id="notas-individuais" class="section level2">
+<h2>Notas individuais</h2>
+<!-- **Aqui estão apenas as notas individuais de cada sabatina. Veja na seção -->
+<!-- abaixo as médias finais calculadas!** -->
+<pre class="r"><code>kable(notas[, c(1, notas.col)], align = &quot;c&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Matricula</th>
+<th align="center">P1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">20149114</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">20159136</td>
+<td align="center">7.28</td>
+</tr>
+<tr class="odd">
+<td align="center">20159322</td>
+<td align="center">4.60</td>
+</tr>
+<tr class="even">
+<td align="center">20159350</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">20159352</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">20159393</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">20159409</td>
+<td align="center">10.00</td>
+</tr>
+<tr class="even">
+<td align="center">20159417</td>
+<td align="center">4.27</td>
+</tr>
+<tr class="odd">
+<td align="center">20159775</td>
+<td align="center">7.02</td>
+</tr>
+<tr class="even">
+<td align="center">20159826</td>
+<td align="center">6.83</td>
+</tr>
+<tr class="odd">
+<td align="center">20159858</td>
+<td align="center">7.37</td>
+</tr>
+<tr class="even">
+<td align="center">20159999</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">20160023</td>
+<td align="center">9.17</td>
+</tr>
+<tr class="even">
+<td align="center">20160194</td>
+<td align="center">5.54</td>
+</tr>
+<tr class="odd">
+<td align="center">20160203</td>
+<td align="center">7.89</td>
+</tr>
+<tr class="even">
+<td align="center">20160204</td>
+<td align="center">5.62</td>
+</tr>
+<tr class="odd">
+<td align="center">20160205</td>
+<td align="center">3.11</td>
+</tr>
+<tr class="even">
+<td align="center">20160206</td>
+<td align="center">10.00</td>
+</tr>
+<tr class="odd">
+<td align="center">20160208</td>
+<td align="center">7.14</td>
+</tr>
+<tr class="even">
+<td align="center">20160209</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">20160210</td>
+<td align="center">9.98</td>
+</tr>
+<tr class="even">
+<td align="center">20160211</td>
+<td align="center">6.62</td>
+</tr>
+<tr class="odd">
+<td align="center">20160212</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">20160213</td>
+<td align="center">7.24</td>
+</tr>
+<tr class="odd">
+<td align="center">20160214</td>
+<td align="center">1.81</td>
+</tr>
+<tr class="even">
+<td align="center">20160215</td>
+<td align="center">5.10</td>
+</tr>
+<tr class="odd">
+<td align="center">20160216</td>
+<td align="center">6.66</td>
+</tr>
+<tr class="even">
+<td align="center">20160217</td>
+<td align="center">10.00</td>
+</tr>
+<tr class="odd">
+<td align="center">20160218</td>
+<td align="center">6.05</td>
+</tr>
+<tr class="even">
+<td align="center">20160219</td>
+<td align="center">9.98</td>
+</tr>
+<tr class="odd">
+<td align="center">20160220</td>
+<td align="center">9.42</td>
+</tr>
+<tr class="even">
+<td align="center">20160221</td>
+<td align="center">7.14</td>
+</tr>
+<tr class="odd">
+<td align="center">20160222</td>
+<td align="center">3.15</td>
+</tr>
+<tr class="even">
+<td align="center">20160223</td>
+<td align="center">7.58</td>
+</tr>
+<tr class="odd">
+<td align="center">20160224</td>
+<td align="center">9.27</td>
+</tr>
+<tr class="even">
+<td align="center">20160225</td>
+<td align="center">7.45</td>
+</tr>
+<tr class="odd">
+<td align="center">20160226</td>
+<td align="center">7.10</td>
+</tr>
+<tr class="even">
+<td align="center">20160227</td>
+<td align="center">1.81</td>
+</tr>
+<tr class="odd">
+<td align="center">20160228</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">20160229</td>
+<td align="center">3.48</td>
+</tr>
+<tr class="odd">
+<td align="center">20160230</td>
+<td align="center">3.85</td>
+</tr>
+<tr class="even">
+<td align="center">20160231</td>
+<td align="center">8.84</td>
+</tr>
+<tr class="odd">
+<td align="center">20160232</td>
+<td align="center">1.87</td>
+</tr>
+<tr class="even">
+<td align="center">20160233</td>
+<td align="center">2.20</td>
+</tr>
+<tr class="odd">
+<td align="center">20160234</td>
+<td align="center">7.62</td>
+</tr>
+<tr class="even">
+<td align="center">20160235</td>
+<td align="center">6.87</td>
+</tr>
+<tr class="odd">
+<td align="center">20160236</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">20160237</td>
+<td align="center">7.85</td>
+</tr>
+<tr class="odd">
+<td align="center">20160238</td>
+<td align="center">8.69</td>
+</tr>
+<tr class="even">
+<td align="center">20160239</td>
+<td align="center">9.71</td>
+</tr>
+<tr class="odd">
+<td align="center">20160240</td>
+<td align="center">7.43</td>
+</tr>
+<tr class="even">
+<td align="center">20160242</td>
+<td align="center">7.74</td>
+</tr>
+<tr class="odd">
+<td align="center">20160304</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">20162949</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">20165725</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">20165740</td>
+<td align="center">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 <center>
   <hr width="100%" size="3px">

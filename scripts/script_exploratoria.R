@@ -222,3 +222,18 @@ with(dados2, aggregate(cbind(expVida, pibPercap), list(pais, ano), mean))
 aggregate(cbind(expVida, pibPercap) ~ pais + ano, data = dados2, mean)
 ## E para fazer com mais de uma função?
 ## Ver a função ddply do pacote plyr
+
+##----------------------------------------------------------------------
+## Algumas opções de gráficos de dispersão
+plot(expVida ~ pibPercap, data = dados2)
+plot(expVida ~ pibPercap, data = dados2, subset = pais == "Brazil")
+xyplot(expVida ~ pibPercap, data = dados2)
+xyplot(expVida ~ pibPercap, data = dados2,
+       groups = pais, auto.key = list(columns = 4))
+xyplot(expVida ~ pibPercap, data = dados2,
+       groups = pais, auto.key = list(columns = 4),
+       type = c("p", "smooth"))
+xyplot(expVida ~ pibPercap | pais, data = dados2)
+xyplot(expVida ~ pibPercap | pais, data = dados2, as.table = TRUE)
+xyplot(expVida ~ pibPercap | pais, data = dados2, as.table = TRUE,
+       type = c("p", "smooth"))

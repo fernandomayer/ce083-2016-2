@@ -96,8 +96,14 @@ para as eleições.
   de funções `*apply()` e `aggregate()` para criar tabelas resumo.
   [Material](05_Analise_exploratoria.html) e
   [script de aula](scripts/script_exploratoria.R).
-- **03/11**:
-- **08/11**:
+- **03/11**: Subset (em argumentos gráficos e para criação de objetos).
+  Família de funções `*apply()` e
+  `aggregate()`. [Material](05_Analise_exploratoria.html)
+  e [script de aula](scripts/script_exploratoria.R).
+- **08/11**: Gráficos para relação de duas variáveis quantitativas.
+  [Exercício](exercicios/ex03_exploratoria.R) de análise
+  exploratória. [Material](05_Analise_exploratoria.html)
+  e [script de aula](scripts/script_exploratoria.R).
 - **10/11**: Segunda prova.
 - **15/11**: Feriado.
 - **17/11**:
@@ -114,7 +120,8 @@ para as eleições.
   descritiva, inferencial e probabilidade)
 - [Exercícios de comandos básicos e classes de objetos](exercicios/ex02_basico.pdf).
 - Exercício de Análise Exploratória de Dados.
-  Baixar [script](exercicios/ex03_exploratoria.R) e abrir no RStudio.
+  Baixar [script](exercicios/ex03_exploratoria.R) e abrir no
+  RStudio. [Gabarito](exercicios/ex03_exploratoria_GABARITO.R).
 
 ## Notas
 

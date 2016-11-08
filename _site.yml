@@ -51,10 +51,12 @@ navbar:
         href: 05_Analise_exploratoria.html
       - text: "----------"
       - text: "Exercícios"
-      - text: "Estatística básica"
+      - text: "Estatística básica [HTML]"
         href: ex01_intro.html
-      - text: "Comandos básicos e classes de objetos"
+      - text: "Comandos básicos e classes de objetos [PDF]"
         href: exercicios/ex02_basico.pdf
+      - text: "Análise exploratória de dados [R]"
+        href: exercicios/ex03_exploratoria.R
   right:
     - text: GitHub
       icon: fa-github fa-lg

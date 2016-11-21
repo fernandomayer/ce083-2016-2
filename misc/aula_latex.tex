@@ -1,0 +1,106 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{indentfirst}
+
+\title{Aula latex}
+\author{Fernando Mayer}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+
+\section{Introdução}
+
+A primeira aula sobre latex.
+
+Vamos ver alguns comandos basicos abaixo.
+
+O LaTeX é um {\bf conjunto} de macros para o processador de textos TeX, utilizado amplamente para a produção de textos
+{\huge matemáticos} e \textbf{científicos} devido à sua alta qualidade
+tipográfica. Entretanto, também é utilizado para        produção
+de cartas pessoais, artigos e livros sobre assuntos
+diversos.
+
+\begin{verbatim}
+O LaTeX é um {\bf conjunto} de macros
+para o processador de textos TeX, 
+utilizado amplamente para a produção de textos
+{\huge matemáticos} e 
+\textbf{científicos} devido à sua alta qualidade
+
+tipográfica. Entretanto, também é utilizado para        produção
+de cartas pessoais, artigos e livros sobre assuntos
+diversos.
+\end{verbatim}
+
+% Alguma coisa 10%
+Alguma coisa 10\%
+
+\section{Metodologia}
+
+\subsection{Dados}
+
+Os dados coletados foram:
+
+\begin{itemize}
+\item expVida: expectativa de vida
+\item pibPercap: PIB per capta
+\end{itemize}
+
+Os dados foram importados com  comando:
+
+\begin{verbatim}
+dados <- read.table("pib_gapminder.csv",
+                    header = TRUE, sep = ",", dec = ".")
+\end{verbatim}
+
+Este conjunto de dados tem 1114 linhas e 5 colunas.
+
+\subsection{Análise}
+
+As análises foram:
+
+\begin{enumerate}
+\item Análise exploratória
+\item Associação entre variáveis
+\begin{itemize}
+\item pibPercap e expVida
+\end{itemize}
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -106,7 +106,11 @@ para as eleições.
   e [script de aula](scripts/script_exploratoria.R).
 - **10/11**: Segunda prova.
 - **15/11**: Feriado.
-- **17/11**:
+- **17/11**: Introdução ao
+  LaTeX. [Slides](misc/Introducao_ao_Latex_ESALQ-USP.pdf) (emprestados
+  de um curso antigo na ESALQ/USP), e documento `.tex` criado em
+  aula: [aula_latex.tex](misc/aula_latex.tex). Usar o ShareLaTeX do
+  C3SL: https://sharelatex.c3sl.ufpr.br.
 - **22/11**:
 - **24/11**:
 - **29/11**:

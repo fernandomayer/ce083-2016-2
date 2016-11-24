@@ -111,8 +111,20 @@ para as eleições.
   de um curso antigo na ESALQ/USP), e documento `.tex` criado em
   aula: [aula_latex.tex](misc/aula_latex.tex). Usar o ShareLaTeX do
   C3SL: https://sharelatex.c3sl.ufpr.br.
-- **22/11**:
-- **24/11**:
+- **22/11**: Incluindo figuras no LaTeX. Referências cruzadas. Equações
+  matemáticas.
+  [Slides](misc/Introducao_ao_Latex_ESALQ-USP.pdf).
+  [Script](scripts/script_exploratoria_aula.R) para gerar a figura.
+- **24/11**: Gerando tabelas no LaTeX. Referências bibliográficas.
+  Transformando `.tex` em `.Rnw` e usando
+  o [knitr](http://yihui.name/knitr) para criar um documento
+  dinâmico.
+  [Slides](misc/Introducao_ao_Latex_ESALQ-USP.pdf).
+  [Arquivo `.bib`](misc/referencias.bib) com algumas referências no
+  formato
+  [BibTeX](http://www.bibtex.org).
+  [Link](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management)
+  com mais instruções de uso do BibTeX e do pacote `natbib`.
 - **29/11**:
 - **01/12**:
 - **06/12**:

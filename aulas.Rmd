@@ -124,7 +124,8 @@ para as eleições.
   formato
   [BibTeX](http://www.bibtex.org).
   [Link](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management)
-  com mais instruções de uso do BibTeX e do pacote `natbib`.
+  com mais instruções de uso do BibTeX e do pacote
+  `natbib`. [Arquivo .Rnw](misc/aula_latex.Rnw) usado em aula.
 - **29/11**:
 - **01/12**:
 - **06/12**:

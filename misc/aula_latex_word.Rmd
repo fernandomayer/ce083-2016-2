@@ -1,0 +1,104 @@
+---
+title: "Aula latex"
+author: "Fernando Mayer"
+date: "29 de novembro, 2016"
+output: word_document
+---
+
+# Introdução
+
+A primeira aula sobre latex.
+
+Vamos ver alguns comandos basicos abaixo.
+
+O LaTeX é um **conjunto** de macros para o processador de textos TeX, utilizado amplamente para a produção de textos
+matemáticos e **científicos** devido à sua alta qualidade
+tipográfica. Entretanto, também é utilizado para        produção
+de cartas pessoais, artigos e livros sobre assuntos
+diversos.
+
+```
+O LaTeX é um {\bf conjunto} de macros
+para o processador de textos TeX,
+utilizado amplamente para a produção de textos
+{\huge matemáticos} e
+\textbf{científicos} devido à sua alta qualidade
+
+tipográfica. Entretanto, também é utilizado para        produção
+de cartas pessoais, artigos e livros sobre assuntos
+diversos.
+```
+
+<!-- % Alguma coisa 10% -->
+Alguma coisa 10\%
+
+# Metodologia
+
+## Dados
+
+Os dados coletados foram:
+
+- expVida: expectativa de vida
+- pibPercap: PIB per capta
+
+Os dados foram importados com  comando:
+
+```{r}
+dados <- read.table("dados/pib_gapminder.csv",
+                    header = TRUE, sep = ",", dec = ".")
+```
+
+Este conjunto de dados tem `r nrow(dados)` linhas e `r ncol(dados)` colunas.
+
+```{r, echo=FALSE, results='hide'}
+paises <- c("Brazil", "Uruguay", "Argentina", "Chile",
+            "Paraguay", "Colombia", "Ecuador")
+dados2 <- subset(dados, pais %in% paises)
+str(dados2)
+```
+
+Os dados possuem esta estrutura:
+
+```{r comment=NA,prompt=TRUE}
+str(dados2)
+```
+
+Uma equação $a+b-2c$.
+
+Uma equação $$a+b-2c$$.
+
+A densidade da distribuição Normal é
+
+\begin{equation} \label{eq:normal}
+f(x) = \frac{1}{\sqrt{2\pi}\sigma}
+  \exp{\left[ -\frac{1}{2}
+  \left( \frac{x - \mu}{\sigma} \right)^2 \right] }
+\end{equation}
+
+## Análise
+
+As análises foram:
+
+1. Análise exploratória
+2. Associação entre variáveis
+    - pibPercap e expVida
+
+# Resultados
+
+A relação entre pibPercap e expVida pode ser vista na figura \ref{fig:xyplot}.
+
+```{r, xyplot,echo=FALSE,fig.width=8,fig.height=6,out.width='.8\\textwidth',fig.align='center',fig.pos='!h',fig.cap='Relação entre pibPercap e expVida.'}
+plot(expVida ~ pibPercap, data = dados2)
+```
+
+A média de expectativa de vida por país está na tabela \ref{tab:medias}.
+
+```{r, echo=FALSE,results='hide'}
+tab <- aggregate(expVida ~ pais, data = dados2, mean)
+tab
+```
+
+```{r, results='asis',echo=FALSE}
+library(knitr)
+kable(tab)
+```

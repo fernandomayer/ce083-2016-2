@@ -324,7 +324,7 @@ As funções permitem ainda ler dados diretamente disponíveis na
 com o comando a seguir, sem a necessidade de copiar primeiro os dados para
 algum local no computador do usuário:
 
-```{r}
+```{r, eval=FALSE}
 dados <- read.csv2("http://www.leg.ufpr.br/~fernandomayer/dados/crabs.csv")
 ```
 

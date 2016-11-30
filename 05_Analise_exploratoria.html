@@ -927,7 +927,7 @@ prop.table(civil.tb)</code></pre>
 <p>Os gráficos de barras e de setores são adequados para representar esta variável. Os comandos <code>barplot()</code> e <code>pie()</code> usam o resultado da função <code>table()</code> para gerar os gráficos:</p>
 <pre class="r"><code>barplot(civil.tb)
 pie(civil.tb)</code></pre>
-<p><img src="figures/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>A <em>moda</em> de qualquer variável aleatória é definida como o valor mais frequente encontrado na amostra. No R não há uma função pronta para “calcular” a moda, pois ela pode ser obtida facilmente através do uso de funções básicas. Uma opção seria usar os comandos abaixo:</p>
 <pre class="r"><code>names(civil.tb)[which.max(civil.tb)]</code></pre>
 <pre><code>[1] &quot;casado&quot;</code></pre>
@@ -950,13 +950,13 @@ prop.table(inst.tb)</code></pre>
 0.3333333 0.5000000 0.1666667 </code></pre>
 <p>O gráfico de setores não é adequado para este tipo de variável por não expressar a ordem dos possíveis valores. Usamos então apenas um gráfico de barras conforme mostrado abaixo</p>
 <pre class="r"><code>barplot(inst.tb)</code></pre>
-<p><img src="figures/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Em alguns casos podemos querer mostrar o gráfico de barras com as barras classificadas da menos para a maior, ou vice-versa, independente da ordem dos níveis. Para isso podemos usar a função <code>sort()</code> para ordenar os valores da tabela e fazer o gráfico</p>
 <pre class="r"><code>## Menor para maior
 barplot(sort(inst.tb))
 ## Maior para menor
 barplot(sort(inst.tb, decreasing = TRUE))</code></pre>
-<p><img src="figures/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para uma variável ordinal, além da moda podemos também calcular outras medidas, tais como a mediana conforme exemplificado a seguir. Note que o comando <code>median()</code> não funciona com variáveis não numéricas, e por isso usamos o comando seguinte.</p>
 <pre class="r"><code>## Moda
 names(inst.tb)[which.max(inst.tb)]</code></pre>
@@ -992,13 +992,13 @@ filhos.tba</code></pre>
 0.20 0.45 0.80 0.95 1.00 </code></pre>
 <p>O gráfico adequado para frequências absolutas de uma variável discreta é parecido com um gráfico de barras, mas nesse caso, as frequências são indicadas por linhas. Usando a função <code>plot()</code> em um objeto resultado da função <code>table()</code>, o gráfico adequado já é selecionado:</p>
 <pre class="r"><code>plot(filhos.tb)</code></pre>
-<p><img src="figures/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Outra possibilidade seria fazer gráficos de frequências relativas e de frequências acumuladas conforme mostrado na</p>
 <pre class="r"><code>## Frequência relativa
 plot(filhos.tbr)
 ## Frequência relativa acumulada
 plot(filhos.tba, type = &quot;S&quot;) # tipo step (escada)</code></pre>
-<p><img src="figures/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Sendo a variável numérica há uma maior diversidade de medidas estatísticas que podem ser calculadas.</p>
 <p>A seguir mostramos como obter algumas medidas de posição: moda, mediana, média e média aparada. Note que o argumento <code>na.rm = TRUE</code> é necessário porque não há informação sobre número de filhos para alguns indivíduos (<code>NA</code>). Para calcular a média aparada, usamos o argumento <code>trim = 0.1</code> que indica que a média deve ser calculada excluindo-se 10% dos menores e 10% dos maiores valores do vetor de dados. Ao final mostramos como obter os quartis, incluido o mínimo e o máximo.</p>
 <pre class="r"><code>## Moda
@@ -1144,17 +1144,17 @@ prop.table(salario.tb)</code></pre>
 <p>Na sequência vamos mostrar dois possíveis gráficos para variáveis contínuas: o histograma e o <em>box-plot</em>.</p>
 <p>Para fazer um histograma usamos a função <code>hist()</code>, por exemplo,</p>
 <pre class="r"><code>hist(milsa$Salario)</code></pre>
-<p><img src="figures/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>A função <code>hist()</code> possui vários argumentos para alterar o comportamento da saída do gráfico. Por exemplo, com <code>labels = TRUE</code> as frequências são mostradas acima de cada barra. Com <code>freq = FALSE</code>, o gráfico é feito com as frequências relativas.</p>
 <pre class="r"><code>hist(milsa$Salario, freq = FALSE, labels = TRUE)</code></pre>
-<p><img src="figures/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Por padrão, a função <code>hist()</code> calcula automaticamente o número de classes e os valores limites de cada classe. No entanto, isto pode ser alterado com o argumento <code>breaks</code>, que pode receber um vetor definindo os limites das classes, uma função para definir as quebras, um nome de critério (por exemplo, <code>&quot;Sturges&quot;</code>), ou um único escalar definido o número de classes. As últimas três opções são apenas sugestões utilizadas pela função. O argumento <code>nclass</code> também funciona dessa forma, recebendo apenas um valor com o número de classes (como sugestão).</p>
 <pre class="r"><code>hist(milsa$Salario, nclass = 15)</code></pre>
-<p><img src="figures/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Assim como na função <code>cut()</code>, os argumentos <code>include.lowest</code> e <code>right</code> são utilizados para controlar a borda das classes.</p>
 <p>Uma característica importante da função <code>hist()</code> é que ela retorna não apenas o gráfico, mas também uma lista com as informações utilizadas para construir o gráfico. Associando um histograma a um objeto, podemos ver o seu conteúdo:</p>
 <pre class="r"><code>salario.hist &lt;- hist(milsa$Salario)</code></pre>
-<p><img src="figures/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>salario.hist</code></pre>
 <pre><code>$breaks
  [1]  4  6  8 10 12 14 16 18 20 22 24
@@ -1184,10 +1184,10 @@ attr(,&quot;class&quot;)
 <li>As linhas que se extendem das caixas são definidas como: <span class="math display">\[q1-1,5\cdot IQR\ \qquad \mathrm{e}\ \qquad q3+1,5\cdot IQR\]</span> onde <span class="math inline">\(IQR\)</span> é o intervalo inter-quartil. As linhas vão até os valores máximo e mínimo que ainda se encontram dentro deste intervalo.</li>
 </ul>
 <pre class="r"><code>boxplot(milsa$Salario)</code></pre>
-<p><img src="figures/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Existem também vários argumentos que permitem variações do <em>boxplot</em>, tais como caixas com tamanho proporcional aos tamanhos dos grupos (<code>varwidth = TRUE</code>), e caixas “acinturadas” (<em>notched boxplot</em>) (<code>notch = TRUE</code>).</p>
 <pre class="r"><code>boxplot(milsa$Salario, varwidth = TRUE, notch = TRUE)</code></pre>
-<p><img src="figures/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-31-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Ambas opções são úteis quando há mais de um grupo e a comparação entre os boxplots é facilitada.</p>
 <p>Finalmente, podemos obter as medidas de posição e dispersão da mesma forma que para variáveis discretas. Veja alguns exemplos a seguir. Note que aqui não é necessário o uso do argumento <code>na.rm = TRUE</code>, pois não existem <code>NA</code>s nesta variável.</p>
 <pre class="r"><code>## Mediana
@@ -1294,7 +1294,7 @@ Est.civil    1o Grau   2o Grau  Superior
 barplot(t(civ.inst.tb), legend = TRUE)
 barplot(civ.inst.tb, beside = TRUE, legend = TRUE)
 barplot(t(prop.table(civ.inst.tb)), beside = TRUE, legend = TRUE)</code></pre>
-<p><img src="figures/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto;" /></p>
 <!-- Incluir aqui a medida de associacao chi-quadrado -->
 <!-- Incluir reagrupamento -->
 </div>
@@ -1326,7 +1326,7 @@ inst.sal.tb</code></pre>
 <p>No gráfico vamos considerar que neste exemplo a instrução deve ser a variável explicativa e portanto colocada no eixo X, e o salário é a variável resposta, e portanto deve ser colocada no eixo Y. Isto é, consideramos que a instrução deve explicar, ainda que parcialmente, o salário (e não o contrário!).</p>
 <p>Vamos então obter um <em>boxplot</em> dos salários para cada nível de instrução. Note que na função abaixo, usamos a notação de <strong>fórmula</strong> do R, com <code>Salario ~ Inst</code> indicando que a variável <code>Salario</code> é explicada, ou descrita, (<span class="math inline">\(\sim\)</span>) pela variável <code>Inst</code>.</p>
 <pre class="r"><code>boxplot(Salario ~ Inst, data = milsa)</code></pre>
-<p><img src="figures/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-37-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Poderíamos ainda fazer gráficos com a variável <code>Salario</code> agrupada em classes, e neste caso os gráficos seriam como no caso anterior com duas variáveis qualitativas.</p>
 <p>Para as medidas descritivas, o usual é obter um resumo da variável quantitativa como mostrado na análise univariada, porém agora informando este resumo para cada nível do fator qualitativo de interesse.</p>
 <p>A seguir mostramos alguns exemplos de como obter a média, desvio padrão e o resumo de cinco números do salário para cada nível de instrução.</p>
@@ -1407,7 +1407,7 @@ idade.cut2     [4,8.65] (8.65,12.9] (12.9,23.3]
 <p>O gráfico adequado para representar duas variáveis quantitativas é um diagrama de dispersão. Note que se as variáveis envolvidas puderem ser classificadas como “explicativa” e “resposta” devemos colocar a primeira no eixo X e a segunda no eixo Y. Neste exemplo é razoável admitir que a idade deve explicar, ao menos parcialmente, o salário e portanto fazemos o gráfico com idade no eixo X. Note que na função <code>plot()</code>, podemos usar tanto os argumentos <code>x</code> e <code>y</code>, quanto o formato de fórmula (como visto anteriormente).</p>
 <pre class="r"><code>plot(x = milsa$Idade, y = milsa$Salario)
 plot(Salario ~ Idade, data = milsa)</code></pre>
-<p><img src="figures/unnamed-chunk-40-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figures/unnamed-chunk-41-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para quantificar a associação entre variáveis deste tipo, usamos o coeficiente de correlação. A função <code>cor()</code> possui opção para três coeficientes de correlação, tendo como <em>default</em> o coeficiente de correlação linear de Pearson.</p>
 <pre class="r"><code>with(milsa, cor(Idade, Salario))</code></pre>
 <pre><code>[1] 0.3651397</code></pre>

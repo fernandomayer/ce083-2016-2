@@ -37,7 +37,7 @@ abaixo. Consulte o livro para mais detalhes sobre este dados.
 
 ```{r, echo=FALSE, results='asis'}
 url <- "http://www.leg.ufpr.br/~fernandomayer/dados/milsa.csv"
-milsa <- read.csv(url)
+milsa <- read.csv("dados/milsa.csv")
 knitr::kable(milsa)
 ```
 
@@ -55,9 +55,13 @@ formato ideal de armazenamento destes dados no R é o `data.frame`.
 
 Para importar os dados do endereço acima diretamente para o R, usamos
 
-```{r}
+```{r, eval=FALSE}
 url <- "http://www.leg.ufpr.br/~fernandomayer/dados/milsa.csv"
 milsa <- read.csv(url)
+```
+
+```{r, include=FALSE}
+milsa <- read.csv("dados/milsa.csv")
 ```
 
 E para conferir a estrutura dos dados podemos usar algumas funções como:

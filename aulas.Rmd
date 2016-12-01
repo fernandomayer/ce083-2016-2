@@ -145,7 +145,13 @@ para as eleições.
           - [Literate programming](http://cursos.leg.ufpr.br/prr/capLitProg.html)
           - [Markdown com Pandoc](http://cursos.leg.ufpr.br/prr/capMarkdown.html)
           - [Documentos dinâmicos no R](http://cursos.leg.ufpr.br/prr/capDocDin.html)
-- **01/12**:
+- **01/12**: Diferentes documentos
+  com [Rmarkdown](http://rmarkdown.rstudio.com).
+      - Arquivos:
+          - [exemplo_simples.Rmd](misc/exemplo_simples.Rmd)
+          - [exemplo_reg.Rmd](misc/exemplo_reg.Rmd)
+      - Arquivo e material sobre inferência e regressão:
+          - [inferencia_regressao.Rmd](misc/inferencia_regressao.Rmd)
 - **06/12**:
 - **08/12**: Terceira prova.
 

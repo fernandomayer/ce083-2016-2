@@ -152,7 +152,8 @@ para as eleições.
           - [exemplo_reg.Rmd](misc/exemplo_reg.Rmd)
       - Arquivo e material sobre inferência e regressão:
           - [inferencia_regressao.Rmd](misc/inferencia_regressao.Rmd)
-- **06/12**:
+- **06/12**: Modelos de
+  regressão. [Material](misc/inferencia_regressao.Rmd).
 - **08/12**: Terceira prova.
 
 ## Exercícios
@@ -163,6 +164,9 @@ para as eleições.
 - Exercício de Análise Exploratória de Dados.
   Baixar [script](exercicios/ex03_exploratoria.R) e abrir no
   RStudio. [Gabarito](exercicios/ex03_exploratoria_GABARITO.R).
+- Exercício de inferência com
+  Rmarkdown. [Arquivo .Rmd](exercicios/ex04_inferencia.Rmd)
+  e [gabarito](exercicios/ex04_inferencia_GABARITO.Rmd).
 
 ## Notas
 

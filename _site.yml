@@ -49,6 +49,8 @@ navbar:
       - text: "Estatística"
       - text: "Análise exploratória de dados [HTML]"
         href: 05_Analise_exploratoria.html
+      - text: "Inferência e regressão [Rmd]"
+        href: misc/inferencia_regressao.Rmd
       - text: "----------"
       - text: "Exercícios"
       - text: "Estatística básica [HTML]"
@@ -57,6 +59,8 @@ navbar:
         href: exercicios/ex02_basico.pdf
       - text: "Análise exploratória de dados [R]"
         href: exercicios/ex03_exploratoria.R
+      - text: "Inferência e regressão [Rmd]"
+        href: exercicios/ex04_inferencia.Rmd
   right:
     - text: GitHub
       icon: fa-github fa-lg

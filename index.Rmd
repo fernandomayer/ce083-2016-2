@@ -11,12 +11,18 @@ source("setup_knitr.R")
 
 [![Build Status](https://travis-ci.org/fernandomayer/ce083-2016-2.svg)](https://travis-ci.org/fernandomayer/ce083-2016-2)
 
-<!-- <div class="alert alert-danger" role="alert"> -->
-<!-- **ATENÇÃO!** -->
+<div class="alert alert-danger" role="alert">
+**ATENÇÃO!**
 
-<!-- - A aula de HOJE (24/11, quinta) será no LABEST. -->
+- Quem estiver com problemas de instalação dos pacotes `knitr` e
+  `rmarkdown` para compilar os documentos em Rmarkdown (`.Rmd`) no
+  Linux (Ubuntu e Mint), abra um terminal e execute a seguinte linha:
+```{sh, eval=FALSE}
+sudo apt-get install build-essential
+```
+  Depois tente instalar os pacotes novamente antes de compilar.
 
-<!-- </div> -->
+</div>
 
 
 # Detalhes da oferta da disciplina

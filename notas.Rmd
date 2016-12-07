@@ -72,5 +72,5 @@ round(apply(notas[, notas.col, drop = FALSE], 2, statm), 2)
 <!-- abaixo as médias finais calculadas!** -->
 
 ```{r, results='asis'}
-kable(notas[, c(1, notas.col)], align = "c")
+kable(notas[, c(1, notas.col)], align = "c", digits = 2)
 ```

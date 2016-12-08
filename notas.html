@@ -317,7 +317,7 @@ hist(notas.all, breaks = breaks, right = FALSE, include.lowest = TRUE,
 }
 round(statm(notas.all), 2)</code></pre>
 <pre><code>  Min    Q1    Q2    Q3   Max Média     s   NAs 
- 0.00  5.29  7.10  8.00 10.00  6.55  2.37 30.00 </code></pre>
+ 0.00  5.54  7.12  8.07 10.00  6.65  2.27 30.00 </code></pre>
 </div>
 <div id="resumos-por-prova" class="section level2">
 <h2>Resumos por prova</h2>
@@ -329,12 +329,12 @@ boxplot(notas[, notas.col], ylim = c(0, 10), ylab = &quot;Notas&quot;)</code></p
 <pre class="r"><code>round(apply(notas[, notas.col, drop = FALSE], 2, statm), 2)</code></pre>
 <pre><code>         P1    P2
 Min    1.81  0.00
-Q1     5.32  5.50
-Q2     7.14  7.01
-Q3     8.29  8.00
-Max   10.00  8.74
-Média  6.71  6.37
-s      2.45  2.31
+Q1     5.32  5.88
+Q2     7.14  7.08
+Q3     8.29  8.04
+Max   10.00  8.93
+Média  6.71  6.60
+s      2.45  2.09
 NAs   13.00 17.00</code></pre>
 </div>
 <div id="notas-individuais" class="section level2">
@@ -594,7 +594,7 @@ NAs   13.00 17.00</code></pre>
 <tr class="odd">
 <td align="center">20160238</td>
 <td align="center">8.69</td>
-<td align="center">0.00</td>
+<td align="center">8.93</td>
 </tr>
 <tr class="even">
 <td align="center">20160239</td>

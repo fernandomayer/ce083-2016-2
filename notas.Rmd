@@ -68,9 +68,129 @@ round(apply(notas[, notas.col, drop = FALSE], 2, statm), 2)
 
 ## Notas individuais
 
-<!-- **Aqui estão apenas as notas individuais de cada sabatina. Veja na seção -->
-<!-- abaixo as médias finais calculadas!** -->
+```{r, include=FALSE}
+##----------------------------------------------------------------------
+## Numero de aulas e frequencias
+
+## Numero de aulas geral no semestre
+## Datas iniciais e finais por dia da semana
+sini1 <- as.Date("2016-08-02")
+sini2 <- as.Date("2016-08-04")
+sfim1 <- as.Date("2016-12-06")
+sfim2 <- as.Date("2016-12-08")
+
+## Numero de aulas nos dias 1 e 2
+d1 <- length(seq(sini1, sfim1, by = "week"))
+d2 <- length(seq(sini2, sfim2, by = "week"))
+aulas <- d1 + d2
+
+## Desconto de dias
+## Dias iniciais
+desc1 <- 1
+## Feriados (quando realmente nao deveria ter aula e as presencas nao
+## deveriam ser computadas)
+feri <- 3
+## Outros dias sem aula
+out <- 3
+## Numero efetivo de aulas
+aulas.eff <- aulas - desc1 - feri - out
+
+## Numero de dias em que foi passada a chamada
+dcham <- 16
+
+## Numero de dias em que nao foi passada a chamada
+dscham <- aulas.eff - dcham
+
+## As frequencias na planilha correspondem ao numero de dias em que foi
+## passada a chamada. Para completar a frequencia com o numero de aulas
+## total (incluindo aqueles dias em que nao foi passada a chamada), sera
+## feita a soma do numero de dias em que nao foi passada a chamada (i.e.
+## sera dada presenca para todo mundo). No entanto, se a frequencia for
+## zero, ela sera mantida assim (pois sao desistencias)
+notas$Freq2 <- 0
+notas$Freq2[notas$Freq != 0] <- notas$Freq[notas$Freq != 0] + dscham
+
+## Frequencia relativa
+notas$Freq.rel <- notas$Freq2/aulas.eff
+
+## Arredonda para duas casas decimais a frequencia relativa
+notas$Freq.rel <- round(notas$Freq.rel, 2)
+
+## Funcao para obter as diferencas entre um valor e um objetivo
+difer <- function(x, obj){
+    obj - x
+}
+
+##----------------------------------------------------------------------
+## Regras para arredondar a frequencia relativa
+## 1) Se 0.7 <= Freq.rel < 0.75 entao SOMA difer
+
+## Cria uma nova coluna e a condicao
+notas$Freq.rel2 <- notas$Freq.rel
+cond.freq <- notas$Freq.rel >= 0.7 & notas$Freq.rel < 0.75
+
+## Soma as diferencas
+notas$Freq.rel2[cond.freq] <- notas$Freq.rel2[cond.freq] +
+    difer(notas$Freq.rel2[cond.freq], 0.75)
+```
+
+```{r, include=FALSE}
+##----------------------------------------------------------------------
+## Tabela com as notas finais
+
+## Calcula as médias
+## Aqui é necessario calcular a média explicitamente pois existem casos
+## onde o aluno pode ter perdido uma prova (NA), mas feito as outras.
+## Por isso calcula usando a soma das notas e o número de provas.
+## Número de provas
+np <- length(notas.col)
+## Médias
+notas$Media <- apply(notas[, notas.col], 1,
+                     function(x) sum(x, na.rm = TRUE)/np)
+## Arredonda para duas casas decimais
+notas$Media <- round(notas$Media, 2)
+
+## Cria nova tabela somente com informações relevantes
+notas2 <- notas[, 1:max(notas.col)]
+
+## Regras para ser aprovado
+## 1) Se 6.5 <= MF < 7.0 E Freq >= 75 entao SOMA difer
+
+## Cria nova coluna e condicoes
+notas2$M <- notas$Media
+cond.nota1 <- notas$Media >=6.5 & notas$Media < 7
+cond.nota2 <- notas$Freq.rel2 >= 0.75
+
+## Soma as diferencas
+notas2$M[cond.nota1 & cond.nota2] <-
+    notas2$M[cond.nota1 & cond.nota2] +
+    difer(notas2$M[cond.nota1 & cond.nota2], 7)
+
+## Regras para ir para exame
+## 1) Se 3.5 <= MF < 4.0 E Freq >= 75 entao SOMA difer
+
+## Cria condicoes
+cond.exam1 <- notas$Media >=3.5 & notas$Media < 4
+
+## Soma as diferencas
+notas2$M[cond.exam1 & cond.nota2] <-
+    notas2$M[cond.exam1 & cond.nota2] +
+    difer(notas2$M[cond.exam1 & cond.nota2], 4)
+
+## Insere a frequencia (Freq.rel2 de notas)
+notas2$F <- ceiling(notas$Freq.rel2*100)
+```
+
+```{r, include=FALSE}
+##----------------------------------------------------------------------
+## Antes do exame (Ex)
+
+## Cria a coluna Situacao
+notas2$S <- "Ap"
+notas2$S[notas2$M >= 4 & notas2$M < 7] <- "Ex"
+notas2$S[notas2$M < 4] <- "Re"
+```
 
 ```{r, results='asis'}
-kable(notas[, c(1, notas.col)], align = "c", digits = 2)
+kable(notas2[, c(1, notas.col)], align = "c", digits = 2)
 ```

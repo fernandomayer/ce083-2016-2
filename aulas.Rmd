@@ -155,6 +155,7 @@ para as eleições.
 - **06/12**: Modelos de
   regressão. [Material](misc/inferencia_regressao.Rmd).
 - **08/12**: Terceira prova.
+- **20/12**: Exame final.
 
 ## Exercícios
 
@@ -167,6 +168,20 @@ para as eleições.
 - Exercício de inferência com
   Rmarkdown. [Arquivo .Rmd](exercicios/ex04_inferencia.Rmd)
   e [gabarito](exercicios/ex04_inferencia_GABARITO.Rmd).
+
+## Provas anteriores
+
+Gabaritos das provas anteriores:
+
+- Prova 1. [Gabarito](misc/P1_ce083_GB.pdf).
+- Prova 2. [Gabarito](misc/script_P2_2016-11-10_GB.R)
+  e [dados](misc/dados_aluguel.csv). **Obs.:** estes são os dados
+  completos. Os dados que você baixou para sua prova são um `subset`
+  aleatório (menor) desta planilha. Portanto, alguns resultados podem
+  ser diferentes, mas os comandos são os mesmos.
+- Prova 3. [Gabarito](misc/ce083_P3_2016-12-08_GB.Rmd)
+  e [dados](misc/dados_Forbes2000.csv).
+  Gabarito [compilado](misc/ce083_P3_2016-12-08_GB.html).
 
 ## Notas
 

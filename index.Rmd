@@ -14,13 +14,7 @@ source("setup_knitr.R")
 <div class="alert alert-danger" role="alert">
 **ATENÇÃO!**
 
-- Quem estiver com problemas de instalação dos pacotes `knitr` e
-  `rmarkdown` para compilar os documentos em Rmarkdown (`.Rmd`) no
-  Linux (Ubuntu e Mint), abra um terminal e execute a seguinte linha:
-```{sh, eval=FALSE}
-sudo apt-get install build-essential
-```
-  Depois tente instalar os pacotes novamente antes de compilar.
+- O exame será dia 20/12 (terça) às 19:00 hs no LABEST.
 
 </div>
 

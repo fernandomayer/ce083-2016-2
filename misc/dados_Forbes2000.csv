@@ -1,0 +1,2001 @@
+"rank","nome","pais","categoria","vendas","lucros","valor.mercado"
+1,"Citigroup","United States","Bancário",94.71,17.85,255.3
+2,"General Electric","United States","Conglomerados",134.19,15.59,328.54
+3,"American Intl Group","United States","Seguro",76.66,6.46,194.87
+4,"ExxonMobil","United States","Óleo e gás",222.88,20.96,277.02
+5,"BP","United Kingdom","Óleo e gás",232.57,10.27,173.54
+6,"Bank of America","United States","Bancário",49.01,10.81,117.55
+7,"HSBC Group","United Kingdom","Bancário",44.33,6.66,177.96
+8,"Toyota Motor","Japan","Bens duráveis",135.82,7.99,115.4
+9,"Fannie Mae","United States","Recursos diversificados",53.13,6.48,76.84
+10,"Wal-Mart Stores","United States","Varejo",256.33,9.05,243.74
+11,"UBS","Switzerland","Recursos diversificados",48.95,5.15,85.07
+12,"ING Group","Netherlands","Recursos diversificados",94.72,4.73,54.59
+13,"Royal Dutch/Shell Group","Netherlands/ United Kingdom","Óleo e gás",133.5,8.4,163.45
+14,"Berkshire Hathaway","United States","Seguro",56.22,6.95,141.14
+15,"JP Morgan Chase","United States","Bancário",44.39,4.47,81.94
+16,"IBM","United States","Tecnologia e equipamentos",89.13,7.58,171.54
+17,"Total","France","Óleo e gás",131.64,8.84,116.64
+18,"BNP Paribas","France","Bancário",47.74,4.73,59.29
+19,"Royal Bank of Scotland","United Kingdom","Bancário",35.65,4.95,90.21
+20,"Freddie Mac","United States","Recursos diversificados",46.26,10.09,44.25
+21,"DaimlerChrysler","Germany","Bens duráveis",157.13,5.12,47.43
+22,"Altria Group","United States","Alimentos, bebidas e tabaco",60.7,9.2,111.02
+23,"ChevronTexaco","United States","Óleo e gás",112.94,7.43,92.49
+24,"Pfizer","United States","Drogas e biotecnologia",40.36,6.2,285.27
+25,"Wells Fargo","United States","Bancário",31.8,6.2,97.53
+26,"Verizon Commun","United States","Serviços de telecomunicação",67.75,2.57,103.97
+27,"Barclays","United Kingdom","Bancário",33.69,4.9,61.33
+28,"Morgan Stanley","United States","Recursos diversificados",33,3.64,64.81
+29,"General Motors","United States","Bens duráveis",185.52,3.82,27.47
+30,"Nippon Tel & Tel","Japan","Serviços de telecomunicação",92.41,2.17,73
+31,"Microsoft","United States","Software e serviços",34.27,8.88,287.02
+32,"Nestle","Switzerland","Alimentos, bebidas e tabaco",64.56,5.48,106.55
+33,"SBC Communications","United States","Serviços de telecomunicação",39.16,5.97,82.93
+34,"Deutsche Bank Group","Germany","Recursos diversificados",58.85,1.53,50.23
+35,"Siemens Group","Germany","Conglomerados",86.62,2.81,75.77
+36,"HBOS","United Kingdom","Bancário",32.68,3.09,52.87
+37,"ENI","Italy","Óleo e gás",53.29,4.82,76.13
+38,"ConocoPhillips","United States","Óleo e gás",90.49,4.83,46.72
+39,"Banco Santander Central","Spain","Bancário",28.7,3.28,56.78
+40,"Merrill Lynch","United States","Recursos diversificados",26.64,3.47,57.52
+41,"Wachovia","United States","Bancário",24.47,4.25,62.35
+42,"Time Warner","United States","Mídia",38.08,2.65,77.95
+43,"Hewlett-Packard","United States","Tecnologia e equipamentos",73.06,2.54,70.2
+44,"Procter & Gamble","United States","Produtos domésticos e pessoais",46.99,5.81,131.89
+45,"Samsung Electronics","South Korea","Semicondutores",50.22,5.95,72.72
+46,"Johnson & Johnson","United States","Drogas e biotecnologia",40.01,6.74,160.96
+47,"Lloyds TSB Group","United Kingdom","Bancário",24.48,2.87,48.11
+48,"ABN-Amro Holding","Netherlands","Bancário",23.64,3.98,39.29
+49,"Honda Motor","Japan","Bens duráveis",67.44,3.61,40.61
+50,"American Express","United States","Recursos diversificados",24.17,3,68.89
+51,"Nissan Motor","Japan","Bens duráveis",57.77,4.19,41.71
+52,"Bank One","United States","Bancário",21.04,3.4,58.38
+53,"AXA Group","France","Seguro",90.1,1,41.39
+54,"Societe Generale Group","France","Bancário",35.52,1.61,40.61
+55,"PetroChina","China","Óleo e gás",29.53,5.67,90.49
+56,"Goldman Sachs Group","United States","Recursos diversificados",22.84,2.54,50.12
+57,"BBVA-Banco Bilbao Vizcaya","Spain","Bancário",24.1,2.81,44.67
+58,"Intel","United States","Semicondutores",30.14,5.64,196.87
+59,"MetLife","United States","Seguro",35.79,2.24,26.34
+60,"Home Depot","United States","Varejo",62.9,4.04,82.29
+61,"Viacom","United States","Mídia",25.85,2.47,68.66
+62,"Allstate","United States","Seguro",32.15,2.73,32.9
+63,"Merck & Co","United States","Drogas e biotecnologia",30.78,7.33,108.76
+64,"Novartis Group","Switzerland","Drogas e biotecnologia",26.77,5.4,116.43
+65,"ENEL","Italy","Utilidades",38.99,2.11,46.84
+66,"Unilever","Netherlands/ United Kingdom","Alimentos, bebidas e tabaco",50.7,2.24,72.19
+67,"Washington Mutual","United States","Bancário",18.01,3.88,39.69
+68,"Credit Agricole","France","Bancário",31.77,1.12,38.8
+69,"Deutsche Post","Germany","Transportes",41.23,1.64,26.83
+70,"Comcast","United States","Mídia",18.35,3.24,67.3
+71,"Volkswagen Group","Germany","Bens duráveis",91.33,2.71,17.42
+72,"Tokyo Electric Power","Japan","Utilidades",41.62,1.4,30.63
+73,"Munich Re","Germany","Seguro",45.85,1.14,26.63
+74,"BMW-Bayerische Motor","Germany","Bens duráveis",52.23,2.12,29.03
+75,"Ford Motor","United States","Bens duráveis",164.2,0.76,26.29
+76,"Tyco International","Bermuda","Conglomerados",37.57,1.19,58.41
+77,"US Bancorp","United States","Bancário",14.57,3.73,52.88
+78,"Roche Group","Switzerland","Drogas e biotecnologia",25.18,2.48,95.38
+79,"Royal Bank of Canada","Canada","Bancário",18.82,2.28,31.82
+80,"GlaxoSmithKline","United Kingdom","Drogas e biotecnologia",34.16,6.34,124.79
+81,"China Petroleum & Chemical","China","Óleo e gás",39.16,1.94,50.09
+82,"Sony","Japan","Bens duráveis",63.23,0.98,38
+83,"Nokia","Finland","Tecnologia e equipamentos",37.05,4.52,104.3
+84,"BellSouth","United States","Serviços de telecomunicação",22.58,3.59,54.08
+85,"Walt Disney","United States","Mídia",28.44,1.92,55.06
+86,"Natl Australia Bank","Australia","Bancário",15.34,2.69,36.51
+87,"Gazprom","Russia","Óleo e gás",19.21,3.81,36.28
+88,"Carrefour Group","France","Mercados de alimentos",96.94,1.45,37.19
+89,"Cisco Systems","United States","Tecnologia e equipamentos",19.82,4.35,166.09
+90,"FleetBoston Finl","United States","Bancário",14.22,2.13,47.19
+91,"RWE Group","Germany","Utilidades",45.68,1.1,23.76
+92,"UniCredito Italiano","Italy","Bancário",16.53,1.89,33.53
+93,"BT Group","United Kingdom","Serviços de telecomunicação",29.58,4.24,28.73
+94,"United Parcel Service","United States","Transportes",32.81,3.54,79.62
+95,"United Technologies","United States","Conglomerados",31.03,2.36,48.77
+96,"Fortis","Netherlands","Recursos diversificados",52.51,0.56,30.19
+97,"Dow Chemical","United States","Químicos",32.63,1.74,39.85
+98,"Aegon Insurance Group","Netherlands","Seguro",17.75,1.63,23.49
+99,"Dexia","Belgium","Bancário",19.62,1.36,21.64
+100,"Renault Group","France","Bens duráveis",38.17,2.05,19.64
+101,"Target","United States","Varejo",46.65,1.7,37.52
+102,"Coca-Cola","United States","Alimentos, bebidas e tabaco",21.03,4.35,125.37
+103,"Lehman Bros Holdings","United States","Recursos diversificados",17.1,1.47,23.01
+104,"PepsiCo","United States","Alimentos, bebidas e tabaco",26.97,3.49,86.73
+105,"Prudential","United Kingdom","Seguro",38.22,0.72,18.84
+106,"Bank of Nova Scotia","Canada","Bancário",13.09,1.88,26.46
+107,"Boeing","United States","Aeroespacial e defesa",50.49,0.7,35.54
+108,"Aventis","France","Drogas e biotecnologia",21.66,2.29,62.98
+109,"Repsol-YPF","Spain","Óleo e gás",29.14,2.05,26.22
+110,"News Corp","Australia","Mídia",20.16,1.22,55.43
+111,"BASF Group","Germany","Químicos",33.84,1.58,30
+112,"China Mobile (HK) Hong","Kong/China","Serviços de telecomunicação",15.53,3.96,67.08
+113,"Dell","United States","Tecnologia e equipamentos",41.44,2.65,88.46
+114,"Peugeot Groupe","France","Bens duráveis",68.23,1.89,12.36
+115,"Endesa Group","Spain","Utilidades",20.43,1.65,21.1
+116,"AT&T","United States","Serviços de telecomunicação",34.53,1.85,15.84
+117,"Statoil Group","Norway","Óleo e gás",35.02,2.36,23.55
+118,"Bristol-Myers Squibb","United States","Drogas e biotecnologia",19.89,2.9,56.05
+119,"AstraZeneca","United Kingdom","Drogas e biotecnologia",20.46,3.29,83.03
+120,"Tesco","United Kingdom","Mercados de alimentos",41.48,1.49,33.99
+121,"Abbott Laboratories","United States","Drogas e biotecnologia",18.99,2.44,69.27
+122,"BHP Billiton","Australia/ United Kingdom","Materiais",17.86,2.13,57.43
+123,"Bayer Group","Germany","Químicos",30.42,1.11,21.9
+124,"Prudential Financial","United States","Seguro",27.73,0.5,24.92
+125,"MBNA","United States","Recursos diversificados",11.38,2.17,35.71
+126,"Commonwealth Bank Group","Australia","Bancário",10.75,1.36,31.95
+127,"Petrobras-Petrsleo Brasil","Brazil","Óleo e gás",22.61,2.29,35.52
+128,"Sanpaolo IMI","Italy","Bancário",13.49,0.93,24.6
+129,"Wyeth","United States","Drogas e biotecnologia",15.33,3.29,56.35
+130,"Canadian Imperial Bank","Canada","Bancário",13,1.56,18.27
+131,"Motorola","United States","Tecnologia e equipamentos",27.06,0.89,40.08
+132,"EI du Pont de Nemours","United States","Químicos",26.2,0.72,44.32
+133,"Den Danske Bank","Denmark","Bancário",12.64,1.57,16.39
+134,"Caterpillar","United States","Bens de capital",22.76,1.1,26.63
+135,"Honeywell","United States","Aeroespacial e defesa",23.1,1.34,31.39
+136,"Nordea","Sweden","Bancário",13.42,0.93,20.14
+137,"Anglo American","United Kingdom","Materiais",16.16,1.67,35.27
+138,"Canon","Japan","Serviços e material para empresas",24.76,1.61,42.84
+139,"Travelers Property Cas","United States","Seguro",14.54,1.7,18.46
+140,"Cendant","United States","Hotéis, restaurantes e lazer",17.49,1.42,23.08
+141,"Sun Life Financial","Canada","Seguro",17.02,1.01,16.58
+142,"Saint-Gobain","France","Construção",37.22,1.09,18.87
+143,"East Japan Railway","Japan","Transportes",21.71,0.83,20.07
+144,"Hutchison Whampoa","Hong Kong/China","Conglomerados",9.65,1.83,35.38
+145,"Cardinal Health","United States","Equipamentos e serviços de saúde",61.3,1.45,28.31
+146,"Bank of Montreal","Canada","Bancário",10.08,1.38,21.63
+147,"Alcoa","United States","Materiais",21.5,0.99,32.14
+148,"National City","United States","Bancário",9.59,2.12,21.51
+149,"Westpac Banking Group","Australia","Bancário",9.45,1.49,24.44
+150,"Lowe`s Cos","United States","Varejo",30.03,1.79,45.29
+151,"Toronto-Dominion Bank","Canada","Bancário",11.88,0.82,22.26
+152,"Korea Electric Power","South Korea","Utilidades",18.01,2.57,11.84
+153,"Moller-Maersk","Denmark","Transportes",19.2,1.53,37.67
+154,"Kookmin Bank","South Korea","Bancário",13.97,1.07,14.44
+155,"British Amer Tobacco","United Kingdom","Alimentos, bebidas e tabaco",17.07,1.86,31.33
+156,"Mitsubishi","Japan","Empresas comerciais",112.76,0.46,15.13
+157,"Kansai Electric Power","Japan","Utilidades",22.12,0.68,17.56
+158,"Almanij","Belgium","Recursos diversificados",20.64,0.75,12.16
+159,"Millea Holdings","Japan","Seguro",24.16,0.48,22.97
+160,"ANZ Banking","Australia","Bancário",8.79,1.6,23.4
+161,"Countrywide Financial","United States","Recursos diversificados",9.88,2.37,16.34
+162,"Lockheed Martin","United States","Aeroespacial e defesa",31.82,1.05,22.27
+163,"M","United States","Conglomerados",18.23,2.4,62.48
+164,"Telstra","Australia","Serviços de telecomunicação",13.81,2.31,47.18
+165,"Eli Lilly and Co","United States","Drogas e biotecnologia",12.58,2.56,82.53
+166,"UnitedHealth Group","United States","Equipamentos e serviços de saúde",28.57,1.83,35.01
+167,"Pinault-Printemps-Redoute","France","Varejo",30.64,1.67,12.84
+168,"Norsk Hydro","Norway","Conglomerados",23.53,1.27,17.64
+169,"Northrop Grumman","United States","Aeroespacial e defesa",23.94,0.87,18.98
+170,"Manulife Financial","Canada","Seguro",12.85,1.19,16.91
+171,"Chubu Electric Power","Japan","Utilidades",18.41,0.9,15.59
+172,"Sears Roebuck","United States","Varejo",41.12,3.4,10.6
+173,"Exelon","United States","Utilidades",15.81,0.79,21.44
+174,"McDonald`s","United States","Hotéis, restaurantes e lazer",16.48,1.04,33.8
+175,"BCE","Canada","Serviços de telecomunicação",14.7,1.4,20.2
+176,"HCA","United States","Equipamentos e serviços de saúde",21.81,1.33,21.65
+177,"Aflac","United States","Seguro",11.27,0.91,20.65
+178,"Southern Co","United States","Utilidades",11.17,1.53,21.6
+179,"Fifth Third Bancorp","United States","Bancário",6.47,1.77,32.74
+180,"Hyundai Motor","South Korea","Bens duráveis",40.57,1.21,8.85
+181,"Amgen","United States","Drogas e biotecnologia",8.36,2.26,83.02
+182,"National Grid Transco","United Kingdom","Utilidades",14.85,0.62,23.73
+183,"Kroger","United States","Mercados de alimentos",53.23,1.04,14.09
+184,"Lukoil Holding","Russia","Óleo e gás",15.25,1.83,21.65
+185,"SunTrust Banks","United States","Bancário",7.07,1.33,20.8
+186,"L`Oreal Group","France","Produtos domésticos e pessoais",17.65,1.89,56.46
+187,"AT&T Wireless","United States","Serviços de telecomunicação",16.7,0.44,27.28
+188,"Rio Tinto","United Kingdom/ Australia","Materiais",10.01,1.64,43.52
+189,"Iberdrola","Spain","Utilidades",11.94,1.33,18.78
+190,"Capital One Financial","United States","Recursos diversificados",9.78,1.15,17.17
+191,"Dominion Resources","United States","Utilidades",11.78,0.72,20.44
+192,"Union Pacific","United States","Transportes",11.55,1.31,16.55
+193,"Nextel Commun","United States","Serviços de telecomunicação",10.15,2.37,29.81
+194,"ACE","Bermuda","Seguro",10.67,1.39,12.6
+195,"Bank of New York","United States","Bancário",6.34,1.16,25.27
+196,"Volvo Group","Sweden","Bens de capital",24.28,0.6,14.12
+197,"Walgreen","United States","Varejo",33.74,1.2,35.33
+198,"Aetna","United States","Equipamentos e serviços de saúde",18.12,0.78,11.82
+199,"UES of","Russia","Utilidades",15.76,1.1,12.72
+200,"Standard Chartered Group","United Kingdom","Bancário",7.4,0.9,20.15
+201,"Anheuser-Busch Cos","United States","Alimentos, bebidas e tabaco",14.15,2.08,42.34
+202,"China Telecom","China","Serviços de telecomunicação",9.12,2.04,29.92
+203,"CNP Assurances","France","Seguro",26.35,0.6,8
+204,"Kimberly-Clark","United States","Produtos domésticos e pessoais",13.99,1.6,30.59
+205,"Hitachi","Japan","Serviços e material para empresas",69.3,0.24,21.09
+206,"ThyssenKrupp Group","Germany","Materiais",42.17,0.6,10.23
+207,"Sprint FON","United States","Serviços de telecomunicação",14.19,1.62,16.6
+208,"Clear Channel Commun","United States","Mídia",8.85,1.14,27.86
+209,"Denso","Japan","Bens duráveis",19.74,0.94,17.2
+210,"John Hancock Financial","United States","Seguro",9.27,0.83,12.38
+211,"KDDI","Japan","Serviços de telecomunicação",23.56,0.49,23.55
+212,"BB&T","United States","Bancário",6.24,1.06,20.43
+213,"Yukos","Russia","Óleo e gás",10.86,3.04,39.81
+214,"Marathon Oil","United States","Óleo e gás",36.68,1.32,10.39
+215,"Groupe Danone","France","Alimentos, bebidas e tabaco",16.52,1.06,23.37
+216,"First Data","United States","Software e serviços",8.32,1.36,29.06
+217,"Qwest Communications","United States","Serviços de telecomunicação",14.51,4.45,8.45
+218,"Metro AG","Germany","Mercados de alimentos",54.12,0.47,14.38
+219,"Bouygues Group","France","Construção",23.37,0.7,12.35
+220,"Emerson Electric","United States","Conglomerados",14.33,1.12,26.88
+221,"Allied Irish Banks","Ireland","Bancário",6.8,1.1,15.04
+222,"Principal Financial","United States","Recursos diversificados",9.24,0.79,11.69
+223,"Svenska Handelsbanken","Sweden","Bancário",7.37,0.84,13.68
+224,"Costco Wholesale","United States","Varejo",43.87,0.74,17.23
+225,"Mitsui & Co","Japan","Empresas comerciais",111.98,0.28,12.3
+226,"Takeda Chemical Inds","Japan","Drogas e biotecnologia",8.85,2.3,37.96
+227,"Chubb","United States","Seguro",10.85,0.79,13.29
+228,"Veolia Environnement","France","Utilidades",35.97,0.36,12.09
+229,"Bear Stearns Cos","United States","Recursos diversificados",6.91,1.06,12.16
+230,"Banca Intesa","Italy","Bancário",19.2,0.21,26.26
+231,"FedEx","United States","Transportes",22.98,0.65,20.56
+232,"Central Japan Railway","Japan","Transportes",11.53,0.42,20.66
+233,"Texas Instruments","United States","Semicondutores",9.83,1.2,53.25
+234,"Japan Tobacco","Japan","Alimentos, bebidas e tabaco",16.46,0.64,14.84
+235,"Deere & Co","United States","Bens de capital",14.01,0.64,15.75
+236,"KT","South Korea","Serviços de telecomunicação",13.82,1.64,10.98
+237,"Sara Lee","United States","Alimentos, bebidas e tabaco",18.66,1.11,17.08
+238,"Oracle","United States","Software e serviços",9.71,2.49,72.09
+239,"PNC Financial Services","United States","Bancário",6.09,0.99,15.82
+240,"WellPoint Health","United States","Equipamentos e serviços de saúde",20.36,0.94,16.18
+241,"General Dynamics","United States","Aeroespacial e defesa",15.72,0.88,18.99
+242,"Marsh & McLennan","United States","Seguro",11.11,1.48,25.96
+243,"Indian Oil","India","Óleo e gás",25.26,1.39,12.93
+244,"Lafarge","France","Construção",17.18,0.48,14.05
+245,"Centrica","United Kingdom","Utilidades",23.05,0.77,17.21
+246,"Coca-Cola Enterprises","United States","Alimentos, bebidas e tabaco",17.33,0.68,10.76
+247,"Banco Bradesco Group","Brazil","Bancário",15.76,0.8,6.83
+248,"Medtronic","United States","Equipamentos e serviços de saúde",8.57,1.88,57.38
+249,"J Sainsbury","United Kingdom","Mercados de alimentos",27.54,0.72,10.51
+250,"Fuji Photo Film","Japan","Produtos domésticos e pessoais",21.2,0.41,15
+251,"State Bank of India Group","India","Bancário",10.37,0.88,7.34
+252,"General Mills","United States","Alimentos, bebidas e tabaco",10.77,1,16.81
+253,"State Street","United States","Bancário",5.46,0.72,18.17
+254,"Automatic Data","United States","Serviços e material para empresas",7.01,0.97,25.86
+255,"Waste Management","United States","Serviços e material para empresas",11.57,0.72,16.87
+256,"Entergy","United States","Utilidades",8.97,0.92,13.27
+257,"Progressive","United States","Seguro",11.27,1.05,17.79
+258,"Pub Svc Enterprise","United States","Utilidades",11.23,0.91,10.74
+259,"Carnival Corp","Panama/ United Kingdom","Hotéis, restaurantes e lazer",5.93,1.18,37.96
+260,"Bank of Ireland","Ireland","Bancário",5.4,0.91,14.02
+261,"ConAgra Foods","United States","Alimentos, bebidas e tabaco",19.84,0.84,14.05
+262,"KeyCorp","United States","Bancário",5.73,0.9,13.18
+263,"Monte dei Paschi","Italy","Bancário",8.02,0.61,10.11
+264,"Schlumberger","Netherlands","Óleo e gás",13.89,0.38,37.49
+265,"Occidental Petroleum","United States","Óleo e gás",8.94,1.54,17.22
+266,"Ito-Yokado","Japan","Mercados de alimentos",28.32,0.38,14.46
+267,"Cigna","United States","Equipamentos e serviços de saúde",18.69,0.43,7.45
+268,"SEB-Skand Enskilda","Sweden","Bancário",7.43,0.61,10.21
+269,"FPL Group","United States","Utilidades",9.67,0.88,11.89
+270,"Burlington Santa Fe","United States","Transportes",9.29,0.78,12.03
+271,"St Paul Cos","United States","Seguro",8.47,0.88,9.86
+272,"Alcan","Canada","Materiais",14.59,0.31,16.77
+273,"Oil & Natural Gas","India","Óleo e gás",7.01,2.2,23.26
+274,"Thomson Corp","Canada","Mídia",8.14,0.9,21.07
+275,"Posco","South Korea","Materiais",12.1,0.92,13.23
+276,"Archer Daniels","United States","Alimentos, bebidas e tabaco",31.73,0.49,10.93
+277,"Mitsui Sumitomo Ins","Japan","Seguro",15.98,0.28,12.49
+278,"Sanofi-Synthelabo","France","Drogas e biotecnologia",10.12,2.62,51.88
+279,"McKesson","United States","Equipamentos e serviços de saúde",66.45,0.61,8.33
+280,"CVS","United States","Varejo",26.59,0.85,14.81
+281,"Tohoku Electric Power","Japan","Utilidades",13.48,0.52,8.67
+282,"Fortum","Finland","Óleo e gás",14.33,0.97,8.78
+283,"Raytheon","United States","Aeroespacial e defesa",18.11,0.37,13.22
+284,"Weyerhaeuser","United States","Materiais",19.87,0.29,13.95
+285,"Kyushu Electric Power","Japan","Utilidades",12.02,0.54,8.48
+286,"Akzo Nobel Group","Netherlands","Químicos",16.42,1.02,11.16
+287,"Johnson Controls","United States","Bens duráveis",23.85,0.71,11.14
+288,"SLM","United States","Recursos diversificados",3.91,1.4,18.21
+289,"Devon Energy","United States","Óleo e gás",5.89,1.73,12.51
+290,"Albertsons","United States","Mercados de alimentos",35.9,0.63,8.79
+291,"Alltel","United States","Serviços de telecomunicação",8.11,1.32,15.84
+292,"Illinois Tool Works","United States","Bens de capital",10.04,1.02,24.29
+293,"Ricoh","Japan","Serviços e material para empresas",14.71,0.61,13.5
+294,"Surgutneftegas Oil","Russia","Óleo e gás",6.29,1.56,21.36
+295,"Aeon","Japan","Varejo",26.14,0.43,11.31
+296,"Gap","United States","Varejo",15.62,0.92,18.1
+297,"Gillette","United States","Produtos domésticos e pessoais",9.25,1.39,37.48
+298,"Progress Energy","United States","Utilidades",8.73,0.8,11.19
+299,"Anthem","United States","Equipamentos e serviços de saúde",16.77,0.77,11.64
+300,"CIC Group","France","Bancário",12.76,0.4,6.64
+301,"Xerox","United States","Serviços e material para empresas",15.7,0.36,11.95
+302,"Golden West Finl","United States","Bancário",3.84,1.11,16.28
+303,"Reliance Industries","India","Óleo e gás",9.57,0.84,18.4
+304,"Edison International","United States","Utilidades",11.95,0.61,7.11
+305,"Sysco","United States","Mercados de alimentos",27.54,0.84,24.28
+306,"Gannett","United States","Mídia",6.62,1.2,23.96
+307,"Baxter International","United States","Equipamentos e serviços de saúde",8.92,0.9,18.73
+308,"Scottish Power","United Kingdom","Utilidades",8.29,0.75,12.31
+309,"Mitsubishi Heavy Inds","Japan","Bens de capital",21.94,0.29,9.82
+310,"EnCana","Canada","Óleo e gás",6.37,0.79,19.1
+311,"Bridgestone","Japan","Bens duráveis",18.93,0.38,12.86
+312,"Cathay Financial","Taiwan","Seguro",6.4,0.38,14.65
+313,"Best Buy","United States","Varejo",23.09,0.55,17.42
+314,"Sumitomo","Japan","Empresas comerciais",78.08,0.24,7.78
+315,"Eurohypo","Germany","Bancário",12.65,0.31,7.15
+316,"Deutsche Lufthansa","Germany","Transportes",17.83,0.75,7.07
+317,"Vinci Group","France","Construção",22.77,0.5,7.68
+318,"Singapore Telecom","Singapore","Serviços de telecomunicação",5.82,0.79,23.85
+319,"Power Corp of Canada","Canada","Recursos diversificados",12.1,0.41,7.76
+320,"Swisscom","Switzerland","Serviços de telecomunicação",10.52,0.6,22.63
+321,"Banco do Brasil","Brazil","Bancário",12.09,0.57,5.77
+322,"Nortel Networks","Canada","Tecnologia e equipamentos",10.49,0.41,34.08
+323,"Schneider Electric","France","Bens de capital",11.04,0.54,15.39
+324,"Forenings Sparbanken","Sweden","Bancário",6.24,0.43,10.42
+325,"Aire Liquide Group","France","Químicos",10.55,0.74,17.55
+326,"BOC Hong Kong","Hong Kong/China","Bancário",3.38,0.86,21.22
+327,"XL Capital","Bermuda","Seguro",8.02,0.41,10.61
+328,"Masco","United States","Construção",10.56,0.91,12.71
+329,"Toshiba","Japan","Serviços e material para empresas",47.85,0.16,13.27
+330,"Aon","United States","Seguro",9.58,0.59,8.09
+331,"Cadbury Schweppes","United Kingdom","Alimentos, bebidas e tabaco",8.53,0.88,16.88
+332,"Sharp","Japan","Serviços e material para empresas",16.95,0.28,18.21
+333,"Valero Energy","United States","Óleo e gás",34.51,0.58,6.7
+334,"Consolidated Edison","United States","Utilidades",9.83,0.54,9.77
+335,"Mellon Finl","United States","Bancário",4.55,0.71,14.25
+336,"UPM-Kymmene","Finland","Materiais",12.51,0.46,10.16
+337,"Colgate-Palmolive","United States","Produtos domésticos e pessoais",9.9,1.42,29.56
+338,"Federated Dept Strs","United States","Varejo",15.23,0.57,8.92
+339,"Anadarko Petroleum","United States","Óleo e gás",5.12,1.25,12.92
+340,"Schering-Plough","United States","Drogas e biotecnologia",8.82,0.4,27.05
+341,"Compass Group","United Kingdom","Hotéis, restaurantes e lazer",18.65,0.31,14.91
+342,"Petro-Canada","Canada","Óleo e gás",9.42,1.29,11.82
+343,"JC Penney","United States","Varejo",32.34,0.34,7.71
+344,"Marks & Spencer","United Kingdom","Varejo",12.76,0.76,11.73
+345,"Nippon Oil","Japan","Óleo e gás",26.44,0.27,7.5
+346,"Omnicom Group","United States","Mídia",8.23,0.66,15.79
+347,"International Paper","United States","Materiais",25,0.13,20.85
+348,"Old Mutual","United Kingdom","Recursos diversificados",14.9,0.25,6.73
+349,"EMC","United States","Tecnologia e equipamentos",6.24,0.5,33.49
+350,"Allianz Worldwide","Germany","Seguro",96.88,-1.23,48.07
+351,"CRH","Ireland","Construção",11.05,0.65,11.43
+352,"Kingfisher","United Kingdom","Varejo",17.67,0.28,12.81
+353,"Kellogg","United States","Alimentos, bebidas e tabaco",8.81,0.79,15.77
+354,"Vodafone","United Kingdom","Serviços de telecomunicação",47.99,-15.51,174.61
+355,"Medco Health Solutions","United States","Equipamentos e serviços de saúde",34.26,0.43,9.45
+356,"NIKE","United States","Produtos domésticos e pessoais",11.25,0.81,19.03
+357,"Tribune","United States","Mídia",5.55,0.75,17.07
+358,"Telenor","Norway","Serviços de telecomunicação",7.93,0.68,12.3
+359,"Standard Bank Group","South Africa","Bancário",5.14,0.58,8.1
+360,"Chunghwa Telecom","Taiwan","Serviços de telecomunicação",5.08,1.25,15.89
+361,"SCA-Svenska Cellulosa","Sweden","Materiais",10.14,0.66,9.52
+362,"Michelin Group","France","Bens duráveis",19.33,0.4,6.92
+363,"Erste Bank","Austria","Bancário",7.5,0.27,8.12
+364,"Deutsche Telekom","Germany","Serviços de telecomunicação",56.4,-25.83,84.18
+365,"DBS Group","Singapore","Bancário",3.36,0.59,13.43
+366,"SAP","Germany","Software e serviços",8.84,1.36,54.1
+367,"GUS","United Kingdom","Varejo",11.29,0.4,14.17
+368,"Holcim","Switzerland","Construção",9.42,0.37,10.27
+369,"Tokyo Gas","Japan","Utilidades",9.54,0.5,10.3
+370,"Ingersoll-Rand","Bermuda","Conglomerados",9.88,0.64,11.56
+371,"AmerisourceBergen","United States","Equipamentos e serviços de saúde",50.58,0.46,6.35
+372,"Credit Suisse Group","Switzerland","Recursos diversificados",38.01,-2.4,44.13
+373,"FirstEnergy","United States","Utilidades",12.41,0.18,12.37
+374,"France Telecom","France","Serviços de telecomunicação",57.99,-21.78,64.36
+375,"Cemex","Mexico","Construção",7.19,0.63,9.93
+376,"May Dept Stores","United States","Varejo",13.34,0.43,10.04
+377,"Firstrand","South Africa","Bancário",4.69,0.61,7.62
+378,"Accenture","Bermuda","Software e serviços",13.64,0.55,22.04
+379,"Banco Popular Espaqol","Spain","Bancário",3.32,0.67,14.38
+380,"George Weston","Canada","Mercados de alimentos",17.46,0.44,9.78
+381,"Sberbank of Russia","Russia","Bancário",5.63,0.97,5.95
+382,"Generali Group","Italy","Seguro",57.9,-0.79,35.11
+383,"China Unicom","Hong Kong/China","Serviços de telecomunicação",4.9,0.55,15.67
+384,"JFE Holdings","Japan","Materiais",20.53,0.13,14.42
+385,"Christian Dior","France","Produtos domésticos e pessoais",15.69,0.19,10.92
+386,"Henkel Group","Germany","Produtos domésticos e pessoais",11.87,0.67,11.71
+387,"Lincoln National","United States","Seguro",4.8,0.38,8.3
+388,"Kyocera","Japan","Serviços e material para empresas",9.05,0.37,13.27
+389,"Shin-Etsu Chemical","Japan","Químicos",6.75,0.62,16.32
+390,"Woori Finance Holdings","South Korea","Bancário",7.22,0.5,4.93
+391,"Mitsubishi Estate","Japan","Recursos diversificados",5.77,0.3,14.84
+392,"Georgia-Pacific","United States","Materiais",20.26,0.23,7.64
+393,"Centex","United States","Construção",10.44,0.74,6.17
+394,"Areva Group","France","Materiais",8.68,0.25,9.9
+395,"TPG","Netherlands","Transportes",12.25,0.63,11.51
+396,"Sumitomo Mitsui Financial","Japan","Bancário",29.17,-3.94,31.87
+397,"E.ON","Germany","Utilidades",37.95,-0.73,43.96
+398,"Mitsubishi Tokyo Finl","Japan","Bancário",20.65,-1.37,49.92
+399,"West Japan Railway","Japan","Transportes",9.86,0.35,7.91
+400,"Taiwan Semiconductor","Taiwan","Semicondutores",4.68,0.62,39.11
+401,"Alliance & Leicester","United Kingdom","Bancário",4.08,0.55,8.01
+402,"Aviva","United Kingdom","Seguro",52.46,-0.86,22.96
+403,"Mizuho Financial","Japan","Bancário",24.4,-20.11,30.87
+404,"Computer Sciences","United States","Software e serviços",13.86,0.49,8.04
+405,"Zurich Financial Services","Switzerland","Seguro",47.46,-3.96,21.83
+406,"Diageo","United Kingdom","Alimentos, bebidas e tabaco",11.25,0.13,41.3
+407,"HJ Heinz","United States","Alimentos, bebidas e tabaco",8.28,0.66,12.76
+408,"SouthTrust","United States","Bancário",3.11,0.71,11.38
+409,"Telefsnica","Spain","Serviços de telecomunicação",29.84,-5.86,86.39
+410,"Stora Enso","Finland","Materiais",15.31,0.18,11.02
+411,"Imperial Tobacco Group","United Kingdom","Alimentos, bebidas e tabaco",5.32,0.7,15.42
+412,"Telecom Italia","Italy","Serviços de telecomunicação",32.99,-0.81,46.57
+413,"Kohl`s","United States","Varejo",9.9,0.62,16.54
+414,"Degussa","Germany","Químicos",12.36,0.36,7.59
+415,"Matsushita Electric Indl","Japan","Bens duráveis",62.62,-0.16,33.02
+416,"Comerica","United States","Bancário",3.3,0.66,10.08
+417,"Sasol","South Africa","Óleo e gás",8.64,1.05,9.33
+418,"Interbrew","Belgium","Alimentos, bebidas e tabaco",7.34,0.49,12.9
+419,"Amerada Hess","United States","Óleo e gás",14.31,0.64,5.42
+420,"Regions Financial","United States","Bancário",3.73,0.64,8.23
+421,"Sempra Energy","United States","Utilidades",7.49,0.58,7.02
+422,"TDC Group","Denmark","Serviços de telecomunicação",7.23,0.64,8.92
+423,"Itochu","Japan","Empresas comerciais",88.51,0.17,5.46
+424,"Norfolk Southern","United States","Transportes",6.47,0.42,8.71
+425,"STMicroelectronics","Switzerland","Semicondutores",7.98,0.28,24.11
+426,"PPL","United States","Utilidades",5.57,0.73,8.01
+427,"Suez Group","France","Utilidades",48.41,-0.91,22.35
+428,"Constellation Energy","United States","Utilidades",9.7,0.48,6.68
+429,"Sun Hung Kai Properties","China","Recursos diversificados",2.94,0.84,24.02
+430,"Unocal","United States","Óleo e gás",6.4,0.73,9.58
+431,"HVB-HypoVereinsbank","Germany","Bancário",40.52,-0.87,14.49
+432,"Magna International","Canada","Bens duráveis",12.94,0.52,7.65
+433,"Qualcomm","United States","Tecnologia e equipamentos",4.12,0.94,46.45
+434,"Electrolux Group","Sweden","Bens duráveis",15.34,0.59,6.93
+435,"Vivendi Universal","France","Mídia",32.05,-5.1,29.12
+436,"CIT Group","United States","Recursos diversificados",3.73,0.57,8.06
+437,"DTE Energy","United States","Utilidades",7.03,0.52,6.6
+438,"Swiss Re Group","Switzerland","Seguro",27.53,-0.07,23.44
+439,"United Overseas Bank","Singapore","Bancário",2.68,0.61,12.77
+440,"Chugoku Electric Power","Japan","Utilidades",8.54,0.37,6.41
+441,"Apache","United States","Óleo e gás",4.2,1.1,12.82
+442,"Portugal Telecom","Portugal","Serviços de telecomunicação",5.87,0.41,14.25
+443,"Eastman Kodak","United States","Produtos domésticos e pessoais",13.32,0.27,8.32
+444,"UFJ Holdings","Japan","Bancário",17.16,-5.15,23.71
+445,"M&T Bank","United States","Bancário",2.96,0.57,11.35
+446,"Northern Rock","United Kingdom","Bancário",4.3,0.49,6.12
+447,"Wolseley","United Kingdom","Empresas comerciais",13.24,0.48,9.08
+448,"Paccar","United States","Bens duráveis",8.19,0.53,9.62
+449,"EDP-Elec de Portugal","Portugal","Utilidades",6.71,0.35,8.39
+450,"Mitsui Fudosan","Japan","Recursos diversificados",9.16,0.22,8.52
+451,"Depfa Bank","Ireland","Recursos diversificados",6.85,0.25,5.61
+452,"Suzuki Motor","Japan","Bens duráveis",17.05,0.26,8.04
+453,"Charles Schwab","United States","Recursos diversificados",3.84,0.25,17.09
+454,"Itazsa","Brazil","Bancário",9.22,0.43,4.19
+455,"BG Group","United Kingdom","Óleo e gás",4.2,0.66,18.39
+456,"Staples","United States","Varejo",12.84,0.44,12.64
+457,"Pepsi Bottling Group","United States","Alimentos, bebidas e tabaco",10.27,0.42,7.33
+458,"SABMiller","United Kingdom","Alimentos, bebidas e tabaco",6.93,0.3,13.37
+459,"Accor","France","Hotéis, restaurantes e lazer",8.59,0.38,8.99
+460,"Philips Group","Netherlands","Conglomerados",33.42,-3.37,41.58
+461,"PTT Public Company","Thailand","Óleo e gás",9.27,0.57,12.37
+462,"ABB Group","Switzerland","Bens de capital",20.41,0.11,12.12
+463,"Gas Natural SDG","Spain","Utilidades",5.53,0.85,11.28
+464,"Dai Nippon Printing","Japan","Mídia",11.07,0.24,11.16
+465,"Burlington Resources","United States","Óleo e gás",4.07,1.03,11.12
+466,"Hartford Finl Service","United States","Seguro",17.73,-0.29,18.56
+467,"Marriott Intl","United States","Hotéis, restaurantes e lazer",9.01,0.5,10.3
+468,"TransCanada","Canada","Utilidades",4.13,0.66,9.86
+469,"InterActiveCorp","United States","Varejo",6.33,0.17,22.72
+470,"Legal & General Group","United Kingdom","Seguro",36.1,-0.29,12.22
+471,"Safeco","United States","Seguro",7.17,0.26,6.31
+472,"Tyson Foods","United States","Alimentos, bebidas e tabaco",25.25,0.36,5.78
+473,"Altadis","Spain","Alimentos, bebidas e tabaco",9.45,0.46,9.48
+474,"PPG Industries","United States","Químicos",8.76,0.5,10.03
+475,"Shinhan Financial","South Korea","Bancário",3.97,0.51,5.81
+476,"AmSouth Bancorp","United States","Bancário",2.94,0.62,8.83
+477,"Equity Office Prop","United States","Recursos diversificados",3.11,0.66,11.35
+478,"Sibneft","Russia","Óleo e gás",4.7,1.14,15.88
+479,"Limited Brands","United States","Varejo",8.67,0.68,9.8
+480,"Solvay Group","Belgium","Químicos",9.5,0.54,7.12
+481,"Takefuji","Japan","Recursos diversificados",3.57,0.8,10.32
+482,"EADS","Netherlands","Aeroespacial e defesa",31.41,-0.31,18.17
+483,"BCP-Bco Com Portugujs","Portugal","Bancário",4.12,0.29,7.96
+484,"Kirin Brewery","Japan","Alimentos, bebidas e tabaco",9.07,0.27,8.66
+485,"Singapore Airlines","Singapore","Transportes",5.96,0.6,8.58
+486,"Textron","United States","Conglomerados",9.86,0.27,7.6
+487,"Marubeni","Japan","Empresas comerciais",74.39,0.26,3
+488,"Duke Energy","United States","Utilidades",21.58,-1.16,19.41
+489,"Eletrobras","Brazil","Utilidades",5.46,0.31,6.34
+490,"Acom","Japan","Recursos diversificados",3.7,0.64,9.56
+491,"Nomura Holdings","Japan","Recursos diversificados",7.59,0.09,31.06
+492,"Mitsubishi Motors","Japan","Bens duráveis",32.87,0.32,3.46
+493,"Nationwide Financial","United States","Seguro",3.91,0.39,5.84
+494,"Abbey National","United Kingdom","Bancário",15.28,-1.93,15.47
+495,"Scottish & Southern","United Kingdom","Utilidades",6.42,0.7,10.63
+496,"Jefferson-Pilot","United States","Seguro",3.65,0.49,7.55
+497,"Vale do Rio Doce","Brazil","Materiais",4.15,0.58,20.96
+498,"Husky Energy","Canada","Óleo e gás",5.91,1.02,7.86
+499,"Orix","Japan","Recursos diversificados",5.19,0.21,7.89
+500,"Commerzbank","Germany","Bancário",22.43,-0.31,11
+501,"Air Prods & Chems","United States","Químicos",6.54,0.4,11.43
+502,"Southwest Airlines","United States","Transportes",5.84,0.44,11.49
+503,"Charter One Finl","United States","Bancário",2.81,0.63,8.25
+504,"Aiful","Japan","Recursos diversificados",3.8,0.51,8.95
+505,"BPVN Group","Italy","Bancário",3.54,0.45,6.61
+506,"Praxair","United States","Químicos",5.61,0.59,11.61
+507,"Campbell Soup","United States","Alimentos, bebidas e tabaco",6.88,0.65,11.37
+508,"National Bank of Canada","Canada","Bancário",3.47,0.47,6.02
+509,"Carso Global Telecom","Mexico","Serviços de telecomunicação",10.89,0.28,5.47
+510,"Suncor Energy","Canada","Óleo e gás",4.87,0.84,11.55
+511,"Hannover Re","Germany","Seguro",9.37,0.28,4.61
+512,"DR Horton","United States","Construção",9.19,0.7,7.07
+513,"Reckitt Benckiser","United Kingdom","Produtos domésticos e pessoais",5.69,0.66,17.95
+514,"TJX Cos","United States","Varejo",12.73,0.57,11.62
+515,"Malayan Banking","Malaysia","Bancário",2.51,0.53,9.76
+516,"Assoc British Foods","United Kingdom","Alimentos, bebidas e tabaco",7.73,0.52,8.8
+517,"St George Bank","Australia","Bancário",2.94,0.45,8.07
+518,"Porsche","Germany","Bens duráveis",6.28,0.64,10.07
+519,"Ameren","United States","Utilidades",4.59,0.51,7.53
+520,"Marshall & Ilsley","United States","Bancário",2.75,0.53,8.78
+521,"Yum Brands","United States","Hotéis, restaurantes e lazer",8.38,0.62,10.39
+522,"ABSA Group","South Africa","Recursos diversificados",4.99,0.43,4.46
+523,"Finmeccanica","Italy","Aeroespacial e defesa",8.17,0.21,7.7
+524,"Fujitsu","Japan","Tecnologia e equipamentos",39.06,-1.03,12.32
+525,"Eaton","United States","Bens de capital",8.06,0.39,9.05
+526,"Fortune Brands","United States","Conglomerados",5.91,0.58,10.34
+527,"Cheung Kong","Hong Kong/China","Recursos diversificados",0.31,1.14,22.05
+528,"Toppan Printing","Japan","Mídia",10.59,0.25,7.81
+529,"Ahold","Netherlands","Mercados de alimentos",70.57,-1.27,13.3
+530,"Unisn Fenosa","Spain","Utilidades",6.13,0.36,6.35
+531,"Danaher","United States","Bens de capital",5.29,0.54,14.21
+532,"Nintendo","Japan","Bens duráveis",4.26,0.57,12.8
+533,"Cepsa","Spain","Óleo e gás",8.85,0.48,9.29
+534,"Kao","Japan","Produtos domésticos e pessoais",7.32,0.53,11.86
+535,"Loews","United States","Seguro",16.1,-0.72,11.98
+536,"Newmont Mining","United States","Materiais",3.21,0.51,19.73
+537,"Sekisui House","Japan","Construção",10.84,0.29,6.88
+538,"NEC","Japan","Tecnologia e equipamentos",39.72,-0.21,12.22
+539,"AutoNation","United States","Varejo",18.2,0.49,4.49
+540,"Adecco","Switzerland","Serviços e material para empresas",18.17,0.26,10.22
+541,"Northern Trust","United States","Bancário",2.62,0.37,10.78
+542,"Brascan","Canada","Recursos diversificados",5.07,0.44,6.01
+543,"Heineken Holding","Netherlands","Alimentos, bebidas e tabaco",9.47,0.42,6.88
+544,"Mitsubishi Chemical","Japan","Químicos",15.97,0.18,5.71
+545,"LM Ericsson","Sweden","Tecnologia e equipamentos",16.79,-2.19,44.06
+546,"DnB Holding","Norway","Bancário",4.3,0.34,4.85
+547,"Boots","United Kingdom","Mercados de alimentos",8.41,0.48,10.99
+548,"Richemont","Switzerland","Produtos domésticos e pessoais",3.95,0.79,13.98
+549,"Pulte Homes","United States","Construção",9.05,0.62,5.71
+550,"Lennar","United States","Construção",8.66,0.69,7.38
+551,"Nippon Steel","Japan","Materiais",23.26,-0.44,13.38
+552,"Fiat Group","Italy","Bens duráveis",58.22,-4.15,6.92
+553,"EnBW-Energie Baden","Germany","Utilidades",9.09,0.16,7.35
+554,"Fubon Financial","Taiwan","Recursos diversificados",3.97,0.27,7.56
+555,"KeySpan","United States","Utilidades",6.85,0.4,5.79
+556,"CSX","United States","Transportes",7.79,0.19,6.76
+557,"Fidelity National Finl","United States","Seguro",7.26,0.84,6.37
+558,"Novo-Nordisk","Denmark","Drogas e biotecnologia",4.49,0.82,15.75
+559,"Natexis Banques Populaire","France","Bancário",10.08,0.11,5.78
+560,"Linde","Germany","Bens de capital",9.17,0.25,6.61
+561,"Alcatel","France","Tecnologia e equipamentos",17.38,-4.98,20.43
+562,"Sumitomo Chemical","Japan","Químicos",9.4,0.26,6.31
+563,"Resona Holdings","Japan","Bancário",8.97,-7.09,13.41
+564,"BAA","United Kingdom","Transportes",3,0.59,10.69
+565,"Bunge","Bermuda","Alimentos, bebidas e tabaco",22.17,0.41,3.69
+566,"Turkiye Is Bankasi","Turkey","Bancário",4.23,0.31,6.68
+567,"Canadian National","Canada","Transportes",3.89,0.36,11.74
+568,"American Electric","United States","Utilidades",15.58,-0.16,13.21
+569,"Pitney Bowes","United States","Serviços e material para empresas",4.58,0.5,9.62
+570,"Daiei","Japan","Varejo",18.61,1.15,0.94
+571,"Aisin Seiki","Japan","Bens duráveis",11.91,0.41,4.41
+572,"Vattenfall Europe","Germany","Utilidades",9.31,0.2,5.78
+573,"CNOOC Hong","Kong/China","Óleo e gás",3.19,1.12,16.96
+574,"Nan Ya Plastic","Taiwan","Químicos",4.96,0.4,9.27
+575,"Cinergy","United States","Utilidades",4.42,0.45,6.85
+576,"McGraw-Hill Cos","United States","Mídia",4.83,0.66,14.63
+577,"Royal KPN","Netherlands","Serviços de telecomunicação",12.38,-10.02,20.64
+578,"National Bank of Greece","Greece","Bancário",3.47,0.22,7.51
+579,"Rohm and Haas","United States","Químicos",6.42,0.29,8.82
+580,"Coles Myer","Australia","Mercados de alimentos",17.52,0.33,7.34
+581,"BOC Group","United Kingdom","Químicos",6.19,0.36,8.68
+582,"Promise","Japan","Recursos diversificados",3.47,0.51,7.4
+583,"WPP","United Kingdom","Mídia",6.29,0.14,13.57
+584,"Schering Group","Germany","Drogas e biotecnologia",6.07,0.56,9.95
+585,"Harley-Davidson","United States","Bens duráveis",4.62,0.76,16.07
+586,"Mitsubishi Electric","Japan","Bens de capital",30.79,-0.1,10.28
+587,"Norilsk Nickel","Russia","Materiais",3.08,0.58,14.48
+588,"Toyota Industries","Japan","Bens duráveis",9.05,0.19,7.08
+589,"Formosa Petrochemical","Taiwan","Óleo e gás",4.89,0.33,11.1
+590,"Lear","United States","Bens duráveis",15.75,0.38,4.35
+591,"Tenaga Nasional","Malaysia","Utilidades",4.33,0.29,7.74
+592,"CLP Holdings","China","Utilidades",3.35,0.91,11.99
+593,"Syngenta","Switzerland","Químicos",7.08,0.29,7.32
+594,"Woolworths","Australia","Mercados de alimentos",17.74,0.44,9.14
+595,"Arcelor","Luxembourg","Materiais",25.77,-0.2,10.23
+596,"Delhaize Group","Belgium","Mercados de alimentos",23.66,0.19,4.91
+597,"China Life Insurance","China","Seguro",8.59,-0.27,19.46
+598,"Banche Popolari Unite","Italy","Bancário",4.02,0.2,5.73
+599,"Whirlpool","United States","Bens duráveis",12.18,0.42,5
+600,"Yamanouchi Pharm","Japan","Drogas e biotecnologia",4.29,0.51,11.02
+601,"H & M Hennes & Mauritz","Sweden","Varejo",6.39,0.85,22.29
+602,"Assurant","United States","Seguro",6.92,0.32,3.51
+603,"American Standard","United States","Bens de capital",8.57,0.41,7.7
+604,"Allied Domecq","United Kingdom","Alimentos, bebidas e tabaco",4.31,0.54,8.98
+605,"Safeway Plc","United Kingdom","Mercados de alimentos",13.65,0.27,5.79
+606,"Grupo Ferrovial","Spain","Construção",5.29,0.48,5.11
+607,"Osaka Gas","Japan","Utilidades",8.02,0.25,6.71
+608,"Banca Antonveneta","Italy","Bancário",3.71,0.23,5.73
+609,"Williams Cos","United States","Utilidades",17.8,0.1,5.25
+610,"Becton Dickinson","United States","Equipamentos e serviços de saúde",4.53,0.55,12.35
+611,"Popular","United States","Bancário",2.66,0.45,5.99
+612,"Atlas Copco","Sweden","Bens de capital",6.2,0.45,7.79
+613,"Baoshan Iron & Steel","China","Materiais",4.07,0.52,10.34
+614,"Sovereign Bancorp","United States","Bancário",2.45,0.4,6.69
+615,"Thales","France","Aeroespacial e defesa",11.67,0.12,6.68
+616,"Nippon Express","Japan","Transportes",14.19,0.2,5.58
+617,"Boston Scientific","United States","Equipamentos e serviços de saúde",3.48,0.47,34.9
+618,"Hellenic Telecom","Greece","Serviços de telecomunicação",4.53,0.41,7.69
+619,"Hanson","United Kingdom","Construção",5.83,0.3,6
+620,"Jardine Matheson","Bermuda","Mercados de alimentos",7.4,0.35,5.91
+621,"Sompo Japan Insurance","Japan","Seguro",14.41,-0.25,8.09
+622,"Hughes Electronics","United States","Mídia",10.12,-0.3,23.56
+623,"Cablevision NY Group","United States","Mídia",4,0.43,7.37
+624,"British Airways","United Kingdom","Transportes",12.15,0.11,6.36
+625,"CenterPoint Energy","United States","Utilidades",9.36,0.29,3.16
+626,"Oversea-Chinese Banking","Singapore","Bancário",1.99,0.38,9.66
+627,"Pernod Ricard","France","Alimentos, bebidas e tabaco",4.45,0.43,8.44
+628,"Chinatrust Financial","Taiwan","Bancário",3.04,0.31,6.67
+629,"DSM","Netherlands","Químicos",7.61,0.29,4.64
+630,"Scottish & Newcastle","United Kingdom","Alimentos, bebidas e tabaco",5.52,0.22,6.71
+631,"Industrial Bank of Korea","South Korea","Bancário",4.83,0.49,2.55
+632,"Imperial Chemical Inds","United Kingdom","Químicos",9.86,0.29,5.04
+633,"Merck","Germany","Drogas e biotecnologia",7.85,0.21,9.06
+634,"Ajinomoto","Japan","Alimentos, bebidas e tabaco",8.36,0.28,7.42
+635,"Matsushita Electric Works","Japan","Bens de capital",11.26,0.19,6.54
+636,"Mazda Motor","Japan","Bens duráveis",20,0.2,3.44
+637,"Sunoco","United States","Óleo e gás",15.87,0.31,4.51
+638,"MBIA","United States","Seguro",1.47,0.61,9.35
+639,"Starwood Hotels","United States","Hotéis, restaurantes e lazer",3.94,0.31,7.8
+640,"Enbridge","Canada","Óleo e gás",3.75,0.54,6.62
+641,"Cathay Pacific Airways","China","Transportes",4.24,0.51,6.53
+642,"Sanyo Electric","Japan","Bens duráveis",19.24,-0.62,9.43
+643,"MAN Group","Germany","Bens de capital",18.87,0.14,5.35
+644,"Continental","Germany","Bens duráveis",11.98,0.24,5.22
+645,"Dean Foods","United States","Alimentos, bebidas e tabaco",9.18,0.36,5.33
+646,"Safeway","United States","Mercados de alimentos",35.55,-0.17,9.92
+647,"Electronic Data Sys","United States","Software e serviços",21.48,-0.27,9.98
+648,"BAE Systems","United Kingdom","Aeroespacial e defesa",13,-1.1,10.11
+649,"Fuji Heavy Inds","Japan","Bens duráveis",11.61,0.28,3.55
+650,"Halliburton","United States","Óleo e gás",16.27,-0.81,13.86
+651,"Office Depot","United States","Varejo",12.36,0.3,5.42
+652,"PG&E","United States","Utilidades",9.91,-1.8,11.46
+653,"Royal & Sun Alliance","United Kingdom","Seguro",20.61,-1.51,5.2
+654,"Secom","Japan","Serviços e material para empresas",4.43,0.3,8.6
+655,"Hon Hai Precision Ind","Taiwan","Tecnologia e equipamentos",7.44,0.49,11.64
+656,"Hana Bank","South Korea","Bancário",3.28,0.27,4.49
+657,"Union Planters","United States","Bancário",2.4,0.5,5.67
+658,"Public Power","Greece","Utilidades",3.59,0.5,6.49
+659,"Autostrade","Italy","Transportes",2.46,0.56,20.61
+660,"Yamato Transport","Japan","Transportes",8.22,0.41,6.65
+661,"Avon Products","United States","Produtos domésticos e pessoais",6.55,0.6,15.99
+662,"First Tennessee Natl","United States","Bancário",2.69,0.47,5.67
+663,"Japan Airlines Sys","Japan","Transportes",17.63,0.1,5.99
+664,"Dixons Group","United Kingdom","Varejo",9.22,0.33,5.49
+665,"Sandvik","Sweden","Bens de capital",5.61,0.4,8.36
+666,"Sabanci Group","Turkey","Recursos diversificados",5.22,0.23,4.86
+667,"Simon Property Group","United States","Recursos diversificados",2.19,0.48,10.79
+668,"Seagate Technology Cayman","Islands","Tecnologia e equipamentos",6.67,0.74,7.9
+669,"Qantas Airways","Australia","Transportes",7.66,0.23,4.92
+670,"Sankyo (pharma)","Japan","Drogas e biotecnologia",4.82,0.29,9.23
+671,"Capitalia","Italy","Bancário",9.61,-0.3,6.36
+672,"Franklin Resources","United States","Recursos diversificados",2.75,0.56,14.54
+673,"Sumitomo Metal Inds","Japan","Materiais",10.36,0.14,4.6
+674,"TeliaSonera Group","Sweden","Serviços de telecomunicação",6.85,-0.93,22.51
+675,"Royal Caribbean","Liberia","Hotéis, restaurantes e lazer",3.78,0.28,8.09
+676,"Synovus Finl","United States","Bancário",2.41,0.39,7.55
+677,"Sprint PCS","United States","Serviços de telecomunicação",12.69,-0.66,9.54
+678,"ITT Industries","United States","Conglomerados",5.63,0.4,7.1
+679,"SK Corp","South Korea","Óleo e gás",36.59,-2.02,4.99
+680,"Everest Re Group","Bermuda","Seguro",4.11,0.43,4.82
+681,"Scania","Sweden","Bens de capital",5.45,0.32,6.58
+682,"Suncorp-Metway","Australia","Recursos diversificados",3.44,0.26,5.3
+683,"TXU","United States","Utilidades",10.77,-4.09,7.89
+684,"HeidelbergCement","Germany","Construção",6.9,0.26,4.39
+685,"Banca Naz del Lavoro","Italy","Bancário",5.74,0.1,5.9
+686,"Bombardier","Canada","Aeroespacial e defesa",15.55,-0.4,8.68
+687,"mmO2","United Kingdom","Serviços de telecomunicação",7.7,-16.03,14.69
+688,"Bank Mandiri","Indonesia","Bancário",3.75,0.4,3.33
+689,"Celesio","Germany","Equipamentos e serviços de saúde",19.31,0.25,4.68
+690,"Sun Microsystems","United States","Tecnologia e equipamentos",11.2,-1.45,18.51
+691,"Cox Communications","United States","Mídia",5.67,-0.14,20.48
+692,"Rohm","Japan","Semicondutores",2.96,0.45,13.52
+693,"Sodexho Alliance","France","Hotéis, restaurantes e lazer",12.84,0.18,5.08
+694,"Cincinnati Financial","United States","Seguro",3.06,0.3,6.95
+695,"Lucent Technologies","United States","Tecnologia e equipamentos",8.65,-0.17,18.36
+696,"Samsung SDI","South Korea","Serviços e material para empresas",5.59,0.5,6.89
+697,"Mattel","United States","Produtos domésticos e pessoais",4.96,0.54,8.07
+698,"Murata Manufacturing","Japan","Serviços e material para empresas",3.34,0.33,13.07
+699,"Delphi","United States","Bens duráveis",28.1,-0.06,5.93
+700,"Swiss Life Holding","Switzerland","Seguro",15.75,-1.23,4.26
+701,"Air France Group","France","Transportes",13.82,0.13,4.42
+702,"Huntington Bancshs","United States","Bancário",2.41,0.36,5.26
+703,"Supervalu","United States","Mercados de alimentos",19.78,0.25,3.93
+704,"Conseco","United States","Recursos diversificados",4.75,0.53,2.26
+705,"Swire Pacific","China","Recursos diversificados",1.95,0.69,9.94
+706,"H&R Block","United States","Serviços e material para empresas",3.66,0.65,10.64
+707,"ASFA-Autoroutes","France","Transportes",2.82,0.28,8.23
+708,"Guidant","United States","Equipamentos e serviços de saúde",3.7,0.33,19.51
+709,"Ambac Financial Group","United States","Seguro",1.27,0.62,8.15
+710,"Asahi Glass","Japan","Construção",10.96,-0.03,10.75
+711,"VNU","Netherlands","Mídia",4.49,0.18,7.68
+712,"Ciba Specialty Chemicals","Switzerland","Químicos",5.36,0.28,5.46
+713,"Oji Paper","Japan","Materiais",10.26,0.1,6.35
+714,"Torchmark","United States","Seguro",2.88,0.43,5.66
+715,"Pepco Holdings","United States","Utilidades",7.37,0.22,3.59
+716,"Hilton Group","United Kingdom","Hotéis, restaurantes e lazer",8.82,0.16,6.48
+717,"Toys R` Us","United States","Varejo",11.5,0.22,3.19
+718,"United Utilities","United Kingdom","Utilidades",2.97,0.44,5.16
+719,"Taisei","Japan","Construção",13.91,0.13,3.66
+720,"OMV Group","Austria","Óleo e gás",7.44,0.33,4.45
+721,"Quest Diagnostics","United States","Equipamentos e serviços de saúde",4.74,0.44,8.51
+722,"Skandia Insurance","Sweden","Seguro",10.53,-0.5,4.87
+723,"British Sky Broadcasting","United Kingdom","Mídia",5.27,0.32,27.26
+724,"White Mountains Ins","Bermuda","Seguro",3.81,0.3,4.24
+725,"Seiko Epson","Japan","Tecnologia e equipamentos",11.19,0.11,7.06
+726,"Unibanco Group","Brazil","Bancário",5.3,0.29,2.77
+727,"MGM Mirage","United States","Hotéis, restaurantes e lazer",3.91,0.24,6.15
+728,"Shikoku Electric Power","Japan","Utilidades",4.95,0.22,4.65
+729,"Valeo","France","Bens duráveis",11.61,0.23,3.65
+730,"Ebay","United States","Varejo",2.17,0.45,44.31
+731,"AutoZone","United States","Varejo",5.52,0.53,7.75
+732,"New York Community","United States","Bancário",0.91,0.32,8.35
+733,"Wesfarmers","Australia","Conglomerados",5,0.36,8.33
+734,"Mitsui Chemicals","Japan","Químicos",8.91,0.17,4.29
+735,"FCC Group","Spain","Construção",5.77,0.29,4.99
+736,"Nippon Yusen","Japan","Transportes",10.57,0.12,5.22
+737,"Bradford & Bingley","United Kingdom","Recursos diversificados",2.71,0.28,3.92
+738,"Gallaher Group","United Kingdom","Alimentos, bebidas e tabaco",3.8,0.41,7.75
+739,"China Steel","Taiwan","Materiais",3.13,0.49,8.6
+740,"Tokyu","Japan","Transportes",11.72,0.03,6.16
+741,"Genuine Parts","United States","Bens duráveis",8.36,0.36,5.9
+742,"Brambles Group","Australia/ United Kingdom","Serviços e material para empresas",5.33,0.22,7.09
+743,"Parker Hannifin","United States","Bens de capital",6.52,0.21,6.84
+744,"Grupo Modelo","Mexico","Alimentos, bebidas e tabaco",3.49,0.41,8.29
+745,"Amcor","Australia","Materiais",7.22,0.24,5.2
+746,"Yapi ve Kredi","Turkey","Bancário",4.48,0.9,1.86
+747,"Beiersdorf","Germany","Produtos domésticos e pessoais",5.88,0.38,9.94
+748,"China Merchants Bank","China","Bancário",1.44,0.22,8.11
+749,"GreenPoint Financial","United States","Bancário",1.74,0.47,6.24
+750,"Aramark","United States","Serviços e material para empresas",9.45,0.3,5.03
+751,"Fairfax Financial","Canada","Seguro",5.21,0.29,2.49
+752,"Sampo","Finland","Seguro",1.83,0.41,6.2
+753,"Estee Lauder Cos","United States","Produtos domésticos e pessoais",5.43,0.31,9.47
+754,"Sumitomo Trust & Banking","Japan","Bancário",4.16,-0.62,8.06
+755,"MTR","Hong Kong/China","Transportes",0.99,0.54,8.46
+756,"Lagardere SCA","France","Mídia",7.62,-0.27,8.52
+757,"America Telecom","Mexico","Serviços de telecomunicação",5.54,0.14,6.22
+758,"UnumProvident","United States","Seguro",10.22,0.06,4.36
+759,"Tostem Inax","Japan","Construção",7.98,0.16,5.55
+760,"Lexmark International","United States","Serviços e material para empresas",4.75,0.44,10.76
+761,"Daido Life Insurance","Japan","Seguro",9.42,0.05,4.43
+762,"Apple Computer","United States","Tecnologia e equipamentos",6.74,0.14,8.5
+763,"Inditex","Spain","Produtos domésticos e pessoais",4.28,0.47,13.52
+764,"adidas-Salomon","Germany","Produtos domésticos e pessoais",7.89,0.33,5.32
+765,"AES","United States","Utilidades",8.42,-0.44,5.68
+766,"Land Securities Group","United Kingdom","Recursos diversificados",1.69,0.36,9.37
+767,"North Fork Bancorp","United States","Bancário",1.27,0.4,6.67
+768,"Flextronics Intl","Singapore","Serviços e material para empresas",13.82,-0.35,9.68
+769,"El Paso","United States","Óleo e gás",7.93,-3.22,5.14
+770,"Clorox","United States","Produtos domésticos e pessoais",4.17,0.5,10.17
+771,"Xcel Energy","United States","Utilidades",9.2,-0.19,6.88
+772,"AMP","Australia","Seguro",5.4,NA,6.7
+773,"Citic Pacific","China","Conglomerados",2.86,0.5,6.45
+774,"Mega Financial Holding","Taiwan","Recursos diversificados",2.16,0.17,7.1
+775,"Caremark Rx","United States","Equipamentos e serviços de saúde",9.07,0.29,8.06
+776,"Baker Hughes","United States","Óleo e gás",5.29,0.13,12.12
+777,"Eisai","Japan","Drogas e biotecnologia",3.95,0.35,7.85
+778,"Hershey Foods","United States","Alimentos, bebidas e tabaco",4.17,0.46,10.26
+779,"Equity Residential","United States","Recursos diversificados",1.82,0.54,8.04
+780,"Kinki Nippon Railway","Japan","Transportes",11.03,-0.43,5.62
+781,"Huaneng Power Intl","China","Utilidades",2.23,0.47,13.07
+782,"Harrah`s Entertain","United States","Hotéis, restaurantes e lazer",4.08,0.31,5.72
+783,"Stryker","United States","Equipamentos e serviços de saúde",3.63,0.45,17.99
+784,"Old Republic Intl","United States","Seguro",3.18,0.44,4.36
+785,"Liberty Media","United States","Mídia",2.45,-0.98,32.69
+786,"AdvancePCS","United States","Equipamentos e serviços de saúde",15.02,0.2,6.01
+787,"Sumitomo Electric","Japan","Bens de capital",12.6,-0.17,6.38
+788,"Banco de Sabadell","Spain","Bancário",1.99,0.3,4.77
+789,"Rolls-Royce","United Kingdom","Aeroespacial e defesa",9.32,0.09,6.69
+790,"KarstadtQuelle","Germany","Varejo",16.61,0.17,2.62
+791,"Telekom Indonesia","Indonesia","Serviços de telecomunicação",2.4,0.93,9.18
+792,"Teva Pharmaceutical Inds","Israel","Drogas e biotecnologia",2.52,0.41,17.17
+793,"Telkom","South Africa","Serviços de telecomunicação",4.76,0.21,6.1
+794,"PartnerRe","Bermuda","Seguro",3.87,0.47,3.03
+795,"Zions Bancorp","United States","Bancário",1.89,0.34,5.25
+796,"Tenet Healthcare","United States","Equipamentos e serviços de saúde",15.17,-0.4,5.68
+797,"Nipponkoa Insurance","Japan","Seguro",8.87,-0.22,4.98
+798,"Infineon Technologies","Germany","Semicondutores",7.18,-0.51,10.73
+799,"Hokkaido Electric Power","Japan","Utilidades",4.39,0.22,3.76
+800,"TUI Group","Germany","Hotéis, restaurantes e lazer",21.33,0.03,4.28
+801,"Mitsui OSK Lines","Japan","Transportes",7.7,0.12,5.5
+802,"Humana","United States","Equipamentos e serviços de saúde",12.1,0.23,3.51
+803,"Anglo Irish Bank","Ireland","Bancário",1.44,0.3,5.53
+804,"Bharat Petroleum","India","Óleo e gás",11.97,0.32,3.22
+805,"Foster`s Group","Australia","Alimentos, bebidas e tabaco",3.19,0.31,7.16
+806,"Banknorth Group","United States","Bancário",1.58,0.34,5.39
+807,"Dover","United States","Conglomerados",4.35,0.23,8.25
+808,"Edison","Italy","Utilidades",5.4,-0.73,8.43
+809,"L-3 Communications","United States","Aeroespacial e defesa",4.89,0.26,5.33
+810,"Temple-Inland","United States","Materiais",4.64,0.16,3.41
+811,"Hongkong Electric","Hong Kong/China","Utilidades",1.49,0.88,9.04
+812,"Friends Provident","United Kingdom","Seguro",6.12,-0.11,4.75
+813,"Unisys","United States","Software e serviços",5.91,0.26,4.78
+814,"National Commerce Finl","United States","Bancário",1.57,0.31,5.95
+815,"Daiwa Securities","Japan","Recursos diversificados",3.28,-0.05,8.75
+816,"Talisman Energy","Canada","Óleo e gás",2.78,0.32,7.17
+817,"Applied Materials","United States","Semicondutores",4.48,-0.15,36.61
+818,"Starbucks","United States","Hotéis, restaurantes e lazer",4.35,0.3,14.54
+819,"Bed Bath & Beyond","United States","Varejo",4.23,0.36,12.34
+820,"ICICI Bank","India","Bancário",2.57,0.24,4.22
+821,"Irish Life & Permanent","Ireland","Seguro",1.72,0.3,4.69
+822,"Murphy Oil","United States","Óleo e gás",4.97,0.3,5.64
+823,"Forest Labs","United States","Drogas e biotecnologia",2.43,0.72,27.26
+824,"Affiliated Computer","United States","Software e serviços",4.03,0.5,6.76
+825,"Fiserv","United States","Software e serviços",2.7,0.32,7.54
+826,"Dollar General","United States","Varejo",6.67,0.31,7.68
+827,"Compass Bancshares","United States","Bancário",1.81,0.34,4.98
+828,"Aioi Insurance","Japan","Seguro",9.1,0.12,2.84
+829,"Femsa","Mexico","Alimentos, bebidas e tabaco",5.09,0.27,4.69
+830,"United Microelectronics","Taiwan","Semicondutores",2.18,0.2,14.66
+831,"Dassault Aviation","France","Aeroespacial e defesa",3.61,0.33,4.87
+832,"Express Scripts","United States","Equipamentos e serviços de saúde",12.92,0.24,5.54
+833,"Kajima","Japan","Construção",15.86,0.09,3.4
+834,"Wm Morrison Supermarkets","United Kingdom","Mercados de alimentos",7.07,0.3,6.76
+835,"Calpine","United States","Utilidades",9.33,0.12,2.5
+836,"Wisconsin Energy","United States","Utilidades",4.03,0.26,3.92
+837,"Asahi Breweries","Japan","Alimentos, bebidas e tabaco",6.7,0.12,4.66
+838,"Bank of Yokohama","Japan","Bancário",2.32,0.14,4.91
+839,"Northwest Airlines","United States","Transportes",8.69,0.25,0.96
+840,"Reed Elsevier","United Kingdom/ Netherlands","Mídia",7.54,0.14,20.46
+841,"SKF Group","Sweden","Bens de capital",5.75,0.28,4.41
+842,"Telekom Malaysia","Malaysia","Serviços de telecomunicação",2.59,0.28,8.42
+843,"VF","United States","Produtos domésticos e pessoais",5.13,0.37,4.83
+844,"Unipol","Italy","Seguro",6.69,0.11,3.47
+845,"Pearson","United Kingdom","Mídia",6.96,-0.18,8.85
+846,"Energy East","United States","Utilidades",4.65,0.21,3.43
+847,"Publicis Groupe","France","Mídia",3.07,0.15,7.15
+848,"Mohawk Industries","United States","Bens duráveis",5.01,0.31,5.48
+849,"Fondiaria-SAI","Italy","Seguro",9.38,0.04,3.57
+850,"EFG Eurobank Ergasias","Greece","Bancário",1.98,0.19,6.32
+851,"SPX","United States","Conglomerados",5,0.21,4.25
+852,"Asahi Kasei","Japan","Químicos",10.1,-0.57,6.9
+853,"Canadian Natural Res","Canada","Óleo e gás",2.22,0.37,6.8
+854,"Dana","United States","Bens duráveis",9.64,0.15,3.17
+855,"Alpha Bank","Greece","Bancário",2.05,0.18,5.88
+856,"Hindustan Petroleum","India","Óleo e gás",10.16,0.31,3.61
+857,"Hokuriku Electric Power","Japan","Utilidades",4.08,0.18,3.74
+858,"Mediaset","Italy","Mídia",2.39,0.38,13.93
+859,"Intl Game Technology","United States","Hotéis, restaurantes e lazer",2.25,0.48,13.01
+860,"Henderson Land Dev","Hong Kong/China","Recursos diversificados",0.98,0.29,8.86
+861,"Fresenius","Germany","Equipamentos e serviços de saúde",7.89,0.15,3.32
+862,"Nippon Unipac","Japan","Materiais",9.86,0.04,5.22
+863,"Willis Group Holdings","United Kingdom","Seguro",1.98,0.41,5.67
+864,"Electronic Arts","United States","Software e serviços",2.82,0.5,13.28
+865,"Toyota Tsusho","Japan","Empresas comerciais",21.8,0.16,2.46
+866,"NiSource","United States","Utilidades",7.45,0.04,5.63
+867,"Kinder Morgan","United States","Utilidades",1.1,0.38,7.43
+868,"E-Trade Financial","United States","Recursos diversificados",2.01,0.2,5.4
+869,"BHW Holding","Germany","Recursos diversificados",7.46,-0.38,2.98
+870,"Smiths Group","United Kingdom","Conglomerados",4.92,0.18,6.89
+871,"Wm Wrigley Jr","United States","Alimentos, bebidas e tabaco",3.07,0.45,12.74
+872,"Alstom","France","Bens de capital",23.26,-1.5,2.7
+873,"Avery Dennison","United States","Serviços e material para empresas",4.76,0.27,6.04
+874,"Analog Devices","United States","Semicondutores",2.19,0.36,18.83
+875,"Hudson City Bancorp","United States","Bancário",0.81,0.21,7.43
+876,"LG Card","South Korea","Recursos diversificados",4.75,0.3,0.21
+877,"ACS Group","Spain","Construção",4.64,0.19,6.24
+878,"Shiseido","Japan","Produtos domésticos e pessoais",5.26,0.21,4.95
+879,"Westfield America Trust","Australia","Recursos diversificados",1.41,0.45,5.65
+880,"Nordstrom","United States","Varejo",6.31,0.2,5.42
+881,"Thomson","France","Bens duráveis",10.64,0.03,5.74
+882,"Securitas","Sweden","Serviços e material para empresas",7.57,0.17,6.08
+883,"Koe Group","Turkey","Recursos diversificados",11.1,0.04,4.8
+884,"Tatneft","Russia","Óleo e gás",4.55,0.49,2.63
+885,"Wharf (Holdings) Hong","Kong/China","Recursos diversificados",1.45,0.3,7.9
+886,"Orkla","Norway","Alimentos, bebidas e tabaco",3.48,0.23,4.82
+887,"Alliance UniChem","United Kingdom","Equipamentos e serviços de saúde",12.92,0.18,3.29
+888,"QBE Insurance Group","Australia","Seguro",3.38,0.16,5.14
+889,"Siam Cement","Thailand","Construção",2.97,0.26,7.9
+890,"Luxottica Group","Italy","Produtos domésticos e pessoais",3.55,0.34,7.79
+891,"Bank Hapoalim","Israel","Bancário",4.03,0.1,3.28
+892,"WR Berkley","United States","Seguro",3.44,0.32,3.34
+893,"Rockwell Automation","United States","Bens de capital",4.14,0.31,6.07
+894,"Komatsu","Japan","Bens de capital",9.22,0.03,5.84
+895,"Cable & Wireless","United Kingdom","Serviços de telecomunicação",6.71,-10.32,6.74
+896,"Telecom of New Zealand","New Zealand","Serviços de telecomunicação",2.64,0.42,7.48
+897,"Bank of East Asia","Hong Kong/China","Bancário",0.74,0.25,4.72
+898,"Yamaha Motor","Japan","Bens duráveis",8.57,0.22,3.1
+899,"Agilent Technologies","United States","Tecnologia e equipamentos",6.06,-1.79,17.8
+900,"Serono","Switzerland","Drogas e biotecnologia",2.17,0.42,11.93
+901,"Sanmina-SCI","United States","Tecnologia e equipamentos",10.79,-0.11,6.8
+902,"Cooper Industries","Bermuda","Bens de capital",4.06,0.27,5.24
+903,"Public Bank","Malaysia","Bancário",1.13,0.26,5.58
+904,"Fanuc","Japan","Bens de capital",1.81,0.33,13.46
+905,"Olympus","Japan","Equipamentos e serviços de saúde",4.77,0.21,5.24
+906,"EchoStar Commun","United States","Mídia",5.46,-0.5,18.86
+907,"Scana","United States","Utilidades",3.34,0.29,3.91
+908,"Sherwin-Williams","United States","Varejo",5.28,0.32,5.15
+909,"Allied Waste Inds","United States","Serviços e material para empresas",5.4,0.16,2.74
+910,"Sudzucker","Germany","Alimentos, bebidas e tabaco",4.73,0.28,3.4
+911,"Yahoo","United States","Software e serviços",1.63,0.24,30.5
+912,"PacifiCare Health","United States","Equipamentos e serviços de saúde",10.44,0.24,2.98
+913,"Westfield Trust","Australia","Recursos diversificados",0.78,0.42,6.13
+914,"SunGard Data Systems","United States","Software e serviços",2.87,0.37,8.48
+915,"Barrick Gold","Canada","Materiais",2.06,0.23,11.24
+916,"Shimizu","Japan","Construção",13.11,0.06,3.48
+917,"MeadWestvaco","United States","Materiais",7.55,0,5.5
+918,"TDK","Japan","Serviços e material para empresas",5.15,0.1,9.1
+919,"Obayashi","Japan","Construção",11.34,0.03,3.47
+920,"Samsung Fire & Marine","South Korea","Seguro",4.54,0.21,3.16
+921,"Formosa Chems & Fibre","Taiwan","Químicos",2.51,0.32,7.5
+922,"All Nippon Airways","Japan","Transportes",10.29,-0.24,4.43
+923,"Nikko Cordial","Japan","Recursos diversificados",2.41,-0.18,9.74
+924,"Providian Financial","United States","Recursos diversificados",2.78,0.2,3.92
+925,"Dentsu","Japan","Mídia",2.42,0.19,6.67
+926,"Bankgesellschaft Berlin","Germany","Bancário",9.43,-0.74,2.3
+927,"AMR","United States","Transportes",17.15,-1.65,2.42
+928,"Rentokil Initial","United Kingdom","Serviços e material para empresas",3.6,0.46,6.91
+929,"Korea Exchange Bank","South Korea","Bancário",5.49,0.04,3.28
+930,"Interpublic Group","United States","Mídia",5.9,-0.33,6.64
+931,"Jones Apparel Group","United States","Produtos domésticos e pessoais",4.36,0.34,4.59
+932,"Macquarie Bank","Australia","Recursos diversificados",1.8,0.2,5.73
+933,"Swatch Group","Switzerland","Produtos domésticos e pessoais",3.21,0.36,8.78
+934,"Toray Industries","Japan","Produtos domésticos e pessoais",8.74,0.05,5.3
+935,"Nissho Iwai-Nichimen","Japan","Empresas comerciais",54.72,-1,0.88
+936,"Kobe Steel","Japan","Materiais",10.19,0.01,3.49
+937,"Grupo Carso","Mexico","Conglomerados",5,0.2,3.7
+938,"Canadian Pacific Railway","Canada","Transportes",2.82,0.31,4.05
+939,"Autoliv","United States","Bens duráveis",5,0.22,4.18
+940,"Hilton Hotels","United States","Hotéis, restaurantes e lazer",3.45,0.14,6.06
+941,"Shanghai Pudong Dev Bk","China","Bancário",1.14,0.15,5.46
+942,"Taiyo Life Insurance","Japan","Seguro",9.48,0.01,2.39
+943,"Daiwa House Industry","Japan","Construção",10.02,-0.77,5.64
+944,"Vornado Realty","United States","Recursos diversificados",1.27,0.31,6.61
+945,"Man Group Plc","United Kingdom","Recursos diversificados",1.59,0.37,9.01
+946,"Pioneer","Japan","Bens duráveis",6.03,0.14,5.21
+947,"British Land","United Kingdom","Recursos diversificados",0.72,0.22,5.81
+948,"Family Dollar Stores","United States","Varejo",4.89,0.25,6.63
+949,"Ameritrade Holding","United States","Recursos diversificados",0.69,0.19,7.05
+950,"Sanlam South","Africa","Seguro",6.54,-0.07,3.65
+951,"Antarchile","Chile","Recursos diversificados",3.39,0.24,4.34
+952,"Corporation Mapfre","Spain","Seguro",5.87,0.12,2.73
+953,"Next","United Kingdom","Varejo",3.63,0.35,7.24
+954,"Fujisawa Pharmaceutical","Japan","Drogas e biotecnologia",3.23,0.24,7.71
+955,"Credit Foncier","France","Bancário",2.79,0.14,2.93
+956,"Archstone-Smith","United States","Recursos diversificados",0.9,0.44,5.26
+957,"Veritas Software","United States","Software e serviços",1.77,0.28,14.02
+958,"Newell Rubbermaid","United States","Produtos domésticos e pessoais",7.75,-0.05,6.94
+959,"Mediobanca","Italy","Recursos diversificados",2.31,0.06,9.34
+960,"Black & Decker","United States","Bens duráveis",4.48,0.29,4.11
+961,"Quanta Computer","Taiwan","Tecnologia e equipamentos",4.12,0.31,6.47
+962,"Arab Bank","Jordan","Bancário",1.33,0.23,4.19
+963,"Marui","Japan","Varejo",4.66,0.15,4.95
+964,"Great Eastern Holdings","Singapore","Seguro",3.58,0.13,3.38
+965,"Mitsui Trust","Japan","Bancário",3.42,-0.82,4.05
+966,"Inco","Canada","Materiais",2.65,0.15,6.89
+967,"InterContinental Hotels","United Kingdom","Hotéis, restaurantes e lazer",4.88,0.05,8.86
+968,"Corning","United States","Tecnologia e equipamentos",3.09,-0.22,16.67
+969,"Computer Associates","United States","Software e serviços",3.24,-0.16,15.89
+970,"Skanska","Sweden","Construção",16.77,-0.1,3.72
+971,"Daikin Industries","Japan","Bens de capital",4.84,0.18,6
+972,"Kubota","Japan","Bens de capital",7.84,-0.07,5.58
+973,"Exel","United Kingdom","Transportes",7.42,0.19,4.3
+974,"MGIC Investment","United States","Seguro",1.78,0.49,6.55
+975,"CenturyTel","United States","Serviços de telecomunicação",2.38,0.34,3.95
+976,"Commerce Bancorp","United States","Bancário",1.25,0.19,4.53
+977,"RMC Group","United Kingdom","Construção",7.25,0.11,3.57
+978,"Insurance Australia Group","Australia","Seguro",3.49,0.1,5.94
+979,"Banca Lombarda Group","Italy","Bancário",2.12,0.14,4.35
+980,"Formosa Plastics","Taiwan","Químicos",2.2,0.29,8.28
+981,"Solectron","United States","Tecnologia e equipamentos",11.04,-3.51,5.52
+982,"Manpower","United States","Serviços e material para empresas",12.18,0.14,3.45
+983,"Corus Group","United Kingdom","Materiais",11.57,-0.74,3.62
+984,"Telus","Canada","Serviços de telecomunicação",4.46,-0.15,6.95
+985,"Ecolab","United States","Químicos",3.76,0.28,7.04
+986,"Bbloise Group","Switzerland","Seguro",6.25,-0.46,2.72
+987,"Monsanto","United States","Químicos",4.4,-0.11,8.3
+988,"RadioShack","United States","Varejo",4.66,0.28,5.43
+989,"New York Times","United States","Mídia",2.97,0.3,7.14
+990,"Severn Trent","United Kingdom","Utilidades",2.93,0.16,4.66
+991,"Boston Properties","United States","Recursos diversificados",1.31,0.37,5.04
+992,"Shizuoka Bank","Japan","Bancário",1.49,0.11,5.26
+993,"Oxford Health Plans","United States","Equipamentos e serviços de saúde",5.35,0.35,3.84
+994,"OTP Bank","Hungary","Bancário",1.58,0.26,3.69
+995,"Smurfit-Stone","United States","Materiais",7.73,-0.1,4.35
+996,"GKN","United Kingdom","Bens duráveis",5.32,0.16,3.76
+997,"Konica Minolta","Japan","Produtos domésticos e pessoais",4.73,0.14,6.49
+998,"S-Oil South","Korea","Óleo e gás",6.26,0.16,4.39
+999,"General Growth Prop","United States","Recursos diversificados",1.16,0.25,6.52
+1000,"Northeast Utilities","United States","Utilidades",6.73,0.13,2.48
+1001,"Korea Gas","South Korea","Utilidades",6.17,0.25,1.76
+1002,"MOL","Hungary","Óleo e gás",5.16,0.29,3.15
+1003,"First American","United States","Seguro",5.98,0.44,2.36
+1004,"Sumitomo Realty & Dev","Japan","Recursos diversificados",4.52,0.04,4.42
+1005,"Hibernia","United States","Bancário",1.33,0.25,3.58
+1006,"Rallye","France","Varejo",29.89,0.07,1.98
+1007,"Tobu Railway","Japan","Transportes",5.8,0.09,3.25
+1008,"Symantec","United States","Software e serviços",1.7,0.32,12.52
+1009,"Washington Post","United States","Mídia",2.69,0.25,8.67
+1010,"M-real","Finland","Materiais",6.9,0.22,1.6
+1011,"Agfa-Gevaert","Belgium","Produtos domésticos e pessoais",4.92,0.2,4.18
+1012,"Tomkins","United Kingdom","Conglomerados",5.07,0.28,3.61
+1013,"KB Home","United States","Construção",5.59,0.36,2.68
+1014,"Altana","Germany","Drogas e biotecnologia",2.74,0.34,8.22
+1015,"Amersham","United Kingdom","Equipamentos e serviços de saúde",2.48,0.29,10.51
+1016,"Koram Bank","South Korea","Bancário",2.16,0.22,2.57
+1017,"Sappi","South Africa","Materiais",5.16,0.18,3.14
+1018,"Investor","Sweden","Recursos diversificados",0.45,0.19,8.27
+1019,"Reuters Group","United Kingdom","Mídia",5.76,-0.65,9.63
+1020,"Caesars Entertainment","United States","Hotéis, restaurantes e lazer",4.66,0.11,3.62
+1021,"Ball","United States","Materiais",4.98,0.23,3.61
+1022,"Knight Ridder","United States","Mídia",2.68,0.29,6.14
+1023,"Daikyo","Japan","Recursos diversificados",2.85,3.27,0.36
+1024,"Softbank","Japan","Software e serviços",3.44,-0.85,13.17
+1025,"Delta Air Lines","United States","Transportes",12.71,-0.81,1.21
+1026,"Oriental Land","Japan","Mídia",2.81,0.16,6.52
+1027,"Leggett & Platt","United States","Bens duráveis",4.39,0.21,4.66
+1028,"Taisho Pharmaceutical","Japan","Drogas e biotecnologia",2.32,0.3,5.83
+1029,"Deutsche Boerse","Germany","Recursos diversificados",1.23,0.25,7.1
+1030,"Sealed Air","United States","Materiais",3.53,0.24,4.03
+1031,"Bank Leumi Group","Israel","Bancário",3.41,0.09,2.8
+1032,"Health Net","United States","Equipamentos e serviços de saúde",10.93,0.19,3.23
+1033,"BPER-Emilia Romagna","Italy","Bancário",2.44,0.13,2.94
+1034,"W&W-Wustenrot","Germany","Recursos diversificados",7.57,-0.08,1.89
+1035,"Nippon Mining","Japan","Óleo e gás",18.3,0.03,2.34
+1036,"Acciona","Spain","Construção",3.59,0.17,4.13
+1037,"Pirelli & C","Italy","Recursos diversificados",7.06,-0.06,3.57
+1038,"Doral Financial","United States","Bancário",0.86,0.32,3.69
+1039,"UAL","United States","Transportes",13.58,-3.78,0.18
+1040,"Reliant Resources","United States","Utilidades",11.23,-2,2.37
+1041,"Banco de Chile","Chile","Bancário",0.61,0.22,3.65
+1042,"Constellation Brands","United States","Alimentos, bebidas e tabaco",3.32,0.21,3.77
+1043,"Bangkok Bank","Thailand","Bancário",1.58,0.15,3.85
+1044,"RJ Reynolds Tobacco","United States","Alimentos, bebidas e tabaco",5.27,-3.57,4.99
+1045,"Brookfield Properties","Canada","Recursos diversificados",1.46,0.3,4.74
+1046,"Whitbread Holdings","United Kingdom","Hotéis, restaurantes e lazer",2.83,0.24,4.23
+1047,"Krung-Thai Bank","Thailand","Bancário",1.13,0.19,3.36
+1048,"Pinnacle West","United States","Utilidades",2.95,0.18,3.43
+1049,"Keppel","Singapore","Recursos diversificados",3.5,0.23,3.17
+1050,"Astoria Financial","United States","Bancário",1.18,0.2,3.3
+1051,"Remgro","South Africa","Conglomerados",1.11,1.11,5.62
+1052,"Univision Commun","United States","Mídia",1.19,0.13,11.84
+1053,"Maxim Integrated Prods","United States","Semicondutores",1.23,0.35,17.32
+1054,"US Steel","United States","Materiais",9.33,-0.41,3.69
+1055,"Cap Gemini Ernst & Young","France","Software e serviços",7.4,-0.54,6.27
+1056,"Legg Mason","United States","Recursos diversificados",1.78,0.25,6.11
+1057,"Zimmer Holdings","United States","Equipamentos e serviços de saúde",1.57,0.33,18.74
+1058,"Rinker Group","Australia","Construção",2.82,0.32,5.15
+1059,"Bankinter","Spain","Bancário",1.37,0.17,3.26
+1060,"Abertis Infraestructuras","Spain","Transportes",0.8,0.21,7.43
+1061,"AmBev","Brazil","Alimentos, bebidas e tabaco",2.07,0.43,9.57
+1062,"Freeport Copper","United States","Materiais",2.21,0.2,8.24
+1063,"Asustek Computer","Taiwan","Tecnologia e equipamentos",3.31,0.29,5.72
+1064,"Laboratory Corp Amer","United States","Equipamentos e serviços de saúde",2.94,0.32,5.58
+1065,"Johnson Matthey","United Kingdom","Materiais",6.83,0.19,3.85
+1066,"Kone","Finland","Construção",4.56,0.17,4.02
+1067,"Paychex","United States","Serviços e material para empresas",1.2,0.3,13.17
+1068,"Micron Technology","United States","Semicondutores",3.51,-0.96,9.59
+1069,"Kawasaki Heavy Inds","Japan","Bens de capital",10.49,0.11,1.74
+1070,"WW Grainger","United States","Bens de capital",4.63,0.23,4.41
+1071,"Metalurgica Gerdau","Brazil","Materiais",4.62,0.43,1
+1072,"IKB","Germany","Bancário",3.66,0.1,2.24
+1073,"PKN Orlen","Poland","Óleo e gás",4.41,0.28,3.08
+1074,"Axis Capital Holdings","Bermuda","Seguro",1.37,0.48,4.72
+1075,"Iberia","Spain","Transportes",4.71,0.17,3.34
+1076,"Associated Banc-Corp","United States","Bancário",0.98,0.23,3.26
+1077,"Radian Group","United States","Seguro",1.38,0.39,4.32
+1078,"CDW","United States","Varejo",4.66,0.18,5.6
+1079,"Odakyu Electric Railway","Japan","Transportes",5.47,0.07,3.72
+1080,"St Jude Medical","United States","Equipamentos e serviços de saúde",1.93,0.34,12.77
+1081,"ProLogis","United States","Recursos diversificados",0.73,0.25,5.86
+1082,"Unibail","France","Recursos diversificados",0.79,0.35,4.73
+1083,"Phelps Dodge","United States","Materiais",4.14,0.03,7.31
+1084,"Friedman Billings","United States","Recursos diversificados",0.63,0.2,4.23
+1085,"HHG","United Kingdom","Seguro",5.68,NA,2.07
+1086,"Outokumpu","Finland","Materiais",5.84,0.17,2.32
+1087,"Carlsberg","Denmark","Alimentos, bebidas e tabaco",5.03,0.14,2.74
+1088,"Ashland","United States","Óleo e gás",7.52,0.09,3.2
+1089,"Abitibi Consolidated","Canada","Materiais",3.69,0.14,3.32
+1090,"China Minsheng Banking","China","Bancário",0.87,0.11,4.65
+1091,"NTL","United States","Serviços de telecomunicação",3.5,NA,5.94
+1092,"Hyundai Mobis","South Korea","Bens duráveis",3.52,0.34,4.12
+1093,"Public Storage","United States","Recursos diversificados",0.85,0.32,6.13
+1094,"Goodyear","United States","Bens duráveis",14.74,-1.44,1.53
+1095,"Liz Claiborne","United States","Produtos domésticos e pessoais",4.2,0.26,4.04
+1096,"Fluor","United States","Construção",8.91,0.16,3.31
+1097,"MTN Group","South Africa","Serviços de telecomunicação",2.46,0.24,7.54
+1098,"Kerr-McGee","United States","Óleo e gás",4.18,-0.14,5.07
+1099,"EOG Resources","United States","Óleo e gás",1.82,0.44,5.07
+1100,"Coventry Health Care","United States","Equipamentos e serviços de saúde",4.54,0.25,3.79
+1101,"Transocean","Cayman Islands","Óleo e gás",2.43,0.02,9.26
+1102,"OPAP","Greece","Hotéis, restaurantes e lazer",2.87,0.3,5.79
+1103,"Owens-Illinois","United States","Materiais",5.97,0.13,1.66
+1104,"Commerce Bancshs","United States","Bancário",0.92,0.21,3.37
+1105,"Telekom Austria","Austria","Serviços de telecomunicação",3.28,0.01,7.58
+1106,"Shinsegae","South Korea","Varejo",5.66,0.21,3.34
+1107,"Mercantile Bkshs","United States","Bancário",0.77,0.2,3.54
+1108,"TCF Financial","United States","Bancário",1.06,0.22,3.67
+1109,"Banco BPI","Portugal","Recursos diversificados",2.01,0.15,2.95
+1110,"EMI Group","United Kingdom","Mídia",3.44,0.36,3.85
+1111,"PICC Property & Casualty","China","Seguro",4.45,0.03,5.09
+1112,"Janus Capital Group","United States","Recursos diversificados",0.99,0.95,3.84
+1113,"Suzuken","Japan","Equipamentos e serviços de saúde",8.97,0.14,2.42
+1114,"IFIL","Italy","Recursos diversificados",5.63,-0.39,3.96
+1115,"Hanwha","South Korea","Empresas comerciais",6.3,-0.17,0.36
+1116,"American Finl Group","United States","Seguro",3.43,0.14,2.05
+1117,"Darden Restaurants","United States","Hotéis, restaurantes e lazer",4.81,0.22,3.66
+1118,"Samsung South","Korea","Empresas comerciais",34.77,0.06,1.52
+1119,"Goodrich","United States","Aeroespacial e defesa",4.38,0.12,3.57
+1120,"Rite Aid","United States","Varejo",16.34,0.02,2.94
+1121,"General Property Trust","Australia","Recursos diversificados",0.46,0.32,4.6
+1122,"Health Management","United States","Equipamentos e serviços de saúde",2.71,0.3,5.48
+1123,"Chiron","United States","Drogas e biotecnologia",1.72,0.23,9.6
+1124,"TRW Automotive Holdings","United States","Bens duráveis",11.04,-0.1,2.6
+1125,"Cez","Czech Republic","Utilidades",1.85,0.28,3.95
+1126,"Bank Central Asia","Indonesia","Bancário",1.7,0.28,2.77
+1127,"Hong Kong & China Gas","Hong Kong/China","Utilidades",0.88,0.4,9.37
+1128,"Nitto Denko","Japan","Químicos",3.2,0.16,8.08
+1129,"Amazon.com","United States","Varejo",5.26,0.04,18.71
+1130,"Ingram Micro","United States","Tecnologia e equipamentos",21.74,0.09,2.54
+1131,"Kasikornbank","Thailand","Bancário",1.02,0.16,3.48
+1132,"Seibu Railway","Japan","Transportes",3.55,0.01,5.52
+1133,"Turkiye Garanti Bankasi","Turkey","Bancário",3.87,0.03,3.03
+1134,"Apollo-Education Group","United States","Serviços e material para empresas",1.44,0.27,13.63
+1135,"Rogers Communications","Canada","Serviços de telecomunicação",3.74,0.1,4.61
+1136,"Onex","Canada","Serviços e material para empresas",14.41,-0.09,1.87
+1137,"Li & Fung","Hong Kong/China","Empresas comerciais",4.78,0.14,5.6
+1138,"Concord EFS","United States","Serviços e material para empresas",2.22,0.35,6.7
+1139,"Visteon","United States","Bens duráveis",17.66,-1.21,1.47
+1140,"Royal Numico","Netherlands","Alimentos, bebidas e tabaco",4.17,0.14,5.31
+1141,"Quebecor","Canada","Mídia",7.64,0.1,1.34
+1142,"Moody`s","United States","Serviços e material para empresas",1.17,0.35,9.68
+1143,"Turkcell","Turkey","Serviços de telecomunicação",3.17,0.14,5.81
+1144,"iStar Financial","United States","Recursos diversificados",0.55,0.29,4.19
+1145,"Intuit","United States","Software e serviços",1.68,0.34,9.61
+1146,"Linear Technology","United States","Semicondutores",0.68,0.27,13.19
+1147,"NVR","United States","Construção",3.68,0.42,3.13
+1148,"Banca Popolare di Milano","Italy","Bancário",2.13,0.13,2.56
+1149,"IMS Health","United States","Equipamentos e serviços de saúde",1.38,0.63,6.37
+1150,"Commerce Asset Holding","Malaysia","Bancário",1.25,0.15,3.13
+1151,"Kmart Holding","United States","Varejo",25.8,-1.99,2.58
+1152,"Grupo Financiero Banorte","Mexico","Bancário",2.46,0.2,1.92
+1153,"Nabors Industries","Bermuda","Óleo e gás",1.88,0.19,6.89
+1154,"Ross Stores","United States","Varejo",3.79,0.21,4.55
+1155,"Publishing & Broadcasting","Australia","Mídia",1.8,0.26,6.46
+1156,"Tokyo Electron","Japan","Semicondutores",3.9,-0.35,11.71
+1157,"CSR Group","Australia","Construção",4.39,1.24,1.32
+1158,"Biomet","United States","Equipamentos e serviços de saúde",1.49,0.31,10.22
+1159,"China Development Finl","Taiwan","Bancário",0.51,0.19,5.29
+1160,"Alliant Energy","United States","Utilidades",2.9,0.19,2.87
+1161,"RenaissanceRe Holdings","Bermuda","Seguro",1.37,0.62,3.58
+1162,"Smith & Nephew","United Kingdom","Equipamentos e serviços de saúde",2.11,0.26,9.05
+1163,"Rockwell Collins","United States","Aeroespacial e defesa",2.61,0.28,5.88
+1164,"George Wimpey","United Kingdom","Construção",4.19,0.31,2.71
+1165,"Synthes-Stratec","Switzerland","Equipamentos e serviços de saúde",1.13,0.28,11.54
+1166,"Cosmo Oil","Japan","Óleo e gás",16.1,0.03,1.36
+1167,"UNY","Japan","Varejo",9.99,0.11,2.07
+1168,"Yamaha","Japan","Produtos domésticos e pessoais",4.44,0.15,3.48
+1169,"Taiwan Cellular","Taiwan","Serviços de telecomunicação",1.69,0.43,4.38
+1170,"Kimco Realty","United States","Recursos diversificados",0.48,0.31,5.19
+1171,"Bunzl","United Kingdom","Materiais",4.31,0.2,3.83
+1172,"Xstrata","United Kingdom","Materiais",1.93,0.15,8.58
+1173,"Bluescope Steel","Australia","Materiais",3.55,0.3,3.46
+1174,"Protective Life","United States","Seguro",1.9,0.18,2.56
+1175,"Foot Locker","United States","Varejo",4.66,0.19,3.62
+1176,"Xilinx","United States","Semicondutores",1.3,0.22,14.31
+1177,"Omnicare","United States","Equipamentos e serviços de saúde",3.5,0.19,4.61
+1178,"Hypo Real Estate Holding","Germany","Recursos diversificados",0.87,0.02,3.97
+1179,"Showa Denko","Japan","Químicos",5.68,0.11,2.32
+1180,"Malaysia Intl Shipping","Malaysia","Transportes",1.43,0.35,5.82
+1181,"Taiheiyo Cement","Japan","Construção",7.85,0.05,2.36
+1182,"Navistar Intl","United States","Bens duráveis",7.32,-0.02,3.3
+1183,"Republic Services","United States","Serviços e material para empresas",2.49,0.22,4.13
+1184,"Verbund-Austrian Electric","Austria","Utilidades",2.18,0.16,4.28
+1185,"Taylor Woodrow","United Kingdom","Construção",3.56,0.25,2.88
+1186,"Vulcan Materials","United States","Construção",2.89,0.21,4.69
+1187,"mg technologies","Germany","Químicos",8.54,-0.13,3.18
+1188,"Eiffage","France","Construção",7.19,0.13,1.84
+1189,"Sagem","France","Tecnologia e equipamentos",4,0.15,5.21
+1190,"UST","United States","Alimentos, bebidas e tabaco",1.74,0.49,6.08
+1191,"WellChoice","United States","Equipamentos e serviços de saúde",5.38,0.2,3.04
+1192,"Yue Yuen Industrial","Hong Kong/China","Produtos domésticos e pessoais",2.53,0.31,4.73
+1193,"Tele2","Sweden","Serviços de telecomunicação",3.6,0.03,7.76
+1194,"Sime Darby","Malaysia","Conglomerados",3.61,0.21,3.28
+1195,"Cintas","United States","Serviços e material para empresas",2.14,0.26,7.49
+1196,"Wendy`s International","United States","Hotéis, restaurantes e lazer",3.15,0.24,4.41
+1197,"Teijin","Japan","Químicos",7.53,-0.18,2.67
+1198,"Hormel Foods","United States","Alimentos, bebidas e tabaco",4.2,0.19,3.82
+1199,"Compal Electronics","Taiwan","Tecnologia e equipamentos",3.38,0.23,4.07
+1200,"MediaTek","Taiwan","Semicondutores",0.85,0.35,7.08
+1201,"Wolters Kluwer","Netherlands","Mídia",4.22,0.03,5.21
+1202,"Engelhard","United States","Químicos",3.71,0.24,3.53
+1203,"Rexam","United Kingdom","Materiais",4.97,-0.19,4.5
+1204,"ALFA","Mexico","Conglomerados",4.95,0.13,2.21
+1205,"Brown-Forman","United States","Alimentos, bebidas e tabaco",2.46,0.25,5.7
+1206,"Nagoya Railroad","Japan","Transportes",6.76,-0.4,2.51
+1207,"Adobe Systems","United States","Software e serviços",1.29,0.27,9.19
+1208,"City National","United States","Bancário",0.75,0.19,2.96
+1209,"First Financial Holding","Taiwan","Bancário",1.53,-0.71,4.77
+1210,"Taishin Financial Holding","Taiwan","Recursos diversificados",1.22,0.12,3.78
+1211,"Gold Fields","South Africa","Materiais",1.86,0.4,6.55
+1212,"NCR","United States","Tecnologia e equipamentos",5.6,0.06,4.31
+1213,"Canadian Tire","Canada","Varejo",5.06,0.19,2.64
+1214,"Impala Platinum Holdings","South Africa","Materiais",1.58,0.46,5.81
+1215,"Norske Skogindustrier","Norway","Materiais",3.39,0.17,2.55
+1216,"Converium Holding","Switzerland","Seguro",3.89,0.12,2.31
+1217,"Weatherford Intl","Bermuda","Óleo e gás",2.45,0.13,5.73
+1218,"Rouse","United States","Recursos diversificados",1.13,0.2,4.44
+1219,"Tomen","Japan","Empresas comerciais",17.62,-0.57,1.12
+1220,"Nucor","United States","Materiais",6.27,0.06,4.78
+1221,"ArvinMeritor","United States","Bens duráveis",8.26,0.13,1.57
+1222,"Fuji Television Network","Japan","Mídia",3.63,0.13,4.82
+1223,"Hankyu","Japan","Transportes",4.04,-0.76,2.86
+1224,"Mitsubishi Materials","Japan","Materiais",8.16,-0.23,2.15
+1225,"CMS Energy","United States","Utilidades",8.58,-1.01,1.43
+1226,"Hua Nan Financial","Taiwan","Recursos diversificados",1.55,-0.77,4.47
+1227,"Fast Retailing","Japan","Varejo",2.65,0.18,6.7
+1228,"Rheinmetall","Germany","Conglomerados",4.8,0.26,1.31
+1229,"Takashimaya","Japan","Varejo",10.03,0.03,2.59
+1230,"Galeries Lafayette","France","Varejo",6.96,0.09,2.13
+1231,"Italmobiliare","Italy","Construção",4.59,0.13,1.52
+1232,"Embraer","Brazil","Aeroespacial e defesa",2.19,0.33,5.16
+1233,"Australian Gas Light","Australia","Utilidades",2.61,0.2,3.93
+1234,"Tele Norte Leste","Brazil","Serviços de telecomunicação",3.35,-0.12,5.46
+1235,"BJ Services","United States","Óleo e gás",2.27,0.22,6.79
+1236,"Kesko Group","Finland","Mercados de alimentos",8.89,0.2,1.77
+1237,"Noranda","Canada","Materiais",3.86,-0.45,4.74
+1238,"GAIL (India)","India","Utilidades",2.39,0.35,4.25
+1239,"GlobalSantaFe","Cayman Islands","Óleo e gás",1.91,0.13,6.79
+1240,"Unitrin","United States","Seguro",2.94,0.12,2.95
+1241,"Aluminum Corp of China","China","Materiais",2.03,0.17,8.17
+1242,"Advanced Micro","United States","Semicondutores",3.52,-0.27,5.21
+1243,"Toyo Seikan Kaisha","Japan","Materiais",5.89,0.07,3.19
+1244,"NStar","United States","Utilidades",2.91,0.2,2.6
+1245,"Hyundai Heavy Industries","South Korea","Bens de capital",7.47,-0.21,2.45
+1246,"Liberty International","United Kingdom","Recursos diversificados",0.65,0.14,4.21
+1247,"Charter Commun","United States","Mídia",4.79,-1.99,1.37
+1248,"Ishikawajima-Harima","Japan","Bens de capital",8.62,-0.08,1.76
+1249,"Mylan Labs","United States","Drogas e biotecnologia",1.39,0.33,6.52
+1250,"Coca-Cola HBC","Greece","Alimentos, bebidas e tabaco",4.17,0.04,5.35
+1251,"Furukawa Electric","Japan","Bens de capital",6.01,-0.96,2.52
+1252,"Assa Abloy","Sweden","Bens de capital",2.93,0.15,5.2
+1253,"Avaya","United States","Tecnologia e equipamentos",4.24,0.04,7.4
+1254,"Tate & Lyle Group","United Kingdom","Alimentos, bebidas e tabaco",4.36,0.21,2.53
+1255,"Daito Trust Construction","Japan","Construção",3.18,0.21,4.13
+1256,"Hoya","Japan","Tecnologia e equipamentos",2.08,0.17,10.37
+1257,"Continental Airlines","United States","Transportes",8.87,0.04,0.97
+1258,"Isuzu Motors","Japan","Bens duráveis",11.42,-1.22,1.44
+1259,"Tele & Data Systems","United States","Serviços de telecomunicação",3.35,0.02,4.08
+1260,"Invensys","United Kingdom","Bens de capital",7.93,-2.28,2.75
+1261,"Bank Negara Indonesia","Indonesia","Bancário",1.82,0.28,2.02
+1262,"EW Scripps","United States","Mídia",1.79,0.25,8.05
+1263,"Eastman Chemical","United States","Químicos",5.8,-0.27,3.27
+1264,"Nexen","Canada","Óleo e gás",1.97,0.29,4.42
+1265,"Chiba Bank","Japan","Bancário",1.54,0.07,3.42
+1266,"Ryder System","United States","Serviços e material para empresas",4.8,0.14,2.32
+1267,"Biogen Idec","United States","Drogas e biotecnologia",0.5,0.16,14.25
+1268,"Mirant","United States","Utilidades",5.81,-4.45,0.2
+1269,"Avnet","United States","Tecnologia e equipamentos",9.49,0.01,3
+1270,"Astra International","Indonesia","Bens duráveis",3.44,0.38,2.56
+1271,"Canara Bank","India","Bancário",1.76,0.22,1.32
+1272,"Dynegy","United States","Óleo e gás",5.81,-0.47,1.62
+1273,"Allmerica Financial","United States","Seguro",3.27,0.09,1.97
+1274,"Keio Electric Railway","Japan","Transportes",3.55,0.13,3.49
+1275,"Keyence","Japan","Tecnologia e equipamentos",0.79,0.2,9.43
+1276,"Julius Baer Holding","Switzerland","Recursos diversificados",1.07,0.13,4.22
+1277,"Hua Xia Bank","China","Bancário",0.76,0.1,3.46
+1278,"Host Marriott","United States","Recursos diversificados",3.6,-0.12,3.72
+1279,"DST Systems","United States","Software e serviços",2.41,0.2,5.02
+1280,"Hynix Semiconductor","South Korea","Semicondutores",3.96,-1.65,3.25
+1281,"Hochtief","Germany","Construção",12.61,0.05,1.85
+1282,"Pactiv","United States","Materiais",3.14,0.2,3.41
+1283,"Bank of Greece","Greece","Bancário",0.58,0.15,1.42
+1284,"Mediolanum","Italy","Seguro",2.34,0.09,5.32
+1285,"Nippon TV Network","Japan","Mídia",2.85,0.17,3.75
+1286,"Punjab National Bank","India","Bancário",1.91,0.2,1.63
+1287,"Advanced Info Service","Thailand","Serviços de telecomunicação",1.86,0.27,6.8
+1288,"Sekisui Chemical","Japan","Construção",6.77,0.08,2.71
+1289,"Korean Air","South Korea","Transportes",5.44,0.08,1.04
+1290,"Pioneer Natural Res","United States","Óleo e gás",1.3,0.4,3.68
+1291,"Plum Creek Timber","United States","Materiais",1.19,0.19,5.48
+1292,"Thornburg Mortgage","United States","Recursos diversificados",0.59,0.18,2.2
+1293,"Gecina","France","Recursos diversificados",0.31,0.14,4.45
+1294,"PMI Group","United States","Seguro",0.89,0.29,3.47
+1295,"Toll Brothers","United States","Construção",2.76,0.26,3.04
+1296,"Bidvest Group","South Africa","Conglomerados",6.3,0.18,2.43
+1297,"Kesa Electricals","United Kingdom","Varejo",5.64,0.16,2.72
+1298,"XTO Energy","United States","Óleo e gás",1.19,0.29,5.22
+1299,"Petrol Ofisi","Turkey","Óleo e gás",6.36,0.23,1.19
+1300,"Hermes International","France","Produtos domésticos e pessoais",1.3,0.23,7.57
+1301,"Omron","Japan","Serviços e material para empresas",4.53,0,5.44
+1302,"Jabil Circuit","United States","Tecnologia e equipamentos",5.17,0.08,5.72
+1303,"Lend Lease","Australia","Recursos diversificados",6.35,-0.48,3.47
+1304,"Tupras-Turkiye Petrol","Turkey","Óleo e gás",7.76,0.17,2.26
+1305,"LG Corp","South Korea","Químicos",4.15,0.11,2.33
+1306,"Essilor International","France","Equipamentos e serviços de saúde",2.25,0.19,6.17
+1307,"Duke Realty","United States","Recursos diversificados",0.74,0.18,4.43
+1308,"AU Optronics","Taiwan","Tecnologia e equipamentos",2.18,0.17,5.91
+1309,"Brunswick","United States","Bens duráveis",4.13,0.14,3.41
+1310,"Smith International","United States","Óleo e gás",3.59,0.12,5.05
+1311,"ITC","India","Alimentos, bebidas e tabaco",1.3,0.29,5.81
+1312,"Dogan Holding","Turkey","Bens de capital",5.64,0.1,1.35
+1313,"Scor","France","Seguro",4.8,-0.48,1.7
+1314,"Acer","Taiwan","Tecnologia e equipamentos",3.1,0.25,3.2
+1315,"Level 3 Commun","United States","Serviços de telecomunicação",3.95,-0.72,3.25
+1316,"Barratt Developments","United Kingdom","Construção",3.59,0.34,2.38
+1317,"Universal Health","United States","Equipamentos e serviços de saúde",3.53,0.2,3.26
+1318,"Brisa","Portugal","Transportes",0.51,0.22,4.42
+1319,"Helvetia Patria","Switzerland","Seguro",4.16,-0.26,1.01
+1320,"Infosys Technologies","India","Serviços e material para empresas",0.77,0.2,7.91
+1321,"Boise Cascade","United States","Materiais",7.69,0.02,2.9
+1322,"KKPC-Korea Kumho","South Korea","Químicos",6.51,-0.02,0.14
+1323,"Brinker International","United States","Hotéis, restaurantes e lazer",3.47,0.18,3.53
+1324,"Thai Airways Intl","Thailand","Transportes",3.36,0.31,2.03
+1325,"Banca Popolare di Lodi","Italy","Bancário",2.45,0.03,2.48
+1326,"Kelda Group","United Kingdom","Utilidades",1.08,0.2,3.16
+1327,"Avalonbay Communities","United States","Recursos diversificados",0.62,0.24,3.55
+1328,"Webster Financial","United States","Bancário",0.89,0.16,2.38
+1329,"AmerUs Group","United States","Seguro",1.68,0.16,1.47
+1330,"Dainippon Ink & Chems","Japan","Químicos",8.14,0.02,1.67
+1331,"China Resources Ent","Hong Kong/China","Conglomerados",3.7,0.18,2.84
+1332,"IKON Office Solutions","United States","Serviços e material para empresas",4.71,0.12,1.74
+1333,"Alps Electric","Japan","Serviços e material para empresas",5.09,0.15,2.3
+1334,"Imerys","France","Construção",3.01,0.15,3.59
+1335,"Nikon","Japan","Semicondutores",3.97,-0.07,4.85
+1336,"Smithfield Foods","United States","Alimentos, bebidas e tabaco",7.99,0.07,2.76
+1337,"Funai Electric","Japan","Bens duráveis",2.8,0.16,4.7
+1338,"RR Donnelley & Sons","United States","Mídia",4.75,0.13,3.31
+1339,"T Rowe Price","United States","Recursos diversificados",0.99,0.23,6.54
+1340,"Sky Financial Group","United States","Bancário",0.84,0.16,2.51
+1341,"Daiichi Pharmaceutical","Japan","Drogas e biotecnologia",2.72,0.11,4.79
+1342,"Franz Colruyt","Belgium","Mercados de alimentos",3.42,0.15,3.96
+1343,"Wipro","India","Serviços e material para empresas",0.9,0.18,8.38
+1344,"Bank of India","India","Bancário",1.59,0.18,0.72
+1345,"Triad Hospitals","United States","Equipamentos e serviços de saúde",3.81,0.13,2.65
+1346,"Premcor","United States","Óleo e gás",8.8,0.12,2.26
+1347,"Arrow Electronics","United States","Tecnologia e equipamentos",8.09,0.01,2.67
+1348,"Mitchells & Butlers","United Kingdom","Hotéis, restaurantes e lazer",2.52,0.21,2.23
+1349,"Aareal Bank","Germany","Recursos diversificados",2.28,0.09,1.14
+1350,"Sonae SGPS","Portugal","Conglomerados",6.59,-0.06,2.2
+1351,"Diamond Lease","Japan","Recursos diversificados",4.5,0.07,1.7
+1352,"Enterprise Inns","United Kingdom","Hotéis, restaurantes e lazer",0.8,0.21,3.94
+1353,"Coca-Cola Amatil","Australia","Alimentos, bebidas e tabaco",2.53,0.15,3.62
+1354,"Coach","United States","Produtos domésticos e pessoais",1.12,0.2,7.04
+1355,"Check Point","Israel","Software e serviços",0.43,0.24,5.82
+1356,"Hillenbrand Inds","United States","Equipamentos e serviços de saúde",2.04,0.14,4.33
+1357,"KLM","Netherlands","Transportes",7.06,-0.2,1
+1358,"Bank of Baroda","India","Bancário",1.61,0.18,1.62
+1359,"Hachijuni Bank","Japan","Bancário",1.36,0.08,2.92
+1360,"Persimmon","United Kingdom","Construção",2.76,0.28,2.99
+1361,"Flagstar Bancorp","United States","Bancário",0.97,0.25,1.44
+1362,"Adolph Coors","United States","Alimentos, bebidas e tabaco",3.96,0.16,2.34
+1363,"Hasbro","United States","Produtos domésticos e pessoais",3.01,0.16,3.81
+1364,"Aker Kvaerner","Norway","Óleo e gás",6.3,0.13,0.91
+1365,"Clariant","Switzerland","Químicos",6.39,-0.47,2.62
+1366,"Dollar Tree Stores","United States","Varejo",2.9,0.18,3.78
+1367,"Banca Carige","Italy","Bancário",1.01,0.07,4.43
+1368,"BOK Financial","United States","Bancário",0.87,0.16,2.33
+1369,"Slough Estates","United Kingdom","Recursos diversificados",0.47,0.16,3.42
+1370,"Industrivarden","Sweden","Construção",0.57,0.5,3.45
+1371,"Celanese","Germany","Químicos",4.54,0.12,2.07
+1372,"Hagemeyer","Netherlands","Empresas comerciais",8.76,0.14,1.19
+1373,"Banque Nat de Belgique","Belgium","Bancário",1.61,0.11,1.52
+1374,"Apartment Investment","United States","Recursos diversificados",1.53,0.13,3.1
+1375,"KLA-Tencor","United States","Semicondutores",1.27,0.14,10.67
+1376,"Oneok","United States","Utilidades",2.71,0.23,1.82
+1377,"Espirito Santo Finl","Luxembourg","Bancário",2.6,-0.05,0.94
+1378,"Groupe Bruxelles Lambert","Belgium","Recursos diversificados",0.32,-0.25,7.86
+1379,"Vendex KBB","Netherlands","Varejo",5.08,0.22,1.53
+1380,"HDFC-Housing Devel","India","Recursos diversificados",0.65,0.16,3.65
+1381,"Citizens Commun","United States","Serviços de telecomunicação",2.55,0.09,3.51
+1382,"Lyondell Chemical","United States","Químicos",3.8,-0.3,3.03
+1383,"Nippon Meat Packers","Japan","Alimentos, bebidas e tabaco",7.7,0.04,2.55
+1384,"Altera","United States","Semicondutores",0.83,0.16,8.46
+1385,"Barnes & Noble","United States","Varejo",5.59,0.13,2.43
+1386,"SAS Group","Sweden","Transportes",7.48,-0.02,1.53
+1387,"Joyo Bank","Japan","Bancário",1.23,0.07,2.71
+1388,"Colonial BancGroup","United States","Bancário",0.91,0.15,2.19
+1389,"Rhodia","France","Químicos",6.95,0,0.82
+1390,"McCormick & Co","United States","Alimentos, bebidas e tabaco",2.27,0.21,4.21
+1391,"Nippon Shinpan","Japan","Recursos diversificados",2.62,0.01,0.96
+1392,"Maxis Communications","Malaysia","Serviços de telecomunicação",0.99,0.25,5.17
+1393,"Steel Authority of India","India","Materiais",3.7,-0.1,4.31
+1394,"Valley Natl Bancorp","United States","Bancário",0.61,0.15,2.66
+1395,"Fuji Electric","Japan","Bens de capital",7.04,0.03,1.55
+1396,"Thermo Electron","United States","Equipamentos e serviços de saúde",2.1,0.2,4.63
+1397,"Crown Holdings","United States","Materiais",6.58,-0.25,1.53
+1398,"Rank Group","United Kingdom","Hotéis, restaurantes e lazer",2.36,0.22,3.67
+1399,"Whole Foods Market","United States","Mercados de alimentos",3.34,0.12,4.51
+1400,"PeopleSoft","United States","Software e serviços",2.27,0.09,8.2
+1401,"Hiroshima Bank","Japan","Bancário",1.09,0.09,2.32
+1402,"Hanwha Chemical","South Korea","Químicos",2.84,0.03,0.95
+1403,"Bank of Fukuoka","Japan","Bancário",1.35,0.07,2.63
+1404,"Technip","France","Óleo e gás",4.68,-0.03,3.07
+1405,"CarMax","United States","Varejo",4.26,0.11,3.55
+1406,"Energizer Holdings","United States","Produtos domésticos e pessoais",2.47,0.2,3.71
+1407,"Dillard`s","United States","Varejo",7.69,0.03,1.42
+1408,"Wiener Stadtische","Austria","Seguro",3.58,-0.02,2.39
+1409,"Kumho Industrial","South Korea","Bens duráveis",5.42,-0.07,0.1
+1410,"Pakistan Telecom","Pakistan","Serviços de telecomunicação",1.23,0.41,3.5
+1411,"Tech Data","United States","Tecnologia e equipamentos",16.5,-0.24,2.3
+1412,"Annaly Mortgage Mgmt","United States","Recursos diversificados",0.34,0.18,1.94
+1413,"Kawasaki Kisen Kaisha","Japan","Transportes",5.35,0.09,2.75
+1414,"KT&G","South Korea","Alimentos, bebidas e tabaco",1.71,0.29,3.95
+1415,"Ryanair Holdings","Ireland","Transportes",0.92,0.26,4.71
+1416,"Alitalia Group","Italy","Transportes",4.98,0.1,1.28
+1417,"Kuraya Sanseido","Japan","Equipamentos e serviços de saúde",10.78,0.04,1.73
+1418,"Brother Inds","Japan","Serviços e material para empresas",3.46,0.19,2.75
+1419,"MedImmune","United States","Drogas e biotecnologia",1.05,0.18,6.44
+1420,"ITV","United Kingdom","Mídia",2.36,0.02,10.79
+1421,"New Century Financial","United States","Recursos diversificados",0.98,0.25,1.72
+1422,"Chang Hwa Com Bank","Taiwan","Bancário",1.38,-0.71,2.83
+1423,"Amdocs","United Kingdom","Serviços e material para empresas",1.57,0.19,6.07
+1424,"Amvescap","United Kingdom","Recursos diversificados",2.07,-0.03,6.2
+1425,"US Airways Group","United States","Transportes",5.5,NA,0.24
+1426,"Orient","Japan","Recursos diversificados",2.54,-0.87,1.54
+1427,"Amadeus Global Travel","Spain","Serviços e material para empresas",2.43,0.2,3.6
+1428,"Schindler Holding","Switzerland","Bens de capital",5.71,0.01,3.89
+1429,"Placer Dome","Canada","Materiais",1.21,0.12,7.03
+1430,"Westfield Holdings","Australia","Recursos diversificados",0.74,0.19,5.79
+1431,"Watson Pharma","United States","Drogas e biotecnologia",1.46,0.2,5.3
+1432,"Shoppers Drug Mart","Canada","Varejo",2.56,0.13,5.15
+1433,"International Power","United Kingdom","Utilidades",1.15,0.18,2.83
+1434,"Tiffany","United States","Varejo",1.89,0.19,5.71
+1435,"Signet Group","United Kingdom","Varejo",2.65,0.21,3.16
+1436,"Sacyr-Vallehermoso","Spain","Recursos diversificados",0.88,0.22,4.09
+1437,"Cattolica Assicurazioni","Italy","Seguro",3.87,0.06,1.99
+1438,"Daily Mail & General","United Kingdom","Mídia",3.22,0.1,5.22
+1439,"SMC","Japan","Bens de capital",1.75,0.13,7.53
+1440,"Coca-Cola Femsa","Mexico","Alimentos, bebidas e tabaco",1.7,0.25,4.52
+1441,"TECO Energy","United States","Utilidades",2.95,-0.91,2.78
+1442,"Peninsular & Oriental","United Kingdom","Transportes",4.31,-0.29,2.93
+1443,"Seiyu","Japan","Mercados de alimentos",9.65,-0.77,2.02
+1444,"Cesky Telecom","Czech Republic","Serviços de telecomunicação",1.76,0.14,3.94
+1445,"Imperial Holdings","South Africa","Transportes",4.32,0.2,2.18
+1446,"Circuit City Stores","United States","Varejo",9.69,-0.09,2.31
+1447,"Benq","Taiwan","Tecnologia e equipamentos",3.18,0.21,2.61
+1448,"Ono Pharmaceutical","Japan","Drogas e biotecnologia",1.14,0.22,5
+1449,"Hyundai Merchant Marine","South Korea","Transportes",4.27,0.13,0.99
+1450,"Federal-Mogul","United States","Bens duráveis",5.49,-0.18,0.02
+1451,"Severstal","Russia","Materiais",2.24,0.19,4.18
+1452,"Gudang Garam","Indonesia","Alimentos, bebidas e tabaco",2.35,0.23,3.25
+1453,"PepsiAmericas","United States","Alimentos, bebidas e tabaco",3.24,0.16,2.74
+1454,"Hovnanian Enterprises","United States","Construção",3.2,0.26,2.33
+1455,"Markel","United States","Seguro",2.09,0.12,2.65
+1456,"New World Development Hong","Kong/China","Construção",2.7,-0.62,2.47
+1457,"IndyMac Bancorp","United States","Bancário",0.96,0.16,1.89
+1458,"Phoenix Cos","United States","Seguro",2.56,-0.04,1.26
+1459,"Credit Saison","Japan","Recursos diversificados",1.8,-0.05,4.74
+1460,"Barloworld","South Africa","Conglomerados",4.98,0.16,2.05
+1461,"Nippon Electric Glass","Japan","Serviços e material para empresas",2.78,0.12,3.25
+1462,"Michaels Stores","United States","Varejo",3,0.16,3.22
+1463,"SEM-Samsung Electro","South Korea","Tecnologia e equipamentos",3.29,0.18,2.74
+1464,"First BanCorp","United States","Bancário",0.66,0.15,1.66
+1465,"StanCorp Financial","United States","Seguro",2.07,0.16,1.97
+1466,"Buhrmann","Netherlands","Serviços e material para empresas",10.13,-0.17,1.34
+1467,"US Commercial","Mexico","Recursos diversificados",3.84,0.23,0.62
+1468,"Oki Electric Industry","Japan","Serviços e material para empresas",4.95,-0.06,2.69
+1469,"Kerry Group","Ireland","Alimentos, bebidas e tabaco",3.94,0.11,3.38
+1470,"Chesapeake Energy","United States","Óleo e gás",1.61,0.27,2.79
+1471,"Alberto-Culver","United States","Produtos domésticos e pessoais",2.96,0.13,3.75
+1472,"Hammerson","United Kingdom","Recursos diversificados",0.33,0.12,3.39
+1473,"FirstMerit","United States","Bancário",0.81,0.15,2.23
+1474,"Credito Emiliano","Italy","Bancário",1.36,0.12,2.02
+1475,"Applera-Applied Biosys","United States","Equipamentos e serviços de saúde",1.67,0.2,4.82
+1476,"Genzyme-General","United States","Drogas e biotecnologia",1.54,-0.09,12.41
+1477,"Nurnberger Beteiligungs","Germany","Seguro",3,-0.03,0.93
+1478,"Outback Steakhouse","United States","Hotéis, restaurantes e lazer",2.61,0.17,3.41
+1479,"Westcorp","United States","Bancário",1.36,0.12,2.16
+1480,"CH Robinson Worldwide","United States","Transportes",3.61,0.11,3.36
+1481,"Grupo Mexico","Mexico","Materiais",2.39,0,3.49
+1482,"BCV Group","Switzerland","Bancário",1.19,-0.87,2.72
+1483,"SGS","Switzerland","Serviços e material para empresas",1.98,0.18,4.6
+1484,"LG International","South Korea","Empresas comerciais",22.57,0.08,0.45
+1485,"PCCW","Hong Kong/China","Serviços de telecomunicação",2.58,-1,3.8
+1486,"Bank of Hawaii","United States","Bancário",0.64,0.14,2.47
+1487,"Daewoo Ship & Marine","South Korea","Bens de capital",2.94,0.22,2.48
+1488,"Garmin","Cayman Islands","Tecnologia e equipamentos",0.57,0.18,5.19
+1489,"Investec","United Kingdom/ South Africa","Recursos diversificados",2.06,-0.1,2.51
+1490,"Grupo Televisa","Mexico","Mídia",2.08,-0.03,6.42
+1491,"Fulton Financial","United States","Bancário",0.57,0.14,2.36
+1492,"Givaudan","Switzerland","Produtos domésticos e pessoais",1.94,0.19,4.46
+1493,"Noble Corp","Cayman Islands","Óleo e gás",0.99,0.17,5.32
+1494,"Acerinox","Spain","Materiais",2.63,0.18,3.05
+1495,"Beckman Coulter","United States","Equipamentos e serviços de saúde",2.19,0.21,3.35
+1496,"H Lundbeck","Denmark","Drogas e biotecnologia",1.34,0.18,5.02
+1497,"Eurotunnel","France/ United Kingdom","Transportes",1.01,-2.83,3.29
+1498,"Saks","United States","Varejo",5.93,0.07,2.33
+1499,"Uniqa","Austria","Seguro",3.16,0,1.34
+1500,"Williams-Sonoma","United States","Varejo",2.61,0.13,3.84
+1501,"Ryland Group","United States","Construção",3.44,0.24,1.94
+1502,"Singapore Press","Singapore","Mídia",0.51,0.22,4.12
+1503,"Nok","Japan","Químicos",2.52,0.11,5.35
+1504,"Owens Corning","United States","Construção",4.9,0.03,0.02
+1505,"Inchcape","United Kingdom","Empresas comerciais",5.5,0.12,2.25
+1506,"Jacobs Engineering","United States","Construção",4.62,0.13,2.41
+1507,"Domtar","Canada","Materiais",3.69,0.09,2.73
+1508,"Cummins","United States","Bens de capital",6.3,0.07,2.19
+1509,"Toyoda Gosei","Japan","Bens duráveis",2.92,0.15,3.15
+1510,"American Axle & Mfg","United States","Bens duráveis",3.68,0.2,2.13
+1511,"American Natl Ins","United States","Seguro",2.44,0.05,2.42
+1512,"Gunma Bank","Japan","Bancário",1.21,0.03,2.21
+1513,"William Hill Org","United Kingdom","Hotéis, restaurantes e lazer",5.42,0.03,3.57
+1514,"Wilmington Trust","United States","Bancário",0.63,0.13,2.45
+1515,"Scientific-Atlanta","United States","Tecnologia e equipamentos",1.6,0.17,5.01
+1516,"Henry Schein","United States","Equipamentos e serviços de saúde",3.15,0.13,3.11
+1517,"Network Appliance","United States","Tecnologia e equipamentos",1.01,0.12,7.49
+1518,"Expeditors Intl","United States","Transportes",2.62,0.12,4.12
+1519,"Amer Power Conversion","United States","Tecnologia e equipamentos",1.46,0.18,4.77
+1520,"Kawasho","Japan","Empresas comerciais",9.79,0.03,0.37
+1521,"Ispat International","Netherlands","Materiais",6,0.07,0.97
+1522,"Barr Pharmaceuticals","United States","Drogas e biotecnologia",1.15,0.16,5.31
+1523,"Polo Ralph Lauren","United States","Produtos domésticos e pessoais",2.52,0.17,3.17
+1524,"CR Bard","United States","Equipamentos e serviços de saúde",1.43,0.17,4.92
+1525,"Synopsys","United States","Software e serviços",1.18,0.15,5.52
+1526,"Sage Group","United Kingdom","Software e serviços",0.93,0.17,4.81
+1527,"Holmen","Sweden","Materiais",2.2,0.2,2.8
+1528,"BorgWarner","United States","Bens duráveis",3.07,0.17,2.56
+1529,"Mandalay Resort Group","United States","Hotéis, restaurantes e lazer",2.1,0.13,3.15
+1530,"Tata Iron & Steel","India","Materiais",1.92,0.22,3.59
+1531,"Chugoku Bank","Japan","Bancário",0.98,0.03,2.17
+1532,"Atos Origin","France","Serviços e material para empresas",3.81,0.07,4.86
+1533,"Randstad Holding","Netherlands","Serviços e material para empresas",5.72,0.06,3.36
+1534,"LandAmerica Financial","United States","Seguro",3.24,0.23,1.01
+1535,"Pilkington","United Kingdom","Construção",3.81,0.11,2.31
+1536,"Louisiana-Pacific","United States","Materiais",2.3,0.28,2.48
+1537,"Harman International","United States","Tecnologia e equipamentos",2.34,0.12,4.83
+1538,"Iscor","South Africa","Materiais",2.55,0.34,2.06
+1539,"Sapporo Hokuyo","Japan","Bancário",1.37,0.02,1.8
+1540,"Waters","United States","Equipamentos e serviços de saúde",0.96,0.17,4.63
+1541,"Neiman Marcus Group","United States","Varejo",3.19,0.14,2.83
+1542,"Empire","Canada","Mercados de alimentos",7.41,0.11,1.39
+1543,"Varian Medical Systems","United States","Equipamentos e serviços de saúde",1.1,0.14,5.65
+1544,"MONY Group","United States","Seguro",2.32,0.04,1.47
+1545,"Pusan Bank","South Korea","Bancário",0.91,0.12,0.89
+1546,"Tokyu Land","Japan","Recursos diversificados",4.3,0.04,1.22
+1547,"Independence Community","United States","Bancário",0.55,0.14,2.19
+1548,"Legend Group","China","Tecnologia e equipamentos",2.59,0.13,3.56
+1549,"Boral","Australia","Construção",2.58,0.19,2.7
+1550,"Sigma-Aldrich","United States","Químicos",1.3,0.19,3.95
+1551,"Ssangyong Motor","South Korea","Bens duráveis",2.88,0.27,0.87
+1552,"Vedior","Netherlands","Serviços e material para empresas",7.51,-0.24,2.78
+1553,"UTStarcom","United States","Tecnologia e equipamentos",1.96,0.2,3.5
+1554,"Storebrand","Norway","Seguro",2.29,-0.13,1.86
+1555,"Indl Dev Bank of India","India","Bancário",1.56,0.11,1.08
+1556,"Potash of Saskatchewan","Canada","Químicos",2.64,-0.14,4.37
+1557,"Finansbank","Turkey","Bancário",1.37,0.16,0.46
+1558,"Hokugin Financial Group","Japan","Bancário",1.03,0.02,1.28
+1559,"Agricultural Bank Greece","Greece","Bancário",1.06,0.02,2.7
+1560,"SNCF Participations","France","Transportes",6.7,-0.02,0.55
+1561,"Microchip Technology","United States","Semicondutores",0.67,0.12,6.29
+1562,"Aracruz Celulose","Brazil","Materiais",1.06,0.3,2.87
+1563,"Bank","Japan","Bancário",0.99,0.07,2.06
+1564,"Manor Care","United States","Equipamentos e serviços de saúde",3.03,0.12,3.22
+1565,"AG Edwards","United States","Recursos diversificados",2.31,0.13,2.99
+1566,"Puma","Germany","Produtos domésticos e pessoais",1.6,0.23,3.4
+1567,"voestalpine","Austria","Materiais",4.78,0.08,1.9
+1568,"M6-Metropole Television","France","Mídia",1.48,0.17,4.37
+1569,"Daegu Bank","South Korea","Bancário",1,0.11,0.71
+1570,"NCC Group","Sweden","Construção",5.2,0.09,0.75
+1571,"Cimpor-Cimentos Portugal","Portugal","Construção",1.38,0.19,3.67
+1572,"Maytag","United States","Bens duráveis",4.79,0.12,2.2
+1573,"USG","United States","Construção",3.67,0.14,0.83
+1574,"Hays","United Kingdom","Serviços e material para empresas",3.8,-0.86,4.4
+1575,"TransAlta","Canada","Utilidades",1.94,0.18,2.58
+1576,"Financiere de l`Odet","France","Transportes",5.75,0.03,0.78
+1577,"Esprit Holdings","Hong Kong/China","Varejo",1.59,0.15,4.71
+1578,"Arch Capital Group","Bermuda","Seguro",1.93,0.24,1.19
+1579,"AMB Property","United States","Recursos diversificados",0.62,0.13,2.93
+1580,"OGE Energy","United States","Utilidades",3.79,0.11,2.13
+1581,"Keihin Electric Express","Japan","Transportes",2.65,0.07,3.22
+1582,"Johnson Electric Holdings","Hong Kong/China","Bens de capital",0.96,0.15,4.73
+1583,"Beijing Datang Power","China","Utilidades",0.97,0.17,4.05
+1584,"Iyo Bank","Japan","Bancário",0.91,0.01,2.1
+1585,"W Holding","United States","Bancário",0.47,0.11,2.16
+1586,"Air Canada","Canada","Transportes",6.25,-0.53,0.13
+1587,"Bank of Kyoto","Japan","Bancário",0.81,0.03,1.71
+1588,"Impac Mortgage Holding","United States","Recursos diversificados",0.34,0.13,1.08
+1589,"Lite-On Technology","Taiwan","Tecnologia e equipamentos",3.01,0.15,2.6
+1590,"BancorpSouth","United States","Bancário",0.72,0.13,1.73
+1591,"Yamaguchi Bank","Japan","Bancário",0.73,-0.22,1.84
+1592,"Mitsukoshi","Japan","Varejo",7.98,0.05,2.05
+1593,"Fuji Fire & Marine","Japan","Seguro",3.49,-0.04,1.08
+1594,"Nissay Dowa General Ins","Japan","Seguro",3.3,-0.04,1.73
+1595,"Singapore Technologies","Singapore","Aeroespacial e defesa",1.66,0.19,3.62
+1596,"Developers Diversified Realty","United States","Recursos diversificados",0.43,0.18,3.12
+1597,"Provident Finl Group","United States","Bancário",1.59,0.09,1.7
+1598,"BJ`s Wholesale Club","United States","Varejo",6.51,0.1,1.67
+1599,"Cullen/Frost Bankers","United States","Bancário",0.58,0.13,2.12
+1600,"Hyundai South","Korea","Empresas comerciais",15.11,-0.15,0.05
+1601,"Kanematsu","Japan","Empresas comerciais",7.1,0.02,0.47
+1602,"Advance Auto Parts","United States","Varejo",3.42,0.1,3.09
+1603,"Perodua","Malaysia","Bens duráveis",2.44,0.3,1.42
+1604,"Nanto Bank","Japan","Bancário",0.78,0.05,1.16
+1605,"Reebok International","United States","Produtos domésticos e pessoais",3.49,0.16,2.21
+1606,"Bilfinger & Berger","Germany","Construção",4.16,0.12,1.34
+1607,"Investors Financial","United States","Recursos diversificados",0.58,0.09,2.8
+1608,"Daishi Bank","Japan","Bancário",0.69,0.02,1.34
+1609,"Danisco","Denmark","Alimentos, bebidas e tabaco",2.49,0.15,2.46
+1610,"Japan Securities Fin","Japan","Recursos diversificados",0.24,0.01,0.53
+1611,"UBE Industries","Japan","Químicos",4.34,0.07,1.32
+1612,"Kimberly-Clark de Mexico","Mexico","Produtos domésticos e pessoais",1.55,0.22,3.21
+1613,"Petsmart","United States","Varejo",2.9,0.11,3.46
+1614,"WPS Resources","United States","Utilidades",4.36,0.09,1.57
+1615,"Dun & Bradstreet","United States","Serviços e material para empresas",1.34,0.17,3.97
+1616,"Pogo Producing","United States","Óleo e gás",1.1,0.28,2.82
+1617,"Fremont General","United States","Bancário",0.74,0.14,1.5
+1618,"Juroku Bank","Japan","Bancário",0.89,-0.28,1.57
+1619,"Nishi-Nippon Bank","Japan","Bancário",0.97,-0.06,0.91
+1620,"Tiger Brands","South Africa","Alimentos, bebidas e tabaco",3.32,0.18,2.09
+1621,"Ranbaxy Laboratories","India","Drogas e biotecnologia",0.99,0.16,4.11
+1622,"Nishimatsu Construction","Japan","Construção",4.28,0.04,0.97
+1623,"Petronas Gas","Malaysia","Óleo e gás",0.59,0.17,3.8
+1624,"Enagas","Spain","Óleo e gás",1.97,0.18,2.83
+1625,"MDU Resources","United States","Utilidades",2.29,0.18,2.7
+1626,"Shiga Bank","Japan","Bancário",0.67,0.02,1.14
+1627,"Shenzhen Development Bk","China","Bancário",0.73,0.05,2.41
+1628,"Canary Wharf Group","United Kingdom","Recursos diversificados",0.41,-0.02,3.08
+1629,"Doosan","South Korea","Empresas comerciais",4.76,-0.22,0.2
+1630,"Lincare Holdings","United States","Equipamentos e serviços de saúde",1.15,0.23,3.07
+1631,"Commercial Bank of Greece","Greece","Bancário",1.25,0.05,2.48
+1632,"Terumo","Japan","Equipamentos e serviços de saúde",1.7,0.15,4.24
+1633,"Hyakugo Bank","Japan","Bancário",0.7,0.02,1.32
+1634,"Beazer Homes USA","United States","Construção",3.29,0.18,1.37
+1635,"ASML Holding","Netherlands","Software e serviços",1.94,-0.16,9.44
+1636,"San-In Godo Bank","Japan","Bancário",0.96,0.05,1.35
+1637,"Metso","Finland","Bens de capital",5.35,-0.32,1.86
+1638,"CapitaLand","Singapore","Recursos diversificados",2.26,0.06,2.56
+1639,"Molex","United States","Tecnologia e equipamentos",1.96,0.1,6.52
+1640,"Hyakujushi Bank","Japan","Bancário",0.6,-0.25,2.08
+1641,"Federated Investors","United States","Recursos diversificados",0.82,0.19,3.44
+1642,"Union Bank of India","India","Bancário",1.08,0.12,0.55
+1643,"NSK","Japan","Bens de capital",4.42,-0.02,2.24
+1644,"Kaneka","Japan","Químicos",3.15,0.11,2.91
+1645,"IVAX","United States","Drogas e biotecnologia",1.35,0.13,5.01
+1646,"Banca CR Firenze","Italy","Bancário",1.5,0.09,2.07
+1647,"Israel Discount Bank","Israel","Bancário",1.86,-0.02,1.06
+1648,"Montpelier Re Holdings","Bermuda","Seguro",0.68,0.38,2.36
+1649,"Leucadia National","United States","Recursos diversificados",0.32,0.18,3.5
+1650,"Yamada Denki","Japan","Varejo",6.72,0.05,2.6
+1651,"SembCorp Industries","Singapore","Bens de capital",2.73,0.17,1.5
+1652,"FirstGroup","United Kingdom","Transportes",3.62,0.15,1.97
+1653,"Hokkaido Bank","Japan","Bancário",0.64,-0.47,0.4
+1654,"Kanebo","Japan","Produtos domésticos e pessoais",4.38,0,0.63
+1655,"Grupo Bimbo","Mexico","Alimentos, bebidas e tabaco",4.28,0.1,2.49
+1656,"Winn-Dixie Stores","United States","Mercados de alimentos",11.78,0.03,0.93
+1657,"Higo Bank","Japan","Bancário",0.58,0.03,1.65
+1658,"Ogaki Kyoritsu Bank","Japan","Bancário",0.6,-0.14,1.78
+1659,"Sumitomo Metal Mining","Japan","Materiais",3.01,-0.01,3.77
+1660,"Shinko Securities","Japan","Recursos diversificados",0.68,-0.27,2.38
+1661,"Tokyo Leasing","Japan","Varejo",3.07,0.03,0.45
+1662,"Tesoro Petroleum","United States","Óleo e gás",8.73,0.06,1.04
+1663,"BW Bank","Germany","Bancário",1.45,0.03,1.8
+1664,"Liberty Property","United States","Recursos diversificados",0.61,0.16,3.22
+1665,"Provident Financial Plc","United Kingdom","Recursos diversificados",1.41,0.19,3.31
+1666,"EON-Edaran Otomobil","Malaysia","Varejo",1.96,0.13,0.55
+1667,"Nomura Research Institute","Japan","Serviços e material para empresas",1.97,0.13,4.34
+1668,"Taiwan Business Bank","Taiwan","Bancário",1.06,-0.03,1.21
+1669,"Autogrill","Italy","Hotéis, restaurantes e lazer",3.95,0.01,3.55
+1670,"Tatung","Taiwan","Conglomerados",4.37,-0.15,1.35
+1671,"Seino Transportation","Japan","Transportes",3.46,0.12,1.51
+1672,"Bemis","United States","Materiais",2.64,0.15,2.64
+1673,"Schroders","United Kingdom","Recursos diversificados",0.75,0.04,3.88
+1674,"San Miguel","Philippines","Alimentos, bebidas e tabaco",2.55,0.12,3.05
+1675,"Storage Technology","United States","Tecnologia e equipamentos",2.18,0.15,3.24
+1676,"MDC Holdings","United States","Construção",2.83,0.2,1.96
+1677,"CJ","South Korea","Alimentos, bebidas e tabaco",4.6,0.1,1.33
+1678,"Molson","Canada","Alimentos, bebidas e tabaco",1.71,0.21,3.04
+1679,"Intl Flavors & Frags","United States","Químicos",1.9,0.17,3.47
+1680,"CSM","Netherlands","Alimentos, bebidas e tabaco",3.37,0.16,1.76
+1681,"Van Lanschot","Netherlands","Recursos diversificados",0.86,0.1,1.48
+1682,"Yanzhou Coal Mining","China","Materiais",0.77,0.15,3.95
+1683,"Fraser & Neave","Singapore","Alimentos, bebidas e tabaco",2.1,0.19,1.8
+1684,"Grupo Financiero Inbursa","Mexico","Bancário",0.76,0.08,3.77
+1685,"Western Digital","United States","Tecnologia e equipamentos",2.94,0.16,2.3
+1686,"Great A&P Tea","United States","Mercados de alimentos",10.63,-0.12,0.3
+1687,"NOVA Chemicals","Canada","Químicos",4.22,0.03,2.4
+1688,"Genting","Malaysia","Hotéis, restaurantes e lazer",0.93,0.2,3.15
+1689,"Diebold","United States","Serviços e material para empresas",1.99,0.14,3.85
+1690,"People`s Bank","United States","Bancário",0.77,0.06,2.76
+1691,"Nidec","Japan","Bens de capital",2.53,0.05,6.02
+1692,"Gilead Sciences","United States","Drogas e biotecnologia",0.87,-0.07,11.81
+1693,"Toda","Japan","Construção",4.57,-0.17,1.09
+1694,"Fisher Scientific","United States","Equipamentos e serviços de saúde",3.56,0.08,3.5
+1695,"Kagoshima Bank","Japan","Bancário",0.65,0.04,1.17
+1696,"Regal Entertainment Group","United States","Mídia",2.21,0.16,2.97
+1697,"Allergan","United States","Drogas e biotecnologia",1.77,-0.05,11.72
+1698,"Hong Leong Credit","Malaysia","Recursos diversificados",0.65,0.1,1.4
+1699,"Washington Federal","United States","Bancário",0.45,0.14,2.06
+1700,"GTech Holdings","United States","Hotéis, restaurantes e lazer",1.04,0.18,3.42
+1701,"Equifax","United States","Serviços e material para empresas",1.23,0.16,3.55
+1702,"Broadcom","United States","Semicondutores",1.61,-0.96,11.7
+1703,"Dentsply Intl","United States","Equipamentos e serviços de saúde",1.57,0.17,3.45
+1704,"EMAP","United Kingdom","Mídia",1.53,0.14,4.31
+1705,"Neptune Orient Lines","Singapore","Transportes",4.78,-0.34,1.46
+1706,"Nissin Food Products","Japan","Alimentos, bebidas e tabaco",2.67,0.12,2.99
+1707,"Patterson Dental","United States","Equipamentos e serviços de saúde",1.78,0.13,4.57
+1708,"Fukuoka City Bank","Japan","Bancário",0.79,-0.43,0.4
+1709,"Cephalon","United States","Drogas e biotecnologia",0.62,0.19,3.18
+1710,"Downey Financial","United States","Bancário",0.61,0.1,1.51
+1711,"Hokkoku Bank","Japan","Bancário",0.61,0.01,1.77
+1712,"Jean Coutu Group","Canada","Varejo",2.96,0.12,2.72
+1713,"Guoco Group","Hong Kong/China","Recursos diversificados",0.25,0.16,2.51
+1714,"Allete","United States","Conglomerados",1.62,0.24,2.74
+1715,"Dassault Systemes","France","Software e serviços",0.81,0.11,5.35
+1716,"Dow Jones","United States","Mídia",1.52,0.14,3.99
+1717,"City Developments","Singapore","Recursos diversificados",1.32,0.09,3.26
+1718,"Isetan","Japan","Varejo",5.09,0.07,2.58
+1719,"Leopalace21","Japan","Recursos diversificados",3.02,0.16,1.65
+1720,"Jaccs","Japan","Recursos diversificados",1.21,-0.01,0.73
+1721,"Suruga Bank","Japan","Bancário",0.7,0.07,1.65
+1722,"Hanjin Shipping","South Korea","Transportes",4.72,0.05,1.42
+1723,"Musashino Bank","Japan","Bancário",0.49,0.04,1.02
+1724,"Sonic Automotive","United States","Varejo",7.32,0.08,0.98
+1725,"Metro Inc","Canada","Mercados de alimentos",4.13,0.12,1.53
+1726,"Kiyo Bank","Japan","Bancário",0.52,-0.05,0.69
+1727,"Sumisho Lease","Japan","Recursos diversificados",2.91,0.08,1.22
+1728,"AmeriCredit","United States","Recursos diversificados",1.03,0.08,2.94
+1729,"Toho Bank","Japan","Bancário",0.57,0.03,0.84
+1730,"Weight Watchers Intl","United States","Serviços e material para empresas",0.92,0.13,4.21
+1731,"Pentair","United States","Conglomerados",2.72,0.14,2.54
+1732,"BEA Systems","United States","Software e serviços",0.98,0.11,5.14
+1733,"Momiji Holdings","Japan","Bancário",0.59,-0.43,0.38
+1734,"Group 4 Falck","Denmark","Serviços e material para empresas",4.55,0.09,2.39
+1735,"Shanghai Automotive","China","Bens duráveis",0.58,0.13,4.31
+1736,"Bank of Nagoya","Japan","Bancário",0.63,0.02,1.03
+1737,"Maxtor","United States","Tecnologia e equipamentos",4.09,0.1,2.36
+1738,"Shire Pharmaceuticals","United Kingdom","Drogas e biotecnologia",1.15,-0.95,5.01
+1739,"Central Leasing","Japan","Recursos diversificados",2.96,0.01,0.39
+1740,"Fresh Del Monte","Cayman Islands","Alimentos, bebidas e tabaco",2.4,0.24,1.44
+1741,"Sankyo (machinery)","Japan","Bens duráveis",1.05,0.16,3.5
+1742,"Kyushu-Shinwa Holdings","Japan","Bancário",0.56,0.01,0.6
+1743,"Denway Motors","Hong Kong/China","Bens duráveis",0.19,0.14,3.91
+1744,"Bank of Bermuda","Bermuda","Bancário",0.56,0.09,1.31
+1745,"Juniper Networks","United States","Tecnologia e equipamentos",0.7,0.04,10.37
+1746,"Keiyo Bank","Japan","Bancário",0.54,0.02,0.76
+1747,"Ebara","Japan","Bens de capital",4.38,-0.24,1.32
+1748,"Erie Indemnity","United States","Seguro",1.13,0.19,3.09
+1749,"Kumagai Gumi","Japan","Construção",4.42,-2.5,0.18
+1750,"Travis Perkins","United Kingdom","Varejo",2.28,0.15,2.82
+1751,"Jyske Bank","Denmark","Bancário",1.15,0.07,2.02
+1752,"Maruha","Japan","Alimentos, bebidas e tabaco",6.8,0.01,0.44
+1753,"Shionogi & Co","Japan","Drogas e biotecnologia",2.41,0.05,5.83
+1754,"Teekay Shipping","Bahamas","Transportes",1.35,0.2,2.55
+1755,"Rent-A-Center","United States","Varejo",2.23,0.18,2.54
+1756,"TabCorp Holdings","Australia","Hotéis, restaurantes e lazer",1.28,0.17,3.27
+1757,"QLogic","United States","Semicondutores",0.52,0.13,4.17
+1758,"Health Care Property","United States","Recursos diversificados",0.34,0.14,3.68
+1759,"Transmontaigne","United States","Óleo e gás",9.13,0.02,0.27
+1760,"IDB Holding","Israel","Recursos diversificados",2.48,-0.08,0.74
+1761,"Yamazaki Baking","Japan","Alimentos, bebidas e tabaco",6.09,0.06,1.77
+1762,"Buderus","Germany","Construção",1.95,0.25,2.46
+1763,"SEI Investments","United States","Recursos diversificados",0.64,0.14,3.67
+1764,"Oita Bank","Japan","Bancário",0.53,-0.09,0.68
+1765,"Kuhne & Nagel Intl","Switzerland","Transportes",4.46,0,2.91
+1766,"Hyundai Eng & Const","South Korea","Construção",4.62,-0.01,0.57
+1767,"Puget Energy","United States","Utilidades",2.15,0.13,2.09
+1768,"Shikoku Bank","Japan","Bancário",0.46,-0.26,1.34
+1769,"Community Health Sys","United States","Equipamentos e serviços de saúde",2.62,0.12,2.74
+1770,"Awa Bank","Japan","Bancário",0.62,-0.08,1.43
+1771,"Toto","Japan","Construção",3.72,0.03,2.88
+1772,"JSR","Japan","Químicos",2.09,0.09,5.14
+1773,"Stanley Works","United States","Bens duráveis",2.68,0.11,3.09
+1774,"AWG","United Kingdom","Utilidades",2.75,-0.1,1.46
+1775,"Yamanashi Chou Bank","Japan","Bancário",0.42,-0.07,0.79
+1776,"Maeda","Japan","Construção",3.88,-0.06,0.61
+1777,"Macerich","United States","Recursos diversificados",0.45,0.14,2.89
+1778,"Jiangsu Expressway","China","Transportes",0.27,0.1,5.36
+1779,"R&G Financial","United States","Bancário",0.58,0.12,1.55
+1780,"Questar","United States","Utilidades",1.4,0.19,2.97
+1781,"Britannic Group","United Kingdom","Seguro",1.44,-0.4,1.08
+1782,"Marconi","United Kingdom","Tecnologia e equipamentos",3,-1.76,2.63
+1783,"Hanshin Construction","South Korea","Construção",0.38,0.38,0.06
+1784,"Tokyo Tomin Bank","Japan","Bancário",0.5,0.01,0.6
+1785,"Teck Cominco","Canada","Materiais",1.86,0.11,3.36
+1786,"Service Corp Intl","United States","Serviços e material para empresas",2.31,0.04,2.09
+1787,"Bank of Iwate","Japan","Bancário",0.39,0.03,0.79
+1788,"Hudson United Bancorp","United States","Bancário",0.53,0.12,1.7
+1789,"Swedish Match","Sweden","Alimentos, bebidas e tabaco",1.57,0.16,3.22
+1790,"Aichi Bank","Japan","Bancário",0.45,0.02,0.66
+1791,"AK Steel Holding","United States","Materiais",4.04,-0.56,0.52
+1792,"Sonoco Products","United States","Materiais",2.76,0.14,2.39
+1793,"Casio Computer","Japan","Serviços e material para empresas",3.73,0.05,2.75
+1794,"Abercrombie & Fitch","United States","Varejo",1.68,0.2,2.73
+1795,"BPB","United Kingdom","Construção",3.05,-0.01,3.53
+1796,"Commercial Federal","United States","Bancário",0.8,0.09,1.14
+1797,"Intl Bancshares","United States","Bancário",0.45,0.12,2.1
+1798,"Soriana","Mexico","Varejo",3.1,0.15,1.6
+1799,"Akita Bank","Japan","Bancário",0.44,0.03,0.79
+1800,"United Auto Group","United States","Varejo",8.39,0.07,1.24
+1801,"Endurance Specialty","Bermuda","Seguro",1.26,0.26,2.24
+1802,"South Financial Group","United States","Bancário",0.51,0.1,1.77
+1803,"CNF","United States","Transportes",5.1,0.09,1.55
+1804,"Sumitomo Heavy Inds","Japan","Bens de capital",4.07,0.02,1.31
+1805,"INI Steel","South Korea","Materiais",3.09,0.13,1.26
+1806,"Great Plains Energy","United States","Utilidades",2.08,0.18,2.4
+1807,"Rashid Hussain","Malaysia","Bancário",0.88,-0.01,0.16
+1808,"Eighteenth Bank","Japan","Bancário",0.5,0.01,0.73
+1809,"DaVita","United States","Equipamentos e serviços de saúde",1.97,0.17,2.86
+1810,"Seat-Pagine Gialle","Italy","Serviços e material para empresas",1.52,0.06,8.63
+1811,"Aomori Bank","Japan","Bancário",0.38,-0.12,0.71
+1812,"Big Food Group","United Kingdom","Mercados de alimentos",8,0.02,1.13
+1813,"Enka","Turkey","Construção",1.44,0.21,2.64
+1814,"Allegheny Energy","United States","Utilidades",2.38,-0.62,1.69
+1815,"Convergys","United States","Serviços e material para empresas",2.29,0.17,2.41
+1816,"Mabuchi Motor","Japan","Bens de capital",0.98,0.15,3.29
+1817,"Pall","United States","Equipamentos e serviços de saúde",1.66,0.15,3.29
+1818,"National Fuel Gas","United States","Utilidades",2.09,0.19,2.12
+1819,"ChoicePoint","United States","Serviços e material para empresas",0.8,0.15,3.37
+1820,"Vimpel Communications","Russia","Serviços de telecomunicação",0.76,0.13,3.77
+1821,"Chi Mei Optoelectronics","Taiwan","Tecnologia e equipamentos",1.72,0.13,3.68
+1822,"Shin Kong Financial","Taiwan","Seguro",1.65,-0.41,2.01
+1823,"Mitsui Engineering & Ship","Japan","Bens de capital",3.98,0.04,1.26
+1824,"Trustmark","United States","Bancário",0.53,0.12,1.75
+1825,"Fukui Bank","Japan","Bancário",0.45,0.02,1.07
+1826,"Pacific Century Regional","Singapore","Serviços de telecomunicação",2.89,0.02,0.68
+1827,"Standard Pacific","United States","Construção",2.36,0.2,1.61
+1828,"Redwood Trust","United States","Recursos diversificados",0.28,0.08,1.07
+1829,"Shaw Communications","Canada","Mídia",1.5,-0.06,3.92
+1830,"DPL","United States","Utilidades",1.18,0.14,2.54
+1831,"YTL","Malaysia","Utilidades",1.06,0.13,1.6
+1832,"Minara Resources","Australia","Materiais",0.17,0.34,1.21
+1833,"Salzgitter","Germany","Materiais",4.98,0.07,0.78
+1834,"Santos","Australia","Óleo e gás",0.83,0.18,2.87
+1835,"Tochigi Bank","Japan","Bancário",0.4,0.01,0.61
+1836,"Hawaiian Electric","United States","Utilidades",1.76,0.1,1.94
+1837,"Gambro","Sweden","Equipamentos e serviços de saúde",3.18,0.07,2.85
+1838,"Moore Wallace","Canada","Serviços e material para empresas",2.51,0.12,2.84
+1839,"Nippon Light Metal","Japan","Materiais",4.35,0.06,1.18
+1840,"LogicaCMG","United Kingdom","Serviços e material para empresas",2.84,-1.48,4.14
+1841,"Chiba Kogyo Bank","Japan","Bancário",0.38,0.02,0.26
+1842,"Guangdong Electric Power","China","Utilidades",0.67,0.14,3.39
+1843,"Michinoku Bank","Japan","Bancário",0.42,0.02,0.88
+1844,"ISS","Denmark","Serviços e material para empresas",5.37,0.03,2.41
+1845,"Career Education","United States","Serviços e material para empresas",0.95,0.1,5.25
+1846,"Basler Kantonalbank","Switzerland","Bancário",0.73,0.05,0.43
+1847,"Sumikin Bussan","Japan","Empresas comerciais",6.96,0.01,0.21
+1848,"Bowater","United States","Materiais",2.72,-0.2,2.49
+1849,"Somerfield","United Kingdom","Mercados de alimentos",7.47,0.06,1.61
+1850,"United Mizrahi Bank","Israel","Bancário",1.09,0.06,0.71
+1851,"CSK","Japan","Software e serviços",3.02,0.09,2.9
+1852,"Mercury General","United States","Seguro",2.15,0.15,2.66
+1853,"Ensco International","United States","Óleo e gás",0.79,0.11,4.42
+1854,"Belo","United States","Mídia",1.42,0.13,3.19
+1855,"Bank of Ikeda","Japan","Bancário",0.42,0.02,0.97
+1856,"Hyosung South","Korea","Produtos domésticos e pessoais",3.88,0.05,0.31
+1857,"Merloni Elettrodomestici","Italy","Bens duráveis",3.78,0.11,1.98
+1858,"Bank of Saga","Japan","Bancário",0.38,0.01,0.63
+1859,"ServiceMaster","United States","Serviços e material para empresas",3.57,-0.22,3.17
+1860,"Hokuetsu Bank","Japan","Bancário",0.41,0,0.44
+1861,"Mercantil Servicios Fin","Venezuela","Recursos diversificados",0.98,0.12,0.47
+1862,"Arriva","United Kingdom","Transportes",3.36,0.13,1.34
+1863,"International Steel Group","United States","Materiais",3.15,-0.01,3.49
+1864,"Metro Cash and Carry South","Africa","Mercados de alimentos",7.1,0.06,0.66
+1865,"Siam Commercial Bank","Thailand","Bancário",0.95,-0.29,1.8
+1866,"Pixar","United States","Mídia",0.26,0.12,3.64
+1867,"Aplus","Japan","Recursos diversificados",0.9,0.01,0.1
+1868,"Woodside Petroleum","Australia","Óleo e gás",1.26,-0.05,7.77
+1869,"AVA","Germany","Varejo",7.04,0.02,1.22
+1870,"McClatchy","United States","Mídia",1.07,0.14,3.25
+1871,"Central European Media","Bermuda","Mídia",0.11,0.31,0.53
+1872,"Trizec Properties","United States","Recursos diversificados",0.89,0.12,2.46
+1873,"Bayerische Immobilien","Germany","Recursos diversificados",0.42,0.16,3.01
+1874,"Cosco Pacific","Hong Kong/China","Transportes",0.24,0.15,3.07
+1875,"MyTravel Group","United Kingdom","Hotéis, restaurantes e lazer",6.97,-1.52,0.12
+1876,"Piraeus Bank","Greece","Bancário",0.99,0.07,2.06
+1877,"Northumbrian Water","United Kingdom","Utilidades",0.81,0.15,1.12
+1878,"Tosoh","Japan","Químicos",3.99,0.04,2.03
+1879,"Far EasTone Telecom","Taiwan","Serviços de telecomunicação",1,0.23,2.4
+1880,"Nisshin Steel","Japan","Materiais",3.49,-0.02,1.69
+1881,"Del Monte Foods","United States","Alimentos, bebidas e tabaco",2.78,0.1,2.31
+1882,"Kangwon Land","South Korea","Hotéis, restaurantes e lazer",0.4,0.19,2.67
+1883,"AMMB Holdings","Malaysia","Recursos diversificados",1.11,0.07,1.54
+1884,"Ceridian","United States","Serviços e material para empresas",1.24,0.11,2.93
+1885,"Vishay Intertech","United States","Tecnologia e equipamentos",2.06,-0.11,3.75
+1886,"Viad","United States","Serviços e material para empresas",1.57,0.08,2.22
+1887,"SPAR Handels","Germany","Mercados de alimentos",6.84,-0.4,0.4
+1888,"Newfield Exploration","United States","Óleo e gás",1.02,0.19,2.59
+1889,"Yamagata Bank","Japan","Bancário",0.37,0.01,0.77
+1890,"Sierra Pacific Res","United States","Utilidades",2.81,-0.14,0.92
+1891,"Advantest","Japan","Software e serviços",0.83,-0.11,7.53
+1892,"Farmers Bank of China","Taiwan","Bancário",0.58,-0.33,0.6
+1893,"Banco Pastor","Spain","Bancário",0.49,0.08,1.79
+1894,"Daimaru","Japan","Varejo",6.72,0.04,1.71
+1895,"Samsung Heavy Industries","South Korea","Bens de capital",3.6,0.09,1.17
+1896,"Balfour Beatty","United Kingdom","Construção",4.99,0.09,1.92
+1897,"Towa Bank","Japan","Bancário",0.3,-0.11,0.42
+1898,"Red Eectrica de Espaqa","Spain","Utilidades",1.14,0.15,2.36
+1899,"China Motor","Taiwan","Bens duráveis",1.58,0.17,2.77
+1900,"Daio Paper","Japan","Materiais",3.26,0.01,0.94
+1901,"Old National Bncp","United States","Bancário",0.68,0.09,1.44
+1902,"Dah Sing Financial","Hong Kong/China","Bancário",0.43,0.11,1.98
+1903,"AEM","Italy","Utilidades",1.09,0.12,3.49
+1904,"Antofagasta","United Kingdom","Materiais",0.92,0.1,4.37
+1905,"Research In Motion","Canada","Tecnologia e equipamentos",0.32,-0.16,7.42
+1906,"Nippon Steel Trading","Japan","Empresas comerciais",6.56,-0.01,0.18
+1907,"SpectraSite","United States","Serviços de telecomunicação",0.33,0.29,1.74
+1908,"Capitol Federal Finl","United States","Bancário",0.43,0.03,2.67
+1909,"Laidlaw International","United States","Transportes",4.48,NA,1.49
+1910,"Higashi-Nippon Bank","Japan","Bancário",0.36,-0.06,0.41
+1911,"Tokyo Broadcasting System","Japan","Mídia",2.49,0.09,2.84
+1912,"Investkredit Bank","Austria","Bancário",1.22,0.03,0.57
+1913,"CBD-Brasil Distribuieco","Brazil","Empresas comerciais",3.74,0.08,2.64
+1914,"WMC Resources","Australia","Materiais",0.82,-0.02,4.94
+1915,"Brasil Telecom","Brazil","Serviços de telecomunicação",2,0.12,2.45
+1916,"BEKB-BCBE","Switzerland","Bancário",0.57,0.05,1.08
+1917,"Stockland Australia","Australia","Recursos diversificados",0.35,0.04,5.04
+1918,"Miyazaki Bank","Japan","Bancário",0.37,0.01,0.56
+1919,"Associated British Ports","United Kingdom","Transportes",0.69,0.16,2.75
+1920,"Equitable Resources","United States","Utilidades",1.08,0.17,2.73
+1921,"Siebel Systems","United States","Software e serviços",1.35,0,6.94
+1922,"Mahanagar Telephone Nigam","India","Serviços de telecomunicação",1.22,0.19,1.9
+1923,"Greater Bay Bancorp","United States","Bancário",0.6,0.1,1.47
+1924,"Meiji Dairies","Japan","Alimentos, bebidas e tabaco",6.2,0.03,1.24
+1925,"Natl Semiconductor","United States","Semicondutores",1.73,0.06,6.93
+1926,"Borders","United States","Varejo",3.61,0.11,1.86
+1927,"FIBI Holding","Israel","Bancário",0.66,-0.01,0.24
+1928,"Snow Brand Milk","Japan","Alimentos, bebidas e tabaco",6.15,-0.23,0.68
+1929,"JDS Uniphase","United States","Tecnologia e equipamentos",0.63,-0.28,6.9
+1930,"Arthur J Gallagher","United States","Seguro",1.26,0.15,2.96
+1931,"LG Construction","South Korea","Construção",2.83,0.14,0.79
+1932,"Gamesa","Spain","Bens de capital",1.15,0.14,3.02
+1933,"Berkeley Group","United Kingdom","Construção",1.84,0.25,2.16
+1934,"Hanjaya Mandala Sampoerna","Indonesia","Alimentos, bebidas e tabaco",1.69,0.19,2.51
+1935,"Agere Systems","United States","Semicondutores",1.92,-0.23,6.56
+1936,"Daisan Bank","Japan","Bancário",0.35,0.01,0.72
+1937,"OKO Bank","Finland","Bancário",0.64,0.07,1.17
+1938,"First Citizens Bcshs","United States","Bancário",0.76,0.08,1.26
+1939,"Bausch & Lomb","United States","Equipamentos e serviços de saúde",2.02,0.13,3
+1940,"St Galler Kantonalbank","Switzerland","Bancário",0.58,0.07,1.03
+1941,"Wing Lung Bank","Hong Kong/China","Bancário",0.31,0.1,1.56
+1942,"Avtovaz","Russia","Bens duráveis",3.74,0.03,0.3
+1943,"Arcelik","Turkey","Bens duráveis",1.92,0.19,2.43
+1944,"Buenaventura","Peru","Materiais",0.17,0.11,3.68
+1945,"Whitney Holding","United States","Bancário",0.43,0.1,1.67
+1946,"Chukyo Bank","Japan","Bancário",0.32,0.01,0.76
+1947,"Axel Springer","Germany","Mídia",2.92,0.07,3.41
+1948,"ICAP","United Kingdom","Recursos diversificados",1.05,0.12,3.43
+1949,"Metro-Goldwyn-Mayer","United States","Mídia",1.96,-0.16,4.14
+1950,"Ehime Bank","Japan","Bancário",0.35,-0.16,0.49
+1951,"CMPC","Chile","Materiais",1.23,0.09,3.67
+1952,"Finova Group","United States","Recursos diversificados",0.33,0.27,0.03
+1953,"Grupo Imsa","Mexico","Bens de capital",2.63,0.15,1.15
+1954,"Hanwa","Japan","Empresas comerciais",5.78,0.05,0.54
+1955,"Hewitt Associates","United States","Serviços e material para empresas",2.03,0.11,3.37
+1956,"Punch Taverns","United Kingdom","Hotéis, restaurantes e lazer",0.68,0.15,2.32
+1957,"Falabella","Chile","Varejo",1.18,0.1,4.34
+1958,"Laurus","Netherlands","Mercados de alimentos",5.75,-0.06,0.9
+1959,"Alliant Techsystems","United States","Aeroespacial e defesa",2.31,0.15,2.28
+1960,"Luzerner Kantonalbank","Switzerland","Bancário",0.56,0.06,1.36
+1961,"Custodia Holding","Germany","Recursos diversificados",0.01,0.26,0.62
+1962,"Iwataya Department Store","Japan","Varejo",1.2,0.26,0.17
+1963,"Laurentian Bank","Canada","Bancário",0.89,0.07,0.49
+1964,"Bca Popolare di Sondrio","Italy","Bancário",0.59,0.05,2.24
+1965,"Valiant Holding","Switzerland","Bancário",0.44,0.06,1.28
+1966,"Aquila","United States","Utilidades",2.38,-1.72,0.82
+1967,"BayWa","Germany","Alimentos, bebidas e tabaco",5.62,0.03,0.67
+1968,"Hirose Electric","Japan","Tecnologia e equipamentos",0.57,0.1,4.29
+1969,"Hellenic Petroleum","Greece","Óleo e gás",3.8,0.07,2.63
+1970,"Performance Food","United States","Mercados de alimentos",5.52,0.07,1.49
+1971,"Citrix Systems","United States","Serviços e material para empresas",0.59,0.13,3.2
+1972,"SEB","France","Bens duráveis",2.95,0.12,1.98
+1973,"China Southern Airlines","China","Transportes",2.18,0.07,3.16
+1974,"Cameco","Canada","Materiais",0.64,0.16,2.6
+1975,"Neyveli Lignite","India","Materiais",0.54,0.24,2.12
+1976,"SinoPac Holdings","Taiwan","Bancário",0.69,0.04,1.98
+1977,"Universal","United States","Alimentos, bebidas e tabaco",2.86,0.13,1.22
+1978,"Daewoo Intl","South Korea","Empresas comerciais",5.5,0.07,0.35
+1979,"Banco di Sardegna","Italy","Bancário",0.76,0.06,0.81
+1980,"Petroplus Intl","Netherlands","Empresas comerciais",5.48,-0.03,0.25
+1981,"CSN-Cia Siderurgica","Brazil","Materiais",1.46,-0.06,4.24
+1982,"Sumitomo Forestry","Japan","Construção",5.46,-0.13,1.67
+1983,"Bharti Tele-Ventures","India","Serviços de telecomunicação",0.64,-0.04,6.29
+1984,"Indian Overseas Bank","India","Bancário",0.84,0.09,0.54
+1985,"Cousins Properties","United States","Recursos diversificados",0.19,0.25,1.51
+1986,"Bank of Ryukyus","Japan","Bancário",0.34,0.04,0.38
+1987,"Bank Philippine Islands","Philippines","Bancário",0.58,0.1,1.5
+1988,"Haseko","Japan","Construção",3.84,0.04,0.71
+1989,"Stanley Electric","Japan","Bens duráveis",2,0.11,3.23
+1990,"Mack-Cali Realty","United States","Recursos diversificados",0.58,0.14,2.46
+1991,"Peabody Energy","United States","Materiais",2.76,0.04,2.15
+1992,"Origin Energy","Australia","Utilidades",2.24,0.11,2.75
+1993,"Sogecable","Spain","Mídia",1.03,-0.06,6.02
+1994,"Mobilcom","Germany","Serviços de telecomunicação",2.16,-3.62,1.42
+1995,"AMEC","United Kingdom","Construção",5.17,0.02,1.53
+1996,"Siam City Bank","Thailand","Bancário",0.48,0.02,1.47
+1997,"Yokogawa Electric","Japan","Serviços e material para empresas",2.78,-0.22,3.29
+1998,"Hindalco Industries","India","Materiais",1.35,0.14,2.76
+1999,"Nexans","France","Bens de capital",5.09,0,0.88
+2000,"Oriental Bank of Commerce","India","Bancário",0.81,0.1,1.17

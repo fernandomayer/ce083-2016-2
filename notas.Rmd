@@ -288,3 +288,50 @@ barplot(prop.table(table(notas2$SF))*100,
         main = "Após o exame")
 par(mfrow = c(1, 1))
 ```
+
+```{r, echo=FALSE, include=FALSE, eval=FALSE}
+##----------------------------------------------------------------------
+## Monta a tabela final com as informacoes necessarias para digitar as
+## notas no sistema
+
+## Importa nomes
+arq <- "~/Dropbox/UFPR/disciplinas/s2016-2/CE083/nomes_ce083_2016-2.csv"
+nomes <- read.csv(arq)
+nomes$Matricula <- as.numeric(gsub("GRR", "", nomes$Matricula))
+
+## Faz o merge dos nomes com as notas
+notas.sis <- merge(nomes, notas2[, c("Matricula", "MFA")],
+                   by = "Matricula", sort = FALSE)
+
+## Faz o merge da coluna Freq2 de notas (que e o numero de presencas)
+notas.sis <- merge(notas.sis, notas[, c("Matricula", "Freq2")],
+                   by = "Matricula", sort = FALSE)
+
+## Mas Freq2 é o número de presenças para
+aulas.eff
+## dias. E o sistema considera que o número máximo de faltas é 15 para
+## uma carga horária de 60H, que correspondem a 30 aulas. Por isso, é
+## necessário converter as presenças para 30 dias. Aqui vou descontar o
+## número de dias efetivos, mantendo o zero quando houver.
+notas.sis$Freq3 <- ifelse(notas.sis$Freq2 > 0,
+                          notas.sis$Freq2 + (30 - aulas.eff),
+                          notas.sis$Freq2)
+
+## Como o sistema precisa do número de faltas, então vou descontar as
+## presenças
+notas.sis$Faltas <- 30 - notas.sis$Freq3
+
+## Cria uma coluna com a situação
+notas.sis$S <- "Ap"
+notas.sis$S[notas.sis$MFA < 50] <- "ReNota"
+notas.sis$S[notas.sis$Faltas > 15] <- "ReFreq"
+
+## Mantem apenas as coluna de interesse
+col.sis <- c("Matricula", "Nome", "Faltas", "MFA", "S")
+
+## Exporta tabela final
+write.table(notas.sis[, col.sis],
+            "~/Dropbox/UFPR/disciplinas/s2016-2/CE083/final_ce083_2016-2.csv",
+            sep = ",", dec = ".", col.names = TRUE, row.names = FALSE)
+
+```
